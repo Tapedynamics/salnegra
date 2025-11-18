@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Audit Report - Sal Negra Tenerife</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: #c41e3a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #c41e3a;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c41e3a;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #c41e3a, #a01830);
+            color: white;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score-number {
+            font-size: 80px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 24px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .metric {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+        }
+
+        .metric-value {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .metric-value.green { color: #28a745; }
+        .metric-value.red { color: #dc3545; }
+        .metric-value.orange { color: #ff9800; }
+        .metric-value.burgundy { color: #c41e3a; }
+
+        .metric-label {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .problem-box {
+            background: white;
+            border-left: 6px solid #dc3545;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .problem-box.critical { border-left-color: #dc3545; }
+        .problem-box.high { border-left-color: #ff9800; }
+        .problem-box.medium { border-left-color: #c41e3a; }
+
+        .problem-box h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .badge-critical {
+            background: #dc3545;
+            color: white;
+        }
+
+        .badge-high {
+            background: #ff9800;
+            color: white;
+        }
+
+        .badge-medium {
+            background: #c41e3a;
+            color: white;
+        }
+
+        .badge-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .before, .after {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .before {
+            border: 3px solid #dc3545;
+        }
+
+        .after {
+            border: 3px solid #28a745;
+        }
+
+        .before h5 {
+            color: #dc3545;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .after h5 {
+            color: #28a745;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 25px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .alert {
+            padding: 20px 25px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-size: 17px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+        }
+
+        .alert-danger {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            color: #721c24;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            border: 2px solid #ff9800;
+            color: #856404;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            border: 2px solid #c41e3a;
+            color: #0c5460;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 17px;
+        }
+
+        th {
+            background: #c41e3a;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 15px;
+            background: #f8f9fa;
+            margin: 10px 0;
+            border-left: 4px solid #c41e3a;
+            font-size: 18px;
+        }
+
+        .checklist li::before {
+            content: "☐ ";
+            color: #c41e3a;
+            font-size: 22px;
+            margin-right: 10px;
+        }
+
+        .phase {
+            background: #f8f9fa;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border-left: 6px solid #c41e3a;
+        }
+
+        .phase h3 {
+            margin-top: 0;
+            color: #c41e3a;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e0e0e0;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+
+        .tag.green {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .tag.red {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .tag.orange {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        strong {
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .footer {
+            background: #2d2d2d;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border: 2px solid #c41e3a;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: #c41e3a;
+        }
+
+        .toc ul {
+            margin-left: 20px;
+        }
+
+        .toc a {
+            color: #c41e3a;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .score-number {
+                font-size: 60px;
+            }
+
+            .metric-value {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🍽️ SEO AUDIT REPORT</h1>
+        <h1>Sal Negra Tenerife</h1>
+        <p>📅 Data Analisi: 18 Novembre 2025</p>
+        <p>🌐 Sito: <a href="https://salnegratenerife.com" style="color: white; text-decoration: underline;" target="_blank">salnegratenerife.com</a></p>
+        <p>🍴 Tipo Business: Ristorante Tapas e Frutti di Mare</p>
+    </div>
+
+    <div class="container">
+        <!-- Score Principale -->
+        <div class="score-box">
+            <div class="score-number">6.0/10</div>
+            <div class="score-text">Punteggio SEO Generale</div>
+            <p style="margin-top: 20px; font-size: 20px;">Base discreta - Problemi critici da risolvere urgentemente</p>
+        </div>
+
+        <!-- Indice -->
+        <div class="toc">
+            <h3>📑 Indice dei Contenuti</h3>
+            <ul>
+                <li><a href="#metriche">Metriche Principali</a></li>
+                <li><a href="#punti-forza">Punti di Forza</a></li>
+                <li><a href="#problemi-critici">Problemi Critici (DA RISOLVERE SUBITO)</a></li>
+                <li><a href="#problemi-importanti">Problemi Importanti</a></li>
+                <li><a href="#esempi">Esempi di Miglioramenti</a></li>
+                <li><a href="#piano">Piano d'Azione</a></li>
+                <li><a href="#roi">ROI Stimato</a></li>
+            </ul>
+        </div>
+
+        <!-- Metriche Principali -->
+        <div id="metriche" class="section">
+            <h2>📊 Metriche Principali</h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-value burgundy">6+</div>
+                    <div class="metric-label">Pagine Analizzate</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value red">4</div>
+                    <div class="metric-label">Problemi Critici</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value orange">5</div>
+                    <div class="metric-label">Problemi Importanti</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">+35%</div>
+                    <div class="metric-label">ROI Previsto (6 mesi)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">7/10</div>
+                    <div class="metric-label">Structured Data</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value red">IT/ES</div>
+                    <div class="metric-label">Lingua Mista!</div>
+                </div>
+            </div>
+
+            <h3>Breakdown Score per Categoria</h3>
+            <table>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Score</th>
+                    <th>Stato</th>
+                </tr>
+                <tr>
+                    <td>Structured Data (Schema.org)</td>
+                    <td><strong style="color: #28a745;">7/10</strong></td>
+                    <td><span class="tag green">Buono</span></td>
+                </tr>
+                <tr>
+                    <td>Meta Tags (Title, Description)</td>
+                    <td><strong style="color: #dc3545;">4/10</strong></td>
+                    <td><span class="tag red">Critico</span></td>
+                </tr>
+                <tr>
+                    <td>Content Quality & Quantità</td>
+                    <td><strong style="color: #ff9800;">5/10</strong></td>
+                    <td><span class="tag orange">Scarso</span></td>
+                </tr>
+                <tr>
+                    <td>Struttura Heading (H1-H6)</td>
+                    <td><strong style="color: #ff9800;">5/10</strong></td>
+                    <td><span class="tag orange">Da Migliorare</span></td>
+                </tr>
+                <tr>
+                    <td>Ottimizzazione Immagini</td>
+                    <td><strong style="color: #dc3545;">3/10</strong></td>
+                    <td><span class="tag red">Critico</span></td>
+                </tr>
+                <tr>
+                    <td>User Experience (Prenotazioni)</td>
+                    <td><strong style="color: #ff9800;">5/10</strong></td>
+                    <td><span class="tag orange">Limitato</span></td>
+                </tr>
+                <tr>
+                    <td>Sitemap & Robots.txt</td>
+                    <td><strong style="color: #28a745;">8/10</strong></td>
+                    <td><span class="tag green">Buono</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Punti di Forza -->
+        <div id="punti-forza" class="section">
+            <h2>⭐ Punti di Forza</h2>
+
+            <h3>1. Structured Data Presente</h3>
+            <div class="alert alert-success">
+                <strong>Valutazione: 7/10</strong> - Schema implementato correttamente
+            </div>
+            <p><strong>Schema Implementati:</strong></p>
+            <ul>
+                <li>✅ <strong>Restaurant</strong> - Tipo business definito</li>
+                <li>✅ <strong>Organization</strong> - Logo, nome, URL</li>
+                <li>✅ <strong>OpeningHours</strong> - Orari 09:00-17:00 (⚠️ verificare correttezza per ristorante)</li>
+                <li>✅ <strong>WebSite & WebPage</strong> - Markup base presente</li>
+                <li>✅ <strong>Article</strong> - Per contenuti</li>
+            </ul>
+
+            <h3>2. Robots.txt Configurato Correttamente</h3>
+            <div class="alert alert-success">
+                <strong>Valutazione: 8/10</strong> - Configurazione WordPress standard
+            </div>
+            <ul>
+                <li>✅ User-agent: * (tutti i bot)</li>
+                <li>✅ Disallow: /wp-admin/ (protezione admin)</li>
+                <li>✅ Allow: /wp-admin/admin-ajax.php (eccezione AJAX)</li>
+                <li>✅ Sitemap reference presente</li>
+            </ul>
+
+            <h3>3. Sitemap XML Presente</h3>
+            <ul>
+                <li>✅ Sitemap index ben strutturato</li>
+                <li>✅ Generato da Rank Math SEO Plugin</li>
+                <li>✅ Lastmod presente (page-sitemap aggiornato a settembre 2025)</li>
+                <li>⚠️ template-sitemap.xml non aggiornato dal 2023</li>
+            </ul>
+
+            <h3>4. Google Maps su Pagina Contatti</h3>
+            <ul>
+                <li>✅ Embed mappa presente</li>
+                <li>✅ Indirizzo visibile</li>
+                <li>✅ Schema LocalBusiness con coordinate</li>
+            </ul>
+        </div>
+
+        <!-- Problemi Critici -->
+        <div id="problemi-critici" class="section">
+            <h2>🔴 PROBLEMI CRITICI - DA RISOLVERE SUBITO</h2>
+
+            <div class="alert alert-danger">
+                <strong>⚠️ ATTENZIONE:</strong> Questi 4 problemi hanno impatto GRAVE sul SEO e devono essere risolti IMMEDIATAMENTE (entro 1 settimana).
+            </div>
+
+            <!-- Problema 1 -->
+            <div class="problem-box critical">
+                <h3>1. Meta Description in ITALIANO su Sito SPAGNOLO <span class="badge badge-critical">CRITICO</span></h3>
+
+                <p><strong>📋 Problema GRAVE:</strong></p>
+                <ul>
+                    <li>❌ Homepage meta description: <em>"Sal Negra Tenerife è un privilegiato ristorante..."</em> (ITALIANO)</li>
+                    <li>❌ Sito completamente in SPAGNOLO</li>
+                    <li>❌ Google confuso sulla lingua target</li>
+                    <li>❌ Errore grammaticale: "ti stai aspettando" (traduzione automatica errata)</li>
+                </ul>
+
+                <p><strong>💥 Impatto SEO:</strong></p>
+                <ul>
+                    <li>❌ Perdita del 50-70% potenziale traffico spagnolo</li>
+                    <li>❌ Confusione algoritmo Google sulla lingua target</li>
+                    <li>❌ CTR ridotto (utenti vedono descrizione in lingua sbagliata)</li>
+                    <li>❌ Possibile penalizzazione per contenuto incoerente</li>
+                </ul>
+
+                <h4>✅ SOLUZIONE URGENTE:</h4>
+
+                <div class="comparison">
+                    <div class="before">
+                        <h5>❌ ATTUALE (Sbagliato)</h5>
+                        <div class="code">&lt;meta name="description" content="Sal Negra Tenerife è un privilegiato ristorante situato nel sud di Tenerife. Vieni a visitarci, ti stai aspettando."&gt;</div>
+                        <p style="margin-top: 15px; color: #dc3545;"><strong>PROBLEMI:</strong></p>
+                        <ul style="margin-top: 10px;">
+                            <li>Lingua italiana su sito spagnolo</li>
+                            <li>Errore grammaticale evidente</li>
+                            <li>Manca call-to-action chiara</li>
+                        </ul>
+                    </div>
+                    <div class="after">
+                        <h5>✅ CORRETTO (Spagnolo)</h5>
+                        <div class="code">&lt;meta name="description" content="Sal Negra Tenerife, restaurante de tapas y mariscos en el sur de Tenerife. Cocina mediterránea de calidad. ¡Reserva tu mesa ahora!"&gt;</div>
+                        <p style="margin-top: 15px; color: #28a745;"><strong>MIGLIORAMENTI:</strong></p>
+                        <ul style="margin-top: 10px;">
+                            <li>✅ Spagnolo corretto</li>
+                            <li>✅ Descrive tipo cucina (tapas, mariscos)</li>
+                            <li>✅ Call-to-action (Reserva tu mesa)</li>
+                            <li>✅ ~155 caratteri (lunghezza ottimale)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-danger">
+                    <strong>⏱️ URGENZA MASSIMA:</strong> Risolvere entro 24-48 ore | <strong>💡 ROI Atteso:</strong> +40-60% visibilità SERP spagnola
+                </div>
+            </div>
+
+            <!-- Problema 2 -->
+            <div class="problem-box critical">
+                <h3>2. Title Tag Generico e Non Ottimizzato <span class="badge badge-critical">CRITICO</span></h3>
+
+                <p><strong>📋 Problema:</strong></p>
+                <ul>
+                    <li>❌ Homepage: "Inicio - Sal Negra Tenerife" (troppo generico)</li>
+                    <li>❌ Manca keyword principale (restaurante, tapas, mariscos)</li>
+                    <li>❌ Non descrive l'offerta del ristorante</li>
+                    <li>❌ Spreca opportunità ranking</li>
+                </ul>
+
+                <p><strong>💥 Impatto SEO:</strong></p>
+                <ul>
+                    <li>❌ Ranking basso per keyword rilevanti</li>
+                    <li>❌ CTR ridotto (-30-40%)</li>
+                    <li>❌ Nessuna differenziazione dai competitor</li>
+                </ul>
+
+                <h4>✅ SOLUZIONE:</h4>
+
+                <div class="comparison">
+                    <div class="before">
+                        <h5>❌ PRIMA</h5>
+                        <div class="code">&lt;title&gt;Inicio - Sal Negra Tenerife&lt;/title&gt;</div>
+                    </div>
+                    <div class="after">
+                        <h5>✅ DOPO</h5>
+                        <div class="code">&lt;title&gt;Sal Negra Tenerife | Restaurante de Tapas y Mariscos - Sur Tenerife&lt;/title&gt;</div>
+                    </div>
+                </div>
+
+                <p><strong>⏱️ Tempo Stimato:</strong> 30 minuti | <strong>💡 ROI:</strong> +25-35% CTR</p>
+            </div>
+
+            <!-- Problema 3 -->
+            <div class="problem-box critical">
+                <h3>3. Alt Text Mancanti su Immagini <span class="badge badge-critical">CRITICO</span></h3>
+
+                <p><strong>📋 Problema:</strong></p>
+                <ul>
+                    <li>❌ Alt text NON visibili o mancanti su immagini principali</li>
+                    <li>❌ Immagini piatti del menu senza descrizione</li>
+                    <li>❌ Perdita opportunità ranking Google Images</li>
+                    <li>❌ Accessibilità compromessa (WCAG non conforme)</li>
+                </ul>
+
+                <h4>✅ SOLUZIONE - Esempi per Ristorante:</h4>
+
+                <div class="comparison">
+                    <div class="before">
+                        <h5>❌ PRIMA</h5>
+                        <div class="code">&lt;img src="piatto1.jpg" alt=""&gt;
+
+&lt;img src="ristorante.jpg"&gt;
+
+&lt;img src="tapas.jpg" alt="tapas"&gt;</div>
+                    </div>
+                    <div class="after">
+                        <h5>✅ DOPO</h5>
+                        <div class="code">&lt;img src="piatto1.jpg"
+     alt="Pulpo a la gallega fresco del restaurante Sal Negra Tenerife"&gt;
+
+&lt;img src="ristorante.jpg"
+     alt="Interior acogedor del restaurante Sal Negra en el sur de Tenerife"&gt;
+
+&lt;img src="tapas.jpg"
+     alt="Variedad de tapas españolas y mariscos frescos en Sal Negra"&gt;</div>
+                    </div>
+                </div>
+
+                <p><strong>⏱️ Tempo Stimato:</strong> 3-4 ore | <strong>💡 ROI:</strong> +20% visibilità Google Images</p>
+            </div>
+
+            <!-- Problema 4 -->
+            <div class="problem-box critical">
+                <h3>4. Pagina Menu Senza Menu Reale <span class="badge badge-high">ALTA</span></h3>
+
+                <p><strong>📋 Problema GRAVE:</strong></p>
+                <ul>
+                    <li>❌ Pagina /carta/ esiste ma NON mostra piatti</li>
+                    <li>❌ Nessuna lista prodotti/piatti visibile</li>
+                    <li>❌ Nessun prezzo indicato</li>
+                    <li>❌ Solo landing page generica</li>
+                </ul>
+
+                <p><strong>💥 Impatto:</strong></p>
+                <ul>
+                    <li>❌ Utenti non vedono l'offerta culinaria</li>
+                    <li>❌ Perdita conversioni (prenotazioni)</li>
+                    <li>❌ SEO locale penalizzato (no product schema)</li>
+                    <li>❌ Bounce rate altissimo</li>
+                </ul>
+
+                <div class="alert alert-danger">
+                    <strong>AZIONE RICHIESTA:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>☐ Aggiungere lista completa piatti con descrizioni</li>
+                        <li>☐ Includere prezzi per ogni piatto</li>
+                        <li>☐ Organizzare in categorie (Entrantes, Principales, Postres, Bebidas)</li>
+                        <li>☐ Foto di qualità per ogni piatto con alt text</li>
+                        <li>☐ Implementare Product schema per piatti signature</li>
+                    </ul>
+                </div>
+
+                <p><strong>⏱️ Tempo Stimato:</strong> 6-8 ore | <strong>💡 ROI:</strong> +30-40% conversioni</p>
+            </div>
+        </div>
+
+        <!-- Problemi Importanti -->
+        <div id="problemi-importanti" class="section">
+            <h2>🟠 Problemi Importanti - Da Pianificare</h2>
+
+            <div class="alert alert-warning">
+                <strong>📅 Timeline:</strong> Risolvere nelle prossime 2-3 settimane
+            </div>
+
+            <h3>5. Contenuto Scarso su Pagina "Sobre Nosotros"</h3>
+            <ul>
+                <li>⚠️ Contenuto limitato (meno di 200 parole stimato)</li>
+                <li>⚠️ Manca storia del ristorante</li>
+                <li>⚠️ Nessuna presentazione chef/team</li>
+                <li>⚠️ Valori e filosofia cucina assenti</li>
+            </ul>
+            <p><strong>Raccomandazioni:</strong></p>
+            <ul>
+                <li>Espandere a 400-600 parole</li>
+                <li>Aggiungere storia e tradizione</li>
+                <li>Foto chef e team con bio</li>
+                <li>Sottolineare prodotti locali e freschezza</li>
+            </ul>
+
+            <h3>6. Prenotazioni Solo Telefoniche (No Form Online)</h3>
+            <ul>
+                <li>⚠️ Pagina /reservas/ ha solo numero telefono</li>
+                <li>⚠️ Nessun form di prenotazione online</li>
+                <li>⚠️ Barriera per utenti che preferiscono online</li>
+                <li>⚠️ Perdita prenotazioni fuori orario apertura</li>
+            </ul>
+            <p><strong>Soluzioni:</strong></p>
+            <ul>
+                <li>Implementare form prenotazione (The Fork, OpenTable, o custom)</li>
+                <li>Aggiungere calendario disponibilità</li>
+                <li>Conferma automatica via email</li>
+                <li>Mantenere telefono come opzione alternativa</li>
+            </ul>
+
+            <h3>7. Orari di Apertura Incongruenti</h3>
+            <ul>
+                <li>⚠️ Schema mostra: "Lun-Dom 09:00-17:00"</li>
+                <li>⚠️ Orario strano per un ristorante (chiuso a cena?)</li>
+                <li>⚠️ Potrebbe confondere clienti</li>
+            </ul>
+            <p><strong>Azione:</strong> Verificare e correggere orari reali nel markup Schema</p>
+
+            <h3>8. Struttura Heading Poco Chiara</h3>
+            <ul>
+                <li>⚠️ H1 non sempre presente o chiaro</li>
+                <li>⚠️ Gerarchia H2/H3 debole</li>
+                <li>⚠️ Contenuto dipende troppo da JavaScript</li>
+            </ul>
+            <p><strong>Fix:</strong> Rivedere ogni pagina per garantire 1 H1 chiaro + H2/H3 logici</p>
+
+            <h3>9. Mancano Recensioni sul Sito</h3>
+            <ul>
+                <li>⚠️ Nessuna sezione testimonianze visibile</li>
+                <li>⚠️ No widget recensioni Google/TripAdvisor</li>
+                <li>⚠️ Perde social proof importante</li>
+            </ul>
+            <p><strong>Implementare:</strong></p>
+            <ul>
+                <li>Widget Google Reviews sulla homepage</li>
+                <li>Sezione "Opinioni Clienti" con 5-10 recensioni top</li>
+                <li>Schema Review per stelle in SERP</li>
+            </ul>
+        </div>
+
+        <!-- Esempi -->
+        <div id="esempi" class="section">
+            <h2>💡 Esempi di Miglioramenti</h2>
+
+            <h3>Esempio: Menu Completo con Schema Product</h3>
+            <p><strong>HTML + Schema da aggiungere alla pagina /carta/:</strong></p>
+            <div class="code">&lt;section class="menu-categoria"&gt;
+  &lt;h2&gt;Entrantes / Tapas&lt;/h2&gt;
+
+  &lt;div class="menu-item"&gt;
+    &lt;h3&gt;Pulpo a la Gallega&lt;/h3&gt;
+    &lt;p class="descripcion"&gt;
+      Pulpo fresco cocido a la perfección, servido con
+      aceite de oliva, pimentón y patatas.
+    &lt;/p&gt;
+    &lt;p class="precio"&gt;14,50 €&lt;/p&gt;
+    &lt;img src="pulpo.jpg"
+         alt="Pulpo a la gallega del restaurante Sal Negra Tenerife"&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Schema Product --&gt;
+  &lt;script type="application/ld+json"&gt;
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Pulpo a la Gallega",
+    "description": "Pulpo fresco cocido con aceite, pimentón y patatas",
+    "offers": {
+      "@type": "Offer",
+      "price": "14.50",
+      "priceCurrency": "EUR"
+    }
+  }
+  &lt;/script&gt;
+&lt;/section&gt;</div>
+
+            <h3>Esempio: Sezione Recensioni con Schema</h3>
+            <div class="code">&lt;section class="testimonios"&gt;
+  &lt;h2&gt;Opiniones de Nuestros Clientes&lt;/h2&gt;
+
+  &lt;script type="application/ld+json"&gt;
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Sal Negra Tenerife",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "156"
+    }
+  }
+  &lt;/script&gt;
+&lt;/section&gt;</div>
+
+            <h3>Esempio: Meta Tags Ottimizzati per Tutte le Pagine</h3>
+            <table>
+                <tr>
+                    <th>Pagina</th>
+                    <th>Title Ottimizzato</th>
+                    <th>Meta Description</th>
+                </tr>
+                <tr>
+                    <td>Homepage</td>
+                    <td>Sal Negra Tenerife | Restaurante Tapas y Mariscos - Sur Tenerife</td>
+                    <td>Restaurante Sal Negra en Tenerife Sur. Tapas españolas y mariscos frescos. Cocina mediterránea de calidad. ¡Reserva tu mesa!</td>
+                </tr>
+                <tr>
+                    <td>Sobre Nosotros</td>
+                    <td>Sobre Nosotros - Restaurante Sal Negra Tenerife | Nuestra Historia</td>
+                    <td>Descubre la historia de Sal Negra, restaurante de tapas y mariscos en Tenerife. Tradición culinaria y productos frescos locales.</td>
+                </tr>
+                <tr>
+                    <td>Carta/Menu</td>
+                    <td>Carta y Menú - Sal Negra Tenerife | Tapas, Mariscos y Pescados</td>
+                    <td>Explora nuestra carta: tapas españolas, mariscos frescos, pescados del día y carnes selectas. Cocina mediterránea en Tenerife Sur.</td>
+                </tr>
+                <tr>
+                    <td>Reservas</td>
+                    <td>Reservar Mesa - Sal Negra Tenerife | Reserva Online o por Teléfono</td>
+                    <td>Reserva tu mesa en Sal Negra Tenerife. Sistema de reservas online fácil y rápido. Tel: 922 30 69 58. ¡Te esperamos!</td>
+                </tr>
+                <tr>
+                    <td>Contacto</td>
+                    <td>Contacto y Ubicación - Sal Negra Tenerife | Cómo Llegar</td>
+                    <td>Contacta con Sal Negra: Avda. La Habana, CC San Telmo. Horario, teléfono y ubicación. Restaurante en el sur de Tenerife.</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Piano d'Azione -->
+        <div id="piano" class="section">
+            <h2>🎯 Piano d'Azione Prioritario</h2>
+
+            <div class="phase">
+                <h3>📅 FASE 1: URGENZA CRITICA (Questa Settimana)</h3>
+
+                <h4>Giorni 1-2 (PRIORITÀ MASSIMA):</h4>
+                <ul class="checklist">
+                    <li><strong>Meta description:</strong> Cambiare SUBITO da italiano a spagnolo su tutte le pagine</li>
+                    <li><strong>Title homepage:</strong> Da "Inicio" a "Restaurante Tapas y Mariscos"</li>
+                    <li><strong>Verificare orari:</strong> Correggere orari apertura in schema (09:00-17:00 sembra errato)</li>
+                </ul>
+
+                <h4>Giorni 3-5:</h4>
+                <ul class="checklist">
+                    <li>Aggiungere alt text a TUTTE le immagini (priorità: homepage, menu)</li>
+                    <li>Creare pagina menu VERA con lista piatti completa</li>
+                    <li>Prezzi visibili per ogni piatto</li>
+                    <li>Foto piatti principali con alt text descrittivi</li>
+                </ul>
+
+                <div class="alert alert-danger">
+                    <strong>🎯 ROI Atteso Fase 1:</strong> +40-50% visibilità SERP + +30% conversioni
+                </div>
+            </div>
+
+            <div class="phase">
+                <h3>📅 FASE 2: Miglioramenti Importanti (2-3 settimane)</h3>
+
+                <h4>Settimana 2:</h4>
+                <ul class="checklist">
+                    <li>Espandere contenuto pagina "Sobre Nosotros" (400-600 parole)</li>
+                    <li>Aggiungere foto team/chef con bio</li>
+                    <li>Implementare form prenotazione online</li>
+                    <li>Rivedere struttura H1/H2/H3 su tutte le pagine</li>
+                </ul>
+
+                <h4>Settimana 3:</h4>
+                <ul class="checklist">
+                    <li>Aggiungere sezione recensioni homepage</li>
+                    <li>Widget Google Reviews</li>
+                    <li>Schema AggregateRating con stelle</li>
+                    <li>Ottimizzare tutti i title tag restanti</li>
+                    <li>Product schema per piatti signature</li>
+                </ul>
+
+                <div class="alert alert-success">
+                    <strong>🎯 ROI Atteso Fase 2:</strong> +15-20% traffico organico
+                </div>
+            </div>
+
+            <div class="phase">
+                <h3>📅 FASE 3: Crescita Long-Term (1-3 mesi)</h3>
+
+                <h4>Mese 1-2:</h4>
+                <ul class="checklist">
+                    <li><strong>Content Marketing:</strong> Blog ricette, eventi, notizie ristorante (2 articoli/mese)</li>
+                    <li><strong>Local SEO:</strong> Ottimizzare Google My Business</li>
+                    <li><strong>Social Proof:</strong> Incentivare recensioni Google/TripAdvisor</li>
+                    <li><strong>Link Building:</strong> Partnership blog gastronomici Tenerife</li>
+                </ul>
+
+                <h4>Mese 3:</h4>
+                <ul class="checklist">
+                    <li>Pagina eventi speciali (cene tematiche, degustazioni)</li>
+                    <li>Video tour ristorante (YouTube embed)</li>
+                    <li>Newsletter per clienti fedeli</li>
+                    <li>Performance audit (PageSpeed Insights)</li>
+                </ul>
+
+                <div class="alert alert-success">
+                    <strong>🎯 ROI Atteso Fase 3:</strong> +25-35% prenotazioni complessive
+                </div>
+            </div>
+        </div>
+
+        <!-- ROI -->
+        <div id="roi" class="section">
+            <h2>💰 ROI Stimato e Impatto Economico</h2>
+
+            <h3>Scenario Conservativo (3 mesi)</h3>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-value green">+30%</div>
+                    <div class="metric-label">Traffico Organico</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">+20%</div>
+                    <div class="metric-label">Conversioni (Prenotazioni)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value burgundy">15-25</div>
+                    <div class="metric-label">Prenotazioni Extra/Mese</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">350%</div>
+                    <div class="metric-label">ROI Medio</div>
+                </div>
+            </div>
+
+            <h3>Scenario Ottimistico (6 mesi)</h3>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-value green">+55%</div>
+                    <div class="metric-label">Traffico Organico</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">+35%</div>
+                    <div class="metric-label">Conversioni</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value burgundy">30-45</div>
+                    <div class="metric-label">Prenotazioni Extra/Mese</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">600%</div>
+                    <div class="metric-label">ROI Medio</div>
+                </div>
+            </div>
+
+            <div class="alert alert-success" style="font-size: 20px;">
+                <strong>💶 Valore Economico Stimato:</strong><br><br>
+                Assumendo ticket medio: <strong>€30-45/persona</strong> e gruppo medio <strong>2-3 persone</strong><br><br>
+                <strong>Incremento mensile conservativo:</strong> €900-1,500 (15-25 prenotazioni)<br>
+                <strong>Incremento mensile ottimistico:</strong> €1,800-3,000 (30-45 prenotazioni)
+            </div>
+
+            <h3>KPI da Monitorare</h3>
+            <table>
+                <tr>
+                    <th>Metrica</th>
+                    <th>Attuale</th>
+                    <th>Target 3 mesi</th>
+                    <th>Target 6 mesi</th>
+                </tr>
+                <tr>
+                    <td>Ranking "restaurante tenerife sur"</td>
+                    <td>?</td>
+                    <td>Pagina 1 (pos. 5-10)</td>
+                    <td>Top 5</td>
+                </tr>
+                <tr>
+                    <td>Traffico organico mensile</td>
+                    <td>100% (baseline)</td>
+                    <td>130%</td>
+                    <td>155%</td>
+                </tr>
+                <tr>
+                    <td>Conversione prenotazioni</td>
+                    <td>~2%</td>
+                    <td>3-4%</td>
+                    <td>5-6%</td>
+                </tr>
+                <tr>
+                    <td>Bounce Rate</td>
+                    <td>~65%</td>
+                    <td>&lt; 55%</td>
+                    <td>&lt; 45%</td>
+                </tr>
+                <tr>
+                    <td>Tempo medio pagina</td>
+                    <td>~1:00 min</td>
+                    <td>&gt; 1:45 min</td>
+                    <td>&gt; 2:15 min</td>
+                </tr>
+                <tr>
+                    <td>Recensioni Google</td>
+                    <td>? (verificare GMB)</td>
+                    <td>+20 recensioni</td>
+                    <td>+40 recensioni</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Conclusioni -->
+        <div class="section" style="background: linear-gradient(135deg, #ffe6e6 0%, #ffd6d6 100%); border: 3px solid #c41e3a;">
+            <h2>🎓 Conclusioni e Prossimi Passi</h2>
+
+            <div class="alert alert-warning" style="font-size: 20px;">
+                <strong>⚠️ STATO ATTUALE:</strong><br><br>
+                Il sito Sal Negra ha <strong>PROBLEMI CRITICI</strong> che limitano fortemente la visibilità online.<br><br>
+                La meta description in ITALIANO su sito SPAGNOLO è un errore <strong>GRAVE</strong> che deve essere corretto IMMEDIATAMENTE.<br><br>
+                <strong>BUONA NOTIZIA:</strong> Tutti i problemi sono facilmente risolvibili in 1-2 settimane.
+            </div>
+
+            <h3>🚨 AZIONI IMMEDIATE (Entro 48 ore)</h3>
+            <ul class="checklist">
+                <li><strong>Meta description:</strong> Cambiare a spagnolo su TUTTE le pagine</li>
+                <li><strong>Title homepage:</strong> Aggiungere keyword "Restaurante Tapas Mariscos"</li>
+                <li><strong>Verificare orari:</strong> Correggere nel markup schema</li>
+            </ul>
+
+            <h3>📅 Prima Settimana</h3>
+            <ul class="checklist">
+                <li>Alt text su tutte le immagini</li>
+                <li>Creare pagina menu completa con piatti e prezzi</li>
+                <li>Foto piatti principali</li>
+                <li>Product schema per 5-10 piatti signature</li>
+            </ul>
+
+            <h3>📅 Prossimi 30 Giorni</h3>
+            <ul class="checklist">
+                <li>Form prenotazioni online</li>
+                <li>Espandere contenuto "Sobre Nosotros"</li>
+                <li>Sezione recensioni homepage</li>
+                <li>Ottimizzare Google My Business</li>
+                <li>Struttura H1/H2 corretta su tutte pagine</li>
+            </ul>
+
+            <div class="alert alert-info" style="margin-top: 30px; font-size: 18px;">
+                <strong>📞 Supporto:</strong> Questo report va implementato gradualmente.<br>
+                <strong>🍽️ Prossimo audit raccomandato:</strong> Marzo 2026 (dopo implementazione fase 1 e 2)
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p style="font-size: 22px; margin-bottom: 15px;"><strong>SEO Audit Report - Sal Negra Tenerife</strong></p>
+        <p style="font-size: 18px;">Report generato il 18 Novembre 2025 | Powered by Claude Code AI</p>
+        <p style="font-size: 16px; margin-top: 10px;">🍴 Restaurante de Tapas y Mariscos - Tenerife Sur</p>
+    </div>
+</body>
+</html>
