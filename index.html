@@ -2,11 +2,176 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=SEO_Report_SalNegra.html">
-    <title>SEO Report - Sal Negra Tenerife</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Audit Reports - Tenerife Businesses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.3em;
+            margin-bottom: 50px;
+        }
+
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .report-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .report-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .report-card h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .report-card .business-type {
+            color: #7f8c8d;
+            font-size: 1em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .report-card .score {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .report-card .url {
+            color: #3498db;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+
+        .report-card .date {
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+
+        .report-card .cta {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-top: 40px;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to Sal Negra SEO Report...</p>
-    <p>If not redirected, <a href="SEO_Report_SalNegra.html">click here</a>.</p>
+    <div class="container">
+        <h1>SEO Audit Reports</h1>
+        <div class="subtitle">Comprehensive SEO Analysis - Tenerife Businesses</div>
+
+        <div class="reports-grid">
+            <a href="SEO_Report_SalNegra.html" class="report-card">
+                <div class="business-type">Ristorante</div>
+                <h2>Sal Negra Tenerife</h2>
+                <div class="url">salnegratenerife.com</div>
+                <div class="score">6.5/10</div>
+                <div class="date">Analisi: 18 Novembre 2025</div>
+                <div class="cta">Visualizza Report</div>
+            </a>
+
+            <a href="SEO_Report_IkaIka.html" class="report-card">
+                <div class="business-type">Scuola di Surf</div>
+                <h2>Ika Ika Surf School</h2>
+                <div class="url">ikaikasurfschooltenerife.com</div>
+                <div class="score">7.5/10</div>
+                <div class="date">Analisi: 18 Novembre 2025</div>
+                <div class="cta">Visualizza Report</div>
+            </a>
+
+            <a href="SEO_Report_SoulJeep.html" class="report-card">
+                <div class="business-type">Tour Operator</div>
+                <h2>Soul Jeep Tenerife</h2>
+                <div class="url">souljeep.com</div>
+                <div class="score">4.5/10</div>
+                <div class="date">Analisi: 19 Novembre 2025</div>
+                <div class="cta">Visualizza Report</div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>Report compilati da Claude Code - AI SEO Audit Specialist</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Analisi complete con problemi critici, quick wins e piano d'azione</p>
+        </div>
+    </div>
 </body>
 </html>
