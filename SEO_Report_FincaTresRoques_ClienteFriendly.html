@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Visibilità Online - Finca Tres Roques</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .score-section {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .score-big {
+            font-size: 5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .score-label {
+            font-size: 1.5em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            background: #fff9e6;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .intro h2 {
+            color: #e67e22;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #9b59b6;
+        }
+
+        .good-box {
+            background: #d5f4e6;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .good-box h3 {
+            color: #27ae60;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .good-box p {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .good-box .benefit {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 500;
+            color: #27ae60;
+        }
+
+        .problem-box {
+            background: #ffe6e6;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .problem-box h3 {
+            color: #c0392b;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .problem-box .issue {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .problem-box .issue h4 {
+            color: #e74c3c;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .problem-box .issue p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .example-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 2px dashed #95a5a6;
+        }
+
+        .example-box .label {
+            font-weight: bold;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .example-box .content {
+            font-size: 1.05em;
+            color: #2c3e50;
+            font-style: italic;
+        }
+
+        .impact-badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1em;
+            margin-top: 15px;
+        }
+
+        .money-box {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .money-box .big-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .money-box .small-text {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .checklist {
+            background: #e8f5e9;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .checklist h4 {
+            color: #27ae60;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 0;
+            font-size: 1.1em;
+            padding-left: 35px;
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .action-plan {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .action-plan h3 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .action-step {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .action-step .step-number {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .action-step h4 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .action-step p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .comparison-box {
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .comparison-box.before {
+            background: #fadbd8;
+            border: 3px solid #e74c3c;
+        }
+
+        .comparison-box.after {
+            background: #d5f4e6;
+            border: 3px solid #27ae60;
+        }
+
+        .comparison-box h4 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .comparison-box.before h4 {
+            color: #c0392b;
+        }
+
+        .comparison-box.after h4 {
+            color: #27ae60;
+        }
+
+        .comparison-box p {
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: #34495e;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .score-big {
+                font-size: 3.5em;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Report Visibilità Online</h1>
+            <div class="subtitle">Finca Tres Roques - Analisi e Opportunità</div>
+            <p style="margin-top: 20px; font-size: 1em; opacity: 0.9;">24 Novembre 2025</p>
+        </div>
+
+        <div class="score-section">
+            <div class="score-big">7/10</div>
+            <div class="score-label">Il tuo sito sta andando bene, ma può fare molto meglio!</div>
+        </div>
+
+        <div class="content">
+            <!-- INTRODUZIONE -->
+            <div class="intro">
+                <h2>👋 Ciao! Ecco cosa abbiamo scoperto</h2>
+                <p>
+                    Abbiamo analizzato il sito di Finca Tres Roques per capire quanto è visibile su Google
+                    e quanto è efficace nel portare nuovi clienti. <strong>La buona notizia?</strong> Il sito
+                    ha delle ottime basi. <strong>La notizia ancora migliore?</strong> Con pochi interventi
+                    mirati puoi aumentare significativamente le prenotazioni e la visibilità online.
+                </p>
+            </div>
+
+            <!-- COSA FUNZIONA BENE -->
+            <div class="section">
+                <div class="section-title">✅ Cosa Funziona Bene</div>
+
+                <div class="good-box">
+                    <h3>🎯 Google Ti Trova Facilmente</h3>
+                    <p>
+                        Il tuo sito è ben organizzato e Google riesce a capire chi sei, cosa offri e dove ti trovi.
+                        Quando qualcuno cerca "ristorante Tenerife" o "bodega Ifonche", hai buone possibilità di apparire.
+                    </p>
+                    <div class="benefit">
+                        ✓ Questo significa che stai già intercettando clienti che cercano esattamente quello che offri
+                    </div>
+                </div>
+
+                <div class="good-box">
+                    <h3>📱 Perfetto su Smartphone</h3>
+                    <p>
+                        Il tuo sito si vede benissimo su cellulare, si carica velocemente e le foto sono ottimizzate.
+                        Considerando che l'80% dei turisti cerca ristoranti dal telefono, è un grande vantaggio!
+                    </p>
+                    <div class="benefit">
+                        ✓ I clienti possono prenotare facilmente anche in movimento
+                    </div>
+                </div>
+
+                <div class="good-box">
+                    <h3>🌍 Sito in Due Lingue</h3>
+                    <p>
+                        Hai versioni in spagnolo e inglese, perfetto per Tenerife dove arrivano turisti da tutto il mondo.
+                        Questo ti apre a un pubblico molto più ampio.
+                    </p>
+                    <div class="benefit">
+                        ✓ Più clienti potenziali = più prenotazioni
+                    </div>
+                </div>
+
+                <div class="good-box">
+                    <h3>✍️ Contenuti di Qualità</h3>
+                    <p>
+                        Le descrizioni dei piatti sono invitanti, le foto sono belle e trasmetti bene l'atmosfera
+                        della finca. Il tuo "storytelling" funziona!
+                    </p>
+                    <div class="benefit">
+                        ✓ Le persone vogliono venire da voi dopo aver visto il sito
+                    </div>
+                </div>
+            </div>
+
+            <!-- COSA MANCA (IL PROBLEMA PRINCIPALE) -->
+            <div class="section">
+                <div class="section-title">🚨 Cosa Puoi Migliorare (Le 3 Opportunità d'Oro)</div>
+
+                <div class="problem-box">
+                    <h3>🔴 OPPORTUNITÀ #1: Condivisioni sui Social Media</h3>
+
+                    <div class="issue">
+                        <h4>Il Problema in Parole Semplici</h4>
+                        <p>
+                            Quando qualcuno condivide il tuo sito su <strong>WhatsApp, Facebook o Instagram</strong>,
+                            non appare un'anteprima bella e invitante con foto e descrizione. Appare solo un link
+                            anonimo. È come se qualcuno parlasse del tuo ristorante ma senza mostrare le foto dei piatti!
+                        </p>
+                    </div>
+
+                    <div class="comparison">
+                        <div class="comparison-box before">
+                            <h4>❌ ADESSO</h4>
+                            <p style="color: #7f8c8d; margin-top: 15px;">
+                                Solo un link grigio<br>
+                                Nessuna foto<br>
+                                Nessuna descrizione<br>
+                                Non invoglia a cliccare
+                            </p>
+                        </div>
+                        <div class="comparison-box after">
+                            <h4>✅ DOPO IL FIX</h4>
+                            <p style="color: #2c3e50; margin-top: 15px;">
+                                Foto bellissima del ristorante<br>
+                                Descrizione accattivante<br>
+                                Nome "Finca Tres Roques"<br>
+                                Sembra un post professionale
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="money-box">
+                        <div class="big-text">+50% Click</div>
+                        <div class="small-text">Più persone cliccheranno quando il tuo sito viene condiviso</div>
+                    </div>
+
+                    <div class="example-box">
+                        <div class="label">Esempio Reale:</div>
+                        <div class="content">
+                            "Un turista mangia da voi e vuole consigliare la finca agli amici su WhatsApp.
+                            Con l'anteprima giusta, i suoi amici vedono subito le foto dei calçots e della
+                            vista panoramica. Risultato? Prenotano anche loro!"
+                        </div>
+                    </div>
+
+                    <div class="impact-badge">💰 Impatto: ALTO - Più condivisioni = Più clienti</div>
+                </div>
+
+                <div class="problem-box">
+                    <h3>🟠 OPPORTUNITÀ #2: Google Capisce Le Lingue</h3>
+
+                    <div class="issue">
+                        <h4>Il Problema in Parole Semplici</h4>
+                        <p>
+                            Google non sa che hai <strong>due versioni</strong> del sito (spagnolo e inglese).
+                            Quindi a volte mostra la versione sbagliata: un turista inglese vede il sito in spagnolo
+                            e viceversa. È come dare il menu in spagnolo a un cliente che parla solo inglese!
+                        </p>
+                    </div>
+
+                    <div class="comparison">
+                        <div class="comparison-box before">
+                            <h4>❌ ADESSO</h4>
+                            <p style="color: #7f8c8d; margin-top: 15px;">
+                                Turista inglese → sito in spagnolo<br>
+                                Non capisce → esce dal sito<br>
+                                Cerca un altro ristorante
+                            </p>
+                        </div>
+                        <div class="comparison-box after">
+                            <h4>✅ DOPO IL FIX</h4>
+                            <p style="color: #2c3e50; margin-top: 15px;">
+                                Turista inglese → sito in inglese<br>
+                                Capisce tutto → naviga<br>
+                                Prenota!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="money-box">
+                        <div class="big-text">+30% Traffico</div>
+                        <div class="small-text">Più persone dalla ricerca Google nella lingua giusta</div>
+                    </div>
+
+                    <div class="example-box">
+                        <div class="label">Esempio Reale:</div>
+                        <div class="content">
+                            "Una famiglia tedesca cerca 'restaurant near Adeje' su Google. Adesso potrebbe
+                            finire sulla versione spagnola e chiudere subito. Con il fix, Google gli mostra
+                            la versione inglese e loro prenotano."
+                        </div>
+                    </div>
+
+                    <div class="impact-badge">💰 Impatto: ALTO - Raggiungi il pubblico internazionale</div>
+                </div>
+
+                <div class="problem-box">
+                    <h3>🟡 OPPORTUNITÀ #3: Le Foto Parlano a Google</h3>
+
+                    <div class="issue">
+                        <h4>Il Problema in Parole Semplici</h4>
+                        <p>
+                            Le tue belle foto di piatti e paesaggi non hanno "descrizioni" per Google.
+                            È come avere foto meravigliose in una guida turistica ma senza didascalie.
+                            Google non sa cosa sono e non le mostra quando qualcuno cerca "secreto ibérico Tenerife"
+                            o "bodega con vista".
+                        </p>
+                    </div>
+
+                    <div class="example-box">
+                        <div class="label">Cosa manca:</div>
+                        <div class="content" style="color: #e74c3c;">
+                            Foto del secreto ibérico → Google non sa che è secreto ibérico
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <div class="label">Cosa serve:</div>
+                        <div class="content" style="color: #27ae60;">
+                            "Secreto ibérico con patatas fritas servito a Finca Tres Roques, ristorante rurale a Tenerife"
+                        </div>
+                    </div>
+
+                    <div class="money-box">
+                        <div class="big-text">+20% Visite</div>
+                        <div class="small-text">Da persone che cercano piatti specifici su Google Immagini</div>
+                    </div>
+
+                    <div class="example-box">
+                        <div class="label">Esempio Reale:</div>
+                        <div class="content">
+                            "Un turista cerca 'calçots Tenerife' su Google Immagini. Con le descrizioni giuste,
+                            le tue foto appaiono nei primi risultati. Clicca, vede il menu, prenota."
+                        </div>
+                    </div>
+
+                    <div class="impact-badge">💰 Impatto: MEDIO - Canale aggiuntivo di visibilità</div>
+                </div>
+            </div>
+
+            <!-- PIANO D'AZIONE -->
+            <div class="section">
+                <div class="action-plan">
+                    <h3>📋 Piano d'Azione: Come Sistemare Tutto</h3>
+
+                    <div class="action-step">
+                        <div class="step-number">STEP 1 (Settimana 1-2)</div>
+                        <h4>Attivare le Anteprime Social</h4>
+                        <p>
+                            Il tuo sviluppatore aggiunge alcuni codici al sito che dicono a Facebook, WhatsApp e Instagram
+                            quali foto e testi mostrare quando qualcuno condivide il link. È una modifica rapida con
+                            grande impatto.
+                        </p>
+                        <p style="margin-top: 15px; opacity: 0.9;">
+                            <strong>Tempo:</strong> 2-3 ore | <strong>Risultato:</strong> Condivisioni più belle e cliccabili
+                        </p>
+                    </div>
+
+                    <div class="action-step">
+                        <div class="step-number">STEP 2 (Settimana 1-2)</div>
+                        <h4>Insegnare a Google le Lingue</h4>
+                        <p>
+                            Si aggiunge un piccolo codice che spiega a Google: "Questa pagina è in spagnolo, quella
+                            è in inglese". Google inizierà automaticamente a mostrare la versione giusta alle persone giuste.
+                        </p>
+                        <p style="margin-top: 15px; opacity: 0.9;">
+                            <strong>Tempo:</strong> 2-3 ore | <strong>Risultato:</strong> Ogni visitatore vede la sua lingua
+                        </p>
+                    </div>
+
+                    <div class="action-step">
+                        <div class="step-number">STEP 3 (Settimana 3-4)</div>
+                        <h4>Descrizioni alle Foto</h4>
+                        <p>
+                            Si aggiungono descrizioni a tutte le foto del sito (circa 40-60 immagini). Descrizioni tipo:
+                            "Secreto ibérico servito a Finca Tres Roques con vista sui vigneti di Tenerife". Google le
+                            "legge" e inizia a mostrarle nelle ricerche.
+                        </p>
+                        <p style="margin-top: 15px; opacity: 0.9;">
+                            <strong>Tempo:</strong> 3-4 ore | <strong>Risultato:</strong> Visibilità su Google Immagini
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INVESTIMENTO E RITORNO -->
+            <div class="section">
+                <div class="section-title">💶 Investimento e Ritorno</div>
+
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 15px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 30px;">
+                        <div style="background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                            <div style="font-size: 1em; color: #7f8c8d; margin-bottom: 10px;">Tempo Totale</div>
+                            <div style="font-size: 2.5em; font-weight: bold; color: #9b59b6;">7-10 ore</div>
+                        </div>
+                        <div style="background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                            <div style="font-size: 1em; color: #7f8c8d; margin-bottom: 10px;">Punteggio Finale</div>
+                            <div style="font-size: 2.5em; font-weight: bold; color: #27ae60;">8.5/10</div>
+                        </div>
+                        <div style="background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                            <div style="font-size: 1em; color: #7f8c8d; margin-bottom: 10px;">Traffico Stimato</div>
+                            <div style="font-size: 2.5em; font-weight: bold; color: #e67e22;">+40%</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>Cosa Otterrai:</h4>
+                        <ul>
+                            <li>Più condivisioni sui social (WhatsApp, Facebook, Instagram)</li>
+                            <li>Ogni visitatore vede il sito nella sua lingua</li>
+                            <li>Le tue foto appaiono su Google Immagini</li>
+                            <li>Più traffico al sito = più prenotazioni</li>
+                            <li>Miglior impressione di professionalità</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONCLUSIONE -->
+            <div class="section">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px; border-radius: 15px; text-align: center;">
+                    <h2 style="font-size: 2.2em; margin-bottom: 20px;">In Sintesi</h2>
+                    <p style="font-size: 1.3em; line-height: 1.8; opacity: 0.95; margin-bottom: 30px;">
+                        Il vostro sito ha ottime fondamenta. Con questi 3 interventi mirati (che richiedono
+                        solo 7-10 ore di lavoro), potete aumentare significativamente le visite e le prenotazioni.
+                        Sono modifiche tecniche rapide con grande impatto sul business.
+                    </p>
+                    <div style="font-size: 1.1em; opacity: 0.9; margin-top: 25px;">
+                        <p><strong>Il momento migliore per ottimizzare?</strong></p>
+                        <p style="margin-top: 10px;">Adesso, prima dell'alta stagione turistica! 🌴</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ SEMPLICE -->
+            <div class="section">
+                <div class="section-title">❓ Domande Frequenti</div>
+
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin-bottom: 15px;">
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">Quanto tempo ci vuole per vedere i risultati?</h4>
+                    <p style="color: #555;">
+                        Le condivisioni social funzionano meglio immediatamente. Per Google servono 2-4 settimane
+                        per "digerire" le modifiche e iniziare a mostrare miglioramenti nei risultati di ricerca.
+                    </p>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin-bottom: 15px;">
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">È complicato da implementare?</h4>
+                    <p style="color: #555;">
+                        No! Qualsiasi sviluppatore web o la persona che gestisce il vostro sito WordPress può
+                        fare queste modifiche in poche ore. Abbiamo preparato guide dettagliate con tutto il codice pronto.
+                    </p>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin-bottom: 15px;">
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">Cosa succede se non facciamo niente?</h4>
+                    <p style="color: #555;">
+                        Il sito continuerà a funzionare come adesso (che non è male!), ma perderete opportunità
+                        di visibilità rispetto ai competitor che hanno già ottimizzato questi aspetti. Ogni condivisione
+                        social sarà meno efficace del possibile.
+                    </p>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin-bottom: 15px;">
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">Possiamo farlo un pezzo alla volta?</h4>
+                    <p style="color: #555;">
+                        Assolutamente sì! L'ordine consigliato è: 1) Anteprime social (massimo impatto immediato),
+                        2) Lingue per Google, 3) Descrizioni foto. Ogni step porta benefici indipendenti.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p style="font-size: 1.3em; margin-bottom: 15px;">📊 Report compilato con Claude Code</p>
+            <p>Analisi accessibile per decisioni business concrete</p>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">24 Novembre 2025</p>
+        </div>
+    </div>
+</body>
+</html>
