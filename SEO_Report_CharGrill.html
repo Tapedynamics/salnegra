@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report SEO - Char Modern Cocina & Grill</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; color: #333; line-height: 1.8; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; }
+        .header { background: linear-gradient(135deg, #d35400 0%, #e67e22 100%); color: white; padding: 50px 30px; text-align: center; }
+        .header h1 { font-size: 2.5em; margin-bottom: 15px; }
+        .header .subtitle { font-size: 1.3em; opacity: 0.95; font-weight: 300; }
+        .header .url { margin-top: 15px; font-size: 1em; opacity: 0.8; }
+        .score-section { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; padding: 50px 30px; text-align: center; }
+        .score-big { font-size: 5em; font-weight: bold; margin-bottom: 10px; }
+        .score-label { font-size: 1.5em; opacity: 0.95; }
+        .content { padding: 40px 30px; }
+        .intro { background: #fef5e7; padding: 30px; border-radius: 15px; margin-bottom: 40px; border-left: 5px solid #e67e22; }
+        .intro h2 { color: #d35400; font-size: 1.8em; margin-bottom: 15px; }
+        .intro p { font-size: 1.15em; line-height: 1.8; color: #555; }
+        .section { margin-bottom: 50px; }
+        .section-title { font-size: 2em; color: #2c3e50; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #e67e22; }
+        .good-box { background: #d5f4e6; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #27ae60; }
+        .good-box h3 { color: #27ae60; font-size: 1.5em; margin-bottom: 15px; }
+        .good-box p { font-size: 1.1em; color: #2c3e50; margin-bottom: 10px; }
+        .good-box .benefit { background: white; padding: 15px; border-radius: 8px; margin-top: 15px; font-weight: 500; color: #27ae60; }
+        .good-box ul { margin: 15px 0; padding-left: 20px; }
+        .good-box li { margin-bottom: 8px; }
+        .problem-box { background: #ffe6e6; padding: 30px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid #e74c3c; }
+        .problem-box.medium { background: #fff3e6; border-left-color: #f39c12; }
+        .problem-box h3 { color: #c0392b; font-size: 1.6em; margin-bottom: 15px; }
+        .problem-box.medium h3 { color: #d68910; }
+        .problem-box .issue { background: white; padding: 20px; border-radius: 10px; margin: 15px 0; }
+        .problem-box .issue h4 { color: #e74c3c; font-size: 1.3em; margin-bottom: 15px; }
+        .problem-box.medium .issue h4 { color: #d68910; }
+        .problem-box .issue p { font-size: 1.1em; color: #555; margin-bottom: 15px; }
+        .code-box { background: #2c3e50; color: #ecf0f1; padding: 20px; border-radius: 8px; font-family: 'Consolas', monospace; font-size: 0.95em; overflow-x: auto; margin: 15px 0; }
+        .code-box .comment { color: #7f8c8d; }
+        .code-box .tag { color: #e74c3c; }
+        .code-box .attr { color: #f39c12; }
+        .code-box .value { color: #2ecc71; }
+        .impact-badge { display: inline-block; background: #3498db; color: white; padding: 10px 20px; border-radius: 25px; font-weight: 600; font-size: 1em; margin-top: 15px; }
+        .impact-badge.high { background: #e74c3c; }
+        .impact-badge.medium { background: #f39c12; }
+        .action-plan { background: linear-gradient(135deg, #d35400 0%, #e67e22 100%); color: white; padding: 40px; border-radius: 15px; margin: 40px 0; }
+        .action-plan h3 { font-size: 2em; margin-bottom: 25px; text-align: center; }
+        .action-step { background: rgba(255,255,255,0.15); padding: 25px; border-radius: 10px; margin-bottom: 20px; }
+        .action-step .priority { display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; font-weight: bold; margin-bottom: 10px; background: rgba(255,255,255,0.3); }
+        .action-step h4 { font-size: 1.4em; margin-bottom: 15px; }
+        .action-step p { font-size: 1.05em; opacity: 0.95; line-height: 1.7; }
+        .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .stat-card .number { font-size: 2.5em; font-weight: bold; color: #d35400; }
+        .stat-card .label { color: #7f8c8d; font-size: 0.95em; margin-top: 5px; }
+        .footer { background: #2c3e50; color: white; padding: 40px; text-align: center; }
+        .footer p { margin: 10px 0; opacity: 0.9; }
+        .contact-info { background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .contact-info h4 { color: #2c3e50; margin-bottom: 15px; }
+        .contact-info p { margin: 8px 0; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } .score-big { font-size: 3.5em; } .content { padding: 25px 20px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Report SEO Audit</h1>
+            <div class="subtitle">Char Modern Cocina & Grill</div>
+            <div class="url">chargrilltenerife.com</div>
+            <p style="margin-top: 20px; font-size: 1em; opacity: 0.8;">25 Novembre 2025</p>
+        </div>
+
+        <div class="score-section">
+            <div class="score-big">5.5/10</div>
+            <div class="score-label">Problemi critici - H1 mancante e alt text assenti</div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <h2>Panoramica</h2>
+                <p>
+                    Char Modern Cocina & Grill e uno steakhouse spagnolo moderno situato presso l'Hotel Baobab Suites
+                    a La Caleta, Costa Adeje. Votato tra i migliori steakhouse della zona, il sito presenta
+                    <strong>problemi SEO critici</strong> che limitano significativamente la visibilita su Google.
+                </p>
+            </div>
+
+            <!-- CONTATTI -->
+            <div class="section">
+                <div class="section-title">Informazioni di Contatto</div>
+                <div class="contact-info">
+                    <h4>Char Modern Cocina & Grill</h4>
+                    <p><strong>Indirizzo:</strong> Hotel Baobab Suites, C. Roques del Samor, 6, 38660 Costa Adeje</p>
+                    <p><strong>Telefono:</strong> +34 822 621 067</p>
+                    <p><strong>Orari:</strong> Lun-Dom 13:30-15:30, 18:00-22:30</p>
+                </div>
+            </div>
+
+            <!-- PUNTI DI FORZA -->
+            <div class="section">
+                <div class="section-title">Punti di Forza</div>
+
+                <div class="good-box">
+                    <h3>Meta Tags Presenti</h3>
+                    <p>
+                        <strong>Title:</strong> "Char Modern Cocina & Grill - The best steaks in La Caleta"<br>
+                        <strong>Description:</strong> "Wondering where to eat in Tenerife? CHAR Modern Cocina & Grill is a Spanish kitchen and voted one of the best steaks restaurants in La Caleta."
+                    </p>
+                    <div class="benefit">
+                        Keyword "best steaks La Caleta" ben posizionata
+                    </div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Schema Markup Completo</h3>
+                    <p>
+                        WebPage, Organization, ImageObject, BreadcrumbList e WebSite con SearchAction tutti implementati.
+                    </p>
+                </div>
+
+                <div class="good-box">
+                    <h3>Contatti Completi e Visibili</h3>
+                    <p>
+                        Telefono, indirizzo completo e orari di apertura chiaramente visibili.
+                        Location presso Hotel Baobab Suites ben specificata.
+                    </p>
+                </div>
+
+                <div class="good-box">
+                    <h3>Social Presence Forte</h3>
+                    <ul>
+                        <li>Facebook: @charventure</li>
+                        <li>Instagram: @charmoderncocinagrill</li>
+                        <li>TikTok: @char_fuegoybrasas</li>
+                        <li>Guia Repsol (recensioni)</li>
+                    </ul>
+                </div>
+
+                <div class="good-box">
+                    <h3>CTA Efficaci</h3>
+                    <ul>
+                        <li>"Reservas" - Prenotazioni</li>
+                        <li>"DESCUBRIR" - Esplora menu</li>
+                        <li>"Regala una experiencia Char" - Gift cards</li>
+                        <li>"Haz Tu Resena" - Link recensioni</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROBLEMI -->
+            <div class="section">
+                <div class="section-title">Problemi Critici</div>
+
+                <div class="problem-box">
+                    <h3>CRITICO: H1 Completamente Mancante</h3>
+                    <div class="issue">
+                        <h4>Il Problema</h4>
+                        <p>
+                            La pagina NON ha alcun tag H1. Questo e un problema SEO fondamentale.
+                            Google non sa quale sia il topic principale della pagina.
+                            Gli H2 e H3 presenti sono solo per elementi di contatto e navigazione.
+                        </p>
+                    </div>
+                    <div class="code-box">
+<span class="comment">&lt;!-- PROBLEMA: Nessun H1 --&gt;</span>
+&lt;<span class="tag">h2</span>&gt;Datos de contacto&lt;/<span class="tag">h2</span>&gt;
+&lt;<span class="tag">h2</span>&gt;Horario de apertura&lt;/<span class="tag">h2</span>&gt;
+
+<span class="comment">&lt;!-- SOLUZIONE --&gt;</span>
+&lt;<span class="tag">h1</span>&gt;Char Modern Cocina & Grill - Steakhouse Spagnolo a La Caleta, Tenerife&lt;/<span class="tag">h1</span>&gt;
+                    </div>
+                    <span class="impact-badge high">Impatto: CRITICO - Ranking Keyword Principali</span>
+                </div>
+
+                <div class="problem-box">
+                    <h3>CRITICO: Alt Text Immagini Totalmente Assenti</h3>
+                    <div class="issue">
+                        <h4>Il Problema</h4>
+                        <p>
+                            TUTTE le immagini usano placeholder SVG vuoti (data:image/svg+xml;base64)
+                            senza alcun alt text. Le foto di carni alla griglia, ambiente e piatti
+                            sono completamente invisibili a Google Immagini.
+                        </p>
+                    </div>
+                    <div class="code-box">
+<span class="comment">&lt;!-- Esempi di alt text per Char --&gt;</span>
+
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"steak.jpg"</span> <span class="attr">alt</span>=<span class="value">"Chuleton alla griglia Char Modern Cocina La Caleta Tenerife"</span>&gt;
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"grill.jpg"</span> <span class="attr">alt</span>=<span class="value">"Parrilla spagnola con carni premium al ristorante Char Costa Adeje"</span>&gt;
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"interior.jpg"</span> <span class="attr">alt</span>=<span class="value">"Sala elegante Char Modern Cocina presso Hotel Baobab Suites"</span>&gt;
+                    </div>
+                    <span class="impact-badge high">Impatto: CRITICO - Google Immagini e Accessibilita</span>
+                </div>
+
+                <div class="problem-box medium">
+                    <h3>Email di Contatto Mancante</h3>
+                    <div class="issue">
+                        <h4>Il Problema</h4>
+                        <p>
+                            Nessun indirizzo email visibile per contatti diretti.
+                            Solo telefono disponibile.
+                        </p>
+                    </div>
+                    <span class="impact-badge">Impatto: BASSO - UX</span>
+                </div>
+
+                <div class="problem-box medium">
+                    <h3>Schema Restaurant Mancante</h3>
+                    <div class="issue">
+                        <h4>Il Problema</h4>
+                        <p>
+                            Nonostante Organization schema presente, manca lo schema specifico
+                            Restaurant con tipo cucina, priceRange, orari strutturati e recensioni.
+                        </p>
+                    </div>
+                    <span class="impact-badge medium">Impatto: MEDIO - SEO Locale</span>
+                </div>
+            </div>
+
+            <!-- PIANO D'AZIONE -->
+            <div class="action-plan">
+                <h3>Piano d'Azione</h3>
+
+                <div class="action-step">
+                    <span class="priority">CRITICO</span>
+                    <h4>1. Aggiungere H1</h4>
+                    <p>
+                        Inserire immediatamente un H1 descrittivo nella hero section:
+                        "Char Modern Cocina & Grill - Best Steakhouse in La Caleta, Tenerife"
+                    </p>
+                </div>
+
+                <div class="action-step">
+                    <span class="priority">CRITICO</span>
+                    <h4>2. Alt Text per Tutte le Immagini</h4>
+                    <p>
+                        Sostituire placeholder SVG con immagini reali e alt text descrittivi.
+                        Focus su carni alla griglia, parrilla spagnola, ambiente Hotel Baobab.
+                    </p>
+                </div>
+
+                <div class="action-step">
+                    <span class="priority">MEDIA</span>
+                    <h4>3. Schema Restaurant</h4>
+                    <p>
+                        Implementare structured data Restaurant con "servesCuisine": ["Spanish", "Grill", "Steakhouse"],
+                        orari, coordinate GPS Hotel Baobab, menu links.
+                    </p>
+                </div>
+
+                <div class="action-step">
+                    <span class="priority">BASSA</span>
+                    <h4>4. Aggiungere Email</h4>
+                    <p>
+                        Inserire indirizzo email nel footer per contatti diretti.
+                    </p>
+                </div>
+            </div>
+
+            <!-- IMPATTO -->
+            <div class="section">
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 15px;">
+                    <h3 style="text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 1.8em;">Impatto Stimato</h3>
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="number">5.5</div>
+                            <div class="label">Score Attuale</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number" style="color: #27ae60;">8.0</div>
+                            <div class="label">Score Potenziale</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number" style="color: #3498db;">+55%</div>
+                            <div class="label">Traffico Organico</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number" style="color: #9b59b6;">5-7h</div>
+                            <div class="label">Tempo Stimato</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONCLUSIONE -->
+            <div class="section">
+                <div style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; padding: 40px; border-radius: 15px; text-align: center;">
+                    <h2 style="font-size: 2em; margin-bottom: 20px;">Verdetto: Interventi Urgenti</h2>
+                    <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                        Char ha <strong>problemi SEO fondamentali</strong>: manca completamente l'H1 e
+                        tutte le immagini sono placeholder senza alt text. Questi sono errori base
+                        che stanno limitando gravemente il potenziale. Con le correzioni puo eccellere.
+                    </p>
+                    <div style="font-size: 1.1em; opacity: 0.95; margin-top: 20px;">
+                        <strong>Priorita assoluta:</strong> H1 + Alt text immagini
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p style="font-size: 1.3em; margin-bottom: 15px;">Report compilato da Claude Code - SEO Audit Specialist</p>
+            <p>Tape-Dynamics SEO Analysis</p>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">25 Novembre 2025</p>
+        </div>
+    </div>
+</body>
+</html>
