@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report SEO - OPA! Restaurante Griego Tenerife</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #3498db 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .url {
+            margin-top: 15px;
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        .score-section {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .score-big {
+            font-size: 5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .score-label {
+            font-size: 1.5em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            background: #e3f2fd;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #1e3a5f;
+        }
+
+        .intro h2 {
+            color: #1e3a5f;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .good-box {
+            background: #d5f4e6;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .good-box h3 {
+            color: #27ae60;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .good-box p {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .good-box .benefit {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 500;
+            color: #27ae60;
+        }
+
+        .good-box ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .good-box li {
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .problem-box {
+            background: #ffe6e6;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .problem-box h3 {
+            color: #e74c3c;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .problem-box p {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .problem-box .impact {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .problem-box .impact strong {
+            color: #e74c3c;
+        }
+
+        .problem-box ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .problem-box li {
+            margin-bottom: 8px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .warning-box h3 {
+            color: #d68910;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .warning-box p {
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        .quick-win {
+            background: linear-gradient(135deg, #1e3a5f 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .quick-win h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .quick-win p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .quick-win .time {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .action-plan {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .action-plan h3 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .action-number {
+            background: linear-gradient(135deg, #1e3a5f 0%, #3498db 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .action-content h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .action-content p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        .priority-high {
+            border-left: 4px solid #e74c3c;
+        }
+
+        .priority-medium {
+            border-left: 4px solid #f39c12;
+        }
+
+        .priority-low {
+            border-left: 4px solid #3498db;
+        }
+
+        .score-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .score-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .score-item .label {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        .score-item .value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .score-item.good .value { color: #27ae60; }
+        .score-item.medium .value { color: #f39c12; }
+        .score-item.bad .value { color: #e74c3c; }
+
+        .footer {
+            background: #1e3a5f;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin: 3px;
+        }
+
+        .tag-good { background: #d5f4e6; color: #27ae60; }
+        .tag-bad { background: #ffe6e6; color: #e74c3c; }
+        .tag-warning { background: #fff3cd; color: #d68910; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid #1e3a5f;
+        }
+
+        .highlight-box h3 {
+            color: #1e3a5f;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .menu-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .menu-cat {
+            background: #e3f2fd;
+            color: #1e3a5f;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .score-big { font-size: 3.5em; }
+            .content { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>OPA! Restaurante Griego</h1>
+            <div class="subtitle">Audit SEO Completo - Ristorante Greco Moderno</div>
+            <div class="url">oparestaurantetenerife.com</div>
+        </div>
+
+        <div class="score-section">
+            <div class="score-big">7.0/10</div>
+            <div class="score-label">Punteggio SEO Complessivo</div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <h2>Panoramica del Sito</h2>
+                <p>OPA! e un ristorante greco moderno situato nel centro commerciale X-Sur a Costa Adeje, Tenerife. Il locale si distingue per l'autenticita: parrilla importata dalla Grecia, pane pita originale, e ingredienti freschi mediterranei. Il sito web presenta una buona struttura SEO di base con title e meta description ottimizzati, schema markup implementato, e contenuto ricco che comunica efficacemente l'esperienza "OPAtime".</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Concept Unico: Autenticita Greca</h3>
+                <p>"Parrilla traida de Grecia" - "Pan de pita importado" - Un posizionamento distintivo che merita maggiore visibilita SEO</p>
+            </div>
+
+            <div class="score-breakdown">
+                <div class="score-item good">
+                    <div class="label">SEO Tecnico</div>
+                    <div class="value">7/10</div>
+                </div>
+                <div class="score-item good">
+                    <div class="label">Contenuti</div>
+                    <div class="value">8/10</div>
+                </div>
+                <div class="score-item medium">
+                    <div class="label">SEO Locale</div>
+                    <div class="value">7/10</div>
+                </div>
+                <div class="score-item good">
+                    <div class="label">UX/Mobile</div>
+                    <div class="value">7/10</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Cosa Funziona Bene</h2>
+
+                <div class="good-box">
+                    <h3>Title Tag e Meta Description Eccellenti</h3>
+                    <p><strong>Title:</strong> "OPA! Restaurante Griego Moderno en Costa Adeje Tenerife"</p>
+                    <p><strong>Meta Description:</strong> "OPA! Restaurante griego en el centro comercial X-Sur Costa Adeje Tenerife con sabores mediterraneos, ambiente vibrante y cocina autentica."</p>
+                    <div class="benefit">Title e description ottimizzati con keyword geografiche, tipo di cucina e USP. Lunghezza appropriata per i risultati di ricerca.</div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Schema Markup Completo</h3>
+                    <p>JSON-LD ben implementato con:</p>
+                    <ul>
+                        <li>WebPage schema</li>
+                        <li>Organization schema con logo</li>
+                        <li>BreadcrumbList per navigazione</li>
+                        <li>ImageObject per immagini</li>
+                        <li>WebSite schema</li>
+                        <li>Link social media strutturati</li>
+                    </ul>
+                    <div class="benefit">Una delle migliori implementazioni di dati strutturati nel portfolio Venture Group.</div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Struttura Heading Corretta</h3>
+                    <p>Gerarchia heading ben organizzata:</p>
+                    <ul>
+                        <li>H1: "Autentico restaurante griego"</li>
+                        <li>H2: "Buscas nuevas opciones...", "Conoce OPA!", "Que significa OPA?", "Lo que dicen"</li>
+                        <li>H3: Sezioni testimonial e social</li>
+                    </ul>
+                    <div class="benefit">Struttura semantica chiara che aiuta Google a comprendere la gerarchia dei contenuti.</div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Contenuto Ricco e Persuasivo</h3>
+                    <p>Il sito comunica efficacemente l'esperienza:</p>
+                    <ul>
+                        <li>Storia del brand e significato di "OPA!"</li>
+                        <li>Autenticita degli ingredienti (parrilla greca, pita importato)</li>
+                        <li>Esperienza "OPAtime" come differenziatore</li>
+                        <li>Freschezza e sapori mediterranei</li>
+                    </ul>
+                    <div class="benefit">Storytelling efficace che crea connessione emotiva e differenzia dai competitor.</div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Menu Completo con 50+ Piatti</h3>
+                    <p>La pagina menu e ben organizzata per categorie:</p>
+                    <div class="menu-categories">
+                        <span class="menu-cat">Entranti</span>
+                        <span class="menu-cat">Dips</span>
+                        <span class="menu-cat">Insalate</span>
+                        <span class="menu-cat">Mezza</span>
+                        <span class="menu-cat">Souvlaki</span>
+                        <span class="menu-cat">Piatti Principali</span>
+                        <span class="menu-cat">Menu Bambini</span>
+                        <span class="menu-cat">Dessert</span>
+                        <span class="menu-cat">Bevande</span>
+                    </div>
+                    <div class="benefit">Icone allergeni standardizzate per ogni piatto. PDF menu disponibile. Prezzi trasparenti.</div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Multi-Canale e Servizi Diversificati</h3>
+                    <p>Il ristorante offre:</p>
+                    <ul>
+                        <li>Cena tradizionale</li>
+                        <li>Servizio colazione/brunch</li>
+                        <li>Click & Collect</li>
+                        <li>Eventi corporate</li>
+                        <li>Prenotazioni online</li>
+                    </ul>
+                    <div class="benefit">Diversificazione dei servizi che amplia il pubblico target e le opportunita di conversione.</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Problemi da Risolvere</h2>
+
+                <div class="problem-box">
+                    <h3>Pagina Menu Senza H1</h3>
+                    <p>La pagina /es/menu/ non ha un tag H1 appropriato. Il titolo "Menu" e troppo generico e manca la keyword principale.</p>
+                    <div class="impact">
+                        <strong>Impatto:</strong> Google non identifica chiaramente il topic della pagina menu. Opportunita persa per rankare su "menu restaurante griego Tenerife".
+                    </div>
+                </div>
+
+                <div class="problem-box">
+                    <h3>Meta Description Pagina Menu Assente</h3>
+                    <p>La pagina menu sembra non avere una meta description ottimizzata specifica.</p>
+                    <div class="impact">
+                        <strong>Impatto:</strong> CTR ridotto per ricerche specifiche sul menu. Google genera snippet automatici.
+                    </div>
+                </div>
+
+                <div class="problem-box">
+                    <h3>Manca Schema Restaurant Specifico</h3>
+                    <p>Nonostante lo schema Organization sia presente, manca lo schema specifico "Restaurant" con:</p>
+                    <ul>
+                        <li>servesCuisine: "Greek", "Mediterranean"</li>
+                        <li>priceRange</li>
+                        <li>openingHours strutturati</li>
+                        <li>acceptsReservations</li>
+                        <li>menu URL</li>
+                    </ul>
+                    <div class="impact">
+                        <strong>Impatto:</strong> Rich snippets limitati. Niente tipo cucina, orari o prezzo nei risultati Google.
+                    </div>
+                </div>
+
+                <div class="problem-box">
+                    <h3>Alt Text Immagini Parziali</h3>
+                    <p>Alcune immagini di piatti hanno alt text ma molte ne sono prive o hanno descrizioni generiche.</p>
+                    <div class="impact">
+                        <strong>Impatto:</strong> Opportunita parzialmente persa per Google Immagini. Accessibilita non ottimale.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Opportunita di Miglioramento</h2>
+
+                <div class="warning-box">
+                    <h3>Landing Page per "Comida Griega Tenerife"</h3>
+                    <p>Creare una pagina dedicata che targettizza la keyword principale "comida griega Tenerife" con contenuto informativo sulla cucina greca e l'esperienza OPA!</p>
+                </div>
+
+                <div class="warning-box">
+                    <h3>Pagina Dedicata Desayunos/Brunch</h3>
+                    <p>Il servizio colazione merita una landing page ottimizzata per "desayuno Costa Adeje", "brunch X-Sur" con menu specifico e orari.</p>
+                </div>
+
+                <div class="warning-box">
+                    <h3>Blog con Contenuti sulla Cucina Greca</h3>
+                    <p>Articoli su: "Piatti tipici greci", "Storia del souvlaki", "Tradizioni culinarie greche". Posizionamento come autorita sulla cucina greca a Tenerife.</p>
+                </div>
+
+                <div class="warning-box">
+                    <h3>Sezione Eventi Corporate</h3>
+                    <p>Se offrite eventi aziendali, una pagina dedicata catturerebbe ricerche come "eventos empresa Tenerife", "cena grupo Costa Adeje".</p>
+                </div>
+
+                <div class="warning-box">
+                    <h3>FAQ Schema per Domande Comuni</h3>
+                    <p>"Che tipo di cucina serve OPA?", "Avete opzioni vegetariane?", "Si puo prenotare?", "Dove siete?" per featured snippets.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Quick Wins - Vittorie Rapide</h2>
+
+                <div class="quick-win">
+                    <h3>1. Aggiungi H1 e Meta Description alla Pagina Menu</h3>
+                    <p>H1: "Menu OPA! - Autentica Cucina Greca a Tenerife". Meta: "Scopri il menu di OPA!: souvlaki, moussaka, mezze e piatti greci autentici. 50+ piatti mediterranei freschi a Costa Adeje. Vedi prezzi e allergeni."</p>
+                    <div class="time">Tempo: 20 minuti</div>
+                </div>
+
+                <div class="quick-win">
+                    <h3>2. Implementa Schema Restaurant</h3>
+                    <p>Aggiungi dati strutturati Restaurant con servesCuisine, priceRange ($$), openingHours, acceptsReservations: true.</p>
+                    <div class="time">Tempo: 1 ora</div>
+                </div>
+
+                <div class="quick-win">
+                    <h3>3. Completa Alt Text Immagini Piatti</h3>
+                    <p>Es: "Moussaka tradizionale greca al ristorante OPA Tenerife", "Souvlaki di pollo con pita e tzatziki"</p>
+                    <div class="time">Tempo: 45 minuti</div>
+                </div>
+
+                <div class="quick-win">
+                    <h3>4. Aggiungi FAQ Schema</h3>
+                    <p>FAQ strutturate per featured snippets: tipo cucina, prenotazioni, location, orari, opzioni dietetiche.</p>
+                    <div class="time">Tempo: 1 ora</div>
+                </div>
+            </div>
+
+            <div class="action-plan">
+                <h3>Piano d'Azione Prioritizzato</h3>
+
+                <div class="action-item priority-high">
+                    <div class="action-number">1</div>
+                    <div class="action-content">
+                        <h4>Schema Restaurant + Menu</h4>
+                        <p>Priorita ALTA - Completa i dati strutturati per rich snippets avanzati con tipo cucina, orari e prezzi.</p>
+                    </div>
+                </div>
+
+                <div class="action-item priority-high">
+                    <div class="action-number">2</div>
+                    <div class="action-content">
+                        <h4>Ottimizza Pagina Menu (H1 + Meta)</h4>
+                        <p>Priorita ALTA - La pagina menu e fondamentale per le conversioni. Necessita H1 e meta description ottimizzati.</p>
+                    </div>
+                </div>
+
+                <div class="action-item priority-medium">
+                    <div class="action-number">3</div>
+                    <div class="action-content">
+                        <h4>Alt Text Completi per Immagini</h4>
+                        <p>Priorita MEDIA - Completa gli alt text per tutte le immagini di piatti e ambiente.</p>
+                    </div>
+                </div>
+
+                <div class="action-item priority-medium">
+                    <div class="action-number">4</div>
+                    <div class="action-content">
+                        <h4>FAQ Schema Markup</h4>
+                        <p>Priorita MEDIA - Aggiungi FAQPage schema per domande frequenti e possibilita di featured snippets.</p>
+                    </div>
+                </div>
+
+                <div class="action-item priority-low">
+                    <div class="action-number">5</div>
+                    <div class="action-content">
+                        <h4>Landing Pages Servizi Specifici</h4>
+                        <p>Priorita BASSA - Pagine dedicate per desayunos, eventi corporate, Click & Collect con contenuto unico.</p>
+                    </div>
+                </div>
+
+                <div class="action-item priority-low">
+                    <div class="action-number">6</div>
+                    <div class="action-content">
+                        <h4>Content Marketing Cucina Greca</h4>
+                        <p>Priorita BASSA - Blog con articoli sulla tradizione culinaria greca per traffico informativo long-tail.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" style="margin-top: 50px;">
+                <h2 class="section-title">Riepilogo Tecnico</h2>
+
+                <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>URL Analizzato</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">oparestaurantetenerife.com/es/</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>CMS/Platform</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">WordPress + Elementor</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>HTTPS</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><span class="tag tag-good">Attivo</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Mobile Friendly</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><span class="tag tag-good">Si</span></td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Title Tag</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><span class="tag tag-good">Ottimizzato</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Meta Description</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><span class="tag tag-good">Ottimizzata</span></td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Struttura Heading</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><span class="tag tag-good">Corretta</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Schema Markup</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><span class="tag tag-good">Presente</span> <span class="tag tag-warning">Manca Restaurant</span></td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Alt Text Immagini</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><span class="tag tag-warning">Parziali</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Multilingua</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><span class="tag tag-good">ES/EN</span></td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Location</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">X-Sur, Costa Adeje, Tenerife</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Tracking</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">GTM, Exponea, Meta Pixel, GA</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Social</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><span class="tag tag-good">FB, IG, TikTok, Maps</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section" style="margin-top: 40px;">
+                <h2 class="section-title">Keyword Target Suggerite</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;">
+                    <span class="tag tag-good">restaurante griego Tenerife</span>
+                    <span class="tag tag-good">comida griega Costa Adeje</span>
+                    <span class="tag tag-good">souvlaki Tenerife</span>
+                    <span class="tag tag-good">cocina mediterranea Tenerife</span>
+                    <span class="tag tag-good">restaurante X-Sur</span>
+                    <span class="tag tag-warning">moussaka Tenerife</span>
+                    <span class="tag tag-warning">gyros Costa Adeje</span>
+                    <span class="tag tag-warning">mejores restaurantes griegos Canarias</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Report compilato da Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Data analisi: 25 Novembre 2025</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Parte del network Venture Group Tenerife</p>
+        </div>
+    </div>
+</body>
+</html>

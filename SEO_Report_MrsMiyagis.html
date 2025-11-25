@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report SEO - Mrs Miyagi's Tenerife (2 Sedi)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d1b4e 0%, #e91e63 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .url {
+            margin-top: 15px;
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        .score-section {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .score-big {
+            font-size: 5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .score-label {
+            font-size: 1.5em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            background: #f3e5f5;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #9c27b0;
+        }
+
+        .intro h2 {
+            color: #7b1fa2;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e91e63;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .location-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-top: 4px solid #e91e63;
+        }
+
+        .location-card h3 {
+            color: #2d1b4e;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .location-card .url {
+            color: #e91e63;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            word-break: break-all;
+        }
+
+        .location-card .score {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #f39c12;
+            margin: 15px 0;
+        }
+
+        .location-card ul {
+            padding-left: 20px;
+            color: #555;
+        }
+
+        .location-card li {
+            margin-bottom: 8px;
+        }
+
+        .good-box {
+            background: #d5f4e6;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .good-box h3 {
+            color: #27ae60;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .good-box p {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .good-box .benefit {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 500;
+            color: #27ae60;
+        }
+
+        .good-box ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .good-box li {
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .problem-box {
+            background: #ffe6e6;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .problem-box h3 {
+            color: #e74c3c;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .problem-box p {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .problem-box .impact {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .problem-box .impact strong {
+            color: #e74c3c;
+        }
+
+        .problem-box ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .problem-box li {
+            margin-bottom: 8px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .warning-box h3 {
+            color: #d68910;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .warning-box p {
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        .quick-win {
+            background: linear-gradient(135deg, #2d1b4e 0%, #e91e63 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .quick-win h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .quick-win p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .quick-win .time {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .action-plan {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .action-plan h3 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .action-number {
+            background: linear-gradient(135deg, #2d1b4e 0%, #e91e63 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .action-content h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .action-content p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        .priority-high {
+            border-left: 4px solid #e74c3c;
+        }
+
+        .priority-medium {
+            border-left: 4px solid #f39c12;
+        }
+
+        .priority-low {
+            border-left: 4px solid #3498db;
+        }
+
+        .score-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .score-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .score-item .label {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        .score-item .value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .score-item.good .value { color: #27ae60; }
+        .score-item.medium .value { color: #f39c12; }
+        .score-item.bad .value { color: #e74c3c; }
+
+        .footer {
+            background: #2d1b4e;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin: 3px;
+        }
+
+        .tag-good { background: #d5f4e6; color: #27ae60; }
+        .tag-bad { background: #ffe6e6; color: #e74c3c; }
+        .tag-warning { background: #fff3cd; color: #d68910; }
+
+        .structure-box {
+            background: #e3f2fd;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 2px solid #2196f3;
+        }
+
+        .structure-box h3 {
+            color: #1565c0;
+            margin-bottom: 15px;
+        }
+
+        .structure-diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hub-box {
+            background: #2d1b4e;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .arrow {
+            font-size: 2em;
+            color: #2196f3;
+        }
+
+        .branches {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .branch-box {
+            background: #e91e63;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .score-big { font-size: 3.5em; }
+            .content { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Mrs Miyagi's Tenerife</h1>
+            <div class="subtitle">Audit SEO Completo - Asian Street Food (2 Sedi)</div>
+            <div class="url">mrsmiyagistenerife.com + 2 filiali</div>
+        </div>
+
+        <div class="score-section">
+            <div class="score-big">6.5/10</div>
+            <div class="score-label">Punteggio SEO Complessivo (Media)</div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <h2>Panoramica del Brand</h2>
+                <p>Mrs Miyagi's e un brand di ristoranti di cucina asiatica fusion street food con due sedi a Tenerife. Il brand utilizza una struttura multi-sito: una landing page hub (mrsmiyagistenerife.com) che indirizza alle due filiali separate, ognuna con il proprio dominio dedicato. Le filiali sono ben ottimizzate con title e meta description efficaci, schema markup presente e contenuti ricchi.</p>
+            </div>
+
+            <div class="structure-box">
+                <h3>Struttura Multi-Sito</h3>
+                <div class="structure-diagram">
+                    <div class="hub-box">
+                        <strong>mrsmiyagistenerife.com</strong><br>
+                        <small>Landing Page Hub</small>
+                    </div>
+                    <div class="arrow">↓</div>
+                    <div class="branches">
+                        <div class="branch-box">
+                            <strong>Las Americas</strong><br>
+                            <small>mrsmiyagislasamericas.com</small>
+                        </div>
+                        <div class="branch-box">
+                            <strong>X-Sur</strong><br>
+                            <small>mrsmiyagisxsur.com</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="locations-grid">
+                <div class="location-card">
+                    <h3>Mrs Miyagi's Las Americas</h3>
+                    <div class="url">mrsmiyagislasamericas.com</div>
+                    <div class="score">7.0/10</div>
+                    <p><strong>Title:</strong> "Mrs. Miyagi's Las Americas | Asian Street Food in Tenerife"</p>
+                    <p><strong>Meta:</strong> "Discover bold Asian street food in Playa de Las Americas..."</p>
+                    <ul>
+                        <li>Schema markup completo</li>
+                        <li>Alt text presenti</li>
+                        <li>H1 duplicati (problema)</li>
+                        <li>Tel: +34 822 622 152</li>
+                    </ul>
+                </div>
+                <div class="location-card">
+                    <h3>Mrs Miyagi's X-Sur</h3>
+                    <div class="url">mrsmiyagisxsur.com</div>
+                    <div class="score">6.5/10</div>
+                    <p><strong>Title:</strong> "Mrs. Miyagi's X-Sur | Modern Asian Street Food in Costa Adeje"</p>
+                    <p><strong>Meta:</strong> "Experience vibrant Asian street food at Mrs. Miyagi's X-Sur..."</p>
+                    <ul>
+                        <li>Schema markup completo</li>
+                        <li>Alt text parziali</li>
+                        <li>H1 duplicati (problema)</li>
+                        <li>Tel: +34 822 111 922</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="score-breakdown">
+                <div class="score-item medium">
+                    <div class="label">SEO Tecnico</div>
+                    <div class="value">6/10</div>
+                </div>
+                <div class="score-item good">
+                    <div class="label">Contenuti</div>
+                    <div class="value">7/10</div>
+                </div>
+                <div class="score-item medium">
+                    <div class="label">SEO Locale</div>
+                    <div class="value">6/10</div>
+                </div>
+                <div class="score-item good">
+                    <div class="label">UX/Mobile</div>
+                    <div class="value">7/10</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Cosa Funziona Bene</h2>
+
+                <div class="good-box">
+                    <h3>Title Tag e Meta Description Ottimizzati</h3>
+                    <p>Entrambe le filiali hanno title e meta description ben scritti:</p>
+                    <ul>
+                        <li>Keyword "Asian street food" presente</li>
+                        <li>Location specifica (Las Americas / Costa Adeje)</li>
+                        <li>Brand name incluso</li>
+                        <li>CTA implicito ("Discover", "Experience")</li>
+                    </ul>
+                    <div class="benefit">Buon CTR potenziale nei risultati di ricerca grazie a meta tag persuasivi e descrittivi.</div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Schema Markup Completo</h3>
+                    <p>Entrambi i siti implementano JSON-LD con:</p>
+                    <ul>
+                        <li>WebPage schema</li>
+                        <li>Organization con logo</li>
+                        <li>BreadcrumbList</li>
+                        <li>ImageObject</li>
+                        <li>SearchAction (Las Americas)</li>
+                    </ul>
+                    <div class="benefit">Base solida per rich snippets e comprensione dei contenuti da parte di Google.</div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Contenuto Ricco e Coinvolgente</h3>
+                    <p>I siti comunicano efficacemente l'esperienza:</p>
+                    <ul>
+                        <li>Descrizioni vivaci dei piatti (ramen, bao, dim sum, bubble tea)</li>
+                        <li>Riferimenti alle origini (Shanghai, Beijing, Tokyo)</li>
+                        <li>Tono informale e trendy</li>
+                        <li>Focus su "street food" e "casual dining"</li>
+                    </ul>
+                    <div class="benefit">Storytelling efficace che crea l'atmosfera del brand.</div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Multi-Canale Delivery e Servizi</h3>
+                    <p>Entrambe le sedi offrono:</p>
+                    <ul>
+                        <li>Dine-in con prenotazione online</li>
+                        <li>Click & Collect</li>
+                        <li>Delivery via Uber Eats e Glovo</li>
+                        <li>Takeaway menu</li>
+                        <li>Catering e eventi corporate</li>
+                    </ul>
+                    <div class="benefit">Diversificazione dei canali che massimizza le conversioni.</div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Alt Text Immagini (Las Americas)</h3>
+                    <p>Il sito Las Americas ha alt text descrittivi come "man eating prawn crackers", "Korean bulgogi".</p>
+                    <div class="benefit">Buona accessibilita e potenziale ranking su Google Immagini.</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Problemi Critici</h2>
+
+                <div class="problem-box">
+                    <h3>H1 Multipli su Entrambi i Siti</h3>
+                    <p>Entrambe le filiali hanno piu di un tag H1:</p>
+                    <ul>
+                        <li><strong>Las Americas:</strong> "PLAYA DE LAS AMERICAS" + "THE INFORMAL CONCEPT..."</li>
+                        <li><strong>X-Sur:</strong> "COOL, QUICK & CONVENIENT" + "URBAN ASIAN FOOD"</li>
+                    </ul>
+                    <div class="impact">
+                        <strong>Impatto:</strong> Google potrebbe confondersi sul topic principale. Best practice: un solo H1 per pagina che contenga la keyword principale.
+                    </div>
+                </div>
+
+                <div class="problem-box">
+                    <h3>Landing Hub (mrsmiyagistenerife.com) Poco Ottimizzata</h3>
+                    <p>La landing page principale ha problemi:</p>
+                    <ul>
+                        <li>Contenuto minimo (solo 2 pulsanti)</li>
+                        <li>Meta tag non verificabili</li>
+                        <li>Nessun contenuto testuale indicizzabile</li>
+                        <li>Nessuno schema markup</li>
+                    </ul>
+                    <div class="impact">
+                        <strong>Impatto:</strong> La landing hub non rankera per keyword del brand. Opportunita persa per consolidare l'autorita del dominio principale.
+                    </div>
+                </div>
+
+                <div class="problem-box">
+                    <h3>Manca Schema Restaurant/LocalBusiness</h3>
+                    <p>Nonostante gli schema base siano presenti, manca lo schema specifico "Restaurant" con:</p>
+                    <ul>
+                        <li>servesCuisine: "Asian", "Japanese", "Korean"</li>
+                        <li>openingHours strutturati</li>
+                        <li>priceRange</li>
+                        <li>address completo</li>
+                        <li>geo coordinates</li>
+                    </ul>
+                    <div class="impact">
+                        <strong>Impatto:</strong> Rich snippets limitati. Niente orari, tipo cucina o prezzo nei risultati Google.
+                    </div>
+                </div>
+
+                <div class="problem-box">
+                    <h3>Alt Text Mancanti (X-Sur)</h3>
+                    <p>Il sito X-Sur ha molte immagini senza attributi alt descrittivi.</p>
+                    <div class="impact">
+                        <strong>Impatto:</strong> Accessibilita ridotta. Opportunita persa per Google Immagini.
+                    </div>
+                </div>
+
+                <div class="problem-box">
+                    <h3>Orari di Apertura Non Visibili</h3>
+                    <p>Gli orari di apertura non sono chiaramente indicati nelle pagine principali di entrambe le sedi.</p>
+                    <div class="impact">
+                        <strong>Impatto:</strong> User experience ridotta. Impossibilita di mostrare orari nei rich snippets.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Opportunita di Miglioramento</h2>
+
+                <div class="warning-box">
+                    <h3>Ottimizza la Landing Hub</h3>
+                    <p>mrsmiyagistenerife.com dovrebbe avere: title ottimizzato, meta description, breve introduzione al brand, schema Organization, e link chiari alle due sedi.</p>
+                </div>
+
+                <div class="warning-box">
+                    <h3>Consolida SEO con Strategia Multi-Location</h3>
+                    <p>Valutare se mantenere 3 domini separati o consolidare su un unico dominio con sottopagine per location (es. mrsmiyagis.com/las-americas/ e /xsur/).</p>
+                </div>
+
+                <div class="warning-box">
+                    <h3>Pagine Dedicate per Servizi</h3>
+                    <p>Landing page ottimizzate per: "Delivery Asian Food Tenerife", "Click & Collect Las Americas", "Corporate Catering Tenerife".</p>
+                </div>
+
+                <div class="warning-box">
+                    <h3>Blog/Content Marketing</h3>
+                    <p>Articoli su: "Migliori ramen Tenerife", "Cosa sono i bao", "Street food asiatico" per traffico informativo.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Quick Wins - Vittorie Rapide</h2>
+
+                <div class="quick-win">
+                    <h3>1. Consolida H1 su Entrambi i Siti</h3>
+                    <p>Un solo H1 per pagina: "Mrs Miyagi's Las Americas - Asian Street Food" e "Mrs Miyagi's X-Sur - Modern Asian Cuisine"</p>
+                    <div class="time">Tempo: 30 minuti</div>
+                </div>
+
+                <div class="quick-win">
+                    <h3>2. Implementa Schema Restaurant</h3>
+                    <p>Aggiungi dati strutturati Restaurant con orari, tipo cucina (Asian, Japanese, Korean), priceRange ($$), indirizzo completo.</p>
+                    <div class="time">Tempo: 2 ore (per entrambi)</div>
+                </div>
+
+                <div class="quick-win">
+                    <h3>3. Aggiungi Orari di Apertura Visibili</h3>
+                    <p>Mostra gli orari nel footer o in una sezione dedicata. Fondamentale per utenti e per schema markup.</p>
+                    <div class="time">Tempo: 30 minuti</div>
+                </div>
+
+                <div class="quick-win">
+                    <h3>4. Completa Alt Text X-Sur</h3>
+                    <p>Aggiungi alt descrittivi a tutte le immagini: "Ramen con chashu pork Mrs Miyagi's X-Sur", "Dim sum basket"</p>
+                    <div class="time">Tempo: 1 ora</div>
+                </div>
+
+                <div class="quick-win">
+                    <h3>5. Ottimizza Landing Hub</h3>
+                    <p>Aggiungi a mrsmiyagistenerife.com: title, meta, H1, paragrafo introduttivo, schema Organization.</p>
+                    <div class="time">Tempo: 1 ora</div>
+                </div>
+            </div>
+
+            <div class="action-plan">
+                <h3>Piano d'Azione Prioritizzato</h3>
+
+                <div class="action-item priority-high">
+                    <div class="action-number">1</div>
+                    <div class="action-content">
+                        <h4>Fix H1 Duplicati</h4>
+                        <p>Priorita ALTA - Consolida gli H1 su entrambe le filiali. Un solo H1 chiaro e descrittivo per pagina.</p>
+                    </div>
+                </div>
+
+                <div class="action-item priority-high">
+                    <div class="action-number">2</div>
+                    <div class="action-content">
+                        <h4>Schema Restaurant + LocalBusiness</h4>
+                        <p>Priorita ALTA - Implementa dati strutturati completi per rich snippets con orari, cucina, prezzi.</p>
+                    </div>
+                </div>
+
+                <div class="action-item priority-medium">
+                    <div class="action-number">3</div>
+                    <div class="action-content">
+                        <h4>Ottimizza Landing Hub</h4>
+                        <p>Priorita MEDIA - La landing mrsmiyagistenerife.com necessita contenuto e meta tag per consolidare brand.</p>
+                    </div>
+                </div>
+
+                <div class="action-item priority-medium">
+                    <div class="action-number">4</div>
+                    <div class="action-content">
+                        <h4>Alt Text Completi X-Sur</h4>
+                        <p>Priorita MEDIA - Allinea X-Sur al livello di Las Americas per alt text immagini.</p>
+                    </div>
+                </div>
+
+                <div class="action-item priority-low">
+                    <div class="action-number">5</div>
+                    <div class="action-content">
+                        <h4>Strategia Multi-Location SEO</h4>
+                        <p>Priorita BASSA - Valutare consolidamento domini vs mantenere struttura attuale con cross-linking ottimizzato.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" style="margin-top: 50px;">
+                <h2 class="section-title">Riepilogo Tecnico per Sede</h2>
+
+                <h3 style="color: #e91e63; margin: 30px 0 15px;">Las Americas</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>URL</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">mrsmiyagislasamericas.com</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Title</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><span class="tag tag-good">Ottimizzato</span></td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Meta Description</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><span class="tag tag-good">Ottimizzata</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>H1</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><span class="tag tag-bad">Multipli</span></td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Schema</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><span class="tag tag-good">Presente</span> <span class="tag tag-warning">Manca Restaurant</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Alt Text</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><span class="tag tag-good">Presenti</span></td>
+                    </tr>
+                </table>
+
+                <h3 style="color: #e91e63; margin: 30px 0 15px;">X-Sur</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>URL</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">mrsmiyagisxsur.com</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Title</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><span class="tag tag-good">Ottimizzato</span></td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Meta Description</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><span class="tag tag-good">Ottimizzata</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>H1</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><span class="tag tag-bad">Multipli</span></td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Schema</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><span class="tag tag-good">Presente</span> <span class="tag tag-warning">Manca Restaurant</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Alt Text</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><span class="tag tag-warning">Parziali</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section" style="margin-top: 40px;">
+                <h2 class="section-title">Keyword Target Suggerite</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;">
+                    <span class="tag tag-good">asian street food Tenerife</span>
+                    <span class="tag tag-good">ramen Tenerife</span>
+                    <span class="tag tag-good">bao buns Canarias</span>
+                    <span class="tag tag-good">comida asiatica Las Americas</span>
+                    <span class="tag tag-good">restaurante japones Costa Adeje</span>
+                    <span class="tag tag-warning">dim sum Tenerife</span>
+                    <span class="tag tag-warning">bubble tea Tenerife sur</span>
+                    <span class="tag tag-warning">korean food Canarias</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Report compilato da Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Data analisi: 25 Novembre 2025</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Parte del network Venture Group Tenerife</p>
+        </div>
+    </div>
+</body>
+</html>
