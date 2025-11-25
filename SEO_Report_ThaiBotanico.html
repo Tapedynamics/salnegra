@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report SEO - Thai Botanico Tenerife</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c23 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .url {
+            margin-top: 15px;
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        .score-section {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .score-big {
+            font-size: 5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .score-label {
+            font-size: 1.5em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            background: #f0f9e8;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #4a7c23;
+        }
+
+        .intro h2 {
+            color: #2d5016;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #4a7c23;
+        }
+
+        .good-box {
+            background: #d5f4e6;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .good-box h3 {
+            color: #27ae60;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .good-box p {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .good-box .benefit {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 500;
+            color: #27ae60;
+        }
+
+        .good-box ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .good-box li {
+            margin-bottom: 8px;
+        }
+
+        .problem-box {
+            background: #ffe6e6;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .problem-box.medium {
+            background: #fff3e6;
+            border-left-color: #f39c12;
+        }
+
+        .problem-box h3 {
+            color: #c0392b;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .problem-box.medium h3 {
+            color: #d68910;
+        }
+
+        .problem-box .issue {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .problem-box .issue h4 {
+            color: #e74c3c;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .problem-box.medium .issue h4 {
+            color: #d68910;
+        }
+
+        .problem-box .issue p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .code-box {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.95em;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .code-box .comment {
+            color: #7f8c8d;
+        }
+
+        .code-box .tag {
+            color: #e74c3c;
+        }
+
+        .code-box .attr {
+            color: #f39c12;
+        }
+
+        .code-box .value {
+            color: #2ecc71;
+        }
+
+        .impact-badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1em;
+            margin-top: 15px;
+        }
+
+        .impact-badge.high {
+            background: #e74c3c;
+        }
+
+        .impact-badge.medium {
+            background: #f39c12;
+        }
+
+        .feature-box {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c23 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .feature-box h4 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            opacity: 0.95;
+        }
+
+        .social-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .social-badge {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        .social-badge.facebook { background: #1877F2; }
+        .social-badge.instagram { background: #E4405F; }
+        .social-badge.tiktok { background: #000000; }
+        .social-badge.tripadvisor { background: #34E0A1; color: #000; }
+
+        .action-plan {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c23 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .action-plan h3 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .action-step {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .action-step .priority {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .action-step h4 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .action-step p {
+            font-size: 1.05em;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2d5016;
+        }
+
+        .stat-card .label {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .score-big {
+                font-size: 3.5em;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Report SEO Audit</h1>
+            <div class="subtitle">Thai Botanico Tenerife</div>
+            <div class="url">thaibotanicotenerife.com</div>
+            <p style="margin-top: 20px; font-size: 1em; opacity: 0.8;">25 Novembre 2025</p>
+        </div>
+
+        <div class="score-section">
+            <div class="score-big">6.5/10</div>
+            <div class="score-label">Buone basi - Alt text e contenuti da potenziare</div>
+        </div>
+
+        <div class="content">
+            <!-- INTRODUZIONE -->
+            <div class="intro">
+                <h2>Panoramica</h2>
+                <p>
+                    Thai Botanico e un ristorante thailandese gourmet situato a Playa de las Americas,
+                    parte del gruppo Venture Group Tenerife. Offre cucina thai autentica in un ambiente
+                    tropicale elegante. Il sito ha <strong>meta tags eccellenti</strong> ma presenta
+                    problemi con alt text e ottimizzazione delle keyword.
+                </p>
+            </div>
+
+            <!-- CONCEPT -->
+            <div class="section">
+                <div class="feature-box">
+                    <h4>"Un viaje a Tailandia sin salir de Tenerife"</h4>
+                    <p>Un angolo di Thailandia nel sud di Tenerife - cucina autentica in ambiente tropicale</p>
+                </div>
+            </div>
+
+            <!-- SOCIAL -->
+            <div class="section">
+                <div class="section-title">Presenza Social</div>
+
+                <div class="social-grid">
+                    <span class="social-badge facebook">Facebook</span>
+                    <span class="social-badge instagram">Instagram</span>
+                    <span class="social-badge tiktok">TikTok</span>
+                    <span class="social-badge tripadvisor">TripAdvisor</span>
+                </div>
+            </div>
+
+            <!-- PUNTI DI FORZA -->
+            <div class="section">
+                <div class="section-title">Punti di Forza</div>
+
+                <div class="good-box">
+                    <h3>Meta Tags Eccellenti</h3>
+                    <p>
+                        <strong>Title:</strong> "Thai Botanico | Gourmet Thai Restaurant in Playa de Las Americas"<br>
+                        <strong>Description:</strong> "Experience authentic Thai cuisine in Tenerife South. A stylish restaurant offering vibrant Asian flavours in a lush tropical setting."
+                    </p>
+                    <div class="benefit">
+                        Keyword ben posizionate: Thai, Tenerife, Playa de las Americas, authentic cuisine
+                    </div>
+                </div>
+
+                <div class="good-box">
+                    <h3>H1 Evocativo e Unico</h3>
+                    <p>
+                        <strong>H1:</strong> "Un viaje a Tailandia sin salir de Tenerife"
+                    </p>
+                    <div class="benefit">
+                        H1 creativo che cattura l'essenza del brand e include keyword geografica
+                    </div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Struttura Heading Corretta</h3>
+                    <ul>
+                        <li><strong>H2:</strong> Autenticidad tailandesa</li>
+                        <li><strong>H2:</strong> Un rincon de Tailandia en Tenerife</li>
+                        <li><strong>H2:</strong> Cocteles & Postres</li>
+                        <li><strong>H2:</strong> Lo que dicen nuestros clientes</li>
+                    </ul>
+                </div>
+
+                <div class="good-box">
+                    <h3>Contatti Visibili</h3>
+                    <p>
+                        <strong>Telefono:</strong> +34 822 621 136<br>
+                        <strong>Ubicazione:</strong> Playa de las Americas, Tenerife
+                    </p>
+                </div>
+
+                <div class="good-box">
+                    <h3>Schema Markup Presente</h3>
+                    <p>
+                        WebPage, Organization, BreadcrumbList, ImageObject e WebSite con SearchAction implementati.
+                    </p>
+                </div>
+
+                <div class="good-box">
+                    <h3>Menu Completi</h3>
+                    <ul>
+                        <li>Menu Cena principale</li>
+                        <li>Menu Pranzo</li>
+                        <li>Menu Gruppi</li>
+                        <li>Menu Capodanno</li>
+                        <li>Cena Aziendale</li>
+                        <li>Click & Collect</li>
+                    </ul>
+                </div>
+
+                <div class="good-box">
+                    <h3>Multilingua Attivo</h3>
+                    <p>
+                        WPML implementato con versioni Spagnolo (ES) e Inglese (EN).
+                    </p>
+                </div>
+            </div>
+
+            <!-- PROBLEMI -->
+            <div class="section">
+                <div class="section-title">Problemi da Risolvere</div>
+
+                <div class="problem-box">
+                    <h3>CRITICO: Alt Text Immagini Assenti</h3>
+
+                    <div class="issue">
+                        <h4>Il Problema</h4>
+                        <p>
+                            Le immagini di piatti thailandesi, ambiente tropicale e cocktail mancano
+                            di alt text descrittivi. Questo e particolarmente grave per un ristorante
+                            con forte appeal visivo come Thai Botanico.
+                        </p>
+                    </div>
+
+                    <div class="code-box">
+<span class="comment">&lt;!-- Esempi di alt text per Thai Botanico --&gt;</span>
+
+<span class="comment">&lt;!-- Piatti thai --&gt;</span>
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"padthai.jpg"</span> <span class="attr">alt</span>=<span class="value">"Pad Thai con gamberi e arachidi, cucina thailandese autentica Tenerife"</span>&gt;
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"curry.jpg"</span> <span class="attr">alt</span>=<span class="value">"Green curry thai con pollo e verdure al Thai Botanico"</span>&gt;
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"tomyum.jpg"</span> <span class="attr">alt</span>=<span class="value">"Tom Yum soup piccante con gamberi, specialita Thai Botanico Playa de las Americas"</span>&gt;
+
+<span class="comment">&lt;!-- Ambiente --&gt;</span>
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"interior.jpg"</span> <span class="attr">alt</span>=<span class="value">"Sala ristorante Thai Botanico con piante tropicali e atmosfera asiatica"</span>&gt;
+
+<span class="comment">&lt;!-- Cocktail --&gt;</span>
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"cocktail.jpg"</span> <span class="attr">alt</span>=<span class="value">"Cocktail tropicale Thai Botanico con decorazione esotica"</span>&gt;
+                    </div>
+
+                    <span class="impact-badge high">Impatto: CRITICO - Google Immagini e Accessibilita</span>
+                </div>
+
+                <div class="problem-box medium">
+                    <h3>Keyword Variation Limitata</h3>
+
+                    <div class="issue">
+                        <h4>Il Problema</h4>
+                        <p>
+                            Il contenuto si affida principalmente al brand name. Mancano variazioni
+                            di keyword per catturare ricerche come "ristorante thailandese Tenerife",
+                            "thai food Playa de las Americas", "best pad thai Canary Islands".
+                        </p>
+                    </div>
+
+                    <div class="issue">
+                        <h4>Soluzione</h4>
+                        <p>
+                            Arricchire i testi con keyword long-tail:
+                        </p>
+                        <ul style="margin-top: 10px;">
+                            <li>"authentic Thai restaurant Tenerife South"</li>
+                            <li>"best green curry Playa de las Americas"</li>
+                            <li>"Thai food delivery Tenerife"</li>
+                            <li>"romantic Thai dinner Canary Islands"</li>
+                        </ul>
+                    </div>
+
+                    <span class="impact-badge medium">Impatto: MEDIO - Ranking Long-tail Keywords</span>
+                </div>
+
+                <div class="problem-box medium">
+                    <h3>Schema Restaurant Mancante</h3>
+
+                    <div class="issue">
+                        <h4>Il Problema</h4>
+                        <p>
+                            Manca lo schema LocalBusiness/Restaurant specifico con tipo di cucina (Thai),
+                            orari, coordinate GPS e recensioni aggregate.
+                        </p>
+                    </div>
+
+                    <div class="code-box">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Thai Botanico",
+  "image": "https://thaibotanicotenerife.com/images/thai-botanico.jpg",
+  "servesCuisine": ["Thai", "Asian"],
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "...",
+    "addressLocality": "Playa de las Americas",
+    "postalCode": "38660",
+    "addressCountry": "ES"
+  },
+  "telephone": "+34822621136",
+  "openingHoursSpecification": [...],
+  "menu": "https://thaibotanicotenerife.com/menu/",
+  "acceptsReservations": "True"
+}
+                    </div>
+
+                    <span class="impact-badge medium">Impatto: MEDIO - SEO Locale</span>
+                </div>
+
+                <div class="problem-box medium">
+                    <h3>Performance Scripts</h3>
+
+                    <div class="issue">
+                        <h4>Il Problema</h4>
+                        <p>
+                            Heavy script bloat rilevato: Google Tag Manager, consent frameworks multipli.
+                            Questo puo impattare i Core Web Vitals, specialmente LCP e TBT.
+                        </p>
+                    </div>
+
+                    <span class="impact-badge">Impatto: BASSO-MEDIO - Performance</span>
+                </div>
+            </div>
+
+            <!-- PIANO D'AZIONE -->
+            <div class="action-plan">
+                <h3>Piano d'Azione</h3>
+
+                <div class="action-step">
+                    <span class="priority">PRIORITA ALTA</span>
+                    <h4>1. Alt Text per Tutte le Immagini</h4>
+                    <p>
+                        Aggiungere descrizioni a tutte le foto: piatti thai (pad thai, curry, tom yum),
+                        ambiente tropicale, cocktail. Includere keyword: Thai, Tenerife, Playa de las Americas.
+                    </p>
+                </div>
+
+                <div class="action-step">
+                    <span class="priority">PRIORITA MEDIA</span>
+                    <h4>2. Arricchire Contenuti con Keywords</h4>
+                    <p>
+                        Espandere testi con variazioni di keyword long-tail.
+                        Creare sezioni dedicate per piatti signature (Pad Thai, Green Curry, Tom Yum).
+                    </p>
+                </div>
+
+                <div class="action-step">
+                    <span class="priority">PRIORITA MEDIA</span>
+                    <h4>3. Schema Restaurant Completo</h4>
+                    <p>
+                        Implementare structured data Restaurant con "servesCuisine": "Thai",
+                        orari, menu links, telefono e coordinate GPS.
+                    </p>
+                </div>
+
+                <div class="action-step">
+                    <span class="priority">PRIORITA BASSA</span>
+                    <h4>4. Ottimizzare Scripts</h4>
+                    <p>
+                        Audit degli script di tracking. Caricare GTM e consent in modo asincrono.
+                        Target: migliorare LCP sotto 2.5 secondi.
+                    </p>
+                </div>
+            </div>
+
+            <!-- IMPATTO -->
+            <div class="section">
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 15px;">
+                    <h3 style="text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 1.8em;">Impatto Stimato</h3>
+
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="number">6.5</div>
+                            <div class="label">Score Attuale</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number" style="color: #27ae60;">8.5</div>
+                            <div class="label">Score Potenziale</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number" style="color: #3498db;">+40%</div>
+                            <div class="label">Traffico Organico</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number" style="color: #9b59b6;">6-7h</div>
+                            <div class="label">Tempo Stimato</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONCLUSIONE -->
+            <div class="section">
+                <div style="background: linear-gradient(135deg, #2d5016 0%, #4a7c23 100%); color: white; padding: 40px; border-radius: 15px; text-align: center;">
+                    <h2 style="font-size: 2em; margin-bottom: 20px;">Verdetto: Buone Basi, Focus su Immagini</h2>
+                    <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                        Thai Botanico ha <strong>meta tags e H1 eccellenti</strong> con un concept
+                        di brand forte. Il problema principale e la mancanza di alt text che limita
+                        la visibilita visiva su Google. Con gli interventi suggeriti puo diventare
+                        un riferimento per la cucina thai a Tenerife.
+                    </p>
+                    <div style="font-size: 1.1em; opacity: 0.95; margin-top: 20px;">
+                        <strong>Priorita:</strong> Alt text immagini + Keyword variation nei contenuti
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p style="font-size: 1.3em; margin-bottom: 15px;">Report compilato da Claude Code - SEO Audit Specialist</p>
+            <p>Tape-Dynamics SEO Analysis</p>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">25 Novembre 2025</p>
+        </div>
+    </div>
+</body>
+</html>
