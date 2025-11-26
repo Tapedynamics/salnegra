@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoría SEO - Social Plan Group</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #667eea;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score-box .score {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .score-box .score-label {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        .critical {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .critical h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, #feca57, #ff9f43);
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning h4 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #26de81, #20bf6b);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .success h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .priority-alta {
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-media {
+            background: #feca57;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-baja {
+            background: #26de81;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .checklist li.done {
+            border-left-color: #26de81;
+        }
+
+        .checklist li.pending {
+            border-left-color: #ff6b6b;
+        }
+
+        .code-block {
+            background: #2d3436;
+            color: #74b9ff;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        .tag-service {
+            background: #667eea;
+            color: white;
+        }
+
+        .tag-location {
+            background: #26de81;
+            color: white;
+        }
+
+        .competitor-analysis {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-box .score {
+                font-size: 60px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>Social Plan Group</strong></p>
+        <p>socialplangroup.com</p>
+        <p>Análisis realizado: 26 de Noviembre 2025</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Volver al índice de informes</a>
+
+        <!-- PUNTUACIÓN GENERAL -->
+        <div class="score-box">
+            <div class="score-label">Puntuación SEO General</div>
+            <div class="score">6.0/10</div>
+            <p>Agencia de Marketing Digital con buen potencial pero con problemas técnicos importantes que afectan el posicionamiento</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>Social Plan Group</strong> es una agencia de marketing digital y gestión de redes sociales con sede en Costa Adeje, Tenerife, y expansión planificada a Milán. La empresa ofrece servicios de social media management, fotografía profesional, influencer marketing, diseño web, SEO y gestión de Google Ads.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">6.0</div>
+                    <div class="label">Puntuación SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">20+</div>
+                    <div class="label">Clientes Portfolio</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">3</div>
+                    <div class="label">Idiomas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">5</div>
+                    <div class="label">Miembros Equipo</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Sector:</strong> Marketing Digital & Gestión de Redes Sociales</li>
+                <li><strong>Ubicación Principal:</strong> Paseo Tarajal, Costa Adeje 38660, Tenerife</li>
+                <li><strong>Expansión:</strong> Milán, Italia (próximamente)</li>
+                <li><strong>Teléfono Tenerife:</strong> +34 643 694 017</li>
+                <li><strong>Teléfono Italia:</strong> +39 349 181 4097</li>
+                <li><strong>Email:</strong> c.socialplantenerife@gmail.com</li>
+                <li><strong>Plataforma:</strong> WordPress + Elementor</li>
+                <li><strong>Idiomas del sitio:</strong> Español, English, Italiano</li>
+            </ul>
+
+            <h3>Servicios Ofrecidos</h3>
+            <p>
+                <span class="tag tag-service">Gestión Redes Sociales</span>
+                <span class="tag tag-service">Fotografía Profesional</span>
+                <span class="tag tag-service">Videografía</span>
+                <span class="tag tag-service">Influencer Marketing</span>
+                <span class="tag tag-service">Diseño Web</span>
+                <span class="tag tag-service">SEO</span>
+                <span class="tag tag-service">Google Ads</span>
+                <span class="tag tag-service">Google My Business</span>
+                <span class="tag tag-service">TripAdvisor</span>
+                <span class="tag tag-service">Apple Maps</span>
+            </p>
+        </div>
+
+        <!-- PROBLEMAS CRÍTICOS -->
+        <div class="section">
+            <h2>Problemas Críticos Detectados</h2>
+
+            <div class="critical">
+                <h4>1. TEXTOS ALT DE IMÁGENES EN ITALIANO PARA SITIO DE TENERIFE</h4>
+                <p>Este es el problema más grave detectado. Todas las imágenes tienen textos ALT en italiano con referencias a "Milano" (ej: "GESTIONE SOCIAL MEDIA milano", "foto-video-culinari-milano", "influencer-marketing-milano") cuando la empresa opera en Tenerife.</p>
+                <p><strong>Impacto:</strong> Google interpreta el contenido como relevante para Milán/Italia en lugar de Tenerife/España. Esto destruye completamente el SEO local y confunde los motores de búsqueda sobre la ubicación real del negocio.</p>
+                <p><strong>Solución:</strong> Cambiar TODOS los textos ALT a español con referencias a Tenerife (ej: "gestión redes sociales tenerife", "fotografía gastronómica tenerife").</p>
+            </div>
+
+            <div class="critical">
+                <h4>2. MENSAJE DE "PÁGINA WEB EN MANTENIMIENTO"</h4>
+                <p>El sitio muestra un mensaje de "Página web en mantenimiento" que es visible para usuarios y motores de búsqueda.</p>
+                <p><strong>Impacto:</strong> Los usuarios pueden abandonar el sitio pensando que no está disponible. Google puede interpretar esto como un sitio no operativo y reducir su visibilidad.</p>
+                <p><strong>Solución:</strong> Eliminar este mensaje inmediatamente o configurar una página de mantenimiento adecuada que no interfiera con el contenido principal.</p>
+            </div>
+
+            <div class="critical">
+                <h4>3. META DESCRIPCIÓN NO CONFIGURADA</h4>
+                <p>La página principal no tiene una meta descripción optimizada visible. El título es genérico ("Social Plan Group").</p>
+                <p><strong>Impacto:</strong> Google generará automáticamente un snippet que puede no ser relevante ni atractivo. Pérdida de CTR en resultados de búsqueda.</p>
+                <p><strong>Solución:</strong> Implementar meta título y descripción optimizados:
+                <div class="code-block">
+&lt;title&gt;Social Plan Group | Agencia de Marketing Digital en Tenerife&lt;/title&gt;
+&lt;meta name="description" content="Agencia de marketing digital en Tenerife.
+Gestión de redes sociales, fotografía profesional, Google Ads, SEO y diseño web
+para restaurantes y negocios. +34 643 694 017"&gt;
+                </div>
+                </p>
+            </div>
+
+            <div class="critical">
+                <h4>4. NOMBRES DE ARCHIVOS DE IMAGEN INCORRECTOS</h4>
+                <p>Los archivos de imagen tienen nombres en italiano (ej: "foto-sushi-professionali-milano.jpg", "foto-cibo-professionali-milano.jpg").</p>
+                <p><strong>Impacto:</strong> Google utiliza los nombres de archivo como señal de relevancia. Nombres en italiano para un negocio en Tenerife confunden el posicionamiento geográfico.</p>
+                <p><strong>Solución:</strong> Renombrar todas las imágenes con palabras clave en español: "fotografia-gastronomica-tenerife.jpg", "gestion-redes-sociales-tenerife.jpg".</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS IMPORTANTES -->
+        <div class="section">
+            <h2>Problemas Importantes</h2>
+
+            <div class="warning">
+                <h4>5. USO DE EMAIL GMAIL PARA NEGOCIO PROFESIONAL</h4>
+                <p>El email de contacto principal es "c.socialplantenerife@gmail.com" en lugar de usar el dominio propio (ej: info@socialplangroup.com).</p>
+                <p><strong>Impacto:</strong> Reduce la percepción de profesionalidad. Para una agencia de marketing digital, esto puede afectar la credibilidad ante potenciales clientes.</p>
+                <p><strong>Solución:</strong> Configurar emails corporativos con el dominio socialplangroup.com</p>
+            </div>
+
+            <div class="warning">
+                <h4>6. INCONSISTENCIA DE MARCA ENTRE UBICACIONES</h4>
+                <p>El email de Milán usa el dominio correcto (elene.scarpa@socialplangroup.com) mientras Tenerife usa Gmail. Esto crea una inconsistencia de marca.</p>
+                <p><strong>Impacto:</strong> Confusión en la identidad de marca. Percepción de que Milán es la sede principal cuando en realidad es Tenerife.</p>
+            </div>
+
+            <div class="warning">
+                <h4>7. FALTA DE PÁGINAS DE SERVICIO INDIVIDUALES</h4>
+                <p>Todos los servicios están en una sola página (one-page). No hay URLs específicas para cada servicio.</p>
+                <p><strong>Impacto:</strong> Imposible posicionar para keywords específicas como "fotografía gastronómica Tenerife" o "gestión Instagram restaurantes Tenerife".</p>
+                <p><strong>Solución:</strong> Crear páginas individuales:
+                    <ul>
+                        <li>/servicios/gestion-redes-sociales-tenerife/</li>
+                        <li>/servicios/fotografia-gastronomica-tenerife/</li>
+                        <li>/servicios/influencer-marketing-canarias/</li>
+                        <li>/servicios/diseno-web-tenerife/</li>
+                        <li>/servicios/google-ads-tenerife/</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="warning">
+                <h4>8. ESTRUCTURA HREFLANG PROBABLEMENTE INCORRECTA</h4>
+                <p>El sitio tiene 3 idiomas pero no se puede verificar si las etiquetas hreflang están correctamente implementadas.</p>
+                <p><strong>Solución:</strong> Verificar e implementar hreflang correcto:
+                <div class="code-block">
+&lt;link rel="alternate" hreflang="es" href="https://socialplangroup.com/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://socialplangroup.com/en/" /&gt;
+&lt;link rel="alternate" hreflang="it" href="https://socialplangroup.com/it/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://socialplangroup.com/" /&gt;
+                </div>
+                </p>
+            </div>
+        </div>
+
+        <!-- LO QUE ESTÁ BIEN -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. PORTFOLIO DE CLIENTES IMPRESIONANTE</h4>
+                <p>Más de 20 clientes mostrados con enlaces a sus redes sociales. Esto genera confianza y demuestra experiencia en el sector de restauración de Tenerife.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. PRESENTACIÓN DEL EQUIPO</h4>
+                <p>5 miembros del equipo con nombres, fotos y roles claramente definidos (Simona - Creative Director, Arianna M. - Manager, Ilaria - Content Strategist, Arianna G. - Digital Specialist, Alberto - Photographer). Esto humaniza la marca.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. INFORMACIÓN DE CONTACTO COMPLETA</h4>
+                <p>Dirección física, teléfonos, emails y enlace a Google Maps. Múltiples formas de contacto para diferentes mercados.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. INTEGRACIÓN WHATSAPP</h4>
+                <p>Botón de WhatsApp funcional para contacto rápido. Excelente para conversiones móviles.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. SOPORTE MULTIIDIOMA</h4>
+                <p>Español, inglés e italiano. Perfecto para el mercado turístico de Tenerife y la expansión a Italia.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. INTEGRACIONES TÉCNICAS</h4>
+                <p>Google Analytics, Google Tag Manager y Search Console configurados. Base técnica para tracking correcta.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. DISEÑO VISUAL ATRACTIVO</h4>
+                <p>Uso de Elementor para un diseño moderno y profesional. Buenas imágenes de portfolio y trabajo.</p>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins - Mejoras Rápidas</h2>
+
+            <p>Estas acciones pueden implementarse en 1-2 días y tendrán impacto inmediato:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Acción</th>
+                        <th>Impacto</th>
+                        <th>Tiempo</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Eliminar mensaje de "mantenimiento"</td>
+                        <td>Alto</td>
+                        <td>5 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Cambiar textos ALT de imágenes a español</td>
+                        <td>Muy Alto</td>
+                        <td>2 horas</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir meta título y descripción</td>
+                        <td>Alto</td>
+                        <td>15 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear email corporativo @socialplangroup.com</td>
+                        <td>Medio</td>
+                        <td>30 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Optimizar Google My Business</td>
+                        <td>Alto</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir Schema LocalBusiness</td>
+                        <td>Medio</td>
+                        <td>30 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Verificar y corregir hreflang</td>
+                        <td>Alto</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ANÁLISIS DE KEYWORDS -->
+        <div class="section">
+            <h2>Análisis de Keywords Recomendadas</h2>
+
+            <h3>Keywords Principales (Alta Prioridad)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Intención</th>
+                        <th>Competencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>agencia marketing digital tenerife</td>
+                        <td>Transaccional</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>gestión redes sociales tenerife</td>
+                        <td>Transaccional</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>community manager tenerife</td>
+                        <td>Transaccional</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>social media manager canarias</td>
+                        <td>Transaccional</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>fotografía gastronómica tenerife</td>
+                        <td>Transaccional</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords de Nicho (Restauración)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Intención</th>
+                        <th>Competencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>marketing para restaurantes tenerife</td>
+                        <td>Transaccional</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                    <tr>
+                        <td>redes sociales restaurantes canarias</td>
+                        <td>Informacional</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                    <tr>
+                        <td>fotografía de comida tenerife</td>
+                        <td>Transaccional</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                    <tr>
+                        <td>influencer marketing gastronómico</td>
+                        <td>Informacional</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>google ads restaurantes tenerife</td>
+                        <td>Transaccional</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Long-Tail (Muy Específicas)</h3>
+            <ul>
+                <li>"agencia de redes sociales para restaurantes en tenerife"</li>
+                <li>"fotógrafo de comida profesional canarias"</li>
+                <li>"gestión tripadvisor restaurantes tenerife"</li>
+                <li>"marketing digital hostelería tenerife sur"</li>
+                <li>"diseño web restaurantes costa adeje"</li>
+            </ul>
+        </div>
+
+        <!-- SCHEMA MARKUP -->
+        <div class="section">
+            <h2>Schema Markup Recomendado</h2>
+
+            <p>Implementar el siguiente Schema JSON-LD para mejorar la visibilidad en resultados de búsqueda:</p>
+
+            <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "MarketingAgency",
+  "name": "Social Plan Group",
+  "description": "Agencia de marketing digital especializada en gestión de redes sociales, fotografía profesional y Google Ads para restaurantes en Tenerife",
+  "url": "https://socialplangroup.com",
+  "telephone": "+34643694017",
+  "email": "info@socialplangroup.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Paseo Tarajal",
+    "addressLocality": "Costa Adeje",
+    "postalCode": "38660",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "28.0916",
+    "longitude": "-16.7260"
+  },
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "Tenerife"
+    },
+    {
+      "@type": "Place",
+      "name": "Canary Islands"
+    }
+  ],
+  "serviceType": [
+    "Social Media Management",
+    "Digital Marketing",
+    "Photography",
+    "Videography",
+    "Web Design",
+    "SEO",
+    "Google Ads"
+  ],
+  "sameAs": [
+    "https://www.instagram.com/socialplangroup"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }
+}
+&lt;/script&gt;
+            </div>
+        </div>
+
+        <!-- PLAN DE ACCIÓN -->
+        <div class="section">
+            <h2>Plan de Acción Priorizado</h2>
+
+            <h3>Fase 1: Correcciones Urgentes (Esta semana)</h3>
+            <ul class="checklist">
+                <li class="pending">Eliminar mensaje de "página en mantenimiento"</li>
+                <li class="pending">Cambiar TODOS los textos ALT de imágenes de italiano a español</li>
+                <li class="pending">Renombrar archivos de imagen con keywords en español</li>
+                <li class="pending">Añadir meta título y descripción optimizados</li>
+                <li class="pending">Implementar Schema LocalBusiness/MarketingAgency</li>
+            </ul>
+
+            <h3>Fase 2: Optimización (Próximas 2 semanas)</h3>
+            <ul class="checklist">
+                <li class="pending">Configurar email corporativo @socialplangroup.com</li>
+                <li class="pending">Verificar y corregir etiquetas hreflang</li>
+                <li class="pending">Optimizar Google My Business con categorías correctas</li>
+                <li class="pending">Crear página "Sobre Nosotros" expandida</li>
+                <li class="pending">Añadir testimonios de clientes con Schema Review</li>
+            </ul>
+
+            <h3>Fase 3: Expansión (Próximo mes)</h3>
+            <ul class="checklist">
+                <li class="pending">Crear páginas individuales para cada servicio</li>
+                <li class="pending">Desarrollar sección de blog con contenido SEO</li>
+                <li class="pending">Crear casos de estudio detallados de clientes</li>
+                <li class="pending">Implementar página de portfolio con filtros</li>
+                <li class="pending">Optimizar velocidad de carga (compresión imágenes)</li>
+            </ul>
+
+            <h3>Fase 4: Contenido y Autoridad (Ongoing)</h3>
+            <ul class="checklist">
+                <li class="pending">Publicar artículos de blog sobre marketing para restaurantes</li>
+                <li class="pending">Crear guías descargables (lead magnets)</li>
+                <li class="pending">Conseguir backlinks de clientes y partners</li>
+                <li class="pending">Desarrollar presencia en directorios de agencias</li>
+            </ul>
+        </div>
+
+        <!-- ANÁLISIS COMPETITIVO -->
+        <div class="section">
+            <h2>Oportunidad de Mercado</h2>
+
+            <div class="info-box">
+                <h4>Nicho Poco Explotado</h4>
+                <p>El mercado de "marketing digital para restaurantes en Tenerife" está muy poco competido. Social Plan Group tiene la oportunidad de posicionarse como la agencia de referencia para el sector hostelero de las Islas Canarias.</p>
+            </div>
+
+            <h3>Ventajas Competitivas Actuales</h3>
+            <ul>
+                <li><strong>Especialización:</strong> Portfolio enfocado casi exclusivamente en restauración</li>
+                <li><strong>Localización:</strong> Presencia física en Costa Adeje, zona turística premium</li>
+                <li><strong>Equipo bilingüe:</strong> Español, inglés e italiano para mercado turístico</li>
+                <li><strong>Servicios completos:</strong> Desde fotografía hasta Google Ads, todo en uno</li>
+                <li><strong>Red de clientes:</strong> +20 restaurantes pueden generar referencias</li>
+            </ul>
+
+            <h3>Recomendación Estratégica</h3>
+            <p>Posicionarse explícitamente como <strong>"La agencia de marketing digital para restaurantes de Tenerife"</strong> en lugar de una agencia generalista. Esta especialización permitirá:</p>
+            <ul>
+                <li>Dominar keywords de nicho con baja competencia</li>
+                <li>Crear contenido específico de alto valor (guías para restaurantes)</li>
+                <li>Conseguir backlinks de asociaciones hosteleras</li>
+                <li>Cobrar precios premium por especialización</li>
+            </ul>
+        </div>
+
+        <!-- CONCLUSIÓN -->
+        <div class="section">
+            <h2>Conclusión</h2>
+
+            <p><strong>Social Plan Group</strong> tiene una base sólida pero está perdiendo oportunidades significativas de posicionamiento por errores técnicos fáciles de corregir. El problema más grave es la inconsistencia geográfica (contenido italiano para negocio en Tenerife) que confunde completamente a Google sobre dónde opera realmente la empresa.</p>
+
+            <div class="info-box">
+                <h4>Potencial de Mejora</h4>
+                <p>Corrigiendo los problemas críticos identificados, especialmente los textos ALT y la meta información, la puntuación SEO podría subir a <strong>7.5-8.0/10</strong> en pocas semanas. Con la implementación de páginas de servicio individuales y contenido de blog, podría alcanzar <strong>8.5-9.0/10</strong>.</p>
+            </div>
+
+            <p>La ironía de la situación es que Social Plan Group ofrece servicios de SEO a sus clientes, por lo que optimizar su propio sitio web debería ser una prioridad absoluta. Un sitio web bien optimizado servirá como mejor carta de presentación para atraer nuevos clientes.</p>
+
+            <h3>Resumen de Puntuaciones por Área</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Puntuación</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Técnico</td>
+                        <td>4/10</td>
+                        <td>ALT texts incorrectos, falta meta tags</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>6/10</td>
+                        <td>Buen contenido pero en una sola página</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>5/10</td>
+                        <td>Dirección presente pero Schema faltante</td>
+                    </tr>
+                    <tr>
+                        <td>UX/Diseño</td>
+                        <td>8/10</td>
+                        <td>Diseño profesional y atractivo</td>
+                    </tr>
+                    <tr>
+                        <td>Autoridad</td>
+                        <td>6/10</td>
+                        <td>Buen portfolio pero faltan backlinks</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td>7/10</td>
+                        <td>Multiidioma pero hreflang por verificar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 26 de Noviembre 2025</p>
+            <p style="margin-top: 15px;">Para implementar estas mejoras o solicitar un análisis más detallado, contacte con su consultor SEO.</p>
+        </div>
+    </div>
+</body>
+</html>
