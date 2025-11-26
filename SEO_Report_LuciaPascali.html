@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoría SEO - Lucia Pascali FAB Method</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #8B4513;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #8B4513;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #8B4513, #654321);
+            color: white;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score-number {
+            font-size: 80px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 24px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .metric {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+        }
+
+        .metric-value {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .metric-value.green { color: #28a745; }
+        .metric-value.red { color: #dc3545; }
+        .metric-value.orange { color: #ff9800; }
+        .metric-value.brown { color: #8B4513; }
+
+        .metric-label {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .problem-box {
+            background: white;
+            border-left: 6px solid #dc3545;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .problem-box.critical { border-left-color: #dc3545; }
+        .problem-box.high { border-left-color: #ff9800; }
+        .problem-box.medium { border-left-color: #8B4513; }
+
+        .problem-box h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .badge-critical {
+            background: #dc3545;
+            color: white;
+        }
+
+        .badge-high {
+            background: #ff9800;
+            color: white;
+        }
+
+        .badge-medium {
+            background: #8B4513;
+            color: white;
+        }
+
+        .badge-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .before, .after {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .before {
+            border: 3px solid #dc3545;
+        }
+
+        .after {
+            border: 3px solid #28a745;
+        }
+
+        .before h5 {
+            color: #dc3545;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .after h5 {
+            color: #28a745;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 25px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .alert {
+            padding: 20px 25px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-size: 17px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+        }
+
+        .alert-danger {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            color: #721c24;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            border: 2px solid #ff9800;
+            color: #856404;
+        }
+
+        .alert-info {
+            background: #e8d4b8;
+            border: 2px solid #8B4513;
+            color: #5a3510;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 17px;
+        }
+
+        th {
+            background: #8B4513;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 15px;
+            background: #f8f9fa;
+            margin: 10px 0;
+            border-left: 4px solid #8B4513;
+            font-size: 18px;
+        }
+
+        .checklist li::before {
+            content: "☐ ";
+            color: #8B4513;
+            font-size: 22px;
+            margin-right: 10px;
+        }
+
+        .phase {
+            background: #f8f9fa;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border-left: 6px solid #8B4513;
+        }
+
+        .phase h3 {
+            margin-top: 0;
+            color: #8B4513;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e0e0e0;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+
+        .tag.green {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .tag.red {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .tag.orange {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        strong {
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .footer {
+            background: #2d2d2d;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border: 2px solid #8B4513;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: #8B4513;
+        }
+
+        .toc ul {
+            margin-left: 20px;
+        }
+
+        .toc a {
+            color: #8B4513;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .score-number {
+                font-size: 60px;
+            }
+
+            .metric-value {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>INFORME DE AUDITORÍA SEO</h1>
+        <h1>Lucia Pascali - FAB Method</h1>
+        <p>Fecha de Análisis: 26 Noviembre 2025</p>
+        <p>Sitio Web: <a href="https://www.luciapascali.com" style="color: white; text-decoration: underline;" target="_blank">www.luciapascali.com</a></p>
+        <p>Tipo de Negocio: Coach Profesional y Formadora (Personal Branding)</p>
+    </div>
+
+    <div class="container">
+        <!-- Puntuación Principal -->
+        <div class="score-box">
+            <div class="score-number">5.5/10</div>
+            <div class="score-text">Puntuación SEO General</div>
+            <p style="margin-top: 20px; font-size: 20px;">Base con potencial - Problemas críticos que limitan visibilidad orgánica</p>
+        </div>
+
+        <!-- Índice -->
+        <div class="toc">
+            <h3>Índice de Contenidos</h3>
+            <ul>
+                <li><a href="#metricas">Métricas Principales</a></li>
+                <li><a href="#puntos-fuertes">Puntos Fuertes</a></li>
+                <li><a href="#problemas-criticos">Problemas Críticos (A RESOLVER YA)</a></li>
+                <li><a href="#problemas-importantes">Problemas Importantes</a></li>
+                <li><a href="#ejemplos">Ejemplos de Mejoras con Código</a></li>
+                <li><a href="#plan">Plan de Acción</a></li>
+                <li><a href="#roi">ROI Estimado</a></li>
+            </ul>
+        </div>
+
+        <!-- Métricas Principales -->
+        <div id="metricas" class="section">
+            <h2>Métricas Principales</h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-value brown">8+</div>
+                    <div class="metric-label">Páginas Analizadas</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value red">4</div>
+                    <div class="metric-label">Problemas Críticos</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value orange">5</div>
+                    <div class="metric-label">Problemas Importantes</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">+50%</div>
+                    <div class="metric-label">ROI Previsto (6 meses)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value red">0/10</div>
+                    <div class="metric-label">Schema Markup</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">IT/EN</div>
+                    <div class="metric-label">Multi-idioma</div>
+                </div>
+            </div>
+
+            <h3>Desglose de Puntuación por Categoría</h3>
+            <table>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Puntuación</th>
+                    <th>Estado</th>
+                </tr>
+                <tr>
+                    <td>Structured Data (Schema.org)</td>
+                    <td><strong style="color: #dc3545;">0/10</strong></td>
+                    <td><span class="tag red">Ausente</span></td>
+                </tr>
+                <tr>
+                    <td>Meta Tags (Title, Description)</td>
+                    <td><strong style="color: #dc3545;">3/10</strong></td>
+                    <td><span class="tag red">Crítico</span></td>
+                </tr>
+                <tr>
+                    <td>Calidad y Cantidad de Contenido</td>
+                    <td><strong style="color: #28a745;">8/10</strong></td>
+                    <td><span class="tag green">Excelente</span></td>
+                </tr>
+                <tr>
+                    <td>Estructura de Encabezados (H1-H6)</td>
+                    <td><strong style="color: #ff9800;">5/10</strong></td>
+                    <td><span class="tag orange">Inconsistente</span></td>
+                </tr>
+                <tr>
+                    <td>Optimización de Imágenes</td>
+                    <td><strong style="color: #dc3545;">3/10</strong></td>
+                    <td><span class="tag red">Crítico</span></td>
+                </tr>
+                <tr>
+                    <td>Experiencia de Usuario (UX)</td>
+                    <td><strong style="color: #28a745;">7/10</strong></td>
+                    <td><span class="tag green">Buena</span></td>
+                </tr>
+                <tr>
+                    <td>Sitemap & Robots.txt</td>
+                    <td><strong style="color: #28a745;">8/10</strong></td>
+                    <td><span class="tag green">Bien</span></td>
+                </tr>
+                <tr>
+                    <td>Testimonios y Prueba Social</td>
+                    <td><strong style="color: #28a745;">8/10</strong></td>
+                    <td><span class="tag green">Excelente</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Puntos Fuertes -->
+        <div id="puntos-fuertes" class="section">
+            <h2>Puntos Fuertes</h2>
+
+            <h3>1. Contenido de Alta Calidad</h3>
+            <div class="alert alert-success">
+                <strong>Valoración: 8/10</strong> - Contenido profesional y diferenciador
+            </div>
+            <ul>
+                <li>Metodología propietaria <strong>F.A.B. Method™</strong> bien explicada</li>
+                <li>Propuesta de valor clara: "Feel, Act, Be"</li>
+                <li>Combinación única: Coaching + PNL + Técnicas teatrales</li>
+                <li>Credenciales sólidas: 20+ años experiencia, 1000+ profesionales, 25+ empresas</li>
+                <li>Biografía profesional con storytelling efectivo</li>
+            </ul>
+
+            <h3>2. Testimonios de Alto Impacto</h3>
+            <div class="alert alert-success">
+                <strong>Valoración: 8/10</strong> - Prueba social excepcional
+            </div>
+            <ul>
+                <li><strong>9 testimonios detallados</strong> con nombre, cargo y empresa</li>
+                <li>Clientes de empresas reconocidas: <strong>Burberry, JP Morgan, ITV, NHS, WeWork</strong></li>
+                <li>Testimonios de múltiples países: Londres, Budapest, Manchester</li>
+                <li><strong>19 logos de empresas</strong> cliente visibles</li>
+                <li>Testimonios específicos con resultados concretos</li>
+            </ul>
+
+            <h3>3. Configuración Técnica Básica</h3>
+            <div class="alert alert-success">
+                <strong>Valoración: 8/10</strong> - Fundamentos correctos
+            </div>
+            <ul>
+                <li><strong>SSL/HTTPS</strong> activo y funcionando</li>
+                <li><strong>Robots.txt</strong> configurado correctamente para WordPress</li>
+                <li><strong>Sitemap XML</strong> estructurado con índice (posts, pages, testimonials, corsi)</li>
+                <li><strong>WPML instalado</strong> - Soporte multi-idioma IT/EN</li>
+                <li>URLs limpias y semánticas</li>
+            </ul>
+
+            <h3>4. Navegación y UX</h3>
+            <div class="alert alert-success">
+                <strong>Valoración: 7/10</strong> - Experiencia de usuario clara
+            </div>
+            <ul>
+                <li>Menú de navegación claro y bien estructurado</li>
+                <li>CTAs visibles: "Contattami per una consulenza gratuita"</li>
+                <li>Diferenciación clara: servicios para privados vs empresas</li>
+                <li>Newsletter "FABletter" para captura de leads</li>
+                <li>Social media integrados (Facebook, Instagram, LinkedIn)</li>
+            </ul>
+        </div>
+
+        <!-- Problemas Críticos -->
+        <div id="problemas-criticos" class="section">
+            <h2>Problemas Críticos (A RESOLVER YA)</h2>
+
+            <div class="problem-box critical">
+                <h3>1. Meta Descriptions Ausentes en TODAS las Páginas <span class="badge badge-critical">CRÍTICO</span></h3>
+                <p><strong>Problema:</strong> Ninguna página del sitio tiene meta description definida. Google genera automáticamente fragmentos aleatorios del contenido.</p>
+                <p><strong>Impacto:</strong></p>
+                <ul>
+                    <li>CTR (Click-Through Rate) reducido en un 20-30%</li>
+                    <li>Sin control sobre cómo aparece el sitio en resultados de búsqueda</li>
+                    <li>Oportunidad perdida de "vender" el clic al usuario</li>
+                </ul>
+                <p><strong>Páginas afectadas:</strong></p>
+                <ul>
+                    <li>Homepage - Sin meta description</li>
+                    <li>Chi Sono - Sin meta description</li>
+                    <li>F.A.B. Method - Sin meta description</li>
+                    <li>Coaching - Sin meta description</li>
+                    <li>Corsi - Sin meta description</li>
+                    <li>Contatti - Sin meta description</li>
+                    <li>Testimonianze - Sin meta description</li>
+                </ul>
+            </div>
+
+            <div class="problem-box critical">
+                <h3>2. Schema Markup Completamente Ausente <span class="badge badge-critical">CRÍTICO</span></h3>
+                <p><strong>Problema:</strong> El sitio no tiene NINGÚN dato estructurado Schema.org implementado.</p>
+                <p><strong>Impacto:</strong></p>
+                <ul>
+                    <li>Sin posibilidad de rich snippets en Google</li>
+                    <li>Los 9 testimonios NO aparecerán como estrellas/reseñas</li>
+                    <li>Información del negocio no estructurada para Google</li>
+                    <li>Pérdida de visibilidad frente a competidores que sí lo tienen</li>
+                </ul>
+                <p><strong>Schemas necesarios:</strong></p>
+                <ul>
+                    <li><strong>Person</strong> - Para Lucia Pascali (coach/autor)</li>
+                    <li><strong>Organization</strong> - Para el negocio</li>
+                    <li><strong>Service</strong> - Para cada servicio ofrecido</li>
+                    <li><strong>Review/AggregateRating</strong> - Para los 9 testimonios</li>
+                    <li><strong>Course</strong> - Para los cursos</li>
+                    <li><strong>FAQPage</strong> - Si hay preguntas frecuentes</li>
+                    <li><strong>WebSite</strong> - Markup básico del sitio</li>
+                </ul>
+            </div>
+
+            <div class="problem-box critical">
+                <h3>3. Alt Text de Imágenes Ausente <span class="badge badge-critical">CRÍTICO</span></h3>
+                <p><strong>Problema:</strong> Las imágenes del sitio (25+) no tienen texto alternativo descriptivo.</p>
+                <p><strong>Impacto:</strong></p>
+                <ul>
+                    <li>Google Images no puede indexar las imágenes correctamente</li>
+                    <li>Problemas de accesibilidad (WCAG compliance)</li>
+                    <li>Pérdida de tráfico desde búsqueda de imágenes</li>
+                    <li>Oportunidad perdida de keywords adicionales</li>
+                </ul>
+                <p><strong>Imágenes afectadas:</strong></p>
+                <ul>
+                    <li>Foto de Lucia Pascali (perfil principal)</li>
+                    <li>Imágenes de testimonios (9)</li>
+                    <li>Logos de empresas cliente (19)</li>
+                    <li>Iconos y gráficos del método FAB</li>
+                    <li>Imágenes de cursos y servicios</li>
+                </ul>
+            </div>
+
+            <div class="problem-box critical">
+                <h3>4. Página Contatti sin Información de Contacto <span class="badge badge-critical">CRÍTICO</span></h3>
+                <p><strong>Problema:</strong> La página de contacto solo tiene formularios, pero NO muestra:</p>
+                <ul>
+                    <li>Email de contacto directo</li>
+                    <li>Número de teléfono</li>
+                    <li>Dirección física o ubicación</li>
+                    <li>Mapa de Google</li>
+                </ul>
+                <p><strong>Impacto:</strong></p>
+                <ul>
+                    <li>Imposible aparecer en búsquedas locales</li>
+                    <li>Reduce confianza del visitante</li>
+                    <li>Sin posibilidad de Schema LocalBusiness</li>
+                    <li>Dificulta el contacto directo de clientes potenciales</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Problemas Importantes -->
+        <div id="problemas-importantes" class="section">
+            <h2>Problemas Importantes</h2>
+
+            <div class="problem-box high">
+                <h3>1. Title Tags Genéricos y No Optimizados <span class="badge badge-high">ALTO</span></h3>
+                <p><strong>Problema:</strong> Los títulos siguen un patrón genérico sin keywords estratégicas.</p>
+                <p><strong>Títulos actuales:</strong></p>
+                <ul>
+                    <li>"Lucia Pascali - FAB Method" (Homepage)</li>
+                    <li>"Chi sono - Lucia Pascali - FAB Method"</li>
+                    <li>"The F.A.B. Method™ - Lucia Pascali - FAB Method"</li>
+                    <li>"Coaching - Lucia Pascali - FAB Method"</li>
+                    <li>"Corsi - Lucia Pascali - FAB Method"</li>
+                </ul>
+                <p><strong>Problema:</strong> No incluyen keywords como "coach professionista", "formazione leadership", "coaching aziendale", etc.</p>
+            </div>
+
+            <div class="problem-box high">
+                <h3>2. Estructura H1/H2 Inconsistente <span class="badge badge-high">ALTO</span></h3>
+                <p><strong>Problema:</strong> Algunas páginas no tienen H1 claro o la jerarquía de encabezados es confusa.</p>
+                <ul>
+                    <li><strong>Chi Sono:</strong> Falta H1 semántico principal</li>
+                    <li><strong>Homepage:</strong> H1 muy largo y no optimizado para keywords</li>
+                    <li><strong>Múltiples H2</strong> sin estructura lógica clara</li>
+                </ul>
+            </div>
+
+            <div class="problem-box high">
+                <h3>3. Testimonios sin Schema Review <span class="badge badge-high">ALTO</span></h3>
+                <p><strong>Problema:</strong> Los 9 testimonios de alta calidad NO tienen markup de reseñas.</p>
+                <p><strong>Oportunidad perdida:</strong></p>
+                <ul>
+                    <li>Posibilidad de mostrar estrellas en Google</li>
+                    <li>Rich snippets con rating agregado</li>
+                    <li>Mayor CTR y credibilidad en SERPs</li>
+                </ul>
+            </div>
+
+            <div class="problem-box high">
+                <h3>4. Cursos sin Información Completa <span class="badge badge-high">ALTO</span></h3>
+                <p><strong>Problema:</strong> La página de cursos no muestra:</p>
+                <ul>
+                    <li>Fechas específicas de inicio</li>
+                    <li>Precios o rango de precios</li>
+                    <li>Duración de los cursos</li>
+                    <li>Número de plazas disponibles</li>
+                </ul>
+                <p><strong>Impacto:</strong> No puede aparecer en rich snippets de "Course" ni eventos.</p>
+            </div>
+
+            <div class="problem-box medium">
+                <h3>5. Falta Blog/Contenido Fresco <span class="badge badge-medium">MEDIO</span></h3>
+                <p><strong>Problema:</strong> No hay sección de blog activa con contenido regular.</p>
+                <p><strong>Impacto:</strong></p>
+                <ul>
+                    <li>Sin contenido fresco para Google</li>
+                    <li>Pérdida de oportunidades long-tail keywords</li>
+                    <li>Menos razones para que usuarios vuelvan</li>
+                    <li>Competidores con blogs rankean mejor</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ejemplos de Mejoras -->
+        <div id="ejemplos" class="section">
+            <h2>Ejemplos de Mejoras con Código</h2>
+
+            <h3>1. Meta Descriptions - Ejemplos para Cada Página</h3>
+
+            <h4>Homepage</h4>
+            <div class="comparison">
+                <div class="before">
+                    <h5>ANTES (Ausente)</h5>
+                    <div class="code">&lt;meta name="description" content=""&gt;
+<!-- No existe --></div>
+                </div>
+                <div class="after">
+                    <h5>DESPUÉS (Optimizado)</h5>
+                    <div class="code">&lt;meta name="description" content="Lucia Pascali: Coach professionista con 20+ anni di esperienza. F.A.B. Method™ per leadership, comunicazione efficace e gestione dello stress. Consulenza gratuita."&gt;</div>
+                </div>
+            </div>
+
+            <h4>Chi Sono</h4>
+            <div class="comparison">
+                <div class="before">
+                    <h5>ANTES</h5>
+                    <div class="code"><!-- Sin meta description --></div>
+                </div>
+                <div class="after">
+                    <h5>DESPUÉS</h5>
+                    <div class="code">&lt;meta name="description" content="Scopri chi è Lucia Pascali: coach certificata, formatrice aziendale e speaker. 1000+ professionisti formati, clienti come Burberry, JP Morgan e ITV."&gt;</div>
+                </div>
+            </div>
+
+            <h4>Coaching</h4>
+            <div class="comparison">
+                <div class="before">
+                    <h5>ANTES</h5>
+                    <div class="code"><!-- Sin meta description --></div>
+                </div>
+                <div class="after">
+                    <h5>DESPUÉS</h5>
+                    <div class="code">&lt;meta name="description" content="Coaching individuale con il F.A.B. Method™: sviluppa mentalità vincente, comunicazione persuasiva e leadership autentica. Prenota una consulenza gratuita."&gt;</div>
+                </div>
+            </div>
+
+            <h3>2. Schema Markup - Person (para Lucia Pascali)</h3>
+            <div class="code">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Lucia Pascali",
+  "url": "https://www.luciapascali.com",
+  "image": "https://www.luciapascali.com/wp-content/uploads/lucia-pascali-coach.jpg",
+  "jobTitle": "Professional Coach & Corporate Trainer",
+  "description": "Coach professionista con oltre 20 anni di esperienza. Creatrice del F.A.B. Method™ per leadership e comunicazione efficace.",
+  "knowsAbout": ["Coaching", "Leadership", "PNL", "Comunicazione", "Public Speaking"],
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "ICF - International Coaching Federation"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/luciapascali",
+    "https://www.instagram.com/luciapascali",
+    "https://www.facebook.com/luciapascalifab"
+  ]
+}
+&lt;/script&gt;</div>
+
+            <h3>3. Schema Markup - Service (para Coaching)</h3>
+            <div class="code">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Professional Coaching",
+  "name": "Coaching Individuale - F.A.B. Method™",
+  "description": "Percorso di coaching personalizzato per imprenditori, manager e professionisti. Sviluppa mentalità vincente, comunicazione efficace e leadership autentica.",
+  "provider": {
+    "@type": "Person",
+    "name": "Lucia Pascali",
+    "url": "https://www.luciapascali.com"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide (Online)"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servizi di Coaching",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sessione Priority & Plan"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Percorso Coaching Completo"
+        }
+      }
+    ]
+  }
+}
+&lt;/script&gt;</div>
+
+            <h3>4. Schema Markup - Reviews (para Testimonios)</h3>
+            <div class="code">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Lucia Pascali - FAB Method",
+  "url": "https://www.luciapascali.com",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "9"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Anne Gruner"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Lucia mi ha aiutato a sviluppare fiducia e capacità di comunicazione...",
+      "itemReviewed": {
+        "@type": "Service",
+        "name": "Executive Coaching"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Jenny Gao"
+      },
+      "jobTitle": "Senior Product Manager Makeup",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Burberry"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Il coaching con Lucia ha trasformato il mio approccio alla leadership..."
+    }
+  ]
+}
+&lt;/script&gt;</div>
+
+            <h3>5. Title Tags Ottimizzati</h3>
+            <table>
+                <tr>
+                    <th>Página</th>
+                    <th>Antes</th>
+                    <th>Después (Optimizado)</th>
+                </tr>
+                <tr>
+                    <td>Homepage</td>
+                    <td>"Lucia Pascali - FAB Method"</td>
+                    <td>"Lucia Pascali | Coach Professionista | F.A.B. Method™"</td>
+                </tr>
+                <tr>
+                    <td>Chi Sono</td>
+                    <td>"Chi sono - Lucia Pascali - FAB Method"</td>
+                    <td>"Chi è Lucia Pascali | Coach & Formatrice | 20+ Anni Esperienza"</td>
+                </tr>
+                <tr>
+                    <td>Coaching</td>
+                    <td>"Coaching - Lucia Pascali - FAB Method"</td>
+                    <td>"Coaching Individuale | Sviluppa Leadership e Comunicazione | Lucia Pascali"</td>
+                </tr>
+                <tr>
+                    <td>Corsi</td>
+                    <td>"Corsi - Lucia Pascali - FAB Method"</td>
+                    <td>"Corsi di Formazione | Leadership, PNL, Public Speaking | Lucia Pascali"</td>
+                </tr>
+                <tr>
+                    <td>FAB Method</td>
+                    <td>"The F.A.B. Method™ - Lucia Pascali"</td>
+                    <td>"F.A.B. Method™ | Metodo di Coaching Trasformativo | Lucia Pascali"</td>
+                </tr>
+            </table>
+
+            <h3>6. Alt Text per Immagini - Esempi</h3>
+            <div class="comparison">
+                <div class="before">
+                    <h5>ANTES</h5>
+                    <div class="code">&lt;img src="lucia-pascali.jpg" alt=""&gt;
+&lt;img src="burberry-logo.png" alt=""&gt;
+&lt;img src="testimonial-jenny.jpg" alt=""&gt;</div>
+                </div>
+                <div class="after">
+                    <h5>DESPUÉS</h5>
+                    <div class="code">&lt;img src="lucia-pascali.jpg"
+     alt="Lucia Pascali - Coach professionista e creatrice del FAB Method"&gt;
+
+&lt;img src="burberry-logo.png"
+     alt="Logo Burberry - Cliente coaching aziendale Lucia Pascali"&gt;
+
+&lt;img src="testimonial-jenny.jpg"
+     alt="Jenny Gao, Senior Product Manager Burberry - Testimonianza coaching"&gt;</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plan de Acción -->
+        <div id="plan" class="section">
+            <h2>Plan de Acción</h2>
+
+            <div class="phase">
+                <h3>FASE 1: Urgente (Primeras 2 Semanas)</h3>
+                <ul class="checklist">
+                    <li>Agregar meta descriptions a TODAS las páginas (7 páginas principales)</li>
+                    <li>Implementar Schema Person para Lucia Pascali</li>
+                    <li>Implementar Schema Organization básico</li>
+                    <li>Optimizar los 7 title tags principales</li>
+                    <li>Agregar información de contacto visible (email, teléfono)</li>
+                </ul>
+            </div>
+
+            <div class="phase">
+                <h3>FASE 2: Importante (Semanas 3-4)</h3>
+                <ul class="checklist">
+                    <li>Implementar Schema Review para los 9 testimonios</li>
+                    <li>Implementar Schema Service para cada servicio</li>
+                    <li>Agregar alt text a TODAS las imágenes (25+)</li>
+                    <li>Revisar y corregir estructura H1/H2 en todas las páginas</li>
+                    <li>Implementar Schema Course para los cursos</li>
+                </ul>
+            </div>
+
+            <div class="phase">
+                <h3>FASE 3: Mejora Continua (Mes 2+)</h3>
+                <ul class="checklist">
+                    <li>Crear sección blog con contenido regular (2-4 posts/mes)</li>
+                    <li>Agregar fechas, precios y detalles a los cursos</li>
+                    <li>Implementar Schema Event para cursos con fechas</li>
+                    <li>Crear páginas específicas para cada servicio (mejor targeting)</li>
+                    <li>Optimizar velocidad de carga (Core Web Vitals)</li>
+                    <li>Estrategia de link building en sector coaching/formación</li>
+                </ul>
+            </div>
+
+            <h3>Prioridad de Implementación</h3>
+            <table>
+                <tr>
+                    <th>Acción</th>
+                    <th>Impacto</th>
+                    <th>Esfuerzo</th>
+                    <th>Prioridad</th>
+                </tr>
+                <tr>
+                    <td>Meta descriptions todas las páginas</td>
+                    <td><span class="tag green">ALTO</span></td>
+                    <td><span class="tag green">BAJO</span></td>
+                    <td><strong>1</strong></td>
+                </tr>
+                <tr>
+                    <td>Schema Person + Organization</td>
+                    <td><span class="tag green">ALTO</span></td>
+                    <td><span class="tag orange">MEDIO</span></td>
+                    <td><strong>2</strong></td>
+                </tr>
+                <tr>
+                    <td>Alt text imágenes</td>
+                    <td><span class="tag orange">MEDIO</span></td>
+                    <td><span class="tag green">BAJO</span></td>
+                    <td><strong>3</strong></td>
+                </tr>
+                <tr>
+                    <td>Schema Review testimonios</td>
+                    <td><span class="tag green">ALTO</span></td>
+                    <td><span class="tag orange">MEDIO</span></td>
+                    <td><strong>4</strong></td>
+                </tr>
+                <tr>
+                    <td>Optimizar title tags</td>
+                    <td><span class="tag orange">MEDIO</span></td>
+                    <td><span class="tag green">BAJO</span></td>
+                    <td><strong>5</strong></td>
+                </tr>
+                <tr>
+                    <td>Información contacto visible</td>
+                    <td><span class="tag orange">MEDIO</span></td>
+                    <td><span class="tag green">BAJO</span></td>
+                    <td><strong>6</strong></td>
+                </tr>
+                <tr>
+                    <td>Blog/contenido fresco</td>
+                    <td><span class="tag green">ALTO</span></td>
+                    <td><span class="tag red">ALTO</span></td>
+                    <td><strong>7</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- ROI Estimado -->
+        <div id="roi" class="section">
+            <h2>ROI Estimado</h2>
+
+            <div class="alert alert-info">
+                <strong>Nota:</strong> Estas estimaciones se basan en mejoras típicas para sitios de servicios profesionales/coaching tras implementar optimizaciones SEO fundamentales.
+            </div>
+
+            <h3>Mejoras Esperadas (6-12 meses)</h3>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-value green">+40-60%</div>
+                    <div class="metric-label">Tráfico Orgánico</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">+25-35%</div>
+                    <div class="metric-label">CTR en Google</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">+30-50%</div>
+                    <div class="metric-label">Leads Cualificados</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">Top 10</div>
+                    <div class="metric-label">Keywords Principales</div>
+                </div>
+            </div>
+
+            <h3>Keywords Objetivo</h3>
+            <p>Con las optimizaciones propuestas, el sitio podrá competir por:</p>
+            <ul>
+                <li><strong>"coach professionista italia"</strong> - Alto potencial</li>
+                <li><strong>"coaching leadership"</strong> - Competencia media</li>
+                <li><strong>"formazione aziendale soft skills"</strong> - Oportunidad</li>
+                <li><strong>"coach PNL certificato"</strong> - Nicho específico</li>
+                <li><strong>"executive coaching online"</strong> - Internacional</li>
+                <li><strong>"gestione stress lavoro"</strong> - Alto volumen</li>
+                <li><strong>"comunicazione efficace corso"</strong> - Intención comercial</li>
+            </ul>
+
+            <h3>Valor Estimado del Tráfico</h3>
+            <p>Considerando que un cliente de coaching tiene un valor medio de <strong>€1,000-5,000+</strong>:</p>
+            <ul>
+                <li>Aumento de 50% en tráfico orgánico cualificado</li>
+                <li>Tasa de conversión típica coaching: 2-5%</li>
+                <li><strong>Resultado potencial:</strong> 3-10 clientes adicionales por mes solo desde SEO orgánico</li>
+                <li><strong>Valor anual adicional estimado:</strong> €36,000 - €600,000</li>
+            </ul>
+
+            <div class="alert alert-success">
+                <strong>Inversión vs. Retorno:</strong> Las optimizaciones SEO propuestas tienen un costo de implementación relativamente bajo comparado con el potencial de retorno. La inversión se recupera típicamente en 2-4 meses con el primer cliente adicional adquirido vía SEO.
+            </div>
+        </div>
+
+        <!-- Resumen Final -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>Lucia Pascali - FAB Method</strong> tiene un sitio web con contenido de alta calidad y testimonios excepcionales, pero está perdiendo visibilidad significativa en motores de búsqueda debido a la falta de optimizaciones SEO técnicas básicas.</p>
+
+            <h3>Los 4 Quick Wins Más Importantes:</h3>
+            <ol>
+                <li><strong>Meta descriptions</strong> - Implementación inmediata, alto impacto en CTR</li>
+                <li><strong>Schema markup</strong> - Diferenciación visual en resultados de Google</li>
+                <li><strong>Alt text imágenes</strong> - Accesibilidad + SEO adicional</li>
+                <li><strong>Información de contacto</strong> - Confianza + SEO local</li>
+            </ol>
+
+            <h3>Fortalezas a Potenciar:</h3>
+            <ul>
+                <li>Metodología propietaria (F.A.B. Method™) - USP único</li>
+                <li>Testimonios de clientes blue-chip (Burberry, JP Morgan, etc.)</li>
+                <li>20+ años de experiencia documentada</li>
+                <li>Contenido profesional y bien escrito</li>
+            </ul>
+
+            <div class="alert alert-warning">
+                <strong>Conclusión:</strong> Con las optimizaciones propuestas, la puntuación SEO puede pasar de <strong>5.5/10 a 8.5/10</strong> en aproximadamente 4-8 semanas de trabajo enfocado.
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>Informe de Auditoría SEO</strong></p>
+        <p>Lucia Pascali - FAB Method</p>
+        <p>Fecha: 26 Noviembre 2025</p>
+        <p style="margin-top: 20px; font-size: 14px;">Este informe ha sido generado para uso interno y de planificación estratégica.</p>
+    </div>
+</body>
+</html>
