@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoría SEO - Santa Cruz Fotolab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #00b4d8 0%, #0077b6 50%, #023e8a 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #0077b6;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #00b4d8;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #00b4d8 0%, #023e8a 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score-box .score {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .score-box .score-label {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        .critical {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .critical h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, #feca57, #ff9f43);
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning h4 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #26de81, #20bf6b);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .success h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #0077b6;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .priority-alta {
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-media {
+            background: #feca57;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-baja {
+            background: #26de81;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #0077b6;
+        }
+
+        .checklist li.done {
+            border-left-color: #26de81;
+        }
+
+        .checklist li.pending {
+            border-left-color: #ff6b6b;
+        }
+
+        .code-block {
+            background: #2d3436;
+            color: #74b9ff;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #00b4d8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #0077b6;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        .tag-service {
+            background: #00b4d8;
+            color: white;
+        }
+
+        .tag-partner {
+            background: #0077b6;
+            color: white;
+        }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .partner-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0077b6;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-box .score {
+                font-size: 60px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>Santa Cruz Fotolab</strong></p>
+        <p>santacruzfotolab.com</p>
+        <p>Análisis realizado: 26 de Noviembre 2025</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al índice de informes</a>
+
+        <!-- PUNTUACIÓN GENERAL -->
+        <div class="score-box">
+            <div class="score-label">Puntuación SEO General</div>
+            <div class="score">5.5/10</div>
+            <p>Servicio de fotografía de surf con modelo de negocio único pero con carencias importantes en SEO técnico y estructura</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>Santa Cruz Fotolab</strong> es un servicio de fotografía especializado en surf ubicado en Tenerife. Su modelo de negocio es único: colabora con múltiples escuelas de surf de la isla para fotografiar a los alumnos durante sus clases, permitiéndoles después comprar sus fotos a través de galerías online organizadas por escuela y fecha.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">5.5</div>
+                    <div class="label">Puntuación SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">11+</div>
+                    <div class="label">Escuelas Partner</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Idiomas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">WooCommerce</div>
+                    <div class="label">E-commerce</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Fotografía de Surf / E-commerce de Fotos</li>
+                <li><strong>Ubicación:</strong> Santa Cruz de Tenerife, Canarias</li>
+                <li><strong>Modelo:</strong> B2B2C (Colaboración con escuelas de surf, venta directa a alumnos)</li>
+                <li><strong>Plataforma:</strong> WordPress + WooCommerce</li>
+                <li><strong>Idiomas:</strong> Español, Inglés</li>
+                <li><strong>Contacto:</strong> WhatsApp (principal)</li>
+            </ul>
+
+            <h3>Escuelas de Surf Asociadas</h3>
+            <div class="partner-grid">
+                <div class="partner-card">K16 Surf School</div>
+                <div class="partner-card">Kontraola</div>
+                <div class="partner-card">Franz Surf School</div>
+                <div class="partner-card">Blackstone Surf</div>
+                <div class="partner-card">Ika Ika Surf</div>
+                <div class="partner-card">Soul Surf Camp</div>
+                <div class="partner-card">Mojo Surf Camp</div>
+                <div class="partner-card">Atlantic Surf</div>
+                <div class="partner-card">7 Islas Surf</div>
+                <div class="partner-card">Tenerife Surf Point</div>
+                <div class="partner-card">Friends (Free Surf)</div>
+            </div>
+
+            <h3>Servicios</h3>
+            <p>
+                <span class="tag tag-service">Fotografía de Clases de Surf</span>
+                <span class="tag tag-service">Galerías Online por Escuela</span>
+                <span class="tag tag-service">Venta de Fotos Digitales</span>
+                <span class="tag tag-service">Sesiones Privadas</span>
+                <span class="tag tag-service">Free Surf Photography</span>
+                <span class="tag tag-service">Notificaciones de Galerías</span>
+            </p>
+        </div>
+
+        <!-- PROBLEMAS CRÍTICOS -->
+        <div class="section">
+            <h2>Problemas Críticos Detectados</h2>
+
+            <div class="critical">
+                <h4>1. AUSENCIA DE ETIQUETA H1 PRINCIPAL</h4>
+                <p>La página principal no tiene una etiqueta H1 definida. Los H2 existentes ("Where did you surf?", "CLIENTS", "PHOTO SOLD") no son descriptivos para SEO y el H1 principal está completamente ausente.</p>
+                <p><strong>Impacto:</strong> Google no puede determinar el tema principal de la página. Pérdida total de posicionamiento para keywords como "fotografía de surf Tenerife" o "fotos clases surf Canarias".</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">
+&lt;h1&gt;Santa Cruz Fotolab - Fotografía de Surf en Tenerife&lt;/h1&gt;
+&lt;h2&gt;Encuentra tus fotos de surf por escuela&lt;/h2&gt;
+                </div>
+            </div>
+
+            <div class="critical">
+                <h4>2. TEXTOS ALT DE IMÁGENES NO VISIBLES/AUSENTES</h4>
+                <p>Las imágenes de las escuelas de surf (logos, botones) no tienen textos alternativos visibles. En un sitio basado en fotografía, esto es especialmente grave.</p>
+                <p><strong>Impacto:</strong> Pérdida de posicionamiento en Google Imágenes. Los turistas que buscan "fotos surf Tenerife" no encontrarán el sitio. Problemas de accesibilidad.</p>
+                <p><strong>Solución:</strong> Añadir ALT descriptivo a cada imagen:
+                <div class="code-block">
+&lt;img src="k16-logo.jpg" alt="K16 Surf School Tenerife - Fotografía de clases de surf"&gt;
+&lt;img src="kontraola.jpg" alt="Kontraola Surf Tenerife - Compra tus fotos de surf"&gt;
+                </div>
+                </p>
+            </div>
+
+            <div class="critical">
+                <h4>3. FALTA DE META TITLE Y DESCRIPTION OPTIMIZADOS</h4>
+                <p>No se detectan meta tags optimizados en el contenido analizado. Es probable que el título sea genérico o automático de WordPress.</p>
+                <p><strong>Impacto:</strong> Google genera snippets automáticos poco atractivos. Bajo CTR en resultados de búsqueda. Pérdida de keywords en posiciones importantes.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">
+&lt;title&gt;Santa Cruz Fotolab | Fotografía de Surf en Tenerife - Encuentra tus Fotos&lt;/title&gt;
+&lt;meta name="description" content="Servicio de fotografía de surf en Tenerife.
+Colaboramos con 11+ escuelas de surf. Encuentra y compra las fotos de tu clase
+de surf. Galerías actualizadas diariamente."&gt;
+                </div>
+            </div>
+
+            <div class="critical">
+                <h4>4. ESTRUCTURA DE HEADINGS INCORRECTA</h4>
+                <p>Los H2 actuales ("Where did you surf?", "can't find your photos?", "CLIENTS", "PHOTO SOLD") son funcionales pero no descriptivos ni optimizados para SEO.</p>
+                <p><strong>Impacto:</strong> Google usa los headings para entender la estructura del contenido. Headings genéricos no aportan relevancia para keywords objetivo.</p>
+                <p><strong>Solución propuesta:</strong>
+                    <ul>
+                        <li>H1: "Fotografía de Surf en Tenerife - Santa Cruz Fotolab"</li>
+                        <li>H2: "Escuelas de Surf Asociadas"</li>
+                        <li>H2: "Cómo Encontrar tus Fotos de Surf"</li>
+                        <li>H2: "Sesiones Privadas de Fotografía"</li>
+                        <li>H2: "Testimonios de Nuestros Clientes"</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS IMPORTANTES -->
+        <div class="section">
+            <h2>Problemas Importantes</h2>
+
+            <div class="warning">
+                <h4>5. CONTENIDO TEXTUAL MUY LIMITADO</h4>
+                <p>La página principal tiene poco contenido textual. Principalmente son botones de escuelas, contadores y CTAs. No hay descripciones de servicios, proceso de compra, información sobre el equipo, etc.</p>
+                <p><strong>Impacto:</strong> Insuficiente contenido para que Google entienda y posicione el sitio. Competir por keywords de nicho requiere contenido relevante.</p>
+                <p><strong>Solución:</strong> Añadir secciones con:
+                    <ul>
+                        <li>Descripción del servicio (mínimo 200 palabras)</li>
+                        <li>Proceso: cómo funciona (clase → foto → galería → compra)</li>
+                        <li>Información sobre fotógrafos</li>
+                        <li>FAQ con preguntas frecuentes</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="warning">
+                <h4>6. AUSENCIA DE REDES SOCIALES VISIBLES</h4>
+                <p>No se detectan enlaces a redes sociales (Instagram, Facebook) en el contenido principal. Para un servicio de fotografía, las redes son esenciales para mostrar portfolio.</p>
+                <p><strong>Impacto:</strong> Pérdida de señales sociales para SEO. Pérdida de oportunidad de engagement y viralización de contenido.</p>
+                <p><strong>Solución:</strong> Crear y enlazar perfiles de Instagram (ideal para fotografía), Facebook y posiblemente TikTok.</p>
+            </div>
+
+            <div class="warning">
+                <h4>7. DEPENDENCIA DE SUBDOMINIOS</h4>
+                <p>Cada escuela tiene su propio subdominio (kontraola.santacruzfotolab.com, ikaika.santacruzfotolab.com, etc.).</p>
+                <p><strong>Impacto:</strong> Los subdominios diluyen la autoridad de dominio. Es mejor usar directorios (/escuelas/kontraola/) para consolidar todo el link juice en el dominio principal.</p>
+                <p><strong>Nota:</strong> Esto puede ser una decisión de negocio válida, pero desde perspectiva SEO, los subdominios compiten entre sí.</p>
+            </div>
+
+            <div class="warning">
+                <h4>8. INFORMACIÓN DE CONTACTO LIMITADA</h4>
+                <p>Solo WhatsApp como método de contacto visible. No hay email, teléfono alternativo ni dirección física.</p>
+                <p><strong>Impacto:</strong> Google valora la información de contacto completa como señal de legitimidad (E-E-A-T). La falta de diversidad en contacto puede afectar la confianza.</p>
+                <p><strong>Solución:</strong> Añadir email (info@santacruzfotolab.com) y dirección física o al menos ciudad (Santa Cruz de Tenerife).</p>
+            </div>
+
+            <div class="warning">
+                <h4>9. FALTA DE SCHEMA MARKUP</h4>
+                <p>No hay datos estructurados para LocalBusiness, Photograph o Service. Esto impide rich snippets en resultados de búsqueda.</p>
+            </div>
+        </div>
+
+        <!-- LO QUE ESTÁ BIEN -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. MODELO DE NEGOCIO ÚNICO Y DIFERENCIADO</h4>
+                <p>El modelo B2B2C de colaboración con escuelas de surf es brillante. Crea un ecosistema donde todos ganan: la escuela ofrece fotos, el alumno tiene recuerdos, y Santa Cruz Fotolab tiene acceso a clientes cualificados.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. RED DE PARTNERS ESTABLECIDA</h4>
+                <p>11+ escuelas de surf colaboradoras. Esto representa una barrera de entrada significativa para competidores y una fuente constante de clientes.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. SISTEMA DE NOTIFICACIONES</h4>
+                <p>Función "NOTIFY ME" para alertar a usuarios cuando su galería esté disponible. Excelente para retención y conversión.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. E-COMMERCE FUNCIONAL</h4>
+                <p>WooCommerce implementado con carrito, checkout y pasarela de pago (PayPal detectado). Infraestructura de venta lista.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. INTEGRACIÓN WHATSAPP</h4>
+                <p>Contacto rápido vía WhatsApp. Ideal para resolver dudas de clientes que buscan sus fotos específicas.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. TRACKING IMPLEMENTADO</h4>
+                <p>Google Analytics y MailerLite detectados. Base para análisis de conversiones y email marketing.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. SECCIÓN DE SESIONES PRIVADAS</h4>
+                <p>Opción de reservar sesión privada ("BOOK A PRIVATE SESSION"). Diversificación de servicios más allá de las escuelas partner.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. URL PRINCIPAL SEO-FRIENDLY</h4>
+                <p>El dominio "santacruzfotolab.com" es descriptivo y fácil de recordar. Incluye la ubicación (Santa Cruz) en el nombre.</p>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins - Mejoras Rápidas</h2>
+
+            <p>Estas acciones pueden implementarse en 1-2 días y tendrán impacto inmediato:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Acción</th>
+                        <th>Impacto</th>
+                        <th>Tiempo</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Añadir H1 con keywords principales</td>
+                        <td>Alto</td>
+                        <td>15 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Optimizar meta title y description</td>
+                        <td>Alto</td>
+                        <td>15 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir ALT a todas las imágenes de escuelas</td>
+                        <td>Muy Alto</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear cuenta Instagram y enlazarla</td>
+                        <td>Alto</td>
+                        <td>30 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir email de contacto visible</td>
+                        <td>Medio</td>
+                        <td>10 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Implementar Schema LocalBusiness</td>
+                        <td>Medio</td>
+                        <td>30 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir sección "Cómo funciona"</td>
+                        <td>Alto</td>
+                        <td>2 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ANÁLISIS DE KEYWORDS -->
+        <div class="section">
+            <h2>Análisis de Keywords Recomendadas</h2>
+
+            <h3>Keywords Principales (Alta Prioridad)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Intención</th>
+                        <th>Competencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>fotografía de surf tenerife</td>
+                        <td>Transaccional</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>fotos clases surf tenerife</td>
+                        <td>Transaccional</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                    <tr>
+                        <td>fotos surf canarias</td>
+                        <td>Informacional</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>comprar fotos surf</td>
+                        <td>Transaccional</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>fotógrafo surf tenerife</td>
+                        <td>Transaccional</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords por Escuela Partner</h3>
+            <p>Oportunidad de posicionar para búsquedas específicas de cada escuela:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Intención</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>fotos K16 surf school</td>
+                        <td>Navegacional</td>
+                    </tr>
+                    <tr>
+                        <td>fotos kontraola surf</td>
+                        <td>Navegacional</td>
+                    </tr>
+                    <tr>
+                        <td>fotos ika ika surf</td>
+                        <td>Navegacional</td>
+                    </tr>
+                    <tr>
+                        <td>fotos blackstone surf center</td>
+                        <td>Navegacional</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Long-Tail</h3>
+            <ul>
+                <li>"donde encontrar mis fotos de surf tenerife"</li>
+                <li>"fotógrafo para clases de surf canarias"</li>
+                <li>"comprar fotos de mi clase de surf"</li>
+                <li>"galería fotos surf tenerife [fecha]"</li>
+                <li>"sesión fotos privada surf tenerife"</li>
+            </ul>
+        </div>
+
+        <!-- SCHEMA MARKUP -->
+        <div class="section">
+            <h2>Schema Markup Recomendado</h2>
+
+            <p>Implementar múltiples tipos de Schema para maximizar visibilidad:</p>
+
+            <h3>Schema LocalBusiness + PhotographAction</h3>
+            <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Santa Cruz Fotolab",
+  "description": "Servicio de fotografía de surf en Tenerife. Colaboramos con escuelas de surf para capturar tus mejores momentos en las olas.",
+  "url": "https://santacruzfotolab.com",
+  "telephone": "+34XXXXXXXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santa Cruz de Tenerife",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "28.4636",
+    "longitude": "-16.2518"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Tenerife, Canary Islands"
+  },
+  "serviceType": [
+    "Surf Photography",
+    "Action Sports Photography",
+    "Digital Photo Sales"
+  ],
+  "priceRange": "$$"
+}
+&lt;/script&gt;
+            </div>
+
+            <h3>Schema Service</h3>
+            <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Fotografía de Clases de Surf",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Santa Cruz Fotolab"
+  },
+  "serviceType": "Photography",
+  "areaServed": "Tenerife",
+  "description": "Fotografía profesional de clases de surf en colaboración con las principales escuelas de Tenerife. Encuentra y compra tus fotos online."
+}
+&lt;/script&gt;
+            </div>
+        </div>
+
+        <!-- PLAN DE ACCIÓN -->
+        <div class="section">
+            <h2>Plan de Acción Priorizado</h2>
+
+            <h3>Fase 1: Correcciones Urgentes (Esta semana)</h3>
+            <ul class="checklist">
+                <li class="pending">Añadir H1 descriptivo con keyword principal</li>
+                <li class="pending">Optimizar meta title y description</li>
+                <li class="pending">Añadir ALT text a todas las imágenes de escuelas</li>
+                <li class="pending">Reestructurar headings H2/H3 con keywords</li>
+                <li class="pending">Añadir email de contacto visible</li>
+            </ul>
+
+            <h3>Fase 2: Contenido y Social (Próximas 2 semanas)</h3>
+            <ul class="checklist">
+                <li class="pending">Crear sección "Cómo Funciona" con proceso paso a paso</li>
+                <li class="pending">Añadir descripción de servicios (200+ palabras)</li>
+                <li class="pending">Crear cuenta Instagram con portfolio de mejores fotos</li>
+                <li class="pending">Implementar Schema LocalBusiness y Service</li>
+                <li class="pending">Crear página "Sobre Nosotros" con info de fotógrafos</li>
+            </ul>
+
+            <h3>Fase 3: SEO Técnico (Próximo mes)</h3>
+            <ul class="checklist">
+                <li class="pending">Optimizar velocidad de carga (compresión de thumbnails)</li>
+                <li class="pending">Crear sitemap XML</li>
+                <li class="pending">Implementar lazy loading para galerías</li>
+                <li class="pending">Añadir breadcrumbs con Schema</li>
+                <li class="pending">Crear FAQ con preguntas frecuentes</li>
+            </ul>
+
+            <h3>Fase 4: Expansión y Autoridad (Ongoing)</h3>
+            <ul class="checklist">
+                <li class="pending">Conseguir enlaces desde webs de escuelas partner</li>
+                <li class="pending">Crear contenido de blog sobre surf en Tenerife</li>
+                <li class="pending">Publicar en directorios de fotografía profesional</li>
+                <li class="pending">Desarrollar programa de referidos con escuelas</li>
+                <li class="pending">Implementar testimonios con Schema Review</li>
+            </ul>
+        </div>
+
+        <!-- OPORTUNIDADES -->
+        <div class="section">
+            <h2>Oportunidades de Crecimiento</h2>
+
+            <div class="info-box">
+                <h4>Mercado Poco Competido</h4>
+                <p>La combinación "fotografía de surf + e-commerce + Tenerife" tiene competencia prácticamente nula. Con optimización básica, Santa Cruz Fotolab puede dominar este nicho en buscadores.</p>
+            </div>
+
+            <h3>Estrategias Recomendadas</h3>
+            <ul>
+                <li><strong>SEO Local por Escuela:</strong> Crear landing pages optimizadas para cada escuela partner, capturando búsquedas tipo "fotos [nombre escuela] surf"</li>
+                <li><strong>Instagram como Portfolio:</strong> Usar Instagram para mostrar las mejores fotos del día/semana, con hashtags de las escuelas y ubicaciones</li>
+                <li><strong>Colaboración con Escuelas:</strong> Pedir a las escuelas que enlacen a la galería correspondiente desde sus webs (backlinks de alta relevancia)</li>
+                <li><strong>Email Marketing:</strong> Usar MailerLite (ya instalado) para notificar a clientes cuando hay nuevas galerías de su escuela favorita</li>
+                <li><strong>Google My Business:</strong> Crear ficha de GMB optimizada para "fotografía de surf Tenerife"</li>
+            </ul>
+
+            <h3>Potencial de Ingresos Adicionales</h3>
+            <ul>
+                <li>Paquetes premium con edición especial</li>
+                <li>Impresiones físicas enviadas a domicilio</li>
+                <li>Videos cortos/reels de sesiones</li>
+                <li>Fotografía de eventos de surf/competiciones</li>
+            </ul>
+        </div>
+
+        <!-- CONCLUSIÓN -->
+        <div class="section">
+            <h2>Conclusión</h2>
+
+            <p><strong>Santa Cruz Fotolab</strong> tiene un modelo de negocio excelente y una red de partners establecida, pero su presencia SEO es muy débil. Los problemas son principalmente de optimización básica (H1, meta tags, ALT texts) que se pueden corregir rápidamente.</p>
+
+            <div class="info-box">
+                <h4>Potencial de Mejora</h4>
+                <p>Con las correcciones de Fase 1, la puntuación podría subir a <strong>7.0-7.5/10</strong>. Con contenido expandido, presencia social y Schema implementado, podría alcanzar <strong>8.0-8.5/10</strong>.</p>
+            </div>
+
+            <p>La oportunidad más grande está en el SEO local y las búsquedas relacionadas con cada escuela partner. Cada colaboración es una fuente potencial de backlinks y una oportunidad de posicionamiento para keywords específicas.</p>
+
+            <h3>Resumen de Puntuaciones por Área</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Puntuación</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Técnico</td>
+                        <td>4/10</td>
+                        <td>Falta H1, meta tags, ALT texts</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>4/10</td>
+                        <td>Muy poco contenido textual</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>5/10</td>
+                        <td>Dominio descriptivo, falta Schema</td>
+                    </tr>
+                    <tr>
+                        <td>E-commerce</td>
+                        <td>7/10</td>
+                        <td>WooCommerce funcional</td>
+                    </tr>
+                    <tr>
+                        <td>UX/Modelo</td>
+                        <td>8/10</td>
+                        <td>Excelente modelo de negocio</td>
+                    </tr>
+                    <tr>
+                        <td>Social/Marca</td>
+                        <td>3/10</td>
+                        <td>Sin redes sociales visibles</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning">
+                <h4>Prioridad Inmediata</h4>
+                <p>El paso más urgente es crear una cuenta de Instagram. Para un negocio de fotografía, no tener presencia en la plataforma visual más importante es una oportunidad perdida enorme. Las fotos de surf son altamente "instagrameables" y virales.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 26 de Noviembre 2025</p>
+            <p style="margin-top: 15px;">Para implementar estas mejoras o solicitar un análisis más detallado, contacte con su consultor SEO.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoría SEO - MAPPA Festival</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #0f3460;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e94560;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #1a1a2e 0%, #e94560 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score-box .score {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .score-box .score-label {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        .critical {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .critical h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, #feca57, #ff9f43);
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning h4 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #26de81, #20bf6b);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .success h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #0f3460;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .priority-alta {
+            background: #e94560;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-media {
+            background: #feca57;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-baja {
+            background: #26de81;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #0f3460;
+        }
+
+        .checklist li.done {
+            border-left-color: #26de81;
+        }
+
+        .checklist li.pending {
+            border-left-color: #e94560;
+        }
+
+        .code-block {
+            background: #2d3436;
+            color: #74b9ff;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #e94560;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #e94560;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        .tag-service {
+            background: #e94560;
+            color: white;
+        }
+
+        .tag-location {
+            background: #26de81;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-box .score {
+                font-size: 60px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>MAPPA Festival</strong></p>
+        <p>mappafestival.com</p>
+        <p>Análisis realizado: 26 de Noviembre 2025</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al índice de informes</a>
+
+        <!-- PUNTUACIÓN GENERAL -->
+        <div class="score-box">
+            <div class="score-label">Puntuación SEO General</div>
+            <div class="score">6.5/10</div>
+            <p>Festival de música electrónica con buena presencia de marca pero oportunidades significativas de optimización SEO</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>MAPPA Festival</strong> es un festival de música electrónica organizado por GreenWorld, con sede en Siam Park, Tenerife. El próximo evento "MAPPA x NOW HERE by Paco Osuna" está programado para el 6 de septiembre de 2025. El sitio web está bien estructurado para conversiones pero tiene carencias importantes en SEO técnico y contenido indexable.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">6.5</div>
+                    <div class="label">Puntuación SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">3</div>
+                    <div class="label">Idiomas (ES/EN/IT)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">4+</div>
+                    <div class="label">Redes Sociales</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2025</div>
+                    <div class="label">Próximo Evento</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Festival de Música Electrónica</li>
+                <li><strong>Organizador:</strong> GreenWorld</li>
+                <li><strong>Ubicación:</strong> Siam Park, Tenerife</li>
+                <li><strong>Próximo evento:</strong> MAPPA x NOW HERE by Paco Osuna - 6 Septiembre 2025</li>
+                <li><strong>Idiomas del sitio:</strong> Español, English, Italiano</li>
+                <li><strong>Redes Sociales:</strong> Instagram (@mappafest), TikTok (@mappafestival), Facebook, YouTube</li>
+            </ul>
+
+            <h3>Servicios y Productos</h3>
+            <p>
+                <span class="tag tag-service">Entradas Generales</span>
+                <span class="tag tag-service">Acceso VIP</span>
+                <span class="tag tag-service">Upgrade Entradas</span>
+                <span class="tag tag-service">Merchandising (Laverny x MAPPA)</span>
+                <span class="tag tag-service">Ofertas de Trabajo</span>
+            </p>
+        </div>
+
+        <!-- PROBLEMAS CRÍTICOS -->
+        <div class="section">
+            <h2>Problemas Críticos Detectados</h2>
+
+            <div class="critical">
+                <h4>1. AUSENCIA DE ETIQUETA H1 SEMÁNTICA</h4>
+                <p>El sitio web no tiene una etiqueta H1 definida semánticamente. El contenido principal ("MAPPA x NOW HERE") funciona visualmente como título pero no está marcado con HTML semántico correcto.</p>
+                <p><strong>Impacto:</strong> Google no puede identificar claramente el tema principal de la página. Esto afecta negativamente el posicionamiento para búsquedas relacionadas con el festival.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">
+&lt;h1&gt;MAPPA Festival Tenerife - Festival de Música Electrónica&lt;/h1&gt;
+&lt;h2&gt;MAPPA x NOW HERE by Paco Osuna - 6 Septiembre 2025&lt;/h2&gt;
+                </div>
+            </div>
+
+            <div class="critical">
+                <h4>2. CONTENIDO TEXTUAL MUY LIMITADO</h4>
+                <p>La página principal tiene contenido textual extremadamente reducido. Prácticamente solo muestra la fecha y el nombre del evento. No hay descripciones, información sobre artistas, historia del festival, etc.</p>
+                <p><strong>Impacto:</strong> Google necesita contenido textual para entender y posicionar una página. Sin texto suficiente, el sitio no puede rankear para keywords relevantes como "festival música electrónica Tenerife", "eventos Siam Park", etc.</p>
+                <p><strong>Solución:</strong> Añadir secciones con:
+                    <ul>
+                        <li>Descripción del festival (mínimo 300 palabras)</li>
+                        <li>Información sobre artistas/DJs</li>
+                        <li>Historia de ediciones anteriores</li>
+                        <li>Descripción de la ubicación (Siam Park)</li>
+                        <li>FAQ con preguntas frecuentes</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="critical">
+                <h4>3. IMÁGENES SIN ATRIBUTOS ALT</h4>
+                <p>Las imágenes principales del sitio no tienen textos alternativos (alt text) visibles. La imagen Open Graph existe pero las imágenes del contenido carecen de descripciones.</p>
+                <p><strong>Impacto:</strong> Pérdida de oportunidad de posicionamiento en Google Imágenes. Problemas de accesibilidad. Google no puede "ver" las imágenes sin textos alternativos.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">
+&lt;img src="og-mappa-x-nowhere.jpg"
+     alt="MAPPA x NOW HERE Festival con Paco Osuna en Siam Park Tenerife 2025"&gt;
+                </div>
+            </div>
+
+            <div class="critical">
+                <h4>4. FALTA DE INFORMACIÓN DE CONTACTO</h4>
+                <p>No hay email, teléfono ni dirección física visible en el sitio. Solo enlaces a redes sociales y formularios.</p>
+                <p><strong>Impacto:</strong> Google valora la información de contacto como señal de confianza (E-E-A-T). Su ausencia puede afectar negativamente la percepción de legitimidad del sitio.</p>
+                <p><strong>Solución:</strong> Añadir al menos un email de contacto visible (ej: info@mappafestival.com) y la dirección del organizador.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS IMPORTANTES -->
+        <div class="section">
+            <h2>Problemas Importantes</h2>
+
+            <div class="warning">
+                <h4>5. TITLE TAG DEMASIADO ESPECÍFICO</h4>
+                <p>El título actual es "MAPPA x NOW HERE by Paco Osuna · 6 Septiembre 2025". Si bien es descriptivo para el evento actual, no incluye keywords geográficas ni genéricas.</p>
+                <p><strong>Solución mejorada:</strong></p>
+                <div class="code-block">
+&lt;title&gt;MAPPA Festival Tenerife 2025 | MAPPA x NOW HERE by Paco Osuna - 6 Sept&lt;/title&gt;
+                </div>
+            </div>
+
+            <div class="warning">
+                <h4>6. META DESCRIPTION CORTA</h4>
+                <p>La meta description actual: "MAPPA x NOW HERE by Paco Osuna este 6 de septiembre 2025 en Siam Park. Entradas volando. El Jefe aterriza en MAPPA."</p>
+                <p>Aunque es creativa, podría incluir más keywords y un CTA más claro.</p>
+                <p><strong>Solución mejorada:</strong></p>
+                <div class="code-block">
+&lt;meta name="description" content="MAPPA Festival 2025 en Siam Park, Tenerife.
+Paco Osuna presenta NOW HERE el 6 de septiembre. Festival de música electrónica
+con entradas generales y VIP. Compra tus entradas ahora."&gt;
+                </div>
+            </div>
+
+            <div class="warning">
+                <h4>7. FALTA DE SCHEMA MARKUP PARA EVENTO</h4>
+                <p>No hay datos estructurados (Schema.org) para marcar el evento. Esto impide que Google muestre rich snippets con fecha, ubicación y precio en los resultados de búsqueda.</p>
+                <p><strong>Impacto:</strong> Pérdida de visibilidad en SERPs. Los eventos con Schema aparecen con información enriquecida que aumenta el CTR significativamente.</p>
+            </div>
+
+            <div class="warning">
+                <h4>8. ESTRUCTURA URL MULTIIDIOMA SIN VERIFICAR HREFLANG</h4>
+                <p>El sitio tiene versiones en /en/ e /it/ pero no se puede verificar si las etiquetas hreflang están correctamente implementadas.</p>
+                <p><strong>Solución:</strong> Implementar hreflang correcto:</p>
+                <div class="code-block">
+&lt;link rel="alternate" hreflang="es" href="https://mappafestival.com/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://mappafestival.com/en/" /&gt;
+&lt;link rel="alternate" hreflang="it" href="https://mappafestival.com/it/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://mappafestival.com/" /&gt;
+                </div>
+            </div>
+        </div>
+
+        <!-- LO QUE ESTÁ BIEN -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. ESTRUCTURA DE URLs LIMPIA</h4>
+                <p>URLs descriptivas y amigables: /entradas/, /vip/, /trabaja-con-nosotros/. Fáciles de entender para usuarios y motores de búsqueda.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. SOPORTE MULTIIDIOMA</h4>
+                <p>Español, inglés e italiano. Perfecto para captar turistas internacionales que visitan Tenerife y buscan eventos.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. PRESENCIA EN REDES SOCIALES</h4>
+                <p>Instagram, TikTok, Facebook y YouTube integrados. Múltiples canales para engagement y promoción del evento.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. OPEN GRAPH CONFIGURADO</h4>
+                <p>Imagen OG (1200x630px) configurada correctamente para compartir en redes sociales. Esto mejora la apariencia cuando se comparte el enlace.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. CTA CLARO PARA CONVERSIÓN</h4>
+                <p>Botón "ENTRADAS" prominente y visible. El objetivo principal (venta de entradas) está claro.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. TRACKING IMPLEMENTADO</h4>
+                <p>Google Tag Manager, Facebook Pixel y TikTok Pixel configurados. Base técnica para análisis de conversiones correcta.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. PÁGINA DE SOSTENIBILIDAD</h4>
+                <p>Documento de sostenibilidad disponible. Esto demuestra responsabilidad social y puede ser un factor diferenciador.</p>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins - Mejoras Rápidas</h2>
+
+            <p>Estas acciones pueden implementarse en 1-2 días y tendrán impacto inmediato:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Acción</th>
+                        <th>Impacto</th>
+                        <th>Tiempo</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Añadir etiqueta H1 semántica</td>
+                        <td>Alto</td>
+                        <td>10 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir textos ALT a todas las imágenes</td>
+                        <td>Alto</td>
+                        <td>30 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Implementar Schema Event</td>
+                        <td>Muy Alto</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Optimizar title tag con ubicación</td>
+                        <td>Medio</td>
+                        <td>5 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Expandir meta description</td>
+                        <td>Medio</td>
+                        <td>10 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir email de contacto visible</td>
+                        <td>Medio</td>
+                        <td>5 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Verificar/implementar hreflang</td>
+                        <td>Alto</td>
+                        <td>30 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SCHEMA MARKUP -->
+        <div class="section">
+            <h2>Schema Markup Recomendado</h2>
+
+            <p>Implementar el siguiente Schema JSON-LD para aparecer como evento enriquecido en Google:</p>
+
+            <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "MusicEvent",
+  "name": "MAPPA x NOW HERE by Paco Osuna",
+  "description": "Festival de música electrónica en Siam Park, Tenerife. Paco Osuna presenta NOW HERE en MAPPA Festival 2025.",
+  "startDate": "2025-09-06T18:00:00+01:00",
+  "endDate": "2025-09-07T06:00:00+01:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Siam Park",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Costa Adeje",
+      "addressRegion": "Santa Cruz de Tenerife",
+      "addressCountry": "ES"
+    }
+  },
+  "performer": {
+    "@type": "MusicGroup",
+    "name": "Paco Osuna"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "GreenWorld",
+    "url": "https://mappafestival.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://mappafestival.com/entradas/",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "EUR"
+  },
+  "image": "https://mappafestival.com/og-mappa-x-nowhere.jpg"
+}
+&lt;/script&gt;
+            </div>
+
+            <p>También añadir Schema de Organización:</p>
+
+            <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MAPPA Festival",
+  "url": "https://mappafestival.com",
+  "logo": "https://mappafestival.com/logo.png",
+  "sameAs": [
+    "https://www.instagram.com/mappafest/",
+    "https://www.tiktok.com/@mappafestival",
+    "https://www.facebook.com/MAPPAFestival",
+    "https://www.youtube.com/channel/UCtZmeFm3JZMaRRHr6PqdSXw"
+  ]
+}
+&lt;/script&gt;
+            </div>
+        </div>
+
+        <!-- ANÁLISIS DE KEYWORDS -->
+        <div class="section">
+            <h2>Análisis de Keywords Recomendadas</h2>
+
+            <h3>Keywords Principales (Alta Prioridad)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Intención</th>
+                        <th>Competencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>mappa festival tenerife</td>
+                        <td>Navegacional</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>festival música electrónica tenerife</td>
+                        <td>Informacional</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>paco osuna tenerife 2025</td>
+                        <td>Transaccional</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>eventos siam park</td>
+                        <td>Informacional</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>festivales canarias 2025</td>
+                        <td>Informacional</td>
+                        <td>Media</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Long-Tail (Específicas)</h3>
+            <ul>
+                <li>"entradas mappa festival 2025"</li>
+                <li>"festival techno tenerife septiembre 2025"</li>
+                <li>"fiesta siam park paco osuna"</li>
+                <li>"vip mappa festival precio"</li>
+                <li>"festival now here tenerife"</li>
+                <li>"trabajar en mappa festival"</li>
+            </ul>
+
+            <h3>Keywords de Competencia</h3>
+            <ul>
+                <li>"festivales música electrónica españa 2025"</li>
+                <li>"mejores festivales techno islas canarias"</li>
+                <li>"fiestas verano tenerife sur"</li>
+            </ul>
+        </div>
+
+        <!-- PLAN DE ACCIÓN -->
+        <div class="section">
+            <h2>Plan de Acción Priorizado</h2>
+
+            <h3>Fase 1: Correcciones Urgentes (Esta semana)</h3>
+            <ul class="checklist">
+                <li class="pending">Añadir etiqueta H1 con keyword principal</li>
+                <li class="pending">Implementar textos ALT en todas las imágenes</li>
+                <li class="pending">Añadir Schema Event JSON-LD</li>
+                <li class="pending">Incluir email de contacto visible</li>
+                <li class="pending">Optimizar title tag con "Tenerife"</li>
+            </ul>
+
+            <h3>Fase 2: Contenido (Próximas 2 semanas)</h3>
+            <ul class="checklist">
+                <li class="pending">Crear sección "Sobre MAPPA Festival" (300+ palabras)</li>
+                <li class="pending">Añadir página de artistas/lineup con biografías</li>
+                <li class="pending">Crear FAQ con preguntas frecuentes</li>
+                <li class="pending">Añadir información sobre la ubicación (Siam Park)</li>
+                <li class="pending">Incluir galería de fotos de ediciones anteriores</li>
+            </ul>
+
+            <h3>Fase 3: SEO Técnico (Próximo mes)</h3>
+            <ul class="checklist">
+                <li class="pending">Verificar e implementar hreflang correctamente</li>
+                <li class="pending">Crear sitemap XML</li>
+                <li class="pending">Optimizar velocidad de carga (compresión imágenes)</li>
+                <li class="pending">Implementar breadcrumbs con Schema</li>
+                <li class="pending">Crear página 404 personalizada</li>
+            </ul>
+
+            <h3>Fase 4: Autoridad y Links (Ongoing)</h3>
+            <ul class="checklist">
+                <li class="pending">Conseguir enlaces de medios de música electrónica</li>
+                <li class="pending">Publicar en directorios de eventos/festivales</li>
+                <li class="pending">Crear contenido de blog sobre la escena electrónica en Canarias</li>
+                <li class="pending">Establecer partnerships con hoteles/alojamientos</li>
+            </ul>
+        </div>
+
+        <!-- OPORTUNIDADES -->
+        <div class="section">
+            <h2>Oportunidades de Mercado</h2>
+
+            <div class="info-box">
+                <h4>Nicho de Turismo de Festivales</h4>
+                <p>Tenerife atrae millones de turistas al año. Posicionar MAPPA Festival para búsquedas de "qué hacer en Tenerife septiembre" o "eventos Tenerife 2025" puede captar audiencia internacional que ya está planificando su viaje.</p>
+            </div>
+
+            <h3>Estrategias Recomendadas</h3>
+            <ul>
+                <li><strong>Contenido en 3 idiomas:</strong> Aprovechar el multiidioma para posicionar en mercados británico, alemán e italiano (principales turistas en Canarias)</li>
+                <li><strong>Partnerships con turismo:</strong> Colaborar con hoteles, aerolíneas y portales de turismo para paquetes "vuelo + hotel + festival"</li>
+                <li><strong>PR y backlinks:</strong> Conseguir cobertura en Resident Advisor, DJ Mag, Mixmag para aumentar autoridad</li>
+                <li><strong>Retargeting:</strong> Usar los píxeles ya instalados para campañas de remarketing a visitantes que no compraron</li>
+            </ul>
+
+            <h3>Competencia Directa</h3>
+            <p>Investigar y monitorear otros festivales en Canarias para identificar gaps de contenido y oportunidades de diferenciación.</p>
+        </div>
+
+        <!-- CONCLUSIÓN -->
+        <div class="section">
+            <h2>Conclusión</h2>
+
+            <p><strong>MAPPA Festival</strong> tiene un sitio web visualmente atractivo y optimizado para conversiones, pero carece de elementos SEO fundamentales que limitan su visibilidad orgánica. El principal problema es la falta de contenido textual indexable y estructura semántica.</p>
+
+            <div class="info-box">
+                <h4>Potencial de Mejora</h4>
+                <p>Implementando las correcciones críticas (H1, ALT texts, Schema Event), la puntuación podría subir a <strong>7.5-8.0/10</strong>. Con contenido expandido y estrategia de backlinks, podría alcanzar <strong>8.5-9.0/10</strong>.</p>
+            </div>
+
+            <p>La implementación del Schema Event es particularmente importante porque permitirá que Google muestre el festival en los resultados de búsqueda con fecha, ubicación y enlace de compra directamente visibles, aumentando significativamente el CTR.</p>
+
+            <h3>Resumen de Puntuaciones por Área</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Puntuación</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Técnico</td>
+                        <td>5/10</td>
+                        <td>Falta H1, ALT texts, Schema</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>4/10</td>
+                        <td>Muy poco contenido textual</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>5/10</td>
+                        <td>Ubicación implícita, sin Schema</td>
+                    </tr>
+                    <tr>
+                        <td>UX/Diseño</td>
+                        <td>9/10</td>
+                        <td>Diseño atractivo, CTA claro</td>
+                    </tr>
+                    <tr>
+                        <td>Social/Marca</td>
+                        <td>8/10</td>
+                        <td>Buena presencia en redes</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td>7/10</td>
+                        <td>3 idiomas, hreflang por verificar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 26 de Noviembre 2025</p>
+            <p style="margin-top: 15px;">Para implementar estas mejoras o solicitar un análisis más detallado, contacte con su consultor SEO.</p>
+        </div>
+    </div>
+</body>
+</html>
