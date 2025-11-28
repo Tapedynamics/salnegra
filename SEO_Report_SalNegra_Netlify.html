@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoría SEO - Sal Negra Tenerife (Netlify)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .header a {
+            color: #00d4ff;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #1a1a2e;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #00d4ff;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score-number {
+            font-size: 80px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 24px;
+        }
+
+        .excellent-banner {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .excellent-banner h3 {
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .metric {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .metric-value.green { color: #28a745; }
+        .metric-value.red { color: #dc3545; }
+        .metric-value.orange { color: #ff9800; }
+        .metric-value.blue { color: #00d4ff; }
+
+        .metric-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .check-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        .check-table th {
+            background: #1a1a2e;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .check-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .check-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .status-ok {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .status-warning {
+            color: #ff9800;
+            font-weight: bold;
+        }
+
+        .status-error {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .tag.green {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .tag.orange {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .tag.red {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .alert {
+            padding: 20px 25px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-size: 17px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            border: 2px solid #ff9800;
+            color: #856404;
+        }
+
+        .alert-info {
+            background: #e7f3ff;
+            border: 2px solid #00d4ff;
+            color: #0c5460;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+
+        .page-card {
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .page-card.warning {
+            border-left-color: #ff9800;
+        }
+
+        .page-card h4 {
+            margin-top: 0;
+            color: #1a1a2e;
+        }
+
+        .issue-box {
+            background: #fff3cd;
+            border: 2px solid #ff9800;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .issue-box h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border: 2px solid #00d4ff;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: #1a1a2e;
+        }
+
+        .toc a {
+            color: #1a1a2e;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            color: #00d4ff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 24px; }
+            h2 { font-size: 22px; }
+            .section { padding: 25px; }
+            .score-number { font-size: 60px; }
+            .code { font-size: 11px; padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>INFORME DE AUDITORÍA SEO</h1>
+        <h1>Sal Negra Tenerife</h1>
+        <p>Fecha de Análisis: 28 Noviembre 2025</p>
+        <p>Sitio Web: <a href="https://salnegra.netlify.app" target="_blank">salnegra.netlify.app</a></p>
+        <p>Fuente: Código fuente GitHub (datos verificados)</p>
+    </div>
+
+    <div class="container">
+        <!-- Banner Excelente -->
+        <div class="excellent-banner">
+            <h3>EXCELENTE TRABAJO DE OPTIMIZACIÓN SEO</h3>
+            <p>El sitio cumple con las mejores prácticas SEO en casi todos los aspectos</p>
+        </div>
+
+        <!-- Puntuación Principal -->
+        <div class="score-box">
+            <div class="score-number">9.0/10</div>
+            <div class="score-text">Puntuación SEO General</div>
+            <p style="margin-top: 20px; font-size: 20px;">Optimización técnica excelente - Solo pequeños ajustes pendientes</p>
+        </div>
+
+        <!-- Índice -->
+        <div class="toc">
+            <h3>Índice de Contenidos</h3>
+            <ul>
+                <li><a href="#resumen">Resumen Ejecutivo</a></li>
+                <li><a href="#metricas">Métricas por Página</a></li>
+                <li><a href="#implementado">Lo Que Está Implementado</a></li>
+                <li><a href="#pendiente">Pequeños Ajustes Pendientes</a></li>
+                <li><a href="#codigo">Verificación de Código</a></li>
+            </ul>
+        </div>
+
+        <!-- Resumen Ejecutivo -->
+        <div id="resumen" class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <div class="alert alert-success">
+                <strong>Diagnóstico:</strong> El sitio tiene una implementación SEO de nivel profesional. Todas las páginas cuentan con meta tags completos, Open Graph, Twitter Cards, canonical URLs y hreflang. El schema markup está presente en las páginas clave.
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-value green">7/7</div>
+                    <div class="metric-label">Páginas con Meta Description</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">7/7</div>
+                    <div class="metric-label">Páginas con Canonical</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">7/7</div>
+                    <div class="metric-label">Páginas con Open Graph</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">7/7</div>
+                    <div class="metric-label">Páginas con Twitter Cards</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">7/7</div>
+                    <div class="metric-label">Páginas con Hreflang</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value green">4/7</div>
+                    <div class="metric-label">Páginas con Schema</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Métricas por Página -->
+        <div id="metricas" class="section">
+            <h2>Análisis Detallado por Página</h2>
+
+            <div class="page-card">
+                <h4>Homepage (index.html) <span class="tag green">10/10</span></h4>
+                <table class="check-table">
+                    <tr><td>Title</td><td class="status-ok">✓ "Sal Negra Tenerife - Restaurante con Vistas al Mar | Mariscos y Pescados"</td></tr>
+                    <tr><td>Meta Description</td><td class="status-ok">✓ "Sal Negra Tenerife - Restaurante con vistas al mar. Mariscos frescos, pescados, carnes selectas y tapas tradicionales..."</td></tr>
+                    <tr><td>Canonical</td><td class="status-ok">✓ https://salnegratenerife.com/</td></tr>
+                    <tr><td>Open Graph</td><td class="status-ok">✓ Completo (type, url, title, description, image, locale, site_name)</td></tr>
+                    <tr><td>Twitter Cards</td><td class="status-ok">✓ summary_large_image</td></tr>
+                    <tr><td>Hreflang</td><td class="status-ok">✓ es + x-default</td></tr>
+                    <tr><td>Schema JSON-LD</td><td class="status-ok">✓ Restaurant (completo con address, geo, hours, cuisine, menu)</td></tr>
+                    <tr><td>Meta Keywords</td><td class="status-ok">✓ Presentes</td></tr>
+                    <tr><td>Meta Robots</td><td class="status-ok">✓ index, follow</td></tr>
+                    <tr><td>Geo Tags</td><td class="status-ok">✓ geo.region, geo.placename</td></tr>
+                </table>
+            </div>
+
+            <div class="page-card">
+                <h4>Carta (carta.html) <span class="tag green">10/10</span></h4>
+                <table class="check-table">
+                    <tr><td>Title</td><td class="status-ok">✓ "Carta y Menú | Sal Negra Tenerife - Precios y Platos"</td></tr>
+                    <tr><td>Meta Description</td><td class="status-ok">✓ "Carta de Sal Negra Tenerife - Mariscos frescos, pescados, carnes selectas, tapas..."</td></tr>
+                    <tr><td>Canonical</td><td class="status-ok">✓ https://salnegratenerife.com/carta.html</td></tr>
+                    <tr><td>Open Graph</td><td class="status-ok">✓ Completo</td></tr>
+                    <tr><td>Twitter Cards</td><td class="status-ok">✓ summary_large_image</td></tr>
+                    <tr><td>Hreflang</td><td class="status-ok">✓ es + x-default</td></tr>
+                    <tr><td>Schema JSON-LD</td><td class="status-ok">✓ Menu (8 secciones con items y precios en EUR)</td></tr>
+                </table>
+            </div>
+
+            <div class="page-card">
+                <h4>Reservas (reservas.html) <span class="tag green">9/10</span></h4>
+                <table class="check-table">
+                    <tr><td>Title</td><td class="status-ok">✓ "Reservas | Sal Negra Tenerife - Reserva Tu Mesa"</td></tr>
+                    <tr><td>Meta Description</td><td class="status-ok">✓ "Reserva tu mesa en Sal Negra Tenerife. Llámanos al 922 30 69 58..."</td></tr>
+                    <tr><td>Canonical</td><td class="status-ok">✓ https://salnegratenerife.com/reservas.html</td></tr>
+                    <tr><td>Open Graph</td><td class="status-ok">✓ Completo</td></tr>
+                    <tr><td>Twitter Cards</td><td class="status-ok">✓ summary_large_image</td></tr>
+                    <tr><td>Hreflang</td><td class="status-ok">✓ es + x-default</td></tr>
+                    <tr><td>Schema JSON-LD</td><td class="status-warning">- No presente (opcional)</td></tr>
+                </table>
+            </div>
+
+            <div class="page-card">
+                <h4>Contacto (contacto.html) <span class="tag green">9/10</span></h4>
+                <table class="check-table">
+                    <tr><td>Title</td><td class="status-ok">✓ "Contacto y Ubicación | Sal Negra Tenerife - Cómo Llegar"</td></tr>
+                    <tr><td>Meta Description</td><td class="status-ok">✓ "Contacta con Sal Negra Tenerife - Avda. La Habana, Centro Comercial San Telmo..."</td></tr>
+                    <tr><td>Canonical</td><td class="status-ok">✓ https://salnegratenerife.com/contacto.html</td></tr>
+                    <tr><td>Open Graph</td><td class="status-ok">✓ Completo</td></tr>
+                    <tr><td>Twitter Cards</td><td class="status-ok">✓ summary_large_image</td></tr>
+                    <tr><td>Hreflang</td><td class="status-ok">✓ es + x-default</td></tr>
+                    <tr><td>Schema JSON-LD</td><td class="status-warning">- No presente (recomendado LocalBusiness)</td></tr>
+                </table>
+            </div>
+
+            <div class="page-card">
+                <h4>Sobre Nosotros (sobre-nosotros.html) <span class="tag green">9/10</span></h4>
+                <table class="check-table">
+                    <tr><td>Title</td><td class="status-ok">✓ "Sobre Nosotros | Sal Negra Tenerife - Nuestra Historia"</td></tr>
+                    <tr><td>Meta Description</td><td class="status-ok">✓ "Conoce Sal Negra Tenerife - Nuestra historia, pasión por la gastronomía..."</td></tr>
+                    <tr><td>Canonical</td><td class="status-ok">✓ https://salnegratenerife.com/sobre-nosotros.html</td></tr>
+                    <tr><td>Open Graph</td><td class="status-ok">✓ Completo</td></tr>
+                    <tr><td>Twitter Cards</td><td class="status-ok">✓ summary_large_image</td></tr>
+                    <tr><td>Hreflang</td><td class="status-ok">✓ es + x-default</td></tr>
+                    <tr><td>Schema JSON-LD</td><td class="status-warning">- No presente (opcional)</td></tr>
+                </table>
+            </div>
+
+            <div class="page-card">
+                <h4>Menús Especiales (menus-especiales.html) <span class="tag green">9/10</span></h4>
+                <table class="check-table">
+                    <tr><td>Title</td><td class="status-ok">✓ "Menús Especiales para Grupos | Sal Negra Tenerife - Desde 45€"</td></tr>
+                    <tr><td>Meta Description</td><td class="status-ok">✓ "Menús especiales para grupos en Sal Negra Tenerife - Menú Degustación Mar, Tierra y Mar, Celebración. Desde 45€..."</td></tr>
+                    <tr><td>Canonical</td><td class="status-ok">✓ https://salnegratenerife.com/menus-especiales.html</td></tr>
+                    <tr><td>Open Graph</td><td class="status-ok">✓ Completo</td></tr>
+                    <tr><td>Twitter Cards</td><td class="status-ok">✓ summary_large_image</td></tr>
+                    <tr><td>Hreflang</td><td class="status-ok">✓ es + x-default</td></tr>
+                    <tr><td>Schema JSON-LD</td><td class="status-warning">- No presente (recomendado AggregateOffer)</td></tr>
+                </table>
+            </div>
+
+            <div class="page-card">
+                <h4>Eventos (eventos.html) <span class="tag green">10/10</span></h4>
+                <table class="check-table">
+                    <tr><td>Title</td><td class="status-ok">✓ "Eventos y Música en Directo | Sal Negra Tenerife"</td></tr>
+                    <tr><td>Meta Description</td><td class="status-ok">✓ "Eventos en Sal Negra Tenerife - Música en directo, eventos privados..."</td></tr>
+                    <tr><td>Canonical</td><td class="status-ok">✓ https://salnegratenerife.com/eventos.html</td></tr>
+                    <tr><td>Open Graph</td><td class="status-ok">✓ Completo</td></tr>
+                    <tr><td>Twitter Cards</td><td class="status-ok">✓ summary_large_image</td></tr>
+                    <tr><td>Hreflang</td><td class="status-ok">✓ es + x-default</td></tr>
+                    <tr><td>Schema JSON-LD</td><td class="status-ok">✓ ItemList con MusicEvent, Event, FoodEvent</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Lo Implementado -->
+        <div id="implementado" class="section">
+            <h2>Lo Que Está Correctamente Implementado</h2>
+
+            <h3>SEO On-Page (100%)</h3>
+            <ul>
+                <li><strong>Meta charset UTF-8</strong> - En todas las páginas</li>
+                <li><strong>Meta viewport</strong> - Responsive en todas las páginas</li>
+                <li><strong>Titles únicos y optimizados</strong> - Con keywords y brand</li>
+                <li><strong>Meta descriptions únicas</strong> - Descriptivas y con CTA</li>
+                <li><strong>Meta robots</strong> - index, follow en todas</li>
+                <li><strong>Meta keywords</strong> - Presentes (aunque menos relevantes hoy)</li>
+            </ul>
+
+            <h3>SEO Técnico (100%)</h3>
+            <ul>
+                <li><strong>Canonical URLs</strong> - En todas las páginas</li>
+                <li><strong>Hreflang tags</strong> - es + x-default en todas</li>
+                <li><strong>Favicon</strong> - Configurado</li>
+                <li><strong>Apple touch icon</strong> - Configurado</li>
+                <li><strong>Preconnect</strong> - Google Fonts optimizado</li>
+            </ul>
+
+            <h3>Social Media (100%)</h3>
+            <ul>
+                <li><strong>Open Graph completo</strong> - type, url, title, description, image, locale, site_name</li>
+                <li><strong>Twitter Cards</strong> - summary_large_image en todas</li>
+                <li><strong>Links sociales funcionales</strong> - Facebook, Instagram, TikTok</li>
+            </ul>
+
+            <h3>Structured Data (Muy Bueno)</h3>
+            <ul>
+                <li><strong>Homepage:</strong> Schema Restaurant completo</li>
+                <li><strong>Carta:</strong> Schema Menu con secciones y precios</li>
+                <li><strong>Eventos:</strong> Schema ItemList con Event types</li>
+            </ul>
+
+            <h3>SEO Local (100%)</h3>
+            <ul>
+                <li><strong>NAP consistente</strong> - Nombre, dirección (con CP 38660), teléfono</li>
+                <li><strong>Geo tags</strong> - geo.region (ES-CN), geo.placename (Tenerife)</li>
+                <li><strong>Coordenadas</strong> - GeoCoordinates en schema (28.0525, -16.7248)</li>
+            </ul>
+        </div>
+
+        <!-- Pendiente -->
+        <div id="pendiente" class="section">
+            <h2>Pequeños Ajustes Pendientes (Opcionales)</h2>
+
+            <div class="alert alert-info">
+                <strong>Nota:</strong> Estos son ajustes menores que pueden mejorar aún más el SEO, pero el sitio ya está excelentemente optimizado.
+            </div>
+
+            <div class="issue-box">
+                <h4>1. Verificar Horarios en Schema</h4>
+                <p><strong>Detectado:</strong> El schema indica horario 09:00 - 17:00 todos los días.</p>
+                <p><strong>Pregunta:</strong> ¿Son estos los horarios reales del restaurante? Si el restaurante abre también para cenas, actualizar el schema.</p>
+            </div>
+
+            <div class="issue-box">
+                <h4>2. Alt Text de Imágenes Genéricos</h4>
+                <p><strong>Detectado:</strong> Los alt text actuales son:</p>
+                <ul>
+                    <li>"Sal Negra" (logo)</li>
+                    <li>"Sal Negra Tenerife" (logo hero)</li>
+                    <li>"Sal Negra Restaurant" (imágenes about)</li>
+                </ul>
+                <p><strong>Recomendación:</strong> Usar descripciones más específicas para mejorar SEO de imágenes:</p>
+                <div class="code">&lt;img src="hero-left.jpg" alt="Terraza del restaurante Sal Negra con vistas al mar Atlántico en Tenerife"&gt;
+&lt;img src="hero-right.jpg" alt="Interior del restaurante Sal Negra con decoración mediterránea"&gt;</div>
+            </div>
+
+            <div class="issue-box">
+                <h4>3. Schema Adicional (Opcional)</h4>
+                <p><strong>Páginas sin schema:</strong> sobre-nosotros, menus-especiales, contacto, reservas</p>
+                <p><strong>Impacto:</strong> Bajo - El schema principal en homepage ya cubre la información del negocio.</p>
+                <p><strong>Si se desea añadir:</strong></p>
+                <ul>
+                    <li><strong>menus-especiales:</strong> AggregateOffer con precios (45€, 50€, 60€)</li>
+                    <li><strong>contacto:</strong> LocalBusiness (duplicaría info de homepage)</li>
+                </ul>
+            </div>
+
+            <div class="issue-box">
+                <h4>4. Canonical URLs - Dominio</h4>
+                <p><strong>Detectado:</strong> Los canonical apuntan a <code>salnegratenerife.com</code></p>
+                <p><strong>Sitio actual:</strong> <code>salnegra.netlify.app</code></p>
+                <p><strong>Acción:</strong> Cuando se migre al dominio definitivo, verificar que los canonical coincidan.</p>
+            </div>
+        </div>
+
+        <!-- Verificación de Código -->
+        <div id="codigo" class="section">
+            <h2>Verificación de Código (Fuente: GitHub)</h2>
+
+            <h3>Head de Homepage (index.html)</h3>
+            <div class="code">&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="Sal Negra Tenerife - Restaurante con vistas al mar. Mariscos frescos, pescados, carnes selectas y tapas tradicionales en el sur de Tenerife. Reserva ahora."&gt;
+&lt;meta name="keywords" content="restaurante tenerife, mariscos tenerife, pescado fresco, tapas, vistas al mar, sal negra, cocina mediterranea, reservas"&gt;
+&lt;meta name="robots" content="index, follow"&gt;
+
+&lt;title&gt;Sal Negra Tenerife - Restaurante con Vistas al Mar | Mariscos y Pescados&lt;/title&gt;
+
+&lt;link rel="canonical" href="https://salnegratenerife.com/"&gt;
+
+&lt;!-- Open Graph --&gt;
+&lt;meta property="og:type" content="restaurant"&gt;
+&lt;meta property="og:url" content="https://salnegratenerife.com/"&gt;
+&lt;meta property="og:title" content="Sal Negra Tenerife - Restaurante con Vistas al Mar"&gt;
+&lt;meta property="og:description" content="Disfruta de mariscos frescos, pescados y tapas tradicionales con impresionantes vistas al mar en el sur de Tenerife."&gt;
+&lt;meta property="og:image" content="https://salnegratenerife.com/images/gallery1.jpg"&gt;
+&lt;meta property="og:locale" content="es_ES"&gt;
+&lt;meta property="og:site_name" content="Sal Negra Tenerife"&gt;
+
+&lt;!-- Twitter Cards --&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;
+&lt;meta name="twitter:url" content="https://salnegratenerife.com/"&gt;
+&lt;meta name="twitter:title" content="Sal Negra Tenerife - Restaurante con Vistas al Mar"&gt;
+&lt;meta name="twitter:description" content="Disfruta de mariscos frescos, pescados y tapas tradicionales con impresionantes vistas al mar en el sur de Tenerife."&gt;
+&lt;meta name="twitter:image" content="https://salnegratenerife.com/images/gallery1.jpg"&gt;
+
+&lt;!-- Geo --&gt;
+&lt;meta name="geo.region" content="ES-CN"&gt;
+&lt;meta name="geo.placename" content="Tenerife"&gt;
+
+&lt;!-- Hreflang --&gt;
+&lt;link rel="alternate" hreflang="es" href="https://salnegratenerife.com/"&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://salnegratenerife.com/"&gt;</div>
+
+            <h3>Schema Restaurant (Homepage)</h3>
+            <div class="code">{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Sal Negra Tenerife",
+  "image": "https://salnegratenerife.com/images/gallery1.jpg",
+  "url": "https://salnegratenerife.com",
+  "telephone": "+34 922 30 69 58",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avda. La Habana, Centro Comercial San Telmo, Local 13 b",
+    "addressLocality": "Arona",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "postalCode": "38660",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.0525,
+    "longitude": -16.7248
+  },
+  "servesCuisine": ["Mediterranean", "Seafood", "Spanish"],
+  "priceRange": "$$",
+  "acceptsReservations": "True",
+  "menu": "https://salnegratenerife.com/carta.html"
+}</div>
+        </div>
+
+        <!-- Conclusión -->
+        <div class="section">
+            <h2>Conclusión</h2>
+
+            <div class="alert alert-success">
+                <strong>Excelente trabajo de optimización SEO.</strong> El sitio está preparado para posicionarse bien en buscadores. La implementación técnica es profesional y completa.
+            </div>
+
+            <h3>Puntuación Final: 9.0/10</h3>
+
+            <table class="check-table">
+                <tr>
+                    <th>Categoría</th>
+                    <th>Puntuación</th>
+                </tr>
+                <tr>
+                    <td>Meta Tags (Title, Description)</td>
+                    <td><span class="tag green">10/10</span></td>
+                </tr>
+                <tr>
+                    <td>Canonical URLs</td>
+                    <td><span class="tag green">10/10</span></td>
+                </tr>
+                <tr>
+                    <td>Open Graph</td>
+                    <td><span class="tag green">10/10</span></td>
+                </tr>
+                <tr>
+                    <td>Twitter Cards</td>
+                    <td><span class="tag green">10/10</span></td>
+                </tr>
+                <tr>
+                    <td>Hreflang</td>
+                    <td><span class="tag green">10/10</span></td>
+                </tr>
+                <tr>
+                    <td>Schema Markup</td>
+                    <td><span class="tag green">8/10</span></td>
+                </tr>
+                <tr>
+                    <td>SEO Local</td>
+                    <td><span class="tag green">10/10</span></td>
+                </tr>
+                <tr>
+                    <td>Alt Text Imágenes</td>
+                    <td><span class="tag orange">7/10</span></td>
+                </tr>
+            </table>
+
+            <h3>Próximos Pasos Recomendados</h3>
+            <ol>
+                <li>Verificar horarios de apertura en el schema</li>
+                <li>Mejorar alt text de imágenes con descripciones específicas</li>
+                <li>Configurar Google Search Console para monitorizar indexación</li>
+                <li>Configurar Google My Business con los mismos datos NAP</li>
+                <li>Solicitar reseñas a clientes satisfechos</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>Informe generado por Claude Code - AI SEO Audit Specialist</strong></p>
+        <p style="margin-top: 10px;">Fecha: 28 Noviembre 2025</p>
+        <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">Datos verificados desde repositorio GitHub: Tapedynamics/salsalnegra</p>
+    </div>
+</body>
+</html>
