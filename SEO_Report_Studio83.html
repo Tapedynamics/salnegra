@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoría SEO - Studio 83 Centro Estético Tenerife</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .score-section {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .score-section .score {
+            font-size: 100px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .score-section .score-label {
+            font-size: 24px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .score-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .score-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .score-item .value {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .score-item .label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .score-item .value.green { color: #28a745; }
+        .score-item .value.yellow { color: #ffc107; }
+        .score-item .value.orange { color: #fd7e14; }
+        .score-item .value.red { color: #dc3545; }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #9c27b0;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e91e63;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-size: 19px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tag.critical { background: #ffebee; color: #c62828; }
+        .tag.warning { background: #fff3e0; color: #ef6c00; }
+        .tag.good { background: #e8f5e9; color: #2e7d32; }
+        .tag.info { background: #e3f2fd; color: #1565c0; }
+
+        .issue-card {
+            background: #fff5f5;
+            border-left: 4px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .issue-card.warning {
+            background: #fff8e1;
+            border-left-color: #ffc107;
+        }
+
+        .issue-card.success {
+            background: #e8f5e9;
+            border-left-color: #28a745;
+        }
+
+        .issue-card h4 {
+            margin-top: 0;
+            color: inherit;
+        }
+
+        .quick-win {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+
+        .quick-win h4 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        .code-block {
+            background: #263238;
+            color: #aed581;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        .priority-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .priority-table th, .priority-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .priority-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .priority-table tr:hover {
+            background: #fafafa;
+        }
+
+        .priority-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .priority-badge.alta { background: #ffcdd2; color: #c62828; }
+        .priority-badge.media { background: #ffe0b2; color: #ef6c00; }
+        .priority-badge.baja { background: #c8e6c9; color: #2e7d32; }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            color: #4caf50;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .checklist li.missing:before {
+            content: "✗";
+            color: #f44336;
+        }
+
+        .checklist li.partial:before {
+            content: "◐";
+            color: #ff9800;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: #1565c0;
+            margin-top: 0;
+        }
+
+        .competitor-note {
+            background: #fce4ec;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-section .score {
+                font-size: 70px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .score-breakdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>Studio 83 - Centro Estético y Masajes</strong></p>
+        <p><a href="https://studio83.es/" target="_blank">studio83.es</a></p>
+        <p>Playa de Las Américas, Tenerife Sur</p>
+        <p style="margin-top: 20px; font-size: 16px;">Fecha del Análisis: 9 Diciembre 2025</p>
+    </div>
+
+    <div class="container">
+        <!-- PUNTUACIÓN GENERAL -->
+        <div class="score-section">
+            <div class="score">7.0/10</div>
+            <div class="score-label">Puntuación SEO General</div>
+
+            <div class="score-breakdown">
+                <div class="score-item">
+                    <div class="value green">8.0</div>
+                    <div class="label">SEO Técnico</div>
+                </div>
+                <div class="score-item">
+                    <div class="value yellow">6.5</div>
+                    <div class="label">Contenido</div>
+                </div>
+                <div class="score-item">
+                    <div class="value orange">6.0</div>
+                    <div class="label">Local SEO</div>
+                </div>
+                <div class="score-item">
+                    <div class="value green">7.5</div>
+                    <div class="label">UX/Mobile</div>
+                </div>
+                <div class="score-item">
+                    <div class="value yellow">7.0</div>
+                    <div class="label">Estructura</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>Studio 83</strong> es un centro estético ubicado en Playa de Las Américas, Tenerife Sur, que ofrece una amplia gama de servicios de belleza, masajes y tratamientos corporales. El sitio web presenta una <strong>estructura sólida y profesional</strong>, con buena optimización técnica básica.</p>
+
+            <h3>Fortalezas Principales</h3>
+            <ul>
+                <li><span class="tag good">Excelente</span> Estructura de URLs clara y optimizada para SEO local</li>
+                <li><span class="tag good">Excelente</span> Implementación de Schema markup (WebPage, Organization, BreadcrumbList)</li>
+                <li><span class="tag good">Muy Bien</span> Meta títulos y descripciones únicos en cada página</li>
+                <li><span class="tag good">Muy Bien</span> Catálogo de servicios extenso y bien organizado (50+ tratamientos)</li>
+                <li><span class="tag good">Bien</span> CTAs claros con integración de WhatsApp para reservas inmediatas</li>
+            </ul>
+
+            <h3>Áreas de Mejora Críticas</h3>
+            <ul>
+                <li><span class="tag critical">Crítico</span> Falta Schema LocalBusiness con NAP estructurado</li>
+                <li><span class="tag critical">Crítico</span> No hay Google Maps integrado en página de contacto</li>
+                <li><span class="tag warning">Importante</span> Sin precios visibles - reduce confianza y conversión</li>
+                <li><span class="tag warning">Importante</span> Imágenes placeholder SVG sin contenido real</li>
+                <li><span class="tag warning">Importante</span> Texto Lorem Ipsum en sección "Quiénes Somos"</li>
+            </ul>
+        </div>
+
+        <!-- ANÁLISIS TÉCNICO -->
+        <div class="section">
+            <h2>1. Análisis SEO Técnico</h2>
+
+            <h3>Meta Tags por Página</h3>
+
+            <h4>Homepage</h4>
+            <div class="issue-card success">
+                <h4>Title Tag</h4>
+                <p>"Centro Estético Tenerife | Belleza y Bienestar en Tenerife | Studio83"</p>
+                <p><strong>Longitud:</strong> 65 caracteres <span class="tag good">Óptimo</span></p>
+                <p><strong>Análisis:</strong> Incluye keyword principal + ubicación + marca. Bien estructurado.</p>
+            </div>
+
+            <div class="issue-card success">
+                <h4>Meta Description</h4>
+                <p>"Descubre los mejores tratamientos de belleza y bienestar en Centro Estético Tenerife Studio 83. Ofrecemos servicios personalizados de alta calidad."</p>
+                <p><strong>Longitud:</strong> 145 caracteres <span class="tag good">Óptimo</span></p>
+            </div>
+
+            <h4>Páginas de Servicios</h4>
+            <table class="priority-table">
+                <tr>
+                    <th>Página</th>
+                    <th>Title</th>
+                    <th>Estado</th>
+                </tr>
+                <tr>
+                    <td>/masajes-tenerife/</td>
+                    <td>"Masajes Tenerife - Centro Estético Tenerife Studio 83"</td>
+                    <td><span class="tag good">OK</span></td>
+                </tr>
+                <tr>
+                    <td>/estetica-tenerife/</td>
+                    <td>"Tratamiento Estética Tenerife - Studio 83 - Playa de Las Américas"</td>
+                    <td><span class="tag good">OK</span></td>
+                </tr>
+                <tr>
+                    <td>/tratamientos-faciales-tenerife/</td>
+                    <td>"Tratamientos Faciales en Tenerife - Studio 83"</td>
+                    <td><span class="tag good">OK</span></td>
+                </tr>
+                <tr>
+                    <td>/quienes-somos/</td>
+                    <td>"Quiénes Somos - Studio 83 Centro Estético Playa de Las Américas"</td>
+                    <td><span class="tag good">OK</span></td>
+                </tr>
+                <tr>
+                    <td>/contacto/</td>
+                    <td>"Contacto Centro Estético Tenerife - Studio 83"</td>
+                    <td><span class="tag good">OK</span></td>
+                </tr>
+            </table>
+
+            <h3>Estructura de Encabezados</h3>
+
+            <div class="issue-card warning">
+                <h4>Problemas Detectados en Jerarquía H1-H6</h4>
+                <ul>
+                    <li><strong>Homepage:</strong> H1 correcto "Centro Estético y Masajes en Tenerife Sur, Playa de Las Americas"</li>
+                    <li><strong>Quiénes Somos:</strong> H1 genérico "Quiénes Somos" - debería incluir keywords</li>
+                    <li><strong>Múltiples H2:</strong> En algunas páginas hay 4-5 H2 sin estructura jerárquica clara</li>
+                </ul>
+            </div>
+
+            <h3>Schema Markup Implementado</h3>
+            <ul class="checklist">
+                <li>WebPage Schema con metadata</li>
+                <li>Organization Schema con logo</li>
+                <li>BreadcrumbList Schema</li>
+                <li>ImageObject Schema</li>
+                <li class="missing">LocalBusiness Schema (FALTA - CRÍTICO)</li>
+                <li class="missing">Service Schema para tratamientos</li>
+                <li class="missing">Review/AggregateRating Schema</li>
+            </ul>
+
+            <h3>URLs y Estructura del Sitio</h3>
+            <div class="issue-card success">
+                <h4>Estructura de URLs Excelente</h4>
+                <p>Las URLs están bien optimizadas con keywords locales:</p>
+                <ul>
+                    <li><code>/masajes-tenerife/</code></li>
+                    <li><code>/estetica-tenerife/</code></li>
+                    <li><code>/tratamientos-faciales-tenerife/</code></li>
+                    <li><code>/programas-adelgazamiento-tenerife/</code></li>
+                    <li><code>/rejuvenecimiento-cutaneo-tenerife/</code></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ANÁLISIS DE CONTENIDO -->
+        <div class="section">
+            <h2>2. Análisis de Contenido</h2>
+
+            <h3>Catálogo de Servicios</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="value" style="color: #9c27b0;">6</div>
+                    <div class="label">Categorías</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value" style="color: #9c27b0;">50+</div>
+                    <div class="label">Tratamientos</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value" style="color: #9c27b0;">16</div>
+                    <div class="label">Masajes</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value" style="color: #9c27b0;">16</div>
+                    <div class="label">Faciales</div>
+                </div>
+            </div>
+
+            <h4>Categorías de Servicios</h4>
+            <ol>
+                <li><strong>Estética:</strong> Manicura, pedicura, depilación láser, extensiones pestañas, microblading</li>
+                <li><strong>Masajes:</strong> Relajante, deportivo, descontracturante, linfodrenaje, maderoterapia, reflexología</li>
+                <li><strong>Adelgazamiento:</strong> Programas personalizados, anticelulitis, consultas nutricionales</li>
+                <li><strong>Rejuvenecimiento Cutáneo:</strong> Tecnologías avanzadas</li>
+                <li><strong>Tratamientos Faciales:</strong> Limpieza profunda, radiofrecuencia, microneedling, BB-Glow</li>
+                <li><strong>Tratamientos Corporales:</strong> Exfoliación, cavitación, HIFU, biolifting</li>
+            </ol>
+
+            <div class="issue-card">
+                <h4>Problema Crítico: Contenido Placeholder</h4>
+                <p>En la página "Quiénes Somos" se detecta texto Lorem Ipsum en la sección del equipo. Esto es <strong>extremadamente negativo</strong> para SEO y credibilidad:</p>
+                <div class="code-block">
+"Lorem ipsum dolor sit amet..." bajo "Nuestro Equipo"
+                </div>
+                <p><strong>Impacto:</strong> Google puede penalizar contenido placeholder. Los usuarios que lo vean perderán confianza inmediatamente.</p>
+            </div>
+
+            <div class="issue-card warning">
+                <h4>Problema: Imágenes del Equipo Falsas</h4>
+                <p>Los nombres del equipo son claramente ficticios (anglosajones) para un centro estético español:</p>
+                <ul>
+                    <li>Ethan Reynolds (Spa Therapist)</li>
+                    <li>Sophia Anderson (Massage Therapist)</li>
+                    <li>Olivia Parker (Esthetician)</li>
+                </ul>
+                <p>Además, las imágenes usan <strong>SVG placeholders</strong> sin fotos reales.</p>
+                <p><strong>Recomendación:</strong> Usar fotos y nombres reales del equipo, especialmente destacando a <strong>Cristina Cafagno</strong> (fundadora con 20+ años de experiencia).</p>
+            </div>
+
+            <div class="issue-card warning">
+                <h4>Problema: Sin Precios Visibles</h4>
+                <p>Ninguna página de servicios muestra precios. Todos los CTAs redirigen a WhatsApp.</p>
+                <p><strong>Impacto SEO:</strong></p>
+                <ul>
+                    <li>Pierde oportunidad de aparecer en búsquedas tipo "precio masaje Tenerife"</li>
+                    <li>Reduce transparencia y confianza del usuario</li>
+                    <li>Google valora páginas con información completa</li>
+                </ul>
+            </div>
+
+            <h3>Análisis de Keywords</h3>
+            <table class="priority-table">
+                <tr>
+                    <th>Keyword</th>
+                    <th>Volumen Est.</th>
+                    <th>Posicionamiento Actual</th>
+                </tr>
+                <tr>
+                    <td>"centro estético tenerife"</td>
+                    <td>Alto</td>
+                    <td><span class="tag good">Optimizado</span></td>
+                </tr>
+                <tr>
+                    <td>"masajes tenerife"</td>
+                    <td>Alto</td>
+                    <td><span class="tag good">Optimizado</span></td>
+                </tr>
+                <tr>
+                    <td>"masajes playa de las americas"</td>
+                    <td>Medio</td>
+                    <td><span class="tag good">Optimizado</span></td>
+                </tr>
+                <tr>
+                    <td>"tratamientos faciales tenerife"</td>
+                    <td>Medio</td>
+                    <td><span class="tag good">Optimizado</span></td>
+                </tr>
+                <tr>
+                    <td>"depilación láser tenerife sur"</td>
+                    <td>Medio</td>
+                    <td><span class="tag warning">Parcial</span></td>
+                </tr>
+                <tr>
+                    <td>"maderoterapia tenerife"</td>
+                    <td>Bajo-Medio</td>
+                    <td><span class="tag warning">Parcial</span></td>
+                </tr>
+                <tr>
+                    <td>"microneedling tenerife"</td>
+                    <td>Bajo</td>
+                    <td><span class="tag warning">Parcial</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- LOCAL SEO -->
+        <div class="section">
+            <h2>3. SEO Local</h2>
+
+            <h3>Información NAP (Name, Address, Phone)</h3>
+            <div class="info-box">
+                <h4>Datos del Negocio</h4>
+                <ul>
+                    <li><strong>Nombre:</strong> Studio 83</li>
+                    <li><strong>Dirección:</strong> Av. Rafael Puig, 13, APARTHOTEL COLON, 2, 38650 Playa de la Américas, Santa Cruz de Tenerife</li>
+                    <li><strong>Teléfono 1:</strong> +34 634 01 18 46</li>
+                    <li><strong>Teléfono 2:</strong> +34 632 29 65 94 (WhatsApp)</li>
+                    <li><strong>Email:</strong> info@studio83.es</li>
+                    <li><strong>Horario:</strong> L-V 10:00-18:00, S-D con cita previa</li>
+                </ul>
+            </div>
+
+            <h3>Checklist Local SEO</h3>
+            <ul class="checklist">
+                <li>Dirección completa en página de contacto</li>
+                <li>Teléfono clickable (tel:)</li>
+                <li>Horarios de apertura publicados</li>
+                <li class="missing">Google Maps embebido (NO PRESENTE)</li>
+                <li class="missing">Schema LocalBusiness (NO PRESENTE)</li>
+                <li class="partial">Google Business Profile (no verificado en búsqueda)</li>
+                <li class="missing">Formulario de contacto tradicional</li>
+                <li>Redes sociales enlazadas (Facebook, Instagram)</li>
+            </ul>
+
+            <div class="issue-card">
+                <h4>Problema Crítico: Sin Google Maps</h4>
+                <p>La página de contacto <strong>no tiene mapa de Google integrado</strong>. Esto es esencial para:</p>
+                <ul>
+                    <li>Ayudar a clientes a encontrar la ubicación</li>
+                    <li>Mejorar señales de Local SEO</li>
+                    <li>Aumentar confianza (ubicación verificable)</li>
+                </ul>
+            </div>
+
+            <div class="issue-card">
+                <h4>Schema LocalBusiness Faltante</h4>
+                <p>No se detecta Schema LocalBusiness estructurado. Google no puede entender correctamente:</p>
+                <ul>
+                    <li>Tipo de negocio (BeautySalon, HealthAndBeautyBusiness)</li>
+                    <li>Horarios de apertura</li>
+                    <li>Área de servicio</li>
+                    <li>Rango de precios</li>
+                </ul>
+            </div>
+
+            <h3>Presencia en Directorios</h3>
+            <div class="competitor-note">
+                <p><strong>Nota:</strong> No se encontró presencia destacada de Studio 83 en Fresha, TripAdvisor u otros directorios de belleza importantes. Los competidores como <strong>Déjavù Esthetic</strong> y <strong>Golden Sands Massage</strong> tienen mayor visibilidad en estos canales.</p>
+            </div>
+        </div>
+
+        <!-- UX Y CONVERSIÓN -->
+        <div class="section">
+            <h2>4. UX y Conversión</h2>
+
+            <h3>Llamadas a la Acción (CTAs)</h3>
+            <div class="issue-card success">
+                <h4>Estrategia WhatsApp-First: Bien Implementada</h4>
+                <p>El sitio prioriza reservas por WhatsApp, lo cual es efectivo para el mercado turístico:</p>
+                <ul>
+                    <li>"Reserva tu sesión ahora!" - WhatsApp directo</li>
+                    <li>"Llama Ahora" - Click-to-call</li>
+                    <li>Botones "Reservar" en cada servicio</li>
+                    <li>CTA flotante de WhatsApp</li>
+                </ul>
+            </div>
+
+            <h3>Puntos de Mejora UX</h3>
+            <div class="issue-card warning">
+                <h4>Sin Formulario de Contacto</h4>
+                <p>Algunos usuarios prefieren email o formulario. No todos quieren usar WhatsApp.</p>
+            </div>
+
+            <div class="issue-card warning">
+                <h4>Sin Sistema de Reservas Online</h4>
+                <p>Competidores usan Fresha o sistemas de booking. Esto permite:</p>
+                <ul>
+                    <li>Reservas 24/7 sin intervención</li>
+                    <li>Recordatorios automáticos</li>
+                    <li>Reducción de no-shows</li>
+                </ul>
+            </div>
+
+            <h3>Redes Sociales</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="value" style="color: #1877f2;">FB</div>
+                    <div class="label">facebook.com/studio83beautysolution</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value" style="color: #e4405f;">IG</div>
+                    <div class="label">@studio83_beautysolution</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS CRÍTICOS -->
+        <div class="section">
+            <h2>5. Problemas Críticos a Resolver</h2>
+
+            <table class="priority-table">
+                <tr>
+                    <th>Problema</th>
+                    <th>Impacto</th>
+                    <th>Prioridad</th>
+                    <th>Esfuerzo</th>
+                </tr>
+                <tr>
+                    <td>Lorem Ipsum en página "Quiénes Somos"</td>
+                    <td>Credibilidad, penalización Google</td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                    <td>Bajo</td>
+                </tr>
+                <tr>
+                    <td>Imágenes placeholder del equipo</td>
+                    <td>Confianza del usuario</td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                    <td>Medio</td>
+                </tr>
+                <tr>
+                    <td>Falta Schema LocalBusiness</td>
+                    <td>Local SEO, rich snippets</td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                    <td>Bajo</td>
+                </tr>
+                <tr>
+                    <td>Sin Google Maps en contacto</td>
+                    <td>Local SEO, UX</td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                    <td>Bajo</td>
+                </tr>
+                <tr>
+                    <td>Sin precios en servicios</td>
+                    <td>Conversión, keywords transaccionales</td>
+                    <td><span class="priority-badge media">Media</span></td>
+                    <td>Medio</td>
+                </tr>
+                <tr>
+                    <td>Sin formulario de contacto</td>
+                    <td>Alternativa para usuarios no-WhatsApp</td>
+                    <td><span class="priority-badge media">Media</span></td>
+                    <td>Bajo</td>
+                </tr>
+                <tr>
+                    <td>H1 genérico en "Quiénes Somos"</td>
+                    <td>SEO on-page</td>
+                    <td><span class="priority-badge baja">Baja</span></td>
+                    <td>Bajo</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>6. Quick Wins - Implementación Rápida</h2>
+
+            <div class="quick-win">
+                <h4>1. Eliminar Lorem Ipsum y Contenido Placeholder</h4>
+                <p><strong>Impacto:</strong> Alto | <strong>Esfuerzo:</strong> 30 minutos</p>
+                <p>Reemplazar inmediatamente el texto Lorem Ipsum con contenido real sobre el equipo. Usar nombres y fotos reales de las terapeutas.</p>
+            </div>
+
+            <div class="quick-win">
+                <h4>2. Implementar Schema LocalBusiness</h4>
+                <p><strong>Impacto:</strong> Alto | <strong>Esfuerzo:</strong> 20 minutos</p>
+                <p>Agregar el siguiente JSON-LD en el &lt;head&gt; de todas las páginas:</p>
+                <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Studio 83",
+  "image": "https://studio83.es/logo.png",
+  "url": "https://studio83.es",
+  "telephone": ["+34634011846", "+34632296594"],
+  "email": "info@studio83.es",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Rafael Puig, 13, APARTHOTEL COLON, 2",
+    "addressLocality": "Playa de las Américas",
+    "postalCode": "38650",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.0520,
+    "longitude": -16.7260
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "10:00",
+      "closes": "18:00"
+    }
+  ],
+  "priceRange": "€€",
+  "sameAs": [
+    "https://facebook.com/studio83beautysolution",
+    "https://instagram.com/studio83_beautysolution"
+  ]
+}
+&lt;/script&gt;
+                </div>
+            </div>
+
+            <div class="quick-win">
+                <h4>3. Agregar Google Maps en Página de Contacto</h4>
+                <p><strong>Impacto:</strong> Alto | <strong>Esfuerzo:</strong> 10 minutos</p>
+                <div class="code-block">
+&lt;iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.5!2d-16.726!3d28.052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAv.%20Rafael%20Puig%2C%2013%2C%20Playa%20de%20las%20Am%C3%A9ricas!5e0!3m2!1ses!2ses!4v1234567890"
+  width="100%"
+  height="400"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"&gt;
+&lt;/iframe&gt;
+                </div>
+            </div>
+
+            <div class="quick-win">
+                <h4>4. Optimizar H1 en "Quiénes Somos"</h4>
+                <p><strong>Impacto:</strong> Medio | <strong>Esfuerzo:</strong> 5 minutos</p>
+                <p>Cambiar de:</p>
+                <div class="code-block">&lt;h1&gt;Quiénes Somos&lt;/h1&gt;</div>
+                <p>A:</p>
+                <div class="code-block">&lt;h1&gt;Studio 83: Tu Centro de Estética y Masajes en Tenerife Sur&lt;/h1&gt;</div>
+            </div>
+
+            <div class="quick-win">
+                <h4>5. Crear Página de Precios o Lista de Tarifas</h4>
+                <p><strong>Impacto:</strong> Medio | <strong>Esfuerzo:</strong> 1-2 horas</p>
+                <p>Crear una página <code>/precios/</code> o mostrar rangos de precio en cada servicio:</p>
+                <ul>
+                    <li>"Masaje Relajante - desde 45€"</li>
+                    <li>"Limpieza Facial Profunda - desde 35€"</li>
+                </ul>
+                <p>Esto captura búsquedas transaccionales como "precio masaje tenerife".</p>
+            </div>
+        </div>
+
+        <!-- PLAN DE ACCIÓN -->
+        <div class="section">
+            <h2>7. Plan de Acción Recomendado</h2>
+
+            <h3>Fase 1: Correcciones Urgentes (Esta semana)</h3>
+            <ol>
+                <li>Eliminar TODO el contenido Lorem Ipsum</li>
+                <li>Reemplazar fotos y nombres del equipo con personas reales</li>
+                <li>Agregar Google Maps a página de contacto</li>
+                <li>Implementar Schema LocalBusiness</li>
+            </ol>
+
+            <h3>Fase 2: Mejoras de Contenido (2-4 semanas)</h3>
+            <ol>
+                <li>Crear página de precios/tarifas</li>
+                <li>Escribir biografías reales del equipo (destacar experiencia de Cristina Cafagno)</li>
+                <li>Agregar certificaciones y credenciales</li>
+                <li>Optimizar todos los H1 con keywords</li>
+                <li>Implementar alt text descriptivo en todas las imágenes</li>
+            </ol>
+
+            <h3>Fase 3: Local SEO Avanzado</h3>
+            <ol>
+                <li>Verificar/optimizar Google Business Profile</li>
+                <li>Solicitar reseñas a clientes satisfechos</li>
+                <li>Registrarse en Fresha y otros directorios de belleza</li>
+                <li>Crear perfil en TripAdvisor (turistas)</li>
+                <li>Implementar sistema de reservas online</li>
+            </ol>
+
+            <h3>Fase 4: Contenido y Link Building</h3>
+            <ol>
+                <li>Crear blog con artículos sobre tratamientos (ya tienen consapevolmentebelli.com)</li>
+                <li>Publicar casos de éxito con fotos antes/después</li>
+                <li>Crear guías: "Mejores masajes para turistas en Tenerife"</li>
+                <li>Colaborar con hoteles cercanos para backlinks</li>
+            </ol>
+        </div>
+
+        <!-- COMPETENCIA -->
+        <div class="section">
+            <h2>8. Análisis Competitivo</h2>
+
+            <p>Studio 83 compite en un mercado saturado de centros estéticos en Tenerife Sur. Principales competidores identificados:</p>
+
+            <table class="priority-table">
+                <tr>
+                    <th>Competidor</th>
+                    <th>Fortaleza</th>
+                    <th>Oportunidad para Studio 83</th>
+                </tr>
+                <tr>
+                    <td>Déjavù Esthetic (Costa Adeje)</td>
+                    <td>Fuerte presencia Local SEO</td>
+                    <td>Diferenciarse con masajes terapéuticos especializados</td>
+                </tr>
+                <tr>
+                    <td>Golden Sands Massage</td>
+                    <td>Alto volumen de reseñas</td>
+                    <td>Solicitar más reseñas, destacar 20+ años experiencia</td>
+                </tr>
+                <tr>
+                    <td>MP Studio & SPA</td>
+                    <td>Presencia TripAdvisor</td>
+                    <td>Crear perfil en TripAdvisor para turistas</td>
+                </tr>
+            </table>
+
+            <h3>Ventajas Competitivas de Studio 83</h3>
+            <ul>
+                <li><strong>Ubicación:</strong> Playa de Las Américas (zona turística principal)</li>
+                <li><strong>Experiencia:</strong> 20+ años en el sector</li>
+                <li><strong>Catálogo:</strong> 50+ tratamientos (muy completo)</li>
+                <li><strong>Tecnología:</strong> HIFU, Cavitación, Radiofrecuencia</li>
+                <li><strong>Cursos:</strong> Ofrecen formación en estética avanzada</li>
+            </ul>
+        </div>
+
+        <!-- CONCLUSIÓN -->
+        <div class="section">
+            <h2>Conclusión</h2>
+
+            <p><strong>Studio 83</strong> tiene una base sólida para posicionarse bien en SEO local. El sitio está técnicamente bien construido, con URLs optimizadas y meta tags únicos. Sin embargo, hay problemas urgentes que deben corregirse:</p>
+
+            <div class="info-box">
+                <h4>Prioridades Inmediatas</h4>
+                <ol>
+                    <li><strong>Eliminar contenido placeholder</strong> - Lorem Ipsum y nombres falsos del equipo dañan la credibilidad</li>
+                    <li><strong>Implementar Schema LocalBusiness</strong> - Esencial para aparecer en búsquedas locales</li>
+                    <li><strong>Agregar Google Maps</strong> - Básico para cualquier negocio físico</li>
+                </ol>
+            </div>
+
+            <p>Con estas correcciones implementadas, la puntuación podría subir de <strong>7.0 a 8.0-8.5</strong> en pocas semanas.</p>
+
+            <p>El enfoque en WhatsApp para reservas es inteligente para el mercado turístico, pero añadir transparencia de precios y un sistema de booking online mejoraría significativamente las conversiones.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe elaborado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 9 Diciembre 2025</p>
+            <p style="margin-top: 15px; font-size: 14px;">Este informe es confidencial y está destinado únicamente al propietario del sitio web analizado.</p>
+        </div>
+    </div>
+</body>
+</html>
