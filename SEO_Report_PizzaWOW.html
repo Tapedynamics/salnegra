@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoría SEO - Pizza WOW La Laguna Tenerife</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #c5342d 0%, #0f5c35 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .score-section {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .score-section .score {
+            font-size: 100px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #c5342d 0%, #0f5c35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .score-section .score-label {
+            font-size: 24px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .score-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .score-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .score-item .value {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .score-item .label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .score-item .value.green { color: #28a745; }
+        .score-item .value.yellow { color: #ffc107; }
+        .score-item .value.orange { color: #fd7e14; }
+        .score-item .value.red { color: #dc3545; }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #c5342d;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #0f5c35;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-size: 19px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tag.critical { background: #ffebee; color: #c62828; }
+        .tag.warning { background: #fff3e0; color: #ef6c00; }
+        .tag.good { background: #e8f5e9; color: #2e7d32; }
+        .tag.info { background: #e3f2fd; color: #1565c0; }
+
+        .issue-card {
+            background: #fff5f5;
+            border-left: 4px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .issue-card.warning {
+            background: #fff8e1;
+            border-left-color: #ffc107;
+        }
+
+        .issue-card.success {
+            background: #e8f5e9;
+            border-left-color: #28a745;
+        }
+
+        .issue-card h4 {
+            margin-top: 0;
+            color: inherit;
+        }
+
+        .quick-win {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+
+        .quick-win h4 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        .code-block {
+            background: #263238;
+            color: #aed581;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        .priority-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .priority-table th, .priority-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .priority-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .priority-table tr:hover {
+            background: #fafafa;
+        }
+
+        .priority-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .priority-badge.alta { background: #ffcdd2; color: #c62828; }
+        .priority-badge.media { background: #ffe0b2; color: #ef6c00; }
+        .priority-badge.baja { background: #c8e6c9; color: #2e7d32; }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            color: #4caf50;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .checklist li.missing:before {
+            content: "✗";
+            color: #f44336;
+        }
+
+        .checklist li.partial:before {
+            content: "◐";
+            color: #ff9800;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: #1565c0;
+            margin-top: 0;
+        }
+
+        .alert-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border: 2px solid #f44336;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .alert-box h4 {
+            color: #c62828;
+            margin-top: 0;
+        }
+
+        .competitor-note {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-section .score {
+                font-size: 70px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .score-breakdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>Pizza WOW - La Laguna</strong></p>
+        <p><a href="https://lp.officinedigitalitorino.it/pizza-wow-esp/" target="_blank">lp.officinedigitalitorino.it/pizza-wow-esp/</a></p>
+        <p>La Laguna / Arona, Tenerife</p>
+        <p style="margin-top: 20px; font-size: 16px;">Fecha del Análisis: 27 Diciembre 2025</p>
+    </div>
+
+    <div class="container">
+        <!-- PUNTUACIÓN GENERAL -->
+        <div class="score-section">
+            <div class="score">3.5/10</div>
+            <div class="score-label">Puntuación SEO General</div>
+
+            <div class="score-breakdown">
+                <div class="score-item">
+                    <div class="value red">2.5</div>
+                    <div class="label">SEO Técnico</div>
+                </div>
+                <div class="score-item">
+                    <div class="value red">3.0</div>
+                    <div class="label">Contenido</div>
+                </div>
+                <div class="score-item">
+                    <div class="value red">2.0</div>
+                    <div class="label">Local SEO</div>
+                </div>
+                <div class="score-item">
+                    <div class="value orange">5.5</div>
+                    <div class="label">UX/Mobile</div>
+                </div>
+                <div class="score-item">
+                    <div class="value red">4.0</div>
+                    <div class="label">Estructura</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ALERTA CRÍTICA -->
+        <div class="section">
+            <div class="alert-box">
+                <h4>ALERTA: Esta NO es una Página Web - Es una Landing Page de Terceros</h4>
+                <p><strong>Problema fundamental:</strong> La URL analizada (<code>lp.officinedigitalitorino.it</code>) es una landing page hospedada en el dominio de una agencia italiana (Officine Digitali Torino), NO un sitio web propio de Pizza WOW.</p>
+                <p>Esto significa que:</p>
+                <ul>
+                    <li>Pizza WOW <strong>NO tiene presencia web propia</strong></li>
+                    <li>Todo el "SEO juice" va a la agencia, no al negocio</li>
+                    <li>Google no puede asociar esta página con Pizza WOW como entidad local</li>
+                    <li>La página está diseñada para <strong>captura de leads</strong>, no para posicionamiento orgánico</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>Pizza WOW</strong> es una pizzería registrada en Tenerife (Pizza Wow S.L., CIF B70898036) con sede legal en Arona. Sin embargo, la única presencia web detectada es una landing page de lead generation hospedada en el dominio de una agencia de marketing italiana.</p>
+
+            <h3>Información de la Empresa</h3>
+            <div class="info-box">
+                <h4>Datos del Registro Mercantil</h4>
+                <ul>
+                    <li><strong>Razón Social:</strong> Pizza Wow S.L.</li>
+                    <li><strong>CIF:</strong> B70898036</li>
+                    <li><strong>Domicilio:</strong> Calle Rodeo Ed The núm. 3 Bl D, Plt 4, Pta 410</li>
+                    <li><strong>Localidad:</strong> 38640 Arona, Tenerife</li>
+                    <li><strong>CNAE:</strong> 4799 - Comercio al por menor no realizado en establecimientos</li>
+                </ul>
+                <p><em>Nota: El CNAE 4799 sugiere que opera sin establecimiento físico tradicional (posiblemente delivery/dark kitchen).</em></p>
+            </div>
+
+            <h3>Fortalezas Detectadas</h3>
+            <ul>
+                <li><span class="tag good">Bien</span> Empresa legalmente constituida (S.L.)</li>
+                <li><span class="tag good">Bien</span> Diseño responsivo de la landing page</li>
+                <li><span class="tag good">Bien</span> Imágenes optimizadas vía CDN (CloudFront)</li>
+                <li><span class="tag info">Info</span> Colores de marca coherentes (rojo/verde - Italia)</li>
+            </ul>
+
+            <h3>Problemas Críticos</h3>
+            <ul>
+                <li><span class="tag critical">CRÍTICO</span> Sin dominio web propio</li>
+                <li><span class="tag critical">CRÍTICO</span> Landing page en dominio de terceros (agencia)</li>
+                <li><span class="tag critical">CRÍTICO</span> Sin Schema markup de ningún tipo</li>
+                <li><span class="tag critical">CRÍTICO</span> Sin información NAP visible</li>
+                <li><span class="tag critical">CRÍTICO</span> Sin presencia en Google My Business (no encontrada)</li>
+                <li><span class="tag critical">CRÍTICO</span> Sin reseñas en TripAdvisor, Google, etc.</li>
+                <li><span class="tag warning">Importante</span> Imágenes sin alt text</li>
+                <li><span class="tag warning">Importante</span> URL con parámetros UTM (no canónica)</li>
+                <li><span class="tag warning">Importante</span> Form de contacto oculto (display:none)</li>
+            </ul>
+        </div>
+
+        <!-- ANÁLISIS TÉCNICO -->
+        <div class="section">
+            <h2>1. Análisis SEO Técnico</h2>
+
+            <h3>Estructura de URL</h3>
+            <div class="issue-card">
+                <h4>Problema Crítico: Dominio de Terceros</h4>
+                <p>La URL analizada:</p>
+                <div class="code-block">https://lp.officinedigitalitorino.it/pizza-wow-esp/</div>
+                <p><strong>Problemas identificados:</strong></p>
+                <ul>
+                    <li><code>lp.</code> = subdominio de landing pages</li>
+                    <li><code>officinedigitalitorino.it</code> = dominio de la agencia de marketing italiana</li>
+                    <li><code>/pizza-wow-esp/</code> = una de muchas landing pages de clientes</li>
+                    <li>Parámetros UTM en la URL compartida (utm_source, utm_medium, fbclid)</li>
+                </ul>
+                <p><strong>Impacto:</strong> Google NO asociará esta página con "Pizza WOW Tenerife". Todo el posicionamiento beneficia al dominio de la agencia.</p>
+            </div>
+
+            <h3>Meta Tags</h3>
+            <div class="issue-card">
+                <h4>Title Tag</h4>
+                <p><strong>Detectado:</strong> "Pizza WOW - La Laguna"</p>
+                <p><strong>Longitud:</strong> ~22 caracteres <span class="tag warning">Muy corto</span></p>
+                <p><strong>Problema:</strong> Falta descripción del negocio, ubicación completa, y call-to-action.</p>
+                <p><strong>Sugerido:</strong> "Pizza WOW La Laguna | Pizzería Artesanal con Delivery en Tenerife"</p>
+            </div>
+
+            <div class="issue-card">
+                <h4>Meta Description</h4>
+                <p><strong>Detectado:</strong> No visible/no implementado</p>
+                <p><span class="tag critical">FALTA</span> Sin meta description = Google genera una automáticamente (subóptimo)</p>
+            </div>
+
+            <h3>Schema Markup</h3>
+            <ul class="checklist">
+                <li class="missing">LocalBusiness / Restaurant Schema (NO PRESENTE)</li>
+                <li class="missing">Organization Schema (NO PRESENTE)</li>
+                <li class="missing">Menu Schema (NO PRESENTE)</li>
+                <li class="missing">BreadcrumbList Schema (NO PRESENTE)</li>
+                <li class="missing">Review/Rating Schema (NO PRESENTE)</li>
+            </ul>
+
+            <h3>Tecnología de la Página</h3>
+            <table class="priority-table">
+                <tr>
+                    <th>Aspecto</th>
+                    <th>Valor Detectado</th>
+                    <th>Estado</th>
+                </tr>
+                <tr>
+                    <td>Plataforma</td>
+                    <td>Unbounce (landing page builder)</td>
+                    <td><span class="tag info">Info</span></td>
+                </tr>
+                <tr>
+                    <td>Hosting</td>
+                    <td>Dominio de agencia italiana</td>
+                    <td><span class="tag critical">Problema</span></td>
+                </tr>
+                <tr>
+                    <td>CDN de Imágenes</td>
+                    <td>Amazon CloudFront</td>
+                    <td><span class="tag good">OK</span></td>
+                </tr>
+                <tr>
+                    <td>Responsive</td>
+                    <td>Sí (media queries detectadas)</td>
+                    <td><span class="tag good">OK</span></td>
+                </tr>
+                <tr>
+                    <td>HTTPS</td>
+                    <td>Sí</td>
+                    <td><span class="tag good">OK</span></td>
+                </tr>
+                <tr>
+                    <td>Google Analytics</td>
+                    <td>No detectado</td>
+                    <td><span class="tag warning">Revisar</span></td>
+                </tr>
+            </table>
+
+            <h3>Imágenes</h3>
+            <div class="issue-card warning">
+                <h4>40+ Imágenes Sin Alt Text</h4>
+                <p>Todas las imágenes de la landing page carecen de atributos alt descriptivos.</p>
+                <p><strong>Impacto:</strong></p>
+                <ul>
+                    <li>Accesibilidad reducida (lectores de pantalla)</li>
+                    <li>Pérdida de oportunidades de posicionamiento en Google Images</li>
+                    <li>Keywords como "pizza artesanal Tenerife" no asociadas a imágenes</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ANÁLISIS DE CONTENIDO -->
+        <div class="section">
+            <h2>2. Análisis de Contenido</h2>
+
+            <h3>Tipo de Página</h3>
+            <div class="info-box">
+                <h4>Landing Page de Lead Generation</h4>
+                <p>Esta NO es una página web tradicional. Es una landing page diseñada para:</p>
+                <ul>
+                    <li>Capturar datos de contacto (nombre, email, teléfono)</li>
+                    <li>Generar leads para la pizzería</li>
+                    <li>Tráfico desde redes sociales (Instagram según UTM)</li>
+                </ul>
+                <p><strong>Formulario detectado:</strong> Campos para nombre, email, teléfono, nivel de experiencia, área de interés (¿posible franquicia o curso de pizza?).</p>
+            </div>
+
+            <h3>Contenido Visible</h3>
+            <div class="issue-card warning">
+                <h4>Contenido Principalmente Visual</h4>
+                <p>La página depende casi exclusivamente de imágenes. El texto extraíble es mínimo:</p>
+                <ul>
+                    <li>Nombre: "Pizza WOW - La Laguna"</li>
+                    <li>CTAs genéricos: botones rojos y verdes</li>
+                    <li>Sin descripción de productos</li>
+                    <li>Sin menú visible</li>
+                    <li>Sin precios</li>
+                    <li>Sin historia de la marca</li>
+                </ul>
+                <p><strong>Problema SEO:</strong> Google necesita texto para entender y posicionar una página. Sin contenido textual, es imposible rankear para búsquedas relevantes.</p>
+            </div>
+
+            <h3>Keywords Objetivo (No Optimizadas)</h3>
+            <table class="priority-table">
+                <tr>
+                    <th>Keyword Potencial</th>
+                    <th>Volumen Est.</th>
+                    <th>Presente en Página</th>
+                </tr>
+                <tr>
+                    <td>"pizzería la laguna"</td>
+                    <td>Medio-Alto</td>
+                    <td><span class="tag critical">NO</span></td>
+                </tr>
+                <tr>
+                    <td>"pizza a domicilio la laguna"</td>
+                    <td>Alto</td>
+                    <td><span class="tag critical">NO</span></td>
+                </tr>
+                <tr>
+                    <td>"pizza artesanal tenerife"</td>
+                    <td>Medio</td>
+                    <td><span class="tag critical">NO</span></td>
+                </tr>
+                <tr>
+                    <td>"delivery pizza tenerife norte"</td>
+                    <td>Medio</td>
+                    <td><span class="tag critical">NO</span></td>
+                </tr>
+                <tr>
+                    <td>"mejores pizzas la laguna"</td>
+                    <td>Bajo-Medio</td>
+                    <td><span class="tag critical">NO</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- LOCAL SEO -->
+        <div class="section">
+            <h2>3. SEO Local</h2>
+
+            <div class="alert-box">
+                <h4>Estado Crítico: Presencia Local Inexistente</h4>
+                <p>Pizza WOW no tiene ninguna señal de SEO local implementada. Para una pizzería, esto es devastador.</p>
+            </div>
+
+            <h3>Información NAP (Name, Address, Phone)</h3>
+            <ul class="checklist">
+                <li class="missing">Nombre del negocio completo en la página</li>
+                <li class="missing">Dirección física visible</li>
+                <li class="missing">Teléfono de contacto público</li>
+                <li class="missing">Horarios de apertura</li>
+                <li class="missing">Email de contacto</li>
+                <li class="missing">Mapa de Google embebido</li>
+            </ul>
+
+            <h3>Presencia en Directorios y Plataformas</h3>
+            <table class="priority-table">
+                <tr>
+                    <th>Plataforma</th>
+                    <th>Presencia</th>
+                    <th>Prioridad</th>
+                </tr>
+                <tr>
+                    <td>Google My Business</td>
+                    <td><span class="tag critical">NO ENCONTRADO</span></td>
+                    <td><span class="priority-badge alta">Crítica</span></td>
+                </tr>
+                <tr>
+                    <td>TripAdvisor</td>
+                    <td><span class="tag critical">NO ENCONTRADO</span></td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                </tr>
+                <tr>
+                    <td>TheFork / ElTenedor</td>
+                    <td><span class="tag critical">NO ENCONTRADO</span></td>
+                    <td><span class="priority-badge media">Media</span></td>
+                </tr>
+                <tr>
+                    <td>Just Eat / Glovo</td>
+                    <td><span class="tag warning">No verificado</span></td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                </tr>
+                <tr>
+                    <td>Instagram</td>
+                    <td><span class="tag warning">Posible (origen UTM)</span></td>
+                    <td><span class="priority-badge media">Media</span></td>
+                </tr>
+                <tr>
+                    <td>Facebook</td>
+                    <td><span class="tag critical">NO ENCONTRADO</span></td>
+                    <td><span class="priority-badge media">Media</span></td>
+                </tr>
+            </table>
+
+            <h3>Competencia Local</h3>
+            <div class="competitor-note">
+                <p><strong>Competidores identificados en La Laguna:</strong></p>
+                <ul>
+                    <li><strong>Isla Pizza La Laguna</strong> - Presencia fuerte en TripAdvisor, Instagram activo, filosofía farm-to-table</li>
+                    <li><strong>Pizzeria Paganini</strong> - Buenas reseñas, "mejor pizza de La Laguna" según usuarios</li>
+                    <li><strong>Pizzeria Da Canio</strong> - Establecida, múltiples reseñas positivas</li>
+                </ul>
+                <p>Estos competidores tienen presencia web, reseñas y visibilidad local. Pizza WOW está en <strong>desventaja total</strong>.</p>
+            </div>
+        </div>
+
+        <!-- UX Y CONVERSIÓN -->
+        <div class="section">
+            <h2>4. UX y Conversión</h2>
+
+            <h3>Diseño y Experiencia de Usuario</h3>
+            <div class="issue-card success">
+                <h4>Aspectos Positivos</h4>
+                <ul>
+                    <li>Diseño responsivo (adaptado a móviles)</li>
+                    <li>Colores de marca coherentes (rojo/verde = pizza italiana)</li>
+                    <li>CTAs visibles (botones rojos y verdes)</li>
+                    <li>Imágenes de alta calidad vía CDN</li>
+                </ul>
+            </div>
+
+            <h3>Problemas de Conversión</h3>
+            <div class="issue-card">
+                <h4>Formulario Oculto</h4>
+                <p>El formulario de contacto (#lp-pom-form-215) tiene <code>display:none</code>.</p>
+                <p><strong>Implicación:</strong> El formulario solo aparece tras interacción (popup o scroll). Esto puede reducir conversiones si no está bien implementado.</p>
+            </div>
+
+            <div class="issue-card warning">
+                <h4>Sin Opciones de Contacto Directo</h4>
+                <ul>
+                    <li>Sin número de teléfono visible</li>
+                    <li>Sin botón de WhatsApp</li>
+                    <li>Sin link a plataformas de delivery</li>
+                    <li>Sin dirección para visitar</li>
+                </ul>
+            </div>
+
+            <h3>Propósito de la Landing Page</h3>
+            <div class="info-box">
+                <h4>Análisis del Formulario</h4>
+                <p>Los campos detectados sugieren que esta landing NO es para pedir pizza, sino posiblemente para:</p>
+                <ul>
+                    <li><strong>Franquicia:</strong> "nivel de experiencia" + "área de interés"</li>
+                    <li><strong>Curso de pizza:</strong> Formación para pizzeros</li>
+                    <li><strong>B2B:</strong> Captación de socios o proveedores</li>
+                </ul>
+                <p>Si es para clientes finales, el formulario está mal diseñado.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS CRÍTICOS -->
+        <div class="section">
+            <h2>5. Problemas Críticos - Resumen</h2>
+
+            <table class="priority-table">
+                <tr>
+                    <th>Problema</th>
+                    <th>Impacto</th>
+                    <th>Prioridad</th>
+                    <th>Solución</th>
+                </tr>
+                <tr>
+                    <td>Sin dominio propio</td>
+                    <td>Imposibilidad de posicionar en Google</td>
+                    <td><span class="priority-badge alta">Crítica</span></td>
+                    <td>Registrar dominio (ej: pizzawow.es)</td>
+                </tr>
+                <tr>
+                    <td>Sin Google My Business</td>
+                    <td>Invisible en búsquedas locales</td>
+                    <td><span class="priority-badge alta">Crítica</span></td>
+                    <td>Crear y verificar perfil GMB</td>
+                </tr>
+                <tr>
+                    <td>Sin Schema LocalBusiness</td>
+                    <td>Google no entiende el negocio</td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                    <td>Implementar JSON-LD</td>
+                </tr>
+                <tr>
+                    <td>Sin NAP visible</td>
+                    <td>Usuarios no pueden contactar</td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                    <td>Mostrar dirección, teléfono, horarios</td>
+                </tr>
+                <tr>
+                    <td>Sin contenido textual</td>
+                    <td>Imposible rankear keywords</td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                    <td>Añadir textos descriptivos</td>
+                </tr>
+                <tr>
+                    <td>Imágenes sin alt text</td>
+                    <td>Accesibilidad y SEO de imágenes</td>
+                    <td><span class="priority-badge media">Media</span></td>
+                    <td>Añadir alt descriptivos</td>
+                </tr>
+                <tr>
+                    <td>Sin reseñas online</td>
+                    <td>Falta de social proof</td>
+                    <td><span class="priority-badge media">Media</span></td>
+                    <td>Solicitar reseñas a clientes</td>
+                </tr>
+                <tr>
+                    <td>Sin tracking analytics</td>
+                    <td>No se mide rendimiento</td>
+                    <td><span class="priority-badge media">Media</span></td>
+                    <td>Instalar GA4 + Search Console</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>6. Quick Wins - Acciones Inmediatas</h2>
+
+            <div class="quick-win">
+                <h4>1. Registrar Dominio Propio</h4>
+                <p><strong>Impacto:</strong> Crítico | <strong>Esfuerzo:</strong> 30 minutos | <strong>Coste:</strong> ~15€/año</p>
+                <p>Opciones recomendadas:</p>
+                <ul>
+                    <li><code>pizzawow.es</code> - Dominio .es para España</li>
+                    <li><code>pizzawowtenerife.com</code> - Si .es no disponible</li>
+                    <li><code>pizzawowlalaguna.es</code> - Hiperlocal</li>
+                </ul>
+            </div>
+
+            <div class="quick-win">
+                <h4>2. Crear Google My Business HOY</h4>
+                <p><strong>Impacto:</strong> Crítico | <strong>Esfuerzo:</strong> 1 hora | <strong>Coste:</strong> Gratis</p>
+                <p>Pasos:</p>
+                <ol>
+                    <li>Ir a <a href="https://business.google.com" target="_blank">business.google.com</a></li>
+                    <li>Crear perfil con nombre "Pizza WOW - La Laguna"</li>
+                    <li>Añadir dirección real (o zona de delivery si no hay local)</li>
+                    <li>Subir fotos de pizzas, local, equipo</li>
+                    <li>Añadir horarios, teléfono, menú</li>
+                    <li>Verificar (postal o teléfono)</li>
+                </ol>
+            </div>
+
+            <div class="quick-win">
+                <h4>3. Añadir Información de Contacto a la Landing</h4>
+                <p><strong>Impacto:</strong> Alto | <strong>Esfuerzo:</strong> 15 minutos</p>
+                <p>Aunque es una landing de terceros, se puede añadir:</p>
+                <ul>
+                    <li>Número de teléfono clickable</li>
+                    <li>Botón de WhatsApp</li>
+                    <li>Dirección (si hay local físico)</li>
+                    <li>Horarios de apertura/delivery</li>
+                </ul>
+            </div>
+
+            <div class="quick-win">
+                <h4>4. Crear Perfiles en Plataformas de Delivery</h4>
+                <p><strong>Impacto:</strong> Alto | <strong>Esfuerzo:</strong> 2-3 horas</p>
+                <p>Dado que el CNAE sugiere comercio sin establecimiento (delivery/dark kitchen):</p>
+                <ul>
+                    <li><strong>Glovo:</strong> Muy popular en Canarias</li>
+                    <li><strong>Just Eat:</strong> Amplia cobertura</li>
+                    <li><strong>Uber Eats:</strong> Si está disponible en la zona</li>
+                </ul>
+            </div>
+
+            <div class="quick-win">
+                <h4>5. Implementar Schema LocalBusiness</h4>
+                <p><strong>Impacto:</strong> Alto | <strong>Esfuerzo:</strong> 20 minutos</p>
+                <p>Cuando tenga sitio propio, añadir:</p>
+                <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Pizza WOW",
+  "image": "https://pizzawow.es/logo.jpg",
+  "url": "https://pizzawow.es",
+  "telephone": "+34XXXXXXXXX",
+  "servesCuisine": ["Pizza", "Italian"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle...",
+    "addressLocality": "La Laguna",
+    "postalCode": "38200",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.4853,
+    "longitude": -16.3167
+  },
+  "openingHoursSpecification": [...],
+  "priceRange": "€€",
+  "menu": "https://pizzawow.es/menu"
+}
+&lt;/script&gt;
+                </div>
+            </div>
+        </div>
+
+        <!-- PLAN DE ACCIÓN -->
+        <div class="section">
+            <h2>7. Plan de Acción Recomendado</h2>
+
+            <h3>Fase 0: Urgente (Esta Semana)</h3>
+            <ol>
+                <li>Crear Google My Business</li>
+                <li>Registrar dominio propio</li>
+                <li>Añadir teléfono/WhatsApp a landing actual</li>
+                <li>Crear perfil en Instagram (si no existe)</li>
+            </ol>
+
+            <h3>Fase 1: Fundamentos (Semana 2-3)</h3>
+            <ol>
+                <li>Crear sitio web básico en dominio propio (WordPress, Squarespace, o similar)</li>
+                <li>Implementar página con: menú, precios, fotos, ubicación, contacto</li>
+                <li>Añadir Schema LocalBusiness</li>
+                <li>Conectar Google Search Console</li>
+                <li>Instalar Google Analytics 4</li>
+                <li>Crear perfil en TripAdvisor</li>
+            </ol>
+
+            <h3>Fase 2: Optimización Local (Mes 2)</h3>
+            <ol>
+                <li>Optimizar Google My Business (fotos, posts, Q&A)</li>
+                <li>Registrarse en plataformas de delivery</li>
+                <li>Solicitar reseñas a primeros clientes</li>
+                <li>Crear página en Facebook</li>
+                <li>Publicar contenido regular en Instagram</li>
+            </ol>
+
+            <h3>Fase 3: Crecimiento (Mes 3+)</h3>
+            <ol>
+                <li>Crear contenido SEO: "Mejores pizzas de La Laguna", "Pizza artesanal Tenerife"</li>
+                <li>Implementar sistema de pedidos online propio</li>
+                <li>Conseguir menciones en blogs locales y guías</li>
+                <li>Promociones para generar más reseñas</li>
+                <li>Considerar publicidad local (Google Ads, Instagram Ads)</li>
+            </ol>
+        </div>
+
+        <!-- ANÁLISIS COMPETITIVO -->
+        <div class="section">
+            <h2>8. Análisis Competitivo</h2>
+
+            <p>Pizza WOW entra en un mercado competitivo en La Laguna / Tenerife Norte:</p>
+
+            <table class="priority-table">
+                <tr>
+                    <th>Competidor</th>
+                    <th>Fortalezas</th>
+                    <th>Debilidades</th>
+                </tr>
+                <tr>
+                    <td><strong>Isla Pizza La Laguna</strong></td>
+                    <td>Farm-to-table, Instagram activo, TripAdvisor, filosofía diferenciada</td>
+                    <td>Horario limitado (L-V 13-16h)</td>
+                </tr>
+                <tr>
+                    <td><strong>Pizzeria Paganini</strong></td>
+                    <td>Excelentes reseñas, "mejor pizza de La Laguna"</td>
+                    <td>Menos presencia digital</td>
+                </tr>
+                <tr>
+                    <td><strong>Pizzeria Da Canio</strong></td>
+                    <td>Establecida, múltiples plataformas</td>
+                    <td>Competencia en precio</td>
+                </tr>
+                <tr>
+                    <td><strong>Domino's Pizza</strong></td>
+                    <td>Marca conocida, delivery rápido, app</td>
+                    <td>Percepción de calidad menor</td>
+                </tr>
+            </table>
+
+            <h3>Oportunidades para Pizza WOW</h3>
+            <ul>
+                <li><strong>Delivery especializado:</strong> Si opera como dark kitchen, puede competir en rapidez y precio</li>
+                <li><strong>Nicho gourmet:</strong> Diferenciarse con ingredientes premium o recetas únicas</li>
+                <li><strong>Marketing digital agresivo:</strong> La competencia local tiene presencia digital básica</li>
+                <li><strong>Colaboraciones:</strong> Hoteles, eventos universitarios (ULL está en La Laguna)</li>
+            </ul>
+        </div>
+
+        <!-- CONCLUSIÓN -->
+        <div class="section">
+            <h2>Conclusión</h2>
+
+            <p><strong>Pizza WOW</strong> enfrenta un desafío fundamental: <strong>no tiene presencia web propia</strong>. La landing page analizada es una herramienta de lead generation hospedada en el dominio de una agencia externa, lo cual impide cualquier posicionamiento SEO para el negocio.</p>
+
+            <div class="alert-box">
+                <h4>Resumen del Estado Actual</h4>
+                <ul>
+                    <li><strong>Puntuación SEO:</strong> 3.5/10 - Crítico</li>
+                    <li><strong>Visibilidad en Google:</strong> Prácticamente nula</li>
+                    <li><strong>Presencia local:</strong> Inexistente</li>
+                    <li><strong>Competitividad:</strong> Muy por debajo de competidores locales</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>Prioridad Absoluta</h4>
+                <ol>
+                    <li><strong>Google My Business:</strong> Crear HOY - Es gratis y proporciona visibilidad inmediata en búsquedas locales</li>
+                    <li><strong>Dominio propio:</strong> Registrar esta semana - Base para cualquier estrategia SEO</li>
+                    <li><strong>Sitio web básico:</strong> Lanzar en 2-3 semanas - Menú, contacto, fotos</li>
+                </ol>
+            </div>
+
+            <p>Con estas acciones básicas implementadas, Pizza WOW podría pasar de <strong>3.5 a 6.0-7.0</strong> en pocos meses. Sin ellas, el negocio permanecerá invisible online mientras la competencia captura todo el tráfico local.</p>
+
+            <p><strong>Nota importante:</strong> El código CNAE (4799 - comercio sin establecimiento) sugiere que Pizza WOW opera como delivery/dark kitchen. Si es así, la estrategia debe enfocarse en plataformas de delivery (Glovo, Just Eat) además del SEO tradicional.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe elaborado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 27 Diciembre 2025</p>
+            <p style="margin-top: 15px; font-size: 14px;">Este informe es confidencial y está destinado únicamente al propietario del sitio web analizado.</p>
+            <p style="margin-top: 10px; font-size: 13px;">Fuentes: <a href="https://empresite.eleconomista.es/PIZZA-WOW.html" target="_blank">Empresite</a>, <a href="https://www.einforma.com/informacion-empresa/pizza-wow" target="_blank">eInforma</a>, <a href="https://www.tripadvisor.com/Restaurants-g187480-San_Cristobal_de_La_Laguna_Tenerife_Canary_Islands.html" target="_blank">TripAdvisor La Laguna</a></p>
+        </div>
+    </div>
+</body>
+</html>
