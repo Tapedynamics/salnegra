@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoría SEO - Astoria Wines Italia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a472a 0%, #c9a227 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .score-section {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .score-section .score {
+            font-size: 100px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #1a472a 0%, #c9a227 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .score-section .score-label {
+            font-size: 24px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .score-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .score-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .score-item .value {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .score-item .label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .score-item .value.green { color: #28a745; }
+        .score-item .value.yellow { color: #ffc107; }
+        .score-item .value.orange { color: #fd7e14; }
+        .score-item .value.red { color: #dc3545; }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #1a472a;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c9a227;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-size: 19px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tag.critical { background: #ffebee; color: #c62828; }
+        .tag.warning { background: #fff3e0; color: #ef6c00; }
+        .tag.good { background: #e8f5e9; color: #2e7d32; }
+        .tag.info { background: #e3f2fd; color: #1565c0; }
+
+        .issue-card {
+            background: #fff5f5;
+            border-left: 4px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .issue-card.warning {
+            background: #fff8e1;
+            border-left-color: #ffc107;
+        }
+
+        .issue-card.success {
+            background: #e8f5e9;
+            border-left-color: #28a745;
+        }
+
+        .issue-card h4 {
+            margin-top: 0;
+            color: inherit;
+        }
+
+        .quick-win {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+
+        .quick-win h4 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        .code-block {
+            background: #263238;
+            color: #aed581;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        .priority-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .priority-table th, .priority-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .priority-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .priority-table tr:hover {
+            background: #fafafa;
+        }
+
+        .priority-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .priority-badge.alta { background: #ffcdd2; color: #c62828; }
+        .priority-badge.media { background: #ffe0b2; color: #ef6c00; }
+        .priority-badge.baja { background: #c8e6c9; color: #2e7d32; }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            color: #4caf50;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .checklist li.missing:before {
+            content: "✗";
+            color: #f44336;
+        }
+
+        .checklist li.partial:before {
+            content: "◐";
+            color: #ff9800;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: #1565c0;
+            margin-top: 0;
+        }
+
+        .wine-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border: 2px solid #9c27b0;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .wine-box h4 {
+            color: #7b1fa2;
+            margin-top: 0;
+        }
+
+        .competitor-note {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-section .score {
+                font-size: 70px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .score-breakdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>Astoria Wines - Prosecco DOCG</strong></p>
+        <p><a href="https://www.astoria.it/es/" target="_blank">www.astoria.it/es/</a></p>
+        <p>Crocetta del Montello, Treviso - Italia</p>
+        <p style="margin-top: 20px; font-size: 16px;">Fecha del Análisis: 27 Diciembre 2025</p>
+    </div>
+
+    <div class="container">
+        <!-- PUNTUACIÓN GENERAL -->
+        <div class="score-section">
+            <div class="score">6.5/10</div>
+            <div class="score-label">Puntuación SEO General</div>
+
+            <div class="score-breakdown">
+                <div class="score-item">
+                    <div class="value yellow">6.0</div>
+                    <div class="label">SEO Técnico</div>
+                </div>
+                <div class="score-item">
+                    <div class="value yellow">7.0</div>
+                    <div class="label">Contenido</div>
+                </div>
+                <div class="score-item">
+                    <div class="value orange">5.5</div>
+                    <div class="label">Local SEO</div>
+                </div>
+                <div class="score-item">
+                    <div class="value green">7.5</div>
+                    <div class="label">UX/Mobile</div>
+                </div>
+                <div class="score-item">
+                    <div class="value green">7.0</div>
+                    <div class="label">Internacional</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>Astoria Wines</strong> es una de las bodegas más importantes de Italia, líder en la producción de Prosecco DOCG de Conegliano-Valdobbiadene. Fundada en 1987 por la familia Polegato, hoy es el <strong>principal productor privado</strong> de la zona DOCG, con 40 hectáreas de viñedos y múltiples premios internacionales.</p>
+
+            <div class="wine-box">
+                <h4>Datos de la Empresa</h4>
+                <ul>
+                    <li><strong>Razón Social:</strong> A.C. Srl</li>
+                    <li><strong>P.IVA:</strong> 01792940262</li>
+                    <li><strong>Capital Social:</strong> €884.000</li>
+                    <li><strong>Sede:</strong> Viale Antonini, 9 - 31035 Crocetta del Montello, Treviso (TV)</li>
+                    <li><strong>Tenuta Principal:</strong> Refrontolo (40 ha de viñedos)</li>
+                    <li><strong>Fundación:</strong> 1987</li>
+                    <li><strong>Dirección:</strong> Paolo y Filippo Polegato</li>
+                    <li><strong>Email:</strong> info@astoria.it</li>
+                </ul>
+            </div>
+
+            <h3>Fortalezas Principales</h3>
+            <ul>
+                <li><span class="tag good">Excelente</span> Sitio multilingüe con 8 idiomas (ES, IT, EN, FR, DE, PT, RU, JA)</li>
+                <li><span class="tag good">Excelente</span> Implementación de hreflang para SEO internacional</li>
+                <li><span class="tag good">Muy Bien</span> Marca consolidada con múltiples premios internacionales</li>
+                <li><span class="tag good">Muy Bien</span> Estructura de colecciones bien organizada</li>
+                <li><span class="tag good">Bien</span> E-shop separado (astoriawineshop.com)</li>
+                <li><span class="tag good">Bien</span> Wine Store físico (Lounge) para experiencias</li>
+                <li><span class="tag info">Info</span> Tracking implementado (GTM + PixelYourSite)</li>
+            </ul>
+
+            <h3>Áreas de Mejora</h3>
+            <ul>
+                <li><span class="tag critical">Crítico</span> Age Gate bloquea el crawling de Google</li>
+                <li><span class="tag critical">Crítico</span> Meta descriptions ausentes o genéricas</li>
+                <li><span class="tag critical">Crítico</span> Sin Schema markup (Organization, Product, LocalBusiness)</li>
+                <li><span class="tag warning">Importante</span> Title tags genéricos ("Benvenuti in Astoria")</li>
+                <li><span class="tag warning">Importante</span> Contenido del Magazine desactualizado (último: 2020)</li>
+                <li><span class="tag warning">Importante</span> Teléfono de contacto no visible en el sitio</li>
+                <li><span class="tag warning">Importante</span> Alt text insuficientes en imágenes de productos</li>
+            </ul>
+        </div>
+
+        <!-- ANÁLISIS TÉCNICO -->
+        <div class="section">
+            <h2>1. Análisis SEO Técnico</h2>
+
+            <h3>Age Gate - Problema Crítico para SEO</h3>
+            <div class="issue-card">
+                <h4>Verificación de Edad Bloquea Googlebot</h4>
+                <p>El sitio implementa un <strong>age gate</strong> (verificación de mayoría de edad) que aparece antes de acceder al contenido.</p>
+                <p><strong>Texto detectado:</strong> "¿Eres mayor de edad para comprar o consumir alcohol en tu país de residencia?"</p>
+                <p><strong>Impacto SEO:</strong></p>
+                <ul>
+                    <li>Googlebot puede no ver el contenido real de las páginas</li>
+                    <li>Las páginas internas pueden no indexarse correctamente</li>
+                    <li>El contenido valioso queda "oculto" tras la barrera</li>
+                </ul>
+                <p><strong>Solución:</strong> Implementar age gate que no bloquee crawlers (usando JavaScript que detecte user-agent o cookies técnicas).</p>
+            </div>
+
+            <h3>Meta Tags</h3>
+            <div class="issue-card warning">
+                <h4>Title Tag - Homepage</h4>
+                <p><strong>Actual:</strong> "Astoria Wines – Benvenuti in Astoria"</p>
+                <p><strong>Problema:</strong> Genérico, en italiano aunque es versión ES, sin keywords principales.</p>
+                <p><strong>Sugerido:</strong> "Astoria Wines | Prosecco DOCG Valdobbiadene | Bodega Italiana desde 1987"</p>
+            </div>
+
+            <div class="issue-card">
+                <h4>Meta Description - AUSENTE</h4>
+                <p>No se detectó meta description en la homepage ni en páginas internas analizadas.</p>
+                <p><strong>Impacto:</strong> Google genera snippets automáticos (subóptimos para CTR).</p>
+                <p><strong>Sugerida:</strong> "Descubre Astoria Wines, líder en Prosecco DOCG de Conegliano-Valdobbiadene. Más de 35 años de tradición vinícola italiana. Espumosos, blancos, tintos y grappas premium."</p>
+            </div>
+
+            <h3>Implementación Internacional (hreflang)</h3>
+            <div class="issue-card success">
+                <h4>hreflang Correctamente Implementado</h4>
+                <p>El sitio implementa etiquetas hreflang para 8 versiones lingüísticas:</p>
+                <ul>
+                    <li><code>es</code> - Español</li>
+                    <li><code>it</code> - Italiano</li>
+                    <li><code>en</code> - Inglés</li>
+                    <li><code>fr</code> - Francés</li>
+                    <li><code>de</code> - Alemán</li>
+                    <li><code>pt-br</code> - Portugués (Brasil)</li>
+                    <li><code>ru</code> - Ruso</li>
+                    <li><code>ja</code> - Japonés</li>
+                </ul>
+                <p><span class="tag good">Bien</span> Esto ayuda a Google a mostrar la versión correcta según el idioma del usuario.</p>
+            </div>
+
+            <h3>Schema Markup</h3>
+            <ul class="checklist">
+                <li class="missing">Organization Schema (NO PRESENTE)</li>
+                <li class="missing">LocalBusiness Schema (NO PRESENTE)</li>
+                <li class="missing">Product Schema para vinos (NO PRESENTE)</li>
+                <li class="missing">BreadcrumbList Schema (NO PRESENTE)</li>
+                <li class="missing">Article Schema para Magazine (NO PRESENTE)</li>
+                <li class="partial">Tracking scripts (GTM, PixelYourSite)</li>
+            </ul>
+
+            <h3>Canonical Tags</h3>
+            <div class="issue-card warning">
+                <h4>Canonical Tags No Detectados</h4>
+                <p>No se encontraron etiquetas canonical en las páginas analizadas.</p>
+                <p><strong>Riesgo:</strong> Contenido duplicado entre versiones lingüísticas si no se gestiona correctamente.</p>
+            </div>
+
+            <h3>Estructura de URLs</h3>
+            <div class="issue-card success">
+                <h4>URLs Limpias y Localizadas</h4>
+                <table class="priority-table">
+                    <tr>
+                        <th>Página</th>
+                        <th>URL ES</th>
+                        <th>Estado</th>
+                    </tr>
+                    <tr>
+                        <td>Homepage</td>
+                        <td>/es/</td>
+                        <td><span class="tag good">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>Colecciones</td>
+                        <td>/es/colecciones/</td>
+                        <td><span class="tag good">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>Magazine</td>
+                        <td>/es/magazine/</td>
+                        <td><span class="tag good">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>Sobre Nosotros</td>
+                        <td>/es/astoria/</td>
+                        <td><span class="tag good">OK</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- ANÁLISIS DE CONTENIDO -->
+        <div class="section">
+            <h2>2. Análisis de Contenido</h2>
+
+            <h3>Catálogo de Productos</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="value" style="color: #1a472a;">5</div>
+                    <div class="label">Categorías</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value" style="color: #1a472a;">15+</div>
+                    <div class="label">Colecciones</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value" style="color: #1a472a;">40+</div>
+                    <div class="label">Productos</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value" style="color: #1a472a;">8</div>
+                    <div class="label">Idiomas</div>
+                </div>
+            </div>
+
+            <h4>Categorías de Productos</h4>
+            <ol>
+                <li><strong>Vinos Espumantes:</strong> Prosecco DOCG, Millesimato, Cartizze</li>
+                <li><strong>Prosecco:</strong> Líneas premium de Valdobbiadene</li>
+                <li><strong>Vinos Blancos:</strong> Clásicos de la región</li>
+                <li><strong>Vinos Tintos:</strong> Incluyendo "Il Puro" (premio mejor vino Italia)</li>
+                <li><strong>Grappa:</strong> Fina y Barricata</li>
+            </ol>
+
+            <h4>Colecciones Destacadas</h4>
+            <table class="priority-table">
+                <tr>
+                    <th>Colección</th>
+                    <th>Descripción</th>
+                    <th>SEO</th>
+                </tr>
+                <tr>
+                    <td>Venice Collection</td>
+                    <td>6 espumosos inspirados en Venecia, con botellas sensoriales Astor</td>
+                    <td><span class="tag good">Diferenciador</span></td>
+                </tr>
+                <tr>
+                    <td>Giro d'Italia 2025</td>
+                    <td>Edición especial ciclismo</td>
+                    <td><span class="tag good">Actualidad</span></td>
+                </tr>
+                <tr>
+                    <td>Casa Vittorino</td>
+                    <td>Línea premium de la casa</td>
+                    <td><span class="tag info">Estándar</span></td>
+                </tr>
+                <tr>
+                    <td>9.5 Cold Wine</td>
+                    <td>Concepto innovador de vino frío</td>
+                    <td><span class="tag good">Único</span></td>
+                </tr>
+                <tr>
+                    <td>Fashion Victims</td>
+                    <td>Línea lifestyle/moda</td>
+                    <td><span class="tag good">Nicho</span></td>
+                </tr>
+            </table>
+
+            <h3>Magazine / Blog</h3>
+            <div class="issue-card">
+                <h4>Contenido Desactualizado - Problema Grave</h4>
+                <p>Los últimos artículos del Magazine datan de <strong>2020</strong>:</p>
+                <ul>
+                    <li>"Introducing #RoséSpritz by Astoria Wines" - 22 Diciembre 2020</li>
+                    <li>"Guided tour at Lounge Wine Store" - 3 Febrero 2020</li>
+                </ul>
+                <p><strong>Impacto:</strong></p>
+                <ul>
+                    <li>Google penaliza sitios sin contenido fresco</li>
+                    <li>Pérdida de oportunidades de posicionamiento para keywords long-tail</li>
+                    <li>Imagen de empresa "abandonada" online</li>
+                </ul>
+                <p><strong>Recomendación:</strong> Publicar al menos 2-4 artículos mensuales sobre:</p>
+                <ul>
+                    <li>Vendimia y proceso de elaboración</li>
+                    <li>Maridajes y recetas</li>
+                    <li>Premios y reconocimientos</li>
+                    <li>Eventos y ferias</li>
+                    <li>Historia de la región Valdobbiadene</li>
+                </ul>
+            </div>
+
+            <h3>Análisis de Keywords</h3>
+            <table class="priority-table">
+                <tr>
+                    <th>Keyword</th>
+                    <th>Volumen</th>
+                    <th>Posición Estimada</th>
+                </tr>
+                <tr>
+                    <td>"prosecco valdobbiadene"</td>
+                    <td>Alto</td>
+                    <td><span class="tag good">Top 20</span></td>
+                </tr>
+                <tr>
+                    <td>"astoria prosecco"</td>
+                    <td>Medio</td>
+                    <td><span class="tag good">Top 5</span></td>
+                </tr>
+                <tr>
+                    <td>"prosecco docg"</td>
+                    <td>Alto</td>
+                    <td><span class="tag warning">Competido</span></td>
+                </tr>
+                <tr>
+                    <td>"comprar prosecco italiano"</td>
+                    <td>Medio</td>
+                    <td><span class="tag warning">Mejorable</span></td>
+                </tr>
+                <tr>
+                    <td>"vino espumoso italiano"</td>
+                    <td>Medio-Alto</td>
+                    <td><span class="tag warning">Mejorable</span></td>
+                </tr>
+                <tr>
+                    <td>"bodega italiana prosecco"</td>
+                    <td>Bajo-Medio</td>
+                    <td><span class="tag good">Bien</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- LOCAL SEO -->
+        <div class="section">
+            <h2>3. SEO Local / Enoturismo</h2>
+
+            <h3>Información de Contacto</h3>
+            <div class="info-box">
+                <h4>Datos Detectados</h4>
+                <ul>
+                    <li><strong>Nombre:</strong> Astoria Wines / A.C. Srl</li>
+                    <li><strong>Dirección:</strong> Viale Antonini, 9 - 31035 Crocetta del Montello, Treviso (TV) - Italy</li>
+                    <li><strong>Email:</strong> info@astoria.it</li>
+                    <li><strong>Teléfono:</strong> <span class="tag critical">NO VISIBLE</span></li>
+                    <li><strong>P.IVA:</strong> 01792940262</li>
+                </ul>
+            </div>
+
+            <h3>Checklist Local SEO</h3>
+            <ul class="checklist">
+                <li>Dirección física en footer</li>
+                <li>Email de contacto visible</li>
+                <li class="missing">Teléfono de contacto (NO VISIBLE)</li>
+                <li class="missing">Google Maps embebido</li>
+                <li class="missing">Schema LocalBusiness</li>
+                <li class="partial">Horarios de Wine Store (parcial)</li>
+                <li class="partial">Información sobre visitas/tours</li>
+            </ul>
+
+            <h3>Astoria Lounge Wine Store</h3>
+            <div class="issue-card warning">
+                <h4>Oportunidad de Enoturismo Desaprovechada</h4>
+                <p>Astoria tiene un <strong>Wine Store físico</strong> (Lounge) pero la información en el sitio es mínima:</p>
+                <ul>
+                    <li>Sin horarios claros de apertura</li>
+                    <li>Sin información sobre reservas de visitas</li>
+                    <li>Sin fotos del espacio</li>
+                    <li>Sin mapa de ubicación</li>
+                    <li>Sin precios de experiencias</li>
+                </ul>
+                <p><strong>Keywords desaprovechadas:</strong></p>
+                <ul>
+                    <li>"visita bodega prosecco"</li>
+                    <li>"enoturismo veneto"</li>
+                    <li>"cata prosecco valdobbiadene"</li>
+                    <li>"tour cantina italia"</li>
+                </ul>
+            </div>
+
+            <h3>Presencia en Plataformas</h3>
+            <table class="priority-table">
+                <tr>
+                    <th>Plataforma</th>
+                    <th>Presencia</th>
+                    <th>Nota</th>
+                </tr>
+                <tr>
+                    <td>Vivino</td>
+                    <td><span class="tag good">Presente</span></td>
+                    <td>Vinos listados con reviews</td>
+                </tr>
+                <tr>
+                    <td>Prosecco.it (Consorzio)</td>
+                    <td><span class="tag good">Presente</span></td>
+                    <td>Listado oficial</td>
+                </tr>
+                <tr>
+                    <td>Wine.com</td>
+                    <td><span class="tag good">Presente</span></td>
+                    <td>Productos disponibles</td>
+                </tr>
+                <tr>
+                    <td>TripAdvisor</td>
+                    <td><span class="tag warning">Revisar</span></td>
+                    <td>Wine Store debería estar listado</td>
+                </tr>
+                <tr>
+                    <td>Google My Business</td>
+                    <td><span class="tag warning">Revisar</span></td>
+                    <td>Verificar perfil de la bodega</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- E-COMMERCE -->
+        <div class="section">
+            <h2>4. E-Commerce y Conversión</h2>
+
+            <h3>Estructura de Tienda Online</h3>
+            <div class="issue-card success">
+                <h4>E-shop Separado: astoriawineshop.com</h4>
+                <p>Astoria opera un e-commerce en dominio separado (<code>astoriawineshop.com</code>).</p>
+                <p><strong>Ventajas:</strong></p>
+                <ul>
+                    <li>Posibilidad de optimización específica para transacciones</li>
+                    <li>Separación entre branding y ventas</li>
+                </ul>
+                <p><strong>Desventajas:</strong></p>
+                <ul>
+                    <li>División de autoridad de dominio</li>
+                    <li>El usuario debe cambiar de sitio para comprar</li>
+                    <li>Posible confusión de marca</li>
+                </ul>
+            </div>
+
+            <h3>Precios de Referencia (Mercado)</h3>
+            <div class="info-box">
+                <h4>Rango de Precios Astoria</h4>
+                <ul>
+                    <li><strong>Línea base:</strong> 9-11€ (Corderíe, Gaggiandre, Fanò)</li>
+                    <li><strong>Millesimato:</strong> ~12€</li>
+                    <li><strong>Cartizze DOCG:</strong> <19€</li>
+                    <li><strong>Posicionamiento:</strong> Calidad alta, precios accesibles</li>
+                </ul>
+            </div>
+
+            <h3>CTAs y Conversión</h3>
+            <ul class="checklist">
+                <li>Botón "E-shop" en navegación principal</li>
+                <li>CTAs "Descubre" en colecciones</li>
+                <li class="partial">Proceso de compra requiere cambio de dominio</li>
+                <li class="missing">Botón "Añadir al carrito" en página de producto</li>
+                <li class="missing">Precios visibles en catálogo principal</li>
+            </ul>
+        </div>
+
+        <!-- REDES SOCIALES -->
+        <div class="section">
+            <h2>5. Redes Sociales y Presencia Digital</h2>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="value" style="color: #1877f2;">FB</div>
+                    <div class="label">Facebook</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value" style="color: #e4405f;">IG</div>
+                    <div class="label">Instagram</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value" style="color: #ff0000;">YT</div>
+                    <div class="label">YouTube</div>
+                </div>
+            </div>
+
+            <p>Astoria tiene presencia en las principales redes sociales, enlazadas desde el footer del sitio.</p>
+
+            <div class="issue-card warning">
+                <h4>Sin Open Graph Tags</h4>
+                <p>No se detectaron meta tags Open Graph (og:) ni Twitter Cards.</p>
+                <p><strong>Impacto:</strong> Cuando se comparte el sitio en redes sociales, no aparece preview optimizado (imagen, título, descripción).</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS CRÍTICOS -->
+        <div class="section">
+            <h2>6. Problemas Críticos - Resumen</h2>
+
+            <table class="priority-table">
+                <tr>
+                    <th>Problema</th>
+                    <th>Impacto</th>
+                    <th>Prioridad</th>
+                    <th>Esfuerzo</th>
+                </tr>
+                <tr>
+                    <td>Age Gate bloquea crawling</td>
+                    <td>Páginas no indexadas correctamente</td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                    <td>Medio</td>
+                </tr>
+                <tr>
+                    <td>Meta descriptions ausentes</td>
+                    <td>CTR bajo en resultados de búsqueda</td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                    <td>Bajo</td>
+                </tr>
+                <tr>
+                    <td>Sin Schema markup</td>
+                    <td>Sin rich snippets, menos visibilidad</td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                    <td>Medio</td>
+                </tr>
+                <tr>
+                    <td>Magazine sin actualizar (2020)</td>
+                    <td>Contenido obsoleto, pérdida de ranking</td>
+                    <td><span class="priority-badge alta">Alta</span></td>
+                    <td>Alto (continuo)</td>
+                </tr>
+                <tr>
+                    <td>Teléfono no visible</td>
+                    <td>Barrera de contacto</td>
+                    <td><span class="priority-badge media">Media</span></td>
+                    <td>Bajo</td>
+                </tr>
+                <tr>
+                    <td>Sin Open Graph tags</td>
+                    <td>Compartir en redes subóptimo</td>
+                    <td><span class="priority-badge media">Media</span></td>
+                    <td>Bajo</td>
+                </tr>
+                <tr>
+                    <td>Enoturismo poco desarrollado</td>
+                    <td>Pérdida de tráfico local</td>
+                    <td><span class="priority-badge media">Media</span></td>
+                    <td>Medio</td>
+                </tr>
+                <tr>
+                    <td>Alt text insuficientes</td>
+                    <td>SEO de imágenes, accesibilidad</td>
+                    <td><span class="priority-badge baja">Baja</span></td>
+                    <td>Medio</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>7. Quick Wins - Implementación Rápida</h2>
+
+            <div class="quick-win">
+                <h4>1. Añadir Meta Descriptions a Todas las Páginas</h4>
+                <p><strong>Impacto:</strong> Alto | <strong>Esfuerzo:</strong> 2-3 horas</p>
+                <p>Ejemplos por página:</p>
+                <div class="code-block">
+&lt;!-- Homepage ES --&gt;
+&lt;meta name="description" content="Astoria Wines: bodega líder en Prosecco DOCG de Valdobbiadene. Descubre nuestras colecciones de espumosos, blancos, tintos y grappas. Tradición italiana desde 1987."&gt;
+
+&lt;!-- Colecciones --&gt;
+&lt;meta name="description" content="Explora las colecciones de Astoria Wines: Venice Collection, Millesimato, Casa Vittorino y más. Prosecco DOCG premium de Conegliano-Valdobbiadene."&gt;
+
+&lt;!-- Venice Collection --&gt;
+&lt;meta name="description" content="Venice Collection de Astoria: 6 espumosos que honran Venecia y sus maestros vidrieros. Botellas sensoriales Astor con experiencia única. Prosecco DOCG."&gt;
+                </div>
+            </div>
+
+            <div class="quick-win">
+                <h4>2. Implementar Schema Organization</h4>
+                <p><strong>Impacto:</strong> Alto | <strong>Esfuerzo:</strong> 30 minutos</p>
+                <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Winery",
+  "name": "Astoria Wines",
+  "alternateName": "A.C. Srl",
+  "url": "https://www.astoria.it",
+  "logo": "https://www.astoria.it/logo.png",
+  "image": "https://www.astoria.it/cantina.jpg",
+  "description": "Bodega líder en producción de Prosecco DOCG de Conegliano-Valdobbiadene desde 1987",
+  "foundingDate": "1987",
+  "founders": [
+    {"@type": "Person", "name": "Paolo Polegato"},
+    {"@type": "Person", "name": "Filippo Polegato"}
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Viale Antonini, 9",
+    "addressLocality": "Crocetta del Montello",
+    "postalCode": "31035",
+    "addressRegion": "Treviso",
+    "addressCountry": "IT"
+  },
+  "email": "info@astoria.it",
+  "sameAs": [
+    "https://www.facebook.com/astoriawines",
+    "https://www.instagram.com/astoriawines",
+    "https://www.youtube.com/astoriawines"
+  ]
+}
+&lt;/script&gt;
+                </div>
+            </div>
+
+            <div class="quick-win">
+                <h4>3. Solucionar Age Gate para SEO</h4>
+                <p><strong>Impacto:</strong> Crítico | <strong>Esfuerzo:</strong> 2-4 horas (desarrollo)</p>
+                <p>Opciones:</p>
+                <ol>
+                    <li><strong>Detectar bot:</strong> Permitir acceso a Googlebot sin verificación</li>
+                    <li><strong>Cookie técnica:</strong> Usar cookie para recordar verificación</li>
+                    <li><strong>Renderizado condicional:</strong> Mostrar contenido en HTML, overlay en JS</li>
+                </ol>
+                <div class="code-block">
+// Ejemplo: detectar Googlebot
+const isBot = /bot|crawl|spider|google|bing/i.test(navigator.userAgent);
+if (!isBot && !hasAgeVerification()) {
+  showAgeGate();
+}
+                </div>
+            </div>
+
+            <div class="quick-win">
+                <h4>4. Añadir Teléfono de Contacto</h4>
+                <p><strong>Impacto:</strong> Medio | <strong>Esfuerzo:</strong> 5 minutos</p>
+                <p>Añadir número de teléfono clickable en footer y página de contacto.</p>
+            </div>
+
+            <div class="quick-win">
+                <h4>5. Implementar Open Graph Tags</h4>
+                <p><strong>Impacto:</strong> Medio | <strong>Esfuerzo:</strong> 1 hora</p>
+                <div class="code-block">
+&lt;meta property="og:title" content="Astoria Wines - Prosecco DOCG Valdobbiadene"&gt;
+&lt;meta property="og:description" content="Bodega italiana líder en Prosecco desde 1987. Descubre nuestras colecciones."&gt;
+&lt;meta property="og:image" content="https://www.astoria.it/og-image.jpg"&gt;
+&lt;meta property="og:url" content="https://www.astoria.it/es/"&gt;
+&lt;meta property="og:type" content="website"&gt;
+&lt;meta property="og:locale" content="es_ES"&gt;
+                </div>
+            </div>
+        </div>
+
+        <!-- PLAN DE ACCIÓN -->
+        <div class="section">
+            <h2>8. Plan de Acción Recomendado</h2>
+
+            <h3>Fase 1: Correcciones Técnicas Urgentes</h3>
+            <ol>
+                <li>Solucionar age gate para permitir crawling</li>
+                <li>Añadir meta descriptions a todas las páginas (8 idiomas)</li>
+                <li>Implementar Schema Organization y Winery</li>
+                <li>Añadir canonical tags</li>
+                <li>Verificar Google Search Console para todos los idiomas</li>
+            </ol>
+
+            <h3>Fase 2: Contenido y Optimización</h3>
+            <ol>
+                <li>Reactivar Magazine con calendario editorial (2-4 posts/mes)</li>
+                <li>Optimizar títulos de página con keywords</li>
+                <li>Añadir alt text descriptivos a todas las imágenes</li>
+                <li>Crear página dedicada a enoturismo/visitas</li>
+                <li>Implementar Schema Product para vinos</li>
+            </ol>
+
+            <h3>Fase 3: Local SEO y Enoturismo</h3>
+            <ol>
+                <li>Verificar/optimizar Google My Business de la bodega</li>
+                <li>Crear perfil en TripAdvisor para Wine Store</li>
+                <li>Añadir Google Maps embebido</li>
+                <li>Publicar horarios, precios de visitas, sistema de reservas</li>
+                <li>Crear contenido sobre la región Valdobbiadene</li>
+            </ol>
+
+            <h3>Fase 4: E-commerce y Conversión</h3>
+            <ol>
+                <li>Considerar integrar tienda en dominio principal (subdirectorio /shop/)</li>
+                <li>Mostrar precios en catálogo principal</li>
+                <li>Implementar reviews de productos (Vivino integration?)</li>
+                <li>Añadir Schema Product con precios y disponibilidad</li>
+            </ol>
+        </div>
+
+        <!-- COMPETENCIA -->
+        <div class="section">
+            <h2>9. Análisis Competitivo</h2>
+
+            <p>Astoria compite con otras grandes bodegas de Prosecco DOCG:</p>
+
+            <table class="priority-table">
+                <tr>
+                    <th>Competidor</th>
+                    <th>Fortaleza</th>
+                    <th>Oportunidad para Astoria</th>
+                </tr>
+                <tr>
+                    <td>Bisol</td>
+                    <td>Historia familiar, enoturismo desarrollado</td>
+                    <td>Mejorar contenido de visitas</td>
+                </tr>
+                <tr>
+                    <td>Nino Franco</td>
+                    <td>Tradición, presencia premium</td>
+                    <td>Comunicar premios y reconocimientos</td>
+                </tr>
+                <tr>
+                    <td>Mionetto</td>
+                    <td>Distribución global, marketing fuerte</td>
+                    <td>Contenido más frecuente en redes</td>
+                </tr>
+                <tr>
+                    <td>La Marca</td>
+                    <td>Precio accesible, alta visibilidad</td>
+                    <td>Diferenciarse por DOCG vs DOC</td>
+                </tr>
+            </table>
+
+            <h3>Ventajas Competitivas de Astoria</h3>
+            <ul>
+                <li><strong>Líder privado:</strong> Mayor productor privado de DOCG Conegliano-Valdobbiadene</li>
+                <li><strong>Premios:</strong> Gran Medalla Oro Vinitaly, mejor vino Italia (Il Puro)</li>
+                <li><strong>Innovación:</strong> Venice Collection, 9.5 Cold Wine, Fashion Victims</li>
+                <li><strong>Multilingüe:</strong> 8 idiomas vs competidores con menos</li>
+                <li><strong>Precio/calidad:</strong> Alta calidad a precios accesibles (9-19€)</li>
+            </ul>
+        </div>
+
+        <!-- CONCLUSIÓN -->
+        <div class="section">
+            <h2>Conclusión</h2>
+
+            <p><strong>Astoria Wines</strong> es una marca consolidada con excelente reputación en el sector del Prosecco. Sin embargo, su presencia digital no refleja su posición de liderazgo en el mercado.</p>
+
+            <div class="info-box">
+                <h4>Prioridades Inmediatas</h4>
+                <ol>
+                    <li><strong>Age Gate SEO-friendly:</strong> Crítico para que Google indexe el contenido</li>
+                    <li><strong>Meta descriptions:</strong> Cada página necesita descripción única</li>
+                    <li><strong>Schema markup:</strong> Organization + Winery + Products</li>
+                    <li><strong>Magazine activo:</strong> El contenido de 2020 es inaceptable para una marca líder</li>
+                </ol>
+            </div>
+
+            <p>Con estas mejoras implementadas, la puntuación podría subir de <strong>6.5 a 8.0-8.5</strong>.</p>
+
+            <p>El sitio tiene una excelente base técnica (multilingüe, hreflang, estructura limpia) pero necesita optimización de contenido y corrección de problemas técnicos que impiden el crawling efectivo.</p>
+
+            <p><strong>Nota:</strong> Para una empresa de este calibre, se recomienda una auditoría SEO técnica más profunda con herramientas como Screaming Frog, Ahrefs o Semrush para analizar todas las páginas, backlinks y posicionamiento real en keywords.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe elaborado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 27 Diciembre 2025</p>
+            <p style="margin-top: 15px; font-size: 14px;">Este informe es confidencial y está destinado únicamente al propietario del sitio web analizado.</p>
+            <p style="margin-top: 10px; font-size: 13px;">Fuentes: <a href="https://www.vivino.com/astoria" target="_blank">Vivino</a>, <a href="http://www.prosecco.it/en/scheda-cantina/astoria-vini/" target="_blank">Prosecco.it</a>, <a href="https://www.italysfinestwines.it/astoria-vini/" target="_blank">Italy's Finest Wines</a></p>
+        </div>
+    </div>
+</body>
+</html>
