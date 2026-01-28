@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - Miranda MX Restaurante Mexicano</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #e65100 0%, #ff8c00 50%, #d84315 100%); color: white; padding: 50px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; }
+        .header p { font-size: 18px; margin: 10px 0; opacity: 0.95; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #e65100; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #e65100; }
+        h3 { font-size: 22px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        p, li { margin-bottom: 12px; font-size: 18px; }
+        ul { margin-left: 30px; margin-bottom: 20px; }
+        .score-box { background: linear-gradient(135deg, #e65100 0%, #ff8c00 50%, #d84315 100%); color: white; padding: 50px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
+        .score-box .score { font-size: 80px; font-weight: bold; margin: 20px 0; }
+        .score-box .score-label { font-size: 24px; opacity: 0.9; }
+        .critical { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .critical h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .warning { background: linear-gradient(135deg, #feca57, #ff9f43); color: #333; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .warning h4 { color: #333; margin-top: 0; margin-bottom: 15px; }
+        .success { background: linear-gradient(135deg, #26de81, #20bf6b); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .success h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .info-box { background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .info-box h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #e65100; color: white; }
+        tr:hover { background: #fff8f0; }
+        .priority-alta { background: #ff6b6b; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-media { background: #feca57; color: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-baja { background: #26de81; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .code-block { background: #2d3436; color: #ffab40; padding: 20px; border-radius: 10px; font-family: 'Consolas', monospace; font-size: 14px; overflow-x: auto; margin: 15px 0; white-space: pre-wrap; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #e65100; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .metric-card { background: linear-gradient(135deg, #fff8f0, #ffe0c0); padding: 25px; border-radius: 12px; text-align: center; border: 2px solid #e65100; }
+        .metric-card .value { font-size: 36px; font-weight: bold; color: #e65100; }
+        .metric-card .label { font-size: 14px; color: #666; margin-top: 8px; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin: 3px; background: #e65100; color: white; }
+        .tag-green { background: #006847; }
+        .tag-red { background: #ce1126; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+        .gourmetland-badge { background: #c0392b; color: white; padding: 8px 20px; border-radius: 25px; font-size: 14px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+        .mexican-flag { display: inline-block; margin-left: 10px; }
+        .mexican-flag span { display: inline-block; width: 8px; height: 20px; }
+        .mexican-flag .green { background: #006847; }
+        .mexican-flag .white { background: white; }
+        .mexican-flag .red { background: #ce1126; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="gourmetland-badge">GRUPO GOURMETLAND</span>
+        <h1>Informe de Auditoria SEO
+            <span class="mexican-flag">
+                <span class="green"></span><span class="white"></span><span class="red"></span>
+            </span>
+        </h1>
+        <p><strong>Miranda MX - Restaurante Mexicano</strong></p>
+        <p>mirandamx.com</p>
+        <p>Analisis: 28 de Enero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Volver al indice</a>
+
+        <div class="score-box">
+            <div class="score-label">Puntuacion SEO</div>
+            <div class="score">7.5/10</div>
+            <p>Sitio bien optimizado con SEO tecnico solido, schema completo y contenido bilingue. Oportunidades en keywords y contenido adicional.</p>
+        </div>
+
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+            <p><strong>Miranda MX</strong> es un restaurante mexicano/Tex-Mex ubicado en Costa Adeje, Tenerife Sur. Forma parte del grupo Gourmetland Tenerife y ofrece autentica cocina mexicana incluyendo tacos, fajitas, enchiladas, burritos y margaritas en un ambiente vibrante.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">7.5</div>
+                    <div class="label">Puntuacion SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Idiomas (ES/EN)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">$$</div>
+                    <div class="label">Rango Precio</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">166</div>
+                    <div class="label">Seguidores IG</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Restaurante Mexicano / Tex-Mex</li>
+                <li><strong>Ubicacion:</strong> Av. de Bruselas, 14, Planta alta Local 4, 38679 Costa Adeje, Santa Cruz de Tenerife</li>
+                <li><strong>Telefono:</strong> +34 922 78 08 21</li>
+                <li><strong>Email:</strong> info@mirandamx.com</li>
+                <li><strong>Horario:</strong> Diario 13:00 - 23:00</li>
+                <li><strong>Coordenadas:</strong> 28.092499, -16.73612114</li>
+                <li><strong>Idiomas:</strong> Espanol, English</li>
+            </ul>
+
+            <h3>Especialidades</h3>
+            <p>
+                <span class="tag tag-green">Tacos</span>
+                <span class="tag">Fajitas</span>
+                <span class="tag tag-red">Enchiladas</span>
+                <span class="tag tag-green">Burritos</span>
+                <span class="tag">Quesadillas</span>
+                <span class="tag tag-red">Margaritas</span>
+                <span class="tag tag-green">Nachos</span>
+                <span class="tag">Guacamole</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. TITLE Y META DESCRIPTION EXCELENTES</h4>
+                <p><strong>Title:</strong> "Miranda MX, restaurante mexicano en Tenerife Sur | Gourmetland" (63 chars - Optimo)</p>
+                <p><strong>Description:</strong> "En Miranda MX disfrutaras de los mejores platos mexicanos: tacos, fajitas, enchiladas y mucha margarita! Tu restaurante mexicano en Tenerife sur" (148 chars - Optimo)</p>
+                <p>Incluye keyword principal "restaurante mexicano Tenerife" y platos especificos. Call to action emocional con exclamacion.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. SCHEMA MARKUP COMPLETO</h4>
+                <p>Implementacion robusta de Schema.org con:</p>
+                <ul>
+                    <li>Organization schema</li>
+                    <li>Restaurant schema</li>
+                    <li>Place schema con coordenadas geograficas</li>
+                    <li>Direccion, telefono, email, horarios</li>
+                </ul>
+                <p>Esto mejora significativamente las posibilidades de rich snippets en Google.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. H1 BIEN OPTIMIZADO</h4>
+                <p><strong>H1:</strong> "RESTAURANTE MEXICANO EN TENERIFE SUR"</p>
+                <p>Keyword principal clara y directa. Coincide con intento de busqueda de turistas buscando comida mexicana en la zona.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. GOOGLE ANALYTICS GA4 ACTIVO</h4>
+                <p>Tracking ID: G-KW0FLZ8LL4. Base solida para analisis de trafico, conversiones y comportamiento de usuarios.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. SITIO BILINGUE (ES/EN)</h4>
+                <p>Esencial para captar turistas internacionales en Costa Adeje. Selector de idioma visible.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. IMAGENES OPTIMIZADAS CON ALT TEXT</h4>
+                <p>Alt text descriptivo: "restaurante mexicano en tenerife sur", "plato miranda mx". Buena practica para SEO de imagenes.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. INTEGRACION REDES SOCIALES</h4>
+                <p>Enlaces a Facebook, Instagram (@mirandamxtf) y TripAdvisor. Feed de Instagram integrado en la web.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. MENU ESTRUCTURADO</h4>
+                <p>Secciones claras: Entrantes, Principales, Bebidas y Cocktails, Alergenos. Mejora UX y tiempo en pagina.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Detectados</h2>
+
+            <div class="warning">
+                <h4>1. BAJO NUMERO DE SEGUIDORES EN INSTAGRAM</h4>
+                <p>Solo 166 seguidores en @mirandamxtf. Para un restaurante mexicano con platos visuales (tacos, margaritas coloridas), hay potencial para mucho mas engagement.</p>
+                <p><strong>Solucion:</strong> Estrategia de contenido visual: videos de preparacion de tacos, fotos de margaritas, contenido festivo mexicano, colaboraciones con influencers locales.</p>
+            </div>
+
+            <div class="warning">
+                <h4>2. FALTA KEYWORD "TEX-MEX"</h4>
+                <p>El sitio no menciona "Tex-Mex" aunque ofrece ese estilo de cocina. Es una keyword con busquedas relevantes.</p>
+                <p><strong>Keywords a incluir:</strong></p>
+                <ul>
+                    <li>"tex mex tenerife"</li>
+                    <li>"comida mexicana costa adeje"</li>
+                    <li>"tacos tenerife sur"</li>
+                    <li>"fajitas tenerife"</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h4>3. SIN BLOG O CONTENIDO SEO ADICIONAL</h4>
+                <p>No hay seccion de blog. Oportunidad perdida para posicionar articulos como "mejores restaurantes mexicanos en Tenerife" o "recetas de margaritas".</p>
+            </div>
+
+            <div class="warning">
+                <h4>4. FALTA HREFLANG VERIFICABLE</h4>
+                <p>Con 2 idiomas (ES/EN), las etiquetas hreflang deben estar correctamente implementadas para evitar contenido duplicado en Google.</p>
+                <div class="code-block">&lt;link rel="alternate" hreflang="es" href="https://mirandamx.com/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://mirandamx.com/en/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://mirandamx.com/" /&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>5. SIN SCHEMA REVIEW/RATING</h4>
+                <p>Aunque hay enlace a TripAdvisor, no hay Schema AggregateRating implementado para mostrar estrellas en resultados de Google.</p>
+                <div class="code-block">"aggregateRating": {
+  "@type": "AggregateRating",
+  "ratingValue": "4.5",
+  "reviewCount": "150"
+}</div>
+            </div>
+
+            <div class="warning">
+                <h4>6. SLIDER REVOLUTION - POSIBLE IMPACTO EN VELOCIDAD</h4>
+                <p>El uso de Slider Revolution y jQuery puede impactar los tiempos de carga. Considerar optimizacion o alternativas mas ligeras.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Quick Wins</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Accion</th>
+                        <th>Impacto</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Anadir keywords "tex-mex" y "tacos tenerife" en contenido</td>
+                        <td>Alto</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Implementar Schema AggregateRating con resenas</td>
+                        <td>Alto</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Verificar/implementar etiquetas hreflang ES/EN</td>
+                        <td>Medio</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Aumentar actividad en Instagram con contenido visual</td>
+                        <td>Medio</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Optimizar velocidad de carga (lazy loading, compresion)</td>
+                        <td>Medio</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear pagina "Menu del Dia" o promociones</td>
+                        <td>Medio</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir seccion de blog con recetas mexicanas</td>
+                        <td>Alto (largo plazo)</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Keywords Recomendadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Idioma</th>
+                        <th>Competencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>restaurante mexicano tenerife sur</td>
+                        <td>ES</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>mexican restaurant costa adeje</td>
+                        <td>EN</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>tex mex tenerife</td>
+                        <td>ES/EN</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>tacos tenerife</td>
+                        <td>ES/EN</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>fajitas costa adeje</td>
+                        <td>ES/EN</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                    <tr>
+                        <td>margaritas tenerife</td>
+                        <td>ES/EN</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>comida mexicana canarias</td>
+                        <td>ES</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>best mexican food tenerife</td>
+                        <td>EN</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>enchiladas costa adeje</td>
+                        <td>ES/EN</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                    <tr>
+                        <td>burritos tenerife sur</td>
+                        <td>ES/EN</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Puntuacion por Areas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Puntuacion</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Tecnico</td>
+                        <td>8/10</td>
+                        <td>Schema completo, GA4 activo, estructura correcta</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>7/10</td>
+                        <td>Buen H1 y metas, falta contenido adicional</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>8/10</td>
+                        <td>Datos completos, coordenadas, horarios</td>
+                    </tr>
+                    <tr>
+                        <td>UX/Diseno</td>
+                        <td>7/10</td>
+                        <td>Menu estructurado, responsive, lazy loading</td>
+                    </tr>
+                    <tr>
+                        <td>Social Media</td>
+                        <td>6/10</td>
+                        <td>Presencia en redes pero pocos seguidores</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td>8/10</td>
+                        <td>Bilingue ES/EN, verificar hreflang</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Restaurantes Hermanos (Grupo Gourmetland)</h2>
+            <p>Miranda MX forma parte de la cadena Gourmetland Tenerife, que incluye multiples restaurantes tematicos:</p>
+            <ul>
+                <li><strong>Altamira</strong> - Chillout & Cocktail Bar</li>
+                <li><strong>Bombay Blue</strong> - Cocina India</li>
+                <li><strong>Prime Steak House</strong> - Carnes Premium</li>
+                <li><strong>Imperial Tai Pan</strong> - Cocina China</li>
+                <li><strong>La Brasserie</strong> - Cocina Francesa</li>
+                <li><strong>Mamma Mia</strong> - Cocina Italiana</li>
+                <li>Y mas...</li>
+            </ul>
+            <p>Esta red permite cross-linking interno que beneficia el SEO de todo el grupo.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit</strong></p>
+            <p>Parte del analisis de la cadena Gourmetland Tenerife</p>
+        </div>
+    </div>
+</body>
+</html>

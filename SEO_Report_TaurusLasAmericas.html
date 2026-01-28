@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoria SEO - Taurus 2 Las Americas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f0eb;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #5D4037 0%, #8D6E63 50%, #4E342E 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M30 40 Q35 25 50 30 Q65 25 70 40 L65 50 Q50 45 35 50 Z' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E") center/200px repeat;
+            opacity: 0.3;
+        }
+
+        .header * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .group-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(93, 64, 55, 0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #5D4037;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #8D6E63;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #4E342E;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #6D4C41;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #5D4037 0%, #8D6E63 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(93, 64, 55, 0.3);
+        }
+
+        .score-box .score {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .score-box .score-label {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        .critical {
+            background: linear-gradient(135deg, #D32F2F, #B71C1C);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .critical h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, #FF8F00, #F57C00);
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning h4 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #558B2F, #33691E);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .success h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #8D6E63, #6D4C41);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #D7CCC8;
+        }
+
+        th {
+            background: #5D4037;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #EFEBE9;
+        }
+
+        .priority-alta {
+            background: #D32F2F;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-media {
+            background: #FF8F00;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-baja {
+            background: #558B2F;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .code-block {
+            background: #3E2723;
+            color: #FFCCBC;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #5D4037;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #EFEBE9, #D7CCC8);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #5D4037;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #5D4037;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #6D4C41;
+            margin-top: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #6D4C41;
+            font-size: 14px;
+            background: #EFEBE9;
+            border-radius: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        .tag-cuisine {
+            background: #5D4037;
+            color: white;
+        }
+
+        .tag-location {
+            background: #558B2F;
+            color: white;
+        }
+
+        .tag-feature {
+            background: #8D6E63;
+            color: white;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .menu-item {
+            background: #EFEBE9;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            border-left: 3px solid #5D4037;
+            font-weight: 500;
+            color: #4E342E;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            background: #EFEBE9;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #5D4037;
+        }
+
+        .checklist li.done {
+            border-left-color: #558B2F;
+        }
+
+        .checklist li.pending {
+            border-left-color: #D32F2F;
+        }
+
+        .taurus-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-box .score {
+                font-size: 60px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="group-badge">GRUPO GOURMETLAND</div>
+        <h1>Informe de Auditoria SEO</h1>
+        <p><strong>Taurus 2 Las Americas</strong></p>
+        <p>tauruslasamericas.es</p>
+        <p>Analisis realizado: 28 de Enero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al indice de informes</a>
+
+        <!-- PUNTUACION GENERAL -->
+        <div class="score-box">
+            <div class="score-label">Puntuacion SEO General</div>
+            <div class="score">7.0/10</div>
+            <p>Buena base tecnica con Schema completo, pero con oportunidades de mejora en alt text y estructura de H1</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>Taurus 2 Las Americas</strong> es un restaurante de carnes premium ubicado en Playa de las Americas, Tenerife. Especializado en cortes de carne a la brasa con horno de lena, tambien ofrece pizzas gourmet, mariscos, paellas y pasta fresca. Forma parte del prestigioso Grupo Gourmetland.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">7.0</div>
+                    <div class="label">Puntuacion SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Idiomas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">GA4</div>
+                    <div class="label">Analytics Activo</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">5+</div>
+                    <div class="label">Tipos Schema</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Restaurante Steakhouse / Parrilla Premium</li>
+                <li><strong>Ubicacion:</strong> C/De Luis Diaz de Losada N5, C.C. Complejo Tenerife Royal Garden, Playa de las Americas</li>
+                <li><strong>Codigo Postal:</strong> 38650, Santa Cruz de Tenerife</li>
+                <li><strong>Telefono:</strong> +34 922 753 185</li>
+                <li><strong>Email:</strong> info@tauruslasamericas.es</li>
+                <li><strong>Horario:</strong> Todos los dias de 13:00 a 23:00</li>
+                <li><strong>Coordenadas:</strong> 28.052743, -16.728409</li>
+                <li><strong>Plataforma:</strong> WordPress + WPML</li>
+                <li><strong>Idiomas:</strong> Espanol, English</li>
+            </ul>
+
+            <h3>Especialidades Gastronomicas</h3>
+            <p>
+                <span class="tag tag-cuisine">Carnes Premium</span>
+                <span class="tag tag-cuisine">Steakhouse</span>
+                <span class="tag tag-cuisine">Horno de Lena</span>
+                <span class="tag tag-cuisine">Pizzas Gourmet</span>
+                <span class="tag tag-cuisine">Mariscos</span>
+                <span class="tag tag-cuisine">Paellas</span>
+                <span class="tag tag-cuisine">Pasta Fresca</span>
+            </p>
+
+            <h3>Menu Destacado</h3>
+            <div class="menu-grid">
+                <div class="menu-item">T-Bone Steak</div>
+                <div class="menu-item">Chuletas de Cerdo</div>
+                <div class="menu-item">Entrantes</div>
+                <div class="menu-item">Carnes</div>
+                <div class="menu-item">Pescados</div>
+                <div class="menu-item">Paellas</div>
+                <div class="menu-item">Pastas Frescas</div>
+                <div class="menu-item">Gourmet Pizzas</div>
+            </div>
+        </div>
+
+        <!-- ASPECTOS POSITIVOS -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. SCHEMA MARKUP COMPLETO Y BIEN IMPLEMENTADO</h4>
+                <p>Excelente implementacion de Schema JSON-LD incluyendo:</p>
+                <ul>
+                    <li><strong>Organization/Place</strong> con datos de contacto y geolocalizacion</li>
+                    <li><strong>LocalBusiness</strong> con horarios de apertura y direccion completa</li>
+                    <li><strong>WebSite</strong> con SearchAction habilitado</li>
+                    <li><strong>BreadcrumbList</strong> para navegacion estructurada</li>
+                </ul>
+                <p>Esto mejora significativamente la visibilidad en rich snippets de Google.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. META TAGS OPTIMIZADOS</h4>
+                <p><strong>Title:</strong> "Taurus 2 Las Americas, Restaurante de carne en Tenerife | Gourmetland" (68 caracteres)</p>
+                <p><strong>Description:</strong> "Si buscas un Restaurante de carne en Tenerife Sur, Taurus 2 es el templo de la buena carne. Ademas de carne de primera calidad, encontraras..." (Bien optimizado con keywords)</p>
+                <p>Keywords relevantes presentes: restaurante de carne, Tenerife Sur, carne de primera calidad.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. GOOGLE ANALYTICS GA4 + METRICOOL</h4>
+                <p>Tracking configurado correctamente:</p>
+                <ul>
+                    <li>Google Analytics 4: G-2N3F5PR2S6</li>
+                    <li>Metricool para analisis de redes sociales</li>
+                </ul>
+                <p>Base solida para analizar trafico y comportamiento de usuarios.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. MULTIIDIOMA ACTIVO (ES/EN)</h4>
+                <p>WPML implementado con versiones en Espanol e Ingles. Esencial para el mercado turistico de Tenerife Sur donde predominan visitantes internacionales.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. REDES SOCIALES INTEGRADAS</h4>
+                <ul>
+                    <li>Facebook: Pagina activa</li>
+                    <li>Instagram: @taurus2tenerife (142+ seguidores)</li>
+                    <li>TripAdvisor: Enlace a resenas</li>
+                </ul>
+                <p>Buena presencia social para prueba social y trafico referido.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. DATOS DE CONTACTO COMPLETOS</h4>
+                <p>Telefono, email, direccion completa y horarios claramente visibles. Esto mejora la experiencia del usuario y el SEO local.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. SECCION DE TESTIMONIOS</h4>
+                <p>"LO QUE DICEN DE NOSOTROS" - Seccion de resenas para generar confianza. Las opiniones de clientes son un factor importante para conversiones.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. ESTRUCTURA DE MENU CLARA</h4>
+                <p>Menu bien organizado con categorias definidas (Entrantes, Carnes, Pescados, Paellas, Pastas, Pizzas). Facilita la navegacion y mejora el tiempo en pagina.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS CRITICOS -->
+        <div class="section">
+            <h2>Problemas Criticos Detectados</h2>
+
+            <div class="critical">
+                <h4>1. MULTIPLES H1 EN LA PAGINA</h4>
+                <p>Se detectaron 2 etiquetas H1 en la homepage:</p>
+                <ul>
+                    <li>"RESTAURANTE DE CARNE EN TENERIFE SUR"</li>
+                    <li>"Descubre Taurus 2 en Las Americas"</li>
+                </ul>
+                <p><strong>Impacto:</strong> Google puede confundirse sobre el tema principal de la pagina. Debe haber un unico H1 por pagina.</p>
+                <p><strong>Solucion:</strong></p>
+                <div class="code-block">&lt;!-- PROBLEMA: Multiples H1 --&gt;
+&lt;h1&gt;RESTAURANTE DE CARNE EN TENERIFE SUR&lt;/h1&gt;
+&lt;h1&gt;Descubre Taurus 2 en Las Americas&lt;/h1&gt;
+
+&lt;!-- SOLUCION: Un unico H1 optimizado --&gt;
+&lt;h1&gt;Taurus 2 - Restaurante de Carne Premium en Las Americas, Tenerife&lt;/h1&gt;
+&lt;h2&gt;Descubre el templo de la buena carne en Tenerife Sur&lt;/h2&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>2. ALT TEXT DE IMAGENES AUSENTES O GENERICOS</h4>
+                <p>Muchas imagenes carecen de atributos alt descriptivos. Se detectaron placeholders como "dummy.png" en el slider. Las fotos de platos, carnes y ambiente son invisibles para Google Images.</p>
+                <p><strong>Impacto:</strong> Perdida de trafico desde Google Images, accesibilidad reducida.</p>
+                <p><strong>Solucion:</strong></p>
+                <div class="code-block">&lt;!-- Ejemplos de alt text optimizado para Taurus 2 --&gt;
+
+&lt;!-- Carnes --&gt;
+&lt;img src="tbone.jpg" alt="T-Bone steak a la brasa Taurus 2 Las Americas Tenerife"&gt;
+&lt;img src="chuletas.jpg" alt="Chuletas de cerdo al horno de lena restaurante Taurus"&gt;
+&lt;img src="entrecot.jpg" alt="Entrecot premium a la parrilla Tenerife Sur"&gt;
+
+&lt;!-- Pizzas --&gt;
+&lt;img src="pizza.jpg" alt="Pizza gourmet con ingredientes frescos Taurus Las Americas"&gt;
+
+&lt;!-- Ambiente --&gt;
+&lt;img src="salon.jpg" alt="Salon interior restaurante Taurus 2 Playa de las Americas"&gt;
+&lt;img src="terraza.jpg" alt="Terraza con vistas Taurus Las Americas Tenerife"&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>3. FALTA CANONICAL TAG EXPLICITO</h4>
+                <p>No se detecto una etiqueta canonical explicita en el contenido analizado. Esto puede causar problemas de contenido duplicado, especialmente con las versiones multiidioma.</p>
+                <p><strong>Solucion:</strong></p>
+                <div class="code-block">&lt;link rel="canonical" href="https://tauruslasamericas.es/" /&gt;
+
+&lt;!-- Para version inglesa --&gt;
+&lt;link rel="canonical" href="https://tauruslasamericas.es/en/" /&gt;</div>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS IMPORTANTES -->
+        <div class="section">
+            <h2>Problemas Importantes</h2>
+
+            <div class="warning">
+                <h4>4. OPEN GRAPH TAGS POR VERIFICAR</h4>
+                <p>No se detectaron Open Graph meta tags en el analisis. Estos son esenciales para una correcta visualizacion al compartir en redes sociales.</p>
+                <p><strong>Solucion:</strong></p>
+                <div class="code-block">&lt;meta property="og:title" content="Taurus 2 Las Americas - Restaurante de Carne Premium"&gt;
+&lt;meta property="og:description" content="El templo de la buena carne en Tenerife Sur. Carnes premium, pizzas gourmet, mariscos y paellas."&gt;
+&lt;meta property="og:image" content="https://tauruslasamericas.es/images/taurus-og.jpg"&gt;
+&lt;meta property="og:url" content="https://tauruslasamericas.es/"&gt;
+&lt;meta property="og:type" content="restaurant"&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>5. SCHEMA RESTAURANT INCOMPLETO</h4>
+                <p>Aunque tiene LocalBusiness, falta el schema especifico Restaurant con servesCuisine, priceRange y menu URL.</p>
+                <p><strong>Solucion:</strong></p>
+                <div class="code-block">{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Taurus 2 Las Americas",
+  "image": "https://tauruslasamericas.es/images/taurus.jpg",
+  "servesCuisine": ["Steakhouse", "Grill", "Italian", "Seafood"],
+  "priceRange": "EUR EUR EUR",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C/De Luis Diaz de Losada N5, C.C. Royal Garden",
+    "addressLocality": "Playa de las Americas",
+    "postalCode": "38650",
+    "addressCountry": "ES"
+  },
+  "telephone": "+34922753185",
+  "email": "info@tauruslasamericas.es",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "13:00",
+    "closes": "23:00"
+  },
+  "menu": "https://tauruslasamericas.es/menu/",
+  "acceptsReservations": "True",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.052743,
+    "longitude": -16.728409
+  }
+}</div>
+            </div>
+
+            <div class="warning">
+                <h4>6. HREFLANG POR VERIFICAR</h4>
+                <p>Con 2 idiomas (ES/EN), es crucial que las etiquetas hreflang esten correctamente implementadas para evitar contenido duplicado.</p>
+                <p><strong>Verificar presencia de:</strong></p>
+                <div class="code-block">&lt;link rel="alternate" hreflang="es" href="https://tauruslasamericas.es/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://tauruslasamericas.es/en/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://tauruslasamericas.es/" /&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>7. CONEXION CON GRUPO GOURMETLAND</h4>
+                <p>Aunque menciona Gourmetland en el title, deberia haber enlaces mas prominentes al sitio del grupo para beneficiarse del link equity.</p>
+                <p><strong>Recomendacion:</strong> Anadir badge "Parte del Grupo Gourmetland" con enlace en el footer.</p>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins - Mejoras Rapidas</h2>
+
+            <p>Estas acciones pueden implementarse rapidamente con alto impacto:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Accion</th>
+                        <th>Impacto</th>
+                        <th>Tiempo</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Consolidar H1 en una unica etiqueta</td>
+                        <td>Alto</td>
+                        <td>15 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir alt text a todas las imagenes de platos</td>
+                        <td>Alto</td>
+                        <td>1-2 horas</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Agregar canonical tag explicito</td>
+                        <td>Alto</td>
+                        <td>10 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Implementar Open Graph tags</td>
+                        <td>Medio</td>
+                        <td>30 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Completar Schema Restaurant</td>
+                        <td>Alto</td>
+                        <td>45 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Verificar hreflang ES/EN</td>
+                        <td>Medio</td>
+                        <td>20 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir enlace prominente a Gourmetland</td>
+                        <td>Medio</td>
+                        <td>15 min</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Eliminar placeholders dummy.png</td>
+                        <td>Medio</td>
+                        <td>30 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ANALISIS DE KEYWORDS -->
+        <div class="section">
+            <h2>Analisis de Keywords</h2>
+
+            <h3>Keywords Principales</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Volumen Est.</th>
+                        <th>Competencia</th>
+                        <th>Posicion Actual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>restaurante de carne tenerife</td>
+                        <td>720/mes</td>
+                        <td>Media</td>
+                        <td>Por verificar</td>
+                    </tr>
+                    <tr>
+                        <td>restaurante carne las americas</td>
+                        <td>320/mes</td>
+                        <td>Baja</td>
+                        <td>Por verificar</td>
+                    </tr>
+                    <tr>
+                        <td>steakhouse tenerife sur</td>
+                        <td>260/mes</td>
+                        <td>Baja</td>
+                        <td>Por verificar</td>
+                    </tr>
+                    <tr>
+                        <td>parrilla tenerife</td>
+                        <td>210/mes</td>
+                        <td>Baja</td>
+                        <td>Por verificar</td>
+                    </tr>
+                    <tr>
+                        <td>carne a la brasa las americas</td>
+                        <td>140/mes</td>
+                        <td>Muy Baja</td>
+                        <td>Por verificar</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Secundarias (Oportunidades)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Competencia</th>
+                        <th>Relevancia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>t-bone steak tenerife</td>
+                        <td>Muy Baja</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>horno de lena restaurante tenerife</td>
+                        <td>Baja</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>pizza gourmet las americas</td>
+                        <td>Baja</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>paella restaurante tenerife sur</td>
+                        <td>Media</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>donde comer carne playa americas</td>
+                        <td>Muy Baja</td>
+                        <td>Alta</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Long-Tail Recomendadas</h3>
+            <ul>
+                <li>"mejor restaurante de carne en playa de las americas"</li>
+                <li>"restaurante con horno de lena tenerife sur"</li>
+                <li>"donde comer buen chuleton en tenerife"</li>
+                <li>"restaurante para grupos las americas"</li>
+                <li>"cena romantica steakhouse tenerife"</li>
+                <li>"restaurante familiar con terraza las americas"</li>
+            </ul>
+        </div>
+
+        <!-- PLAN DE ACCION -->
+        <div class="section">
+            <h2>Plan de Accion Priorizado</h2>
+
+            <h3>Fase 1: Correciones Criticas (Esta semana)</h3>
+            <ul class="checklist">
+                <li class="pending">Consolidar multiples H1 en uno unico optimizado</li>
+                <li class="pending">Anadir alt text descriptivo a todas las imagenes de platos</li>
+                <li class="pending">Eliminar/reemplazar imagenes placeholder (dummy.png)</li>
+                <li class="pending">Agregar canonical tag explicito</li>
+                <li class="pending">Verificar y corregir hreflang ES/EN</li>
+            </ul>
+
+            <h3>Fase 2: Optimizacion Schema y Social (Semana 2)</h3>
+            <ul class="checklist">
+                <li class="pending">Implementar Schema Restaurant completo con servesCuisine</li>
+                <li class="pending">Agregar Open Graph tags para compartir en redes</li>
+                <li class="pending">Anadir Twitter Card meta tags</li>
+                <li class="pending">Verificar Schema con Google Rich Results Test</li>
+            </ul>
+
+            <h3>Fase 3: Mejoras de Contenido (Semanas 3-4)</h3>
+            <ul class="checklist">
+                <li class="pending">Crear paginas individuales para especialidades (Carnes, Pizzas, Paellas)</li>
+                <li class="pending">Anadir FAQ estructurado sobre reservas, menu, alergenos</li>
+                <li class="pending">Integrar resenas de TripAdvisor/Google con Schema Review</li>
+                <li class="pending">Desarrollar contenido para keywords long-tail</li>
+            </ul>
+
+            <h3>Fase 4: Link Building Local (Mes 2)</h3>
+            <ul class="checklist">
+                <li class="pending">Verificar y optimizar Google Business Profile</li>
+                <li class="pending">Conseguir enlaces desde webs turisticas de Tenerife</li>
+                <li class="pending">Reforzar enlaces bidireccionales con Gourmetland</li>
+                <li class="pending">Listar en directorios de restaurantes locales</li>
+            </ul>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="section">
+            <h2>Conclusion</h2>
+
+            <p><strong>Taurus 2 Las Americas</strong> tiene una base SEO solida con Schema bien implementado, tracking configurado, multiidioma activo y datos de contacto completos. Sin embargo, hay oportunidades de mejora importantes en la estructura de encabezados y optimizacion de imagenes.</p>
+
+            <div class="info-box">
+                <h4>Potencial de Mejora</h4>
+                <p>Con las correcciones de H1, alt text y Schema Restaurant, la puntuacion podria subir a <strong>8.5/10</strong>. El restaurante tiene buen posicionamiento como "templo de la carne" que debe reforzarse con contenido optimizado para keywords de steakhouse y parrilla.</p>
+            </div>
+
+            <p>La ventaja competitiva de pertenecer al Grupo Gourmetland deberia aprovecharse mejor mediante cross-linking y branding conjunto. Como uno de los 21+ restaurantes del grupo, puede beneficiarse de la autoridad consolidada.</p>
+
+            <h3>Resumen de Puntuaciones por Area</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Puntuacion</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Tecnico</td>
+                        <td>7/10</td>
+                        <td>Schema presente, falta canonical</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>7/10</td>
+                        <td>Buenos meta tags, H1 duplicado</td>
+                    </tr>
+                    <tr>
+                        <td>Imagenes</td>
+                        <td>5/10</td>
+                        <td>Faltan alt text, placeholders</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>8/10</td>
+                        <td>Datos completos, coordenadas OK</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td>7/10</td>
+                        <td>2 idiomas, verificar hreflang</td>
+                    </tr>
+                    <tr>
+                        <td>Social</td>
+                        <td>7/10</td>
+                        <td>Redes activas, falta OG tags</td>
+                    </tr>
+                    <tr>
+                        <td>Tracking</td>
+                        <td>9/10</td>
+                        <td>GA4 + Metricool configurados</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #5D4037, #8D6E63); color: white; border-radius: 12px; text-align: center;">
+                <h3 style="margin-bottom: 15px; color: white;">Veredicto Final</h3>
+                <p style="font-size: 1.1em; margin-bottom: 10px;">Restaurante bien posicionado con problemas corregibles en 2-3 horas de trabajo.</p>
+                <p><strong>Prioridad inmediata:</strong> Corregir H1 duplicado + Anadir alt text a imagenes</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 28 de Enero 2026</p>
+            <p style="margin-top: 15px;">Parte del Grupo Gourmetland | gourmetlandtenerife.com</p>
+        </div>
+    </div>
+</body>
+</html>

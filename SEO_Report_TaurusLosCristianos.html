@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - Taurus 1 Los Cristianos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4a2c1a 0%, #6b3d2a 50%, #8b4513 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .header .group-badge {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .url {
+            margin-top: 15px;
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        .score-section {
+            background: linear-gradient(135deg, #d4a574 0%, #c9a06a 50%, #b8956a 100%);
+            color: #3d2314;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .score-big {
+            font-size: 5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .score-label {
+            font-size: 1.5em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            background: #fdf6f0;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #8b4513;
+        }
+
+        .intro h2 {
+            color: #4a2c1a;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #8b4513;
+        }
+
+        .good-box {
+            background: #d5f4e6;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .good-box h3 {
+            color: #27ae60;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .good-box p {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .good-box .benefit {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 500;
+            color: #27ae60;
+        }
+
+        .good-box ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .good-box li {
+            margin-bottom: 8px;
+        }
+
+        .problem-box {
+            background: #ffe6e6;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .problem-box.medium {
+            background: #fff3e6;
+            border-left-color: #f39c12;
+        }
+
+        .problem-box h3 {
+            color: #c0392b;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .problem-box.medium h3 {
+            color: #d68910;
+        }
+
+        .problem-box .issue {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .problem-box .issue h4 {
+            color: #e74c3c;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .problem-box.medium .issue h4 {
+            color: #d68910;
+        }
+
+        .problem-box .issue p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .code-box {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.95em;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .code-box .comment {
+            color: #7f8c8d;
+        }
+
+        .code-box .tag {
+            color: #e74c3c;
+        }
+
+        .code-box .attr {
+            color: #f39c12;
+        }
+
+        .code-box .value {
+            color: #2ecc71;
+        }
+
+        .impact-badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1em;
+            margin-top: 15px;
+        }
+
+        .impact-badge.high {
+            background: #e74c3c;
+        }
+
+        .impact-badge.medium {
+            background: #f39c12;
+        }
+
+        .tagline-box {
+            background: linear-gradient(135deg, #4a2c1a 0%, #6b3d2a 50%, #8b4513 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .tagline-box h4 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .tagline-box p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .menu-item {
+            background: #fdf6f0;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            color: #4a2c1a;
+            border: 2px solid #d4a574;
+        }
+
+        .action-plan {
+            background: linear-gradient(135deg, #4a2c1a 0%, #6b3d2a 50%, #8b4513 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .action-plan h3 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .action-step {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .action-step .priority {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .action-step h4 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .action-step p {
+            font-size: 1.05em;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #4a2c1a;
+        }
+
+        .stat-card .label {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+
+        .keywords-section {
+            background: #fdf6f0;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .keywords-section h3 {
+            color: #4a2c1a;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .keyword-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .keyword-tag {
+            background: #8b4513;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 0.95em;
+        }
+
+        .keyword-tag.secondary {
+            background: #d4a574;
+            color: #3d2314;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .score-big {
+                font-size: 3.5em;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="group-badge">GRUPO GOURMETLAND</div>
+            <h1>Informe de Auditoria SEO</h1>
+            <div class="subtitle">Taurus 1 Los Cristianos</div>
+            <div class="url">taurusloscristianos.es</div>
+            <p style="margin-top: 20px; font-size: 1em; opacity: 0.8;">28 Enero 2026</p>
+        </div>
+
+        <div class="score-section">
+            <div class="score-big">7.5/10</div>
+            <div class="score-label">Buena Base SEO - Optimizaciones Menores Necesarias</div>
+        </div>
+
+        <div class="content">
+            <!-- INTRODUCCION -->
+            <div class="intro">
+                <h2>Resumen General</h2>
+                <p>
+                    Taurus 1 es un restaurante de carnes premium ubicado en el Safari Shopping Center, Los Cristianos (Tenerife Sur), parte del <strong>Grupo Gourmetland</strong>. El sitio presenta una <strong>excelente implementacion tecnica</strong> con Schema.org completo, Google Analytics 4 y soporte multiidioma (ES/EN). Los meta tags estan bien optimizados y el H1 es unico y relevante. Las principales areas de mejora son el alt text de imagenes, la meta description de la pagina de reservas y algunas oportunidades de keywords locales.
+                </p>
+            </div>
+
+            <!-- TAGLINE -->
+            <div class="section">
+                <div class="tagline-box">
+                    <h4>"El Templo de la Buena Carne"</h4>
+                    <p>Carnes premium cocinadas al horno de lena en Tenerife Sur</p>
+                </div>
+            </div>
+
+            <!-- INFO RESTAURANTE -->
+            <div class="section">
+                <div class="section-title">Informacion del Restaurante</div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div style="background: #fdf6f0; padding: 20px; border-radius: 10px;">
+                        <h4 style="color: #4a2c1a; margin-bottom: 10px;">Ubicacion</h4>
+                        <p>C. Rodeo, 4 (Safari Shopping Center)<br>38650 Arona, Santa Cruz de Tenerife</p>
+                    </div>
+                    <div style="background: #fdf6f0; padding: 20px; border-radius: 10px;">
+                        <h4 style="color: #4a2c1a; margin-bottom: 10px;">Contacto</h4>
+                        <p>Tel: +34 922 752 674<br>Email: info@taurusloscristianos.com</p>
+                    </div>
+                    <div style="background: #fdf6f0; padding: 20px; border-radius: 10px;">
+                        <h4 style="color: #4a2c1a; margin-bottom: 10px;">Horario</h4>
+                        <p>Todos los dias: 13:00 - 23:00</p>
+                    </div>
+                    <div style="background: #fdf6f0; padding: 20px; border-radius: 10px;">
+                        <h4 style="color: #4a2c1a; margin-bottom: 10px;">Idiomas Web</h4>
+                        <p>Espanol (ES) - Ingles (EN)<br>WPML implementado</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MENU -->
+            <div class="section">
+                <div class="section-title">Oferta Gastronomica</div>
+
+                <div class="menu-grid">
+                    <div class="menu-item">Entrantes</div>
+                    <div class="menu-item">Carnes Premium</div>
+                    <div class="menu-item">Pescados</div>
+                    <div class="menu-item">Pastas Frescas</div>
+                    <div class="menu-item">Gourmet Pizzas</div>
+                </div>
+
+                <div style="margin-top: 20px; padding: 20px; background: #fdf6f0; border-radius: 10px;">
+                    <p><strong>Especialidades:</strong> Chuletas de cerdo, T-Bone Steak, Chuleton de ternera, London Burger, Prime Burger</p>
+                    <p style="margin-top: 10px;"><strong>Diferenciador:</strong> Horno de lena tradicional</p>
+                </div>
+            </div>
+
+            <!-- PUNTOS FUERTES -->
+            <div class="section">
+                <div class="section-title">Puntos Positivos</div>
+
+                <div class="good-box">
+                    <h3>Meta Tags Excelentes</h3>
+                    <p>
+                        <strong>Title:</strong> "Taurus 1 Los Cristianos, Restaurante de carne en Tenerife | Gourmetland" (67 caracteres)<br>
+                        <strong>Description:</strong> "Si buscas un Restaurante de carne en Tenerife Sur, Taurus 1 es el templo de la buena carne. Ademas de carne de primera calidad, encontraras..."
+                    </p>
+                    <div class="benefit">
+                        Keywords estrategicas bien integradas: restaurante de carne, Tenerife Sur, carne de primera calidad
+                    </div>
+                </div>
+
+                <div class="good-box">
+                    <h3>H1 Optimizado y Unico</h3>
+                    <p>
+                        <strong>H1:</strong> "RESTAURANTE DE CARNE EN TENERIFE SUR"
+                    </p>
+                    <p>
+                        H1 unico, descriptivo y con keyword principal. Estructura de headings correcta con H2 para secciones.
+                    </p>
+                    <div class="benefit">
+                        Jerarquia clara: H1 > H2 (Descubre, Platos, Menu, Resenas)
+                    </div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Schema.org Completo</h3>
+                    <p>
+                        Implementacion JSON-LD muy completa incluyendo:
+                    </p>
+                    <ul>
+                        <li>Organization/Place con coordenadas GPS (28.053, -16.706)</li>
+                        <li>PostalAddress con direccion completa</li>
+                        <li>ContactPoint con telefono y email</li>
+                        <li>OpeningHoursSpecification para todos los dias</li>
+                    </ul>
+                    <div class="benefit">
+                        Excellent para SEO local y Google Business Profile
+                    </div>
+                </div>
+
+                <div class="good-box">
+                    <h3>Google Analytics 4 Activo</h3>
+                    <p>
+                        GA4 implementado correctamente (ID: G-P5FB1DJ9KL). Permite tracking de conversiones, reservas y comportamiento de usuarios.
+                    </p>
+                </div>
+
+                <div class="good-box">
+                    <h3>Multiidioma Implementado</h3>
+                    <p>
+                        WPML configurado con versiones ES e EN. Estructura URL clara: /en/ para ingles.
+                    </p>
+                    <ul>
+                        <li>Title EN: "Taurus 1 Los Cristianos, Steak house in Tenerife | Gourmetland"</li>
+                        <li>Navegacion traducida correctamente</li>
+                        <li>URLs consistentes: /en/menu/, /en/contact/</li>
+                    </ul>
+                </div>
+
+                <div class="good-box">
+                    <h3>Sistema de Reservas Integrado</h3>
+                    <p>
+                        Pagina /reservar/ con sistema "reservasGM" integrado. CTAs claros "RESERVAR AHORA" en header y navegacion.
+                    </p>
+                </div>
+
+                <div class="good-box">
+                    <h3>Presencia Social</h3>
+                    <ul>
+                        <li>Instagram: @taurus1tenerife</li>
+                        <li>Facebook: Pagina activa</li>
+                        <li>TripAdvisor: Resenas visibles</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROBLEMAS -->
+            <div class="section">
+                <div class="section-title">Problemas a Resolver</div>
+
+                <div class="problem-box medium">
+                    <h3>Alt Text Imagenes Incompleto</h3>
+
+                    <div class="issue">
+                        <h4>El Problema</h4>
+                        <p>
+                            Varias imagenes de platos y ambiente carecen de atributos alt descriptivos. Esto limita la visibilidad en Google Imagenes y afecta accesibilidad.
+                        </p>
+                    </div>
+
+                    <div class="issue">
+                        <h4>Solucion</h4>
+                        <p>Agregar alt text descriptivo a todas las imagenes:</p>
+                    </div>
+
+                    <div class="code-box">
+<span class="comment">&lt;!-- Ejemplos de alt text para Taurus 1 --&gt;</span>
+
+<span class="comment">&lt;!-- Carnes --&gt;</span>
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"chuleton.jpg"</span> <span class="attr">alt</span>=<span class="value">"Chuleton de ternera a la brasa Taurus 1 Los Cristianos"</span>&gt;
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"tbone.jpg"</span> <span class="attr">alt</span>=<span class="value">"T-Bone steak premium cocinado al horno de lena Tenerife"</span>&gt;
+
+<span class="comment">&lt;!-- Ambiente --&gt;</span>
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"interior.jpg"</span> <span class="attr">alt</span>=<span class="value">"Sala restaurante Taurus 1 Safari Shopping Center Los Cristianos"</span>&gt;
+
+<span class="comment">&lt;!-- Pizzas --&gt;</span>
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="value">"pizza.jpg"</span> <span class="attr">alt</span>=<span class="value">"Pizza gourmet al horno de lena Taurus 1 Tenerife Sur"</span>&gt;
+                    </div>
+
+                    <span class="impact-badge medium">Impacto: MEDIO - Google Imagenes y Accesibilidad</span>
+                </div>
+
+                <div class="problem-box medium">
+                    <h3>Meta Description Pagina Reservas Faltante</h3>
+
+                    <div class="issue">
+                        <h4>El Problema</h4>
+                        <p>
+                            La pagina /reservar/ no tiene meta description visible, dependiendo solo de Schema.org. Oportunidad perdida para CTR en SERPs.
+                        </p>
+                    </div>
+
+                    <div class="issue">
+                        <h4>Solucion</h4>
+                    </div>
+
+                    <div class="code-box">
+&lt;<span class="tag">meta</span> <span class="attr">name</span>=<span class="value">"description"</span>
+      <span class="attr">content</span>=<span class="value">"Reserva mesa en Taurus 1 Los Cristianos. Restaurante de carnes premium en Tenerife Sur. Reservas online o llamando al +34 922 752 674. Abierto todos los dias."</span>&gt;
+                    </div>
+
+                    <span class="impact-badge medium">Impacto: MEDIO - CTR en Resultados de Busqueda</span>
+                </div>
+
+                <div class="problem-box medium">
+                    <h3>hreflang Tags No Explicitos</h3>
+
+                    <div class="issue">
+                        <h4>El Problema</h4>
+                        <p>
+                            WPML gestiona el cambio de idioma pero los tags hreflang no son visibles en el head. Google podria no indexar correctamente las versiones de idioma.
+                        </p>
+                    </div>
+
+                    <div class="issue">
+                        <h4>Solucion</h4>
+                        <p>Verificar que WPML este generando hreflang o agregarlos manualmente:</p>
+                    </div>
+
+                    <div class="code-box">
+&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="value">"alternate"</span> <span class="attr">hreflang</span>=<span class="value">"es"</span> <span class="attr">href</span>=<span class="value">"https://taurusloscristianos.es/"</span>&gt;
+&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="value">"alternate"</span> <span class="attr">hreflang</span>=<span class="value">"en"</span> <span class="attr">href</span>=<span class="value">"https://taurusloscristianos.es/en/"</span>&gt;
+&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="value">"alternate"</span> <span class="attr">hreflang</span>=<span class="value">"x-default"</span> <span class="attr">href</span>=<span class="value">"https://taurusloscristianos.es/"</span>&gt;
+                    </div>
+
+                    <span class="impact-badge medium">Impacto: MEDIO - SEO Internacional</span>
+                </div>
+
+                <div class="problem-box medium">
+                    <h3>H1 Pagina Menu Generico</h3>
+
+                    <div class="issue">
+                        <h4>El Problema</h4>
+                        <p>
+                            El H1 de la pagina menu es "PLATOS PARA TODOS LOS GUSTOS" - muy generico y sin keywords.
+                        </p>
+                    </div>
+
+                    <div class="issue">
+                        <h4>Solucion</h4>
+                    </div>
+
+                    <div class="code-box">
+<span class="comment">&lt;!-- ACTUAL --&gt;</span>
+&lt;<span class="tag">h1</span>&gt;PLATOS PARA TODOS LOS GUSTOS&lt;/<span class="tag">h1</span>&gt;
+
+<span class="comment">&lt;!-- RECOMENDADO --&gt;</span>
+&lt;<span class="tag">h1</span>&gt;Menu Taurus 1 - Carnes Premium y Pizzas al Horno de Lena&lt;/<span class="tag">h1</span>&gt;
+                    </div>
+
+                    <span class="impact-badge medium">Impacto: MEDIO - Keywords Pagina Menu</span>
+                </div>
+
+                <div class="problem-box medium">
+                    <h3>Precios No Visibles en Menu Web</h3>
+
+                    <div class="issue">
+                        <h4>El Problema</h4>
+                        <p>
+                            La pagina de menu muestra categorias pero no precios de platos. Esto puede aumentar el bounce rate y limita el uso de Schema Menu.
+                        </p>
+                    </div>
+
+                    <div class="issue">
+                        <h4>Solucion</h4>
+                        <p>
+                            Agregar precios o al menos rangos de precio. Implementar Schema MenuItem con precios para rich snippets.
+                        </p>
+                    </div>
+
+                    <span class="impact-badge medium">Impacto: MEDIO - UX y Rich Snippets</span>
+                </div>
+            </div>
+
+            <!-- QUICK WINS -->
+            <div class="action-plan">
+                <h3>Quick Wins - Acciones Rapidas</h3>
+
+                <div class="action-step">
+                    <span class="priority">30 MINUTOS</span>
+                    <h4>1. Meta Description Pagina Reservas</h4>
+                    <p>
+                        Agregar meta description optimizada a /reservar/ incluyendo: nombre restaurante, ubicacion, telefono y CTA de reserva.
+                    </p>
+                </div>
+
+                <div class="action-step">
+                    <span class="priority">1 HORA</span>
+                    <h4>2. Alt Text Imagenes Principales</h4>
+                    <p>
+                        Agregar alt descriptivo a las 10-15 imagenes principales de la homepage: platos destacados, interior, horno de lena. Incluir keywords: "carne premium", "Tenerife Sur", "Los Cristianos".
+                    </p>
+                </div>
+
+                <div class="action-step">
+                    <span class="priority">30 MINUTOS</span>
+                    <h4>3. Verificar hreflang en WPML</h4>
+                    <p>
+                        Acceder a WPML > Idiomas > Opciones SEO y asegurar que "hreflang tags" este activado. Verificar con herramienta como hreflang.org.
+                    </p>
+                </div>
+
+                <div class="action-step">
+                    <span class="priority">15 MINUTOS</span>
+                    <h4>4. H1 Pagina Menu</h4>
+                    <p>
+                        Cambiar H1 de menu de "PLATOS PARA TODOS LOS GUSTOS" a "Menu Taurus 1 - Carnes Premium y Pizzas Gourmet".
+                    </p>
+                </div>
+
+                <div class="action-step">
+                    <span class="priority">OPCIONAL</span>
+                    <h4>5. Schema Menu con Precios</h4>
+                    <p>
+                        Implementar Schema.org Menu/MenuItem con precios de los platos principales para rich snippets en Google.
+                    </p>
+                </div>
+            </div>
+
+            <!-- KEYWORDS -->
+            <div class="keywords-section">
+                <h3>Keywords Recomendadas</h3>
+
+                <h4 style="color: #6b3d2a; margin: 20px 0 15px 0;">Principales (Alta Prioridad)</h4>
+                <div class="keyword-grid">
+                    <div class="keyword-tag">restaurante carne Tenerife</div>
+                    <div class="keyword-tag">steakhouse Los Cristianos</div>
+                    <div class="keyword-tag">chuleton Tenerife Sur</div>
+                    <div class="keyword-tag">asador Los Cristianos</div>
+                    <div class="keyword-tag">carne a la brasa Arona</div>
+                </div>
+
+                <h4 style="color: #6b3d2a; margin: 25px 0 15px 0;">Secundarias (Media Prioridad)</h4>
+                <div class="keyword-grid">
+                    <div class="keyword-tag secondary">horno de lena Tenerife</div>
+                    <div class="keyword-tag secondary">mejor carne Las Americas</div>
+                    <div class="keyword-tag secondary">restaurante Safari Shopping</div>
+                    <div class="keyword-tag secondary">pizza gourmet Tenerife Sur</div>
+                    <div class="keyword-tag secondary">T-bone steak Canarias</div>
+                    <div class="keyword-tag secondary">reservar restaurante carne</div>
+                </div>
+
+                <h4 style="color: #6b3d2a; margin: 25px 0 15px 0;">Long Tail (Oportunidades)</h4>
+                <div class="keyword-grid">
+                    <div class="keyword-tag secondary">donde comer carne en Los Cristianos</div>
+                    <div class="keyword-tag secondary">mejor steakhouse sur de Tenerife</div>
+                    <div class="keyword-tag secondary">restaurante grupo Gourmetland</div>
+                    <div class="keyword-tag secondary">carne premium cerca de mi Arona</div>
+                </div>
+            </div>
+
+            <!-- IMPACTO -->
+            <div class="section">
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 15px;">
+                    <h3 style="text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 1.8em;">ROI Estimado</h3>
+
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="number">7.5</div>
+                            <div class="label">Puntuacion Actual</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number" style="color: #27ae60;">9.0</div>
+                            <div class="label">Puntuacion Potencial</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number" style="color: #3498db;">+25%</div>
+                            <div class="label">Trafico Organico</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number" style="color: #9b59b6;">3-4h</div>
+                            <div class="label">Tiempo Estimado</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONCLUSION -->
+            <div class="section">
+                <div style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: white; padding: 40px; border-radius: 15px; text-align: center;">
+                    <h2 style="font-size: 2em; margin-bottom: 20px;">Veredicto: Excelente Base - Pulir Detalles</h2>
+                    <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                        Taurus 1 tiene una <strong>implementacion SEO solida</strong> con meta tags optimizados, Schema.org completo, GA4 activo y multiidioma funcional. Los problemas son menores y se centran en alt text, meta description de reservas y verificacion de hreflang. Con <strong>3-4 horas de trabajo</strong> el sitio puede alcanzar un nivel excelente de optimizacion.
+                    </p>
+                    <div style="font-size: 1.1em; opacity: 0.95; margin-top: 20px;">
+                        <strong>Prioridad:</strong> Alt text imagenes + Meta reservas + Verificar hreflang
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p style="font-size: 1.3em; margin-bottom: 15px;">Informe compilado por Claude Code - SEO Audit Specialist</p>
+            <p>Tape-Dynamics SEO Analysis | Grupo Gourmetland</p>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">28 Enero 2026</p>
+        </div>
+    </div>
+</body>
+</html>

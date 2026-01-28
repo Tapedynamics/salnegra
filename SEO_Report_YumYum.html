@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - Yum Yum Thai Cuisine Tenerife</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8B0000 0%, #c41e3a 50%, #8B0000 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 5px solid #FFD700;
+        }
+
+        .header .group-name {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .header .url {
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #c41e3a;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #8B0000;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #8B0000 0%, #c41e3a 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 3px solid #FFD700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .score-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 50%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+
+        .score-box .score {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .score-box .score-label {
+            font-size: 24px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .score-box p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .critical {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .critical h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, #feca57, #ff9f43);
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning h4 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #26de81, #20bf6b);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .success h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #8B0000, #c41e3a);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #FFD700;
+        }
+
+        .info-box h4 {
+            color: #FFD700;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: linear-gradient(135deg, #8B0000, #c41e3a);
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #fff8e7;
+        }
+
+        .priority-alta {
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-media {
+            background: #feca57;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-baja {
+            background: #26de81;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #c41e3a;
+        }
+
+        .checklist li.done {
+            border-left-color: #26de81;
+            background: #e8f8f0;
+        }
+
+        .checklist li.pending {
+            border-left-color: #ff6b6b;
+        }
+
+        .code-block {
+            background: #2d3436;
+            color: #FFD700;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border-left: 4px solid #c41e3a;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #c41e3a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+            color: #8B0000;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #fff8e7, #fff3cd);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #FFD700;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8B0000;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #8B0000 0%, #c41e3a 100%);
+            text-align: center;
+            padding: 30px;
+            color: white;
+            font-size: 14px;
+            border-top: 3px solid #FFD700;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .footer p {
+            margin: 8px 0;
+        }
+
+        .footer strong {
+            color: #FFD700;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        .tag-cuisine {
+            background: #c41e3a;
+            color: white;
+        }
+
+        .tag-location {
+            background: #26de81;
+            color: white;
+        }
+
+        .tag-feature {
+            background: #FFD700;
+            color: #8B0000;
+            font-weight: 600;
+        }
+
+        .tag-social {
+            background: #3498db;
+            color: white;
+        }
+
+        .asian-divider {
+            text-align: center;
+            margin: 30px 0;
+            color: #c41e3a;
+            font-size: 24px;
+            letter-spacing: 10px;
+        }
+
+        .highlight-gold {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #8B0000;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-box .score {
+                font-size: 60px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="group-name">GRUPO GOURMETLAND</div>
+        <h1>Informe de Auditoria SEO</h1>
+        <p><strong>Yum Yum Thai Cuisine</strong></p>
+        <p class="url">yumyumrest.com</p>
+        <p>Analisis realizado: 28 de Enero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al indice de informes</a>
+
+        <!-- PUNTUACION GENERAL -->
+        <div class="score-box">
+            <div class="score-label">Puntuacion SEO General</div>
+            <div class="score">7.8/10</div>
+            <p>Excelente base tecnica con Schema completo, multiidioma y Analytics. Oportunidades en alt text y expansion de contenido long-tail.</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>Yum Yum Thai Cuisine</strong> es un restaurante de cocina tailandesa autentica ubicado en Costa Adeje, parte del prestigioso grupo Gourmetland Tenerife. Ofrece platos de diferentes paises asiaticos: Tailandia, China, Japon y Vietnam, con especialidades como Tom Yum, Pad Thai y una seleccion de sushi.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">7.8</div>
+                    <div class="label">Puntuacion SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Idiomas (ES/EN)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">4</div>
+                    <div class="label">Cocinas Asiaticas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">$$</div>
+                    <div class="label">Rango de Precios</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Sector:</strong> Restaurante Cocina Asiatica / Thai</li>
+                <li><strong>Ubicacion:</strong> Av. de Bruselas, 14, First floor, 38679 Costa Adeje (The Duke Shops)</li>
+                <li><strong>Coordenadas:</strong> 28.092367, -16.735790</li>
+                <li><strong>Telefono:</strong> +34 922 28 20 18</li>
+                <li><strong>Email:</strong> info@yumyumrest.com</li>
+                <li><strong>Horario:</strong> 13:00 - 23:00 (todos los dias)</li>
+                <li><strong>Idiomas web:</strong> Espanol, English</li>
+            </ul>
+
+            <h3>Tipos de Cocina</h3>
+            <p>
+                <span class="tag tag-cuisine">Tailandesa</span>
+                <span class="tag tag-cuisine">China</span>
+                <span class="tag tag-cuisine">Japonesa</span>
+                <span class="tag tag-cuisine">Vietnamita</span>
+                <span class="tag tag-cuisine">Sushi</span>
+            </p>
+
+            <h3>Especialidades Destacadas</h3>
+            <p>
+                <span class="tag tag-feature">Tom Yum</span>
+                <span class="tag tag-feature">Tom Kha</span>
+                <span class="tag tag-feature">Pad Thai</span>
+                <span class="tag tag-feature">Sushi Selection</span>
+                <span class="tag tag-feature">Curry Thai</span>
+            </p>
+
+            <h3>Presencia Social</h3>
+            <p>
+                <span class="tag tag-social">Facebook</span>
+                <span class="tag tag-social">Instagram @yumyumtenerife</span>
+                <span class="tag tag-social">TripAdvisor</span>
+            </p>
+        </div>
+
+        <!-- ASPECTOS POSITIVOS -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. META TAGS OPTIMIZADOS</h4>
+                <p><strong>Title:</strong> "Yum Yum Restaurante - Comida Tailandesa en Tenerife" (50 caracteres - optimo)</p>
+                <p><strong>Description:</strong> "La autentica cocina tailandesa la encontraras Yum Yum Restaurante Thai Cuisine. Platos de diferentes paises de Asia: China, Japon, Tailandia y Vietnam." (152 caracteres - excelente)</p>
+                <p>Keywords bien posicionadas: Thai, Tailandesa, Tenerife, Asia, restaurante.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. SCHEMA JSON-LD COMPLETO</h4>
+                <p>Implementacion profesional de Schema markup incluyendo:</p>
+                <ul>
+                    <li>Organization / Restaurant</li>
+                    <li>GeoCoordinates (lat: 28.092367, lng: -16.735790)</li>
+                    <li>OpeningHoursSpecification</li>
+                    <li>PostalAddress completa</li>
+                    <li>ContactPoint con telefono</li>
+                    <li>BreadcrumbList para navegacion</li>
+                    <li>PriceRange: $$</li>
+                </ul>
+                <p>Esto permite rich snippets en Google con horarios, direccion y telefono.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. GOOGLE ANALYTICS GA4 CONFIGURADO</h4>
+                <p>Tracking ID: <strong>G-VM6BGX44ZH</strong></p>
+                <p>Base solida para analisis de trafico, comportamiento de usuarios y medicion de conversiones (reservas).</p>
+            </div>
+
+            <div class="success">
+                <h4>4. ESTRUCTURA H1/H2 CORRECTA</h4>
+                <p><strong>H1:</strong> "RESTAURANTE DE COMIDA TAILANDESA" / "Ven a conocer Yum Yum Thai Cuisine"</p>
+                <p><strong>H2:</strong> "PLATOS PARA TODOS LOS GUSTOS", "Nuestro Menu"</p>
+                <p><strong>H3:</strong> Nombres de platos (Tom Yum, Tom Kha, Pad Thai...)</p>
+                <p>Jerarquia semantica correcta que ayuda a Google a entender la estructura del contenido.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. MULTIIDIOMA ACTIVO (ES/EN)</h4>
+                <p>Selector de idioma presente con versiones en Espanol e Ingles. Esencial para el mercado turistico de Tenerife Sur con visitantes britanicos y europeos.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. DATOS DE CONTACTO VISIBLES</h4>
+                <p>Telefono, email y direccion claramente visibles. Importante para SEO local y conversiones directas.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. INTEGRACION INSTAGRAM</h4>
+                <p>Feed de Instagram (@yumyumtenerife) integrado en la web, mostrando contenido visual fresco de platos y ambiente del restaurante.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. MENU ESTRUCTURADO</h4>
+                <p>Menu organizado por categorias: Appetizers, Main Courses, Fish/Seafood, Sushi. Facilita la navegacion y puede usarse para Schema Menu.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS -->
+        <div class="section">
+            <h2>Problemas Detectados</h2>
+
+            <div class="critical">
+                <h4>1. ALT TEXT DE IMAGENES LIMITADO</h4>
+                <p>Las imagenes de platos tailandeses, sushi y ambiente del restaurante tienen alt text generico o ausente. Esto afecta:</p>
+                <ul>
+                    <li>Posicionamiento en Google Images (busquedas visuales de comida)</li>
+                    <li>Accesibilidad para usuarios con lectores de pantalla</li>
+                    <li>Comprension del contenido por parte de Google</li>
+                </ul>
+                <p><strong>Solucion:</strong></p>
+                <div class="code-block">&lt;!-- Ejemplos de alt text optimizados --&gt;
+&lt;img src="tomyum.jpg" alt="Tom Yum soup picante con gambas, especialidad tailandesa Yum Yum Tenerife"&gt;
+&lt;img src="padthai.jpg" alt="Pad Thai con gambas y cacahuetes, autentico restaurante thai Costa Adeje"&gt;
+&lt;img src="sushi.jpg" alt="Sushi variado con salmon y atun, cocina japonesa Yum Yum"&gt;
+&lt;img src="interior.jpg" alt="Interior restaurante asiatico Yum Yum Costa Adeje, ambiente acogedor"&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>2. FALTA SCHEMA MENU DETALLADO</h4>
+                <p>Aunque hay Schema Restaurant basico, falta Schema Menu con los platos y precios. Esto permitiria a Google mostrar informacion del menu directamente en los resultados de busqueda.</p>
+                <div class="code-block">{
+  "@type": "Menu",
+  "name": "Menu Yum Yum Thai Cuisine",
+  "hasMenuSection": [
+    {
+      "@type": "MenuSection",
+      "name": "Sopas Tailandesas",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Tom Yum",
+          "description": "Sopa picante con gambas, limon y hierbas thai",
+          "offers": {
+            "@type": "Offer",
+            "price": "8.50",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    }
+  ]
+}</div>
+            </div>
+
+            <div class="warning">
+                <h4>3. CONTENIDO TEXTUAL LIMITADO</h4>
+                <p>Las paginas tienen poco texto descriptivo mas alla de los nombres de platos. Google necesita contenido para entender y posicionar la pagina.</p>
+                <p><strong>Sugerencia:</strong> Anadir descripciones de:</p>
+                <ul>
+                    <li>Historia y filosofia del restaurante</li>
+                    <li>Origen de los ingredientes</li>
+                    <li>Descripciones detalladas de platos signature</li>
+                    <li>Informacion sobre el chef y su experiencia</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h4>4. SIN PAGINA DE RESERVAS DEDICADA</h4>
+                <p>No hay una landing page /reservas/ o /book/ optimizada para capturar busquedas como "reservar restaurante thai Tenerife" o "reserva tailandes Costa Adeje".</p>
+            </div>
+
+            <div class="warning">
+                <h4>5. HREFLANG POR VERIFICAR</h4>
+                <p>Con versiones ES/EN, es importante verificar que las etiquetas hreflang estan correctamente implementadas:</p>
+                <div class="code-block">&lt;link rel="alternate" hreflang="es" href="https://yumyumrest.com/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://yumyumrest.com/en/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://yumyumrest.com/" /&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>6. FALTA OPEN GRAPH TAGS</h4>
+                <p>No se detectaron meta tags Open Graph para compartir en redes sociales. Cuando alguien comparte el enlace en Facebook/WhatsApp, no aparece preview optimizada.</p>
+                <div class="code-block">&lt;meta property="og:title" content="Yum Yum Thai Cuisine - Restaurante Tailandes Costa Adeje"&gt;
+&lt;meta property="og:description" content="Autentica cocina tailandesa en Tenerife Sur. Tom Yum, Pad Thai, Sushi y mas."&gt;
+&lt;meta property="og:image" content="https://yumyumrest.com/images/og-image.jpg"&gt;
+&lt;meta property="og:url" content="https://yumyumrest.com/"&gt;
+&lt;meta property="og:type" content="restaurant"&gt;</div>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins - Mejoras Rapidas</h2>
+
+            <p>Estas acciones pueden implementarse rapidamente con alto impacto:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Accion</th>
+                        <th>Impacto</th>
+                        <th>Tiempo</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Anadir alt text descriptivo a todas las imagenes</td>
+                        <td>Alto</td>
+                        <td>1-2 horas</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Implementar Open Graph tags</td>
+                        <td>Medio</td>
+                        <td>30 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Verificar hreflang ES/EN</td>
+                        <td>Alto</td>
+                        <td>30 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ampliar Schema con Menu detallado</td>
+                        <td>Alto</td>
+                        <td>2-3 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear pagina /reservas/ optimizada</td>
+                        <td>Medio</td>
+                        <td>2 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir contenido descriptivo sobre platos</td>
+                        <td>Alto</td>
+                        <td>3-4 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear seccion "Sobre Nosotros" con historia</td>
+                        <td>Medio</td>
+                        <td>2 horas</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ANALISIS KEYWORDS -->
+        <div class="section">
+            <h2>Analisis de Keywords</h2>
+
+            <h3>Keywords Principales</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Volumen Est.</th>
+                        <th>Competencia</th>
+                        <th>Relevancia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>restaurante tailandes tenerife</td>
+                        <td>480/mes</td>
+                        <td>Media</td>
+                        <td>Muy Alta</td>
+                    </tr>
+                    <tr>
+                        <td>thai restaurant tenerife</td>
+                        <td>320/mes</td>
+                        <td>Media</td>
+                        <td>Muy Alta</td>
+                    </tr>
+                    <tr>
+                        <td>comida tailandesa costa adeje</td>
+                        <td>170/mes</td>
+                        <td>Baja</td>
+                        <td>Muy Alta</td>
+                    </tr>
+                    <tr>
+                        <td>restaurante asiatico tenerife sur</td>
+                        <td>260/mes</td>
+                        <td>Media</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>sushi tenerife sur</td>
+                        <td>390/mes</td>
+                        <td>Alta</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>pad thai tenerife</td>
+                        <td>90/mes</td>
+                        <td>Muy Baja</td>
+                        <td>Muy Alta</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Long-Tail (Oportunidades)</h3>
+            <ul>
+                <li>"mejor restaurante tailandes costa adeje"</li>
+                <li>"where to eat thai food tenerife"</li>
+                <li>"authentic thai cuisine canary islands"</li>
+                <li>"tom yum soup tenerife"</li>
+                <li>"restaurante asiatico the duke shops"</li>
+                <li>"comida vietnamita tenerife sur"</li>
+                <li>"cena romantica asiatica tenerife"</li>
+                <li>"restaurante fusion asiatica costa adeje"</li>
+            </ul>
+
+            <h3>Keywords por Idioma</h3>
+            <div class="info-box">
+                <h4>Ingles (Turistas UK/Internacionales)</h4>
+                <p>best thai restaurant tenerife, thai food costa adeje, authentic asian cuisine tenerife south, pad thai near me tenerife</p>
+            </div>
+
+            <div class="highlight-gold">
+                <strong>Oportunidad:</strong> Pocas busquedas especificas de "comida vietnamita tenerife" tienen competencia. Yum Yum puede posicionarse facilmente para esta keyword al ofrecer platos de Vietnam.
+            </div>
+        </div>
+
+        <!-- ESTRATEGIA CONTENIDO -->
+        <div class="section">
+            <h2>Estrategia de Contenido Recomendada</h2>
+
+            <h3>Paginas a Crear/Optimizar</h3>
+            <ul>
+                <li><strong>/menu/</strong> - Pagina de menu completo con descripciones, ingredientes y fotos</li>
+                <li><strong>/reservas/</strong> - Landing de reservas con formulario y disponibilidad</li>
+                <li><strong>/sobre-nosotros/</strong> - Historia del restaurante, chef, filosofia culinaria</li>
+                <li><strong>/cocina-tailandesa/</strong> - Contenido educativo sobre la cocina thai</li>
+                <li><strong>/platos/tom-yum/</strong> - Pagina dedicada a la especialidad signature</li>
+                <li><strong>/platos/pad-thai/</strong> - Pagina dedicada al plato mas buscado</li>
+            </ul>
+
+            <h3>Contenido para Blog/Noticias</h3>
+            <ul>
+                <li>"Los secretos del autentico Pad Thai: receta e historia"</li>
+                <li>"5 platos tailandeses que debes probar en tu visita a Tenerife"</li>
+                <li>"Diferencias entre cocina tailandesa, china y vietnamita"</li>
+                <li>"Maridaje de vinos con comida asiatica"</li>
+                <li>"Celebra tu cumpleanos con sabores de Asia en Costa Adeje"</li>
+            </ul>
+
+            <h3>Contenido Visual Recomendado</h3>
+            <ul>
+                <li>Video corto de preparacion de Tom Yum (Reels/TikTok)</li>
+                <li>Galeria de fotos profesionales de platos con alt text optimizado</li>
+                <li>Tour virtual del restaurante</li>
+                <li>Fotos del chef preparando platos signature</li>
+            </ul>
+        </div>
+
+        <!-- SCHEMA RECOMENDADO -->
+        <div class="section">
+            <h2>Schema Markup Adicional Recomendado</h2>
+
+            <p>El sitio ya tiene Schema Restaurant basico. Anadir estos schemas para mejores rich snippets:</p>
+
+            <h3>Schema Menu Completo</h3>
+            <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Yum Yum Thai Cuisine",
+  "image": "https://yumyumrest.com/images/yumyum-restaurant.jpg",
+  "servesCuisine": ["Thai", "Chinese", "Japanese", "Vietnamese", "Asian"],
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. de Bruselas, 14, First floor",
+    "addressLocality": "Costa Adeje",
+    "postalCode": "38679",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.092367,
+    "longitude": -16.735790
+  },
+  "telephone": "+34922282018",
+  "email": "info@yumyumrest.com",
+  "url": "https://yumyumrest.com",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "13:00",
+    "closes": "23:00"
+  },
+  "menu": "https://yumyumrest.com/menu/",
+  "acceptsReservations": "True",
+  "hasMenu": {
+    "@type": "Menu",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "Sopas Tailandesas",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "Tom Yum",
+            "description": "Sopa picante tradicional tailandesa con gambas, limongrass y hierbas aromaticas"
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Tom Kha",
+            "description": "Sopa cremosa de coco con pollo y galanga"
+          }
+        ]
+      }
+    ]
+  }
+}
+&lt;/script&gt;</div>
+
+            <h3>Schema FAQPage</h3>
+            <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Se puede reservar mesa en Yum Yum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si, aceptamos reservas por telefono (+34 922 28 20 18) o email. Recomendamos reservar especialmente para fines de semana."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tienen opciones vegetarianas y veganas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si, ofrecemos una amplia variedad de platos vegetarianos y veganos de la cocina tailandesa, incluyendo currys, pad thai y sopas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Donde esta ubicado Yum Yum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Estamos en Av. de Bruselas 14, primera planta, en el centro comercial The Duke Shops, Costa Adeje, Tenerife."
+      }
+    }
+  ]
+}
+&lt;/script&gt;</div>
+        </div>
+
+        <!-- PLAN DE ACCION -->
+        <div class="section">
+            <h2>Plan de Accion Priorizado</h2>
+
+            <h3>Fase 1: Optimizacion Inmediata (Esta semana)</h3>
+            <ul class="checklist">
+                <li class="pending">Anadir alt text descriptivo a todas las imagenes de platos</li>
+                <li class="pending">Implementar meta tags Open Graph</li>
+                <li class="pending">Verificar y corregir etiquetas hreflang ES/EN</li>
+                <li class="pending">Anadir enlace "Parte del Grupo Gourmetland" en footer</li>
+            </ul>
+
+            <h3>Fase 2: Mejoras de Contenido (Proximas 2 semanas)</h3>
+            <ul class="checklist">
+                <li class="pending">Crear pagina /reservas/ con formulario optimizado</li>
+                <li class="pending">Ampliar Schema con Menu detallado y FAQPage</li>
+                <li class="pending">Anadir descripciones ampliadas de platos signature</li>
+                <li class="pending">Crear seccion "Sobre Nosotros" con historia del restaurante</li>
+            </ul>
+
+            <h3>Fase 3: Expansion de Contenido (Proximo mes)</h3>
+            <ul class="checklist">
+                <li class="pending">Crear paginas individuales para platos estrella (Tom Yum, Pad Thai)</li>
+                <li class="pending">Publicar 2-3 articulos de blog sobre cocina tailandesa</li>
+                <li class="pending">Anadir galeria de fotos profesionales con alt text completo</li>
+                <li class="pending">Implementar sistema de resenas con Schema Review</li>
+            </ul>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="section">
+            <h2>Conclusion</h2>
+
+            <p><strong>Yum Yum Thai Cuisine</strong> tiene una base SEO solida con Schema markup bien implementado, Analytics configurado, multiidioma activo y datos de contacto claros. Es uno de los restaurantes del grupo Gourmetland con mejor fundamento tecnico.</p>
+
+            <div class="info-box">
+                <h4>Potencial de Mejora</h4>
+                <p>Con la implementacion de alt text, Open Graph, contenido ampliado y Schema Menu, la puntuacion puede subir facilmente a <strong>8.5-9.0/10</strong>. El restaurante tiene potencial para posicionarse como la referencia de cocina tailandesa en Tenerife Sur.</p>
+            </div>
+
+            <p>La ventaja competitiva de Yum Yum es ofrecer <strong>4 cocinas asiaticas</strong> (Thai, China, Japonesa, Vietnamita) en un solo lugar, algo unico en Costa Adeje. Esta propuesta de valor debe comunicarse mejor en los contenidos y meta tags.</p>
+
+            <h3>Resumen de Puntuaciones por Area</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Puntuacion</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Tecnico</td>
+                        <td>8.5/10</td>
+                        <td>Schema completo, Analytics OK</td>
+                    </tr>
+                    <tr>
+                        <td>Meta Tags</td>
+                        <td>8/10</td>
+                        <td>Title y Description optimizados</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>6.5/10</td>
+                        <td>Falta texto descriptivo y long-tail</td>
+                    </tr>
+                    <tr>
+                        <td>Imagenes</td>
+                        <td>6/10</td>
+                        <td>Alt text limitado, oportunidad importante</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>8.5/10</td>
+                        <td>Datos completos, coordenadas, horarios</td>
+                    </tr>
+                    <tr>
+                        <td>Social/Sharing</td>
+                        <td>7/10</td>
+                        <td>Instagram OK, falta Open Graph</td>
+                    </tr>
+                    <tr>
+                        <td>Multiidioma</td>
+                        <td>8/10</td>
+                        <td>ES/EN activo, verificar hreflang</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-gold">
+                <strong>Veredicto Final:</strong> Excelente base tecnica con Schema y Analytics. Priorizar alt text de imagenes y Open Graph para quick wins inmediatos. El restaurante tiene todos los elementos para dominar las busquedas de "restaurante tailandes Tenerife".
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Grupo Gourmetland Tenerife - Analisis Individual de Restaurantes</p>
+            <p>Fecha: 28 de Enero 2026</p>
+            <p style="margin-top: 15px; opacity: 0.8;">Para implementar estas mejoras o solicitar un analisis mas detallado, contacte con su consultor SEO.</p>
+        </div>
+    </div>
+</body>
+</html>

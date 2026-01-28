@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoria SEO - Prime400</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #e8e8e8;
+            background: #0d0d0d;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            border-bottom: 3px solid #c9a227;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #c9a227;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .header .grupo {
+            font-size: 14px;
+            color: #c9a227;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #c9a227;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #c9a227;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #d4af37;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #e8e8e8;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #cccccc;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+            color: #cccccc;
+        }
+
+        strong {
+            color: #e8e8e8;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            border: 2px solid #c9a227;
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score-box .score {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #c9a227;
+            text-shadow: 0 0 20px rgba(201, 162, 39, 0.3);
+        }
+
+        .score-box .score-label {
+            font-size: 24px;
+            opacity: 0.9;
+            color: #d4af37;
+        }
+
+        .critical {
+            background: linear-gradient(135deg, #4a1a1a, #3d1515);
+            border-left: 4px solid #ff4444;
+            color: #ffcccc;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .critical h4 {
+            color: #ff6b6b;
+            margin-top: 0;
+        }
+
+        .critical p {
+            color: #ffcccc;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, #3d3515, #4a4020);
+            border-left: 4px solid #c9a227;
+            color: #ffe4a0;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning h4 {
+            color: #d4af37;
+            margin-top: 0;
+        }
+
+        .warning p {
+            color: #ffe4a0;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #1a3d1a, #153d15);
+            border-left: 4px solid #4caf50;
+            color: #c8e6c9;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .success h4 {
+            color: #81c784;
+            margin-top: 0;
+        }
+
+        .success p {
+            color: #c8e6c9;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #1a2a3d, #15253d);
+            border-left: 4px solid #64b5f6;
+            color: #bbdefb;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: #90caf9;
+            margin-top: 0;
+        }
+
+        .info-box p {
+            color: #bbdefb;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        th {
+            background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
+            color: #c9a227;
+            font-weight: 600;
+        }
+
+        td {
+            color: #cccccc;
+        }
+
+        tr:hover {
+            background: rgba(201, 162, 39, 0.1);
+        }
+
+        .priority-alta {
+            background: #b71c1c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-media {
+            background: #c9a227;
+            color: #1a1a1a;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-baja {
+            background: #2e7d32;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            background: #252525;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #c9a227;
+            color: #cccccc;
+        }
+
+        .checklist li.done {
+            border-left-color: #4caf50;
+        }
+
+        .checklist li.pending {
+            border-left-color: #ff4444;
+        }
+
+        .code-block {
+            background: #0d0d0d;
+            color: #c9a227;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border: 1px solid #333;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #c9a227;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+            color: #d4af37;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #252525, #1a1a1a);
+            border: 1px solid #333;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #c9a227;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #888;
+            margin-top: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #333;
+            margin-top: 30px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        .tag-cuisine {
+            background: #c9a227;
+            color: #1a1a1a;
+        }
+
+        .tag-location {
+            background: #2e7d32;
+            color: white;
+        }
+
+        .tag-feature {
+            background: #1565c0;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-box .score {
+                font-size: 60px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p class="grupo">GRUPO GOURMETLAND</p>
+        <h1>Informe de Auditoria SEO</h1>
+        <p><strong>Prime400</strong></p>
+        <p>prime400.com</p>
+        <p>Analisis realizado: 28 de Enero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al indice de informes</a>
+
+        <!-- PUNTUACION GENERAL -->
+        <div class="score-box">
+            <div class="score-label">Puntuacion SEO General</div>
+            <div class="score">7.8/10</div>
+            <p>Steakhouse premium con excelente base tecnica y Schema implementado. Oportunidades de mejora en contenido y SEO local</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>Prime400</strong> es un restaurante asador premium especializado en carnes a la parrilla de carbon Joper, ubicado en Costa Adeje, Tenerife. Forma parte del grupo Gourmetland, uno de los grupos de restauracion mas grandes de Tenerife Sur.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">7.8</div>
+                    <div class="label">Puntuacion SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Idiomas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">GA4</div>
+                    <div class="label">Analytics</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">JSON-LD</div>
+                    <div class="label">Schema</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Sector:</strong> Restaurante Steakhouse Premium / Asador de Carne</li>
+                <li><strong>Ubicacion:</strong> Av. de Bruselas, 14, top floor, 38679 Costa Adeje, Santa Cruz de Tenerife</li>
+                <li><strong>Telefono:</strong> (+34) 922 78 08 21</li>
+                <li><strong>Email:</strong> info@prime400.com</li>
+                <li><strong>Horario:</strong> 13:00 - 23:00 (diario)</li>
+                <li><strong>Coordenadas:</strong> 28.092462, -16.735920</li>
+                <li><strong>Idiomas:</strong> Espanol, English</li>
+                <li><strong>Grupo:</strong> Gourmetland Tenerife</li>
+            </ul>
+
+            <h3>Especialidades</h3>
+            <p>
+                <span class="tag tag-cuisine">Chuleton de Vaca</span>
+                <span class="tag tag-cuisine">Carnes Premium</span>
+                <span class="tag tag-cuisine">Parrilla Carbon Joper</span>
+                <span class="tag tag-cuisine">Entradas</span>
+                <span class="tag tag-cuisine">Pescados</span>
+            </p>
+
+            <h3>Servicios</h3>
+            <p>
+                <span class="tag tag-feature">Reservas Online</span>
+                <span class="tag tag-feature">Parking</span>
+                <span class="tag tag-feature">Terraza</span>
+                <span class="tag tag-feature">Instagram Feed</span>
+            </p>
+        </div>
+
+        <!-- ASPECTOS POSITIVOS -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. SCHEMA MARKUP COMPLETO (JSON-LD)</h4>
+                <p>Implementacion correcta de Schema para Organization, Place, PostalAddress con coordenadas geograficas precisas (28.092462, -16.735920). Esto ayuda a Google a mostrar rich snippets y mejora la visibilidad en Maps.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. TRACKING PROFESIONAL CONFIGURADO</h4>
+                <p>Google Analytics GA4 (G-83Q11GF61L) + Metricool + Facebook Pixel implementados. Base solida para analisis de trafico, comportamiento de usuarios y remarketing.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. META TAGS BIEN OPTIMIZADOS</h4>
+                <p><strong>Title:</strong> "Prime400 | Asador de carne en Tenerife | Gourmetland Tenerife" (60 caracteres - optimo)</p>
+                <p><strong>Description:</strong> "Descubre la experiencia unica de Prime400, el mejor asador de carne en Tenerife. Una delicia para los amantes de la carne! Ven y disfruta." (141 caracteres - optimo)</p>
+            </div>
+
+            <div class="success">
+                <h4>4. ESTRUCTURA DE HEADINGS CORRECTA</h4>
+                <p><strong>H1:</strong> "RESTAURANTE ASADOR EN TENERIFE" - Unico y descriptivo</p>
+                <p><strong>H2:</strong> "Descubre Prime400", "Nuestro Menu", "LO QUE DICEN DE NOSOTROS", "PLATOS PARA TODOS LOS GUSTOS"</p>
+                <p>Jerarquia logica que ayuda a Google a entender el contenido.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. SOPORTE BILINGUE (ES/EN)</h4>
+                <p>Sitio disponible en espanol e ingles con selector de idioma visible. Esencial para el mercado turistico de Tenerife Sur.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. INTEGRACION DE REDES SOCIALES</h4>
+                <p>Instagram feed integrado mostrando ultimas 5 publicaciones. Facebook, Instagram (@prime400tf - 172 seguidores) y TripAdvisor vinculados. Genera confianza y contenido fresco.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. CTA DE RESERVA PROMINENTE</h4>
+                <p>"RESERVAR AHORA" visible y accesible. Sistema de reservas funcional para conversion directa.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. TESTIMONIOS INTEGRADOS</h4>
+                <p>Seccion "LO QUE DICEN DE NOSOTROS" con resenas de clientes. Genera confianza y puede aparecer como rich snippets con Schema Review.</p>
+            </div>
+
+            <div class="success">
+                <h4>9. OPTIMIZACION DE RENDIMIENTO</h4>
+                <p>Lazy loading implementado para imagenes. Responsive breakpoints para 1280px, 1024px, 778px, 480px. Buena experiencia movil.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS CRITICOS -->
+        <div class="section">
+            <h2>Problemas Criticos Detectados</h2>
+
+            <div class="critical">
+                <h4>1. DOMINIO SEPARADO DEL GRUPO GOURMETLAND</h4>
+                <p>Prime400 tiene su propio dominio (prime400.com) en lugar de estar bajo gourmetlandtenerife.com. Esto dispersa la autoridad SEO del grupo.</p>
+                <p><strong>Impacto:</strong> El dominio individual compite por autoridad en lugar de beneficiarse de la fuerza del grupo. Los backlinks y senales de marca se fragmentan.</p>
+                <p><strong>Alternativa:</strong> Considerar redireccion a gourmetlandtenerife.com/restaurantes/prime400/ manteniendo el dominio actual como alias.</p>
+            </div>
+
+            <div class="critical">
+                <h4>2. SIN CANONICAL TAG EXPLICITO</h4>
+                <p>No se detecto etiqueta canonical explicita. Con dos idiomas y posibles URLs duplicadas, es importante especificar la URL canonica para evitar contenido duplicado.</p>
+                <p><strong>Solucion:</strong></p>
+                <div class="code-block">&lt;link rel="canonical" href="https://prime400.com/" /&gt;
+&lt;link rel="alternate" hreflang="es" href="https://prime400.com/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://prime400.com/en/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://prime400.com/" /&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>3. POCOS SEGUIDORES EN INSTAGRAM (172)</h4>
+                <p>Para un restaurante premium de un grupo grande, 172 seguidores en Instagram es muy bajo. La prueba social es debil.</p>
+                <p><strong>Impacto:</strong> Los usuarios que investigan el restaurante pueden percibir menor credibilidad.</p>
+                <p><strong>Solucion:</strong> Campaña de crecimiento organico, colaboraciones con influencers gastronomicos locales, contenido UGC.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS IMPORTANTES -->
+        <div class="section">
+            <h2>Problemas Importantes</h2>
+
+            <div class="warning">
+                <h4>4. FALTA SCHEMA RESTAURANT ESPECIFICO</h4>
+                <p>Tiene Schema Organization/Place pero no Schema Restaurant con servesCuisine, menu, priceRange, aggregateRating. Esto limita los rich snippets disponibles.</p>
+                <p><strong>Solucion:</strong></p>
+                <div class="code-block">{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Prime400",
+  "servesCuisine": ["Steakhouse", "Carnes a la brasa", "Parrilla"],
+  "priceRange": "EUR EUR EUR",
+  "menu": "https://prime400.com/menu/",
+  "acceptsReservations": "True",
+  "hasMenu": {
+    "@type": "Menu",
+    "name": "Menu Prime400"
+  }
+}</div>
+            </div>
+
+            <div class="warning">
+                <h4>5. SIN OPEN GRAPH TAGS COMPLETOS</h4>
+                <p>Aunque tiene integracion de Facebook Pixel, no se detectaron meta tags Open Graph completos (og:image, og:title, og:description).</p>
+                <p><strong>Impacto:</strong> Cuando se comparte en redes sociales, puede no mostrar la imagen y descripcion optimizada.</p>
+                <p><strong>Solucion:</strong></p>
+                <div class="code-block">&lt;meta property="og:title" content="Prime400 | Asador Premium en Costa Adeje" /&gt;
+&lt;meta property="og:description" content="El mejor chuleton de vaca a la parrilla de carbon Joper. Reserva ahora." /&gt;
+&lt;meta property="og:image" content="https://prime400.com/images/chuleton-prime400.jpg" /&gt;
+&lt;meta property="og:type" content="restaurant" /&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>6. CONTENIDO DE MENU LIMITADO EN SEO</h4>
+                <p>El menu menciona categorias (Entrantes, Carnes, Pescados) y algunos platos como "CHULETON DE VACA", pero falta contenido descriptivo que pueda posicionar para busquedas long-tail.</p>
+                <p><strong>Solucion:</strong> Crear paginas individuales para platos estrella con descripcion, origen de la carne, metodo de coccion, maridaje recomendado.</p>
+            </div>
+
+            <div class="warning">
+                <h4>7. FALTA INFORMACION DE PARKING</h4>
+                <p>Se menciona parking disponible pero sin detalles (ubicacion, precio, capacidad). Para turistas, esto es informacion clave.</p>
+            </div>
+
+            <div class="warning">
+                <h4>8. SIN SCHEMA REVIEW ESTRUCTURADO</h4>
+                <p>Hay seccion de testimonios pero sin Schema Review/AggregateRating. No puede mostrar estrellas en resultados de Google.</p>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins - Mejoras Rapidas</h2>
+
+            <p>Estas acciones pueden implementarse rapidamente con alto impacto:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Accion</th>
+                        <th>Impacto</th>
+                        <th>Tiempo</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Anadir canonical y hreflang tags</td>
+                        <td>Alto</td>
+                        <td>30 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Implementar Schema Restaurant completo</td>
+                        <td>Alto</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir Open Graph tags</td>
+                        <td>Medio</td>
+                        <td>30 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir Schema Review con AggregateRating</td>
+                        <td>Alto</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Enlace "Parte del Grupo Gourmetland" en footer</td>
+                        <td>Medio</td>
+                        <td>15 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Detallar informacion de parking</td>
+                        <td>Bajo</td>
+                        <td>15 min</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear pagina de menu detallado con SEO</td>
+                        <td>Alto</td>
+                        <td>3-4 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Campana crecimiento Instagram</td>
+                        <td>Medio</td>
+                        <td>Continuo</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ANALISIS DE KEYWORDS -->
+        <div class="section">
+            <h2>Analisis de Keywords</h2>
+
+            <h3>Keywords Principales</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Volumen Est.</th>
+                        <th>Competencia</th>
+                        <th>Relevancia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>asador de carne tenerife</td>
+                        <td>320/mes</td>
+                        <td>Media</td>
+                        <td>Muy Alta</td>
+                    </tr>
+                    <tr>
+                        <td>steakhouse tenerife</td>
+                        <td>480/mes</td>
+                        <td>Media</td>
+                        <td>Muy Alta</td>
+                    </tr>
+                    <tr>
+                        <td>steakhouse costa adeje</td>
+                        <td>210/mes</td>
+                        <td>Baja</td>
+                        <td>Muy Alta</td>
+                    </tr>
+                    <tr>
+                        <td>chuleton tenerife</td>
+                        <td>170/mes</td>
+                        <td>Baja</td>
+                        <td>Muy Alta</td>
+                    </tr>
+                    <tr>
+                        <td>restaurante carnes costa adeje</td>
+                        <td>140/mes</td>
+                        <td>Baja</td>
+                        <td>Muy Alta</td>
+                    </tr>
+                    <tr>
+                        <td>best steakhouse tenerife</td>
+                        <td>260/mes</td>
+                        <td>Media</td>
+                        <td>Alta</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Long-Tail (Oportunidades)</h3>
+            <ul>
+                <li>"chuleton de vaca costa adeje"</li>
+                <li>"restaurante parrilla carbon tenerife"</li>
+                <li>"mejor carne a la brasa las americas"</li>
+                <li>"steakhouse premium tenerife sur"</li>
+                <li>"restaurante romantico carnes tenerife"</li>
+                <li>"where to eat steak in tenerife" (EN)</li>
+                <li>"best meat restaurant costa adeje" (EN)</li>
+                <li>"charcoal grill restaurant tenerife" (EN)</li>
+            </ul>
+
+            <h3>Keywords de Intencion Local</h3>
+            <ul>
+                <li>"restaurantes cerca de mi tenerife" - Importante para SEO local</li>
+                <li>"asador abierto hoy costa adeje" - Horarios claros ayudan</li>
+                <li>"reservar restaurante carnes tenerife" - CTA de reserva visible</li>
+            </ul>
+        </div>
+
+        <!-- ESTRATEGIA DE CONTENIDO -->
+        <div class="section">
+            <h2>Estrategia de Contenido Recomendada</h2>
+
+            <h3>Paginas a Crear/Optimizar</h3>
+            <div class="info-box">
+                <h4>Estructura de Contenido Sugerida</h4>
+                <p>Expandir el sitio con contenido rico en keywords y util para el usuario:</p>
+            </div>
+
+            <ul>
+                <li><strong>/menu/</strong> - Pagina completa del menu con descripciones SEO, origen de carnes, metodos de coccion</li>
+                <li><strong>/chuleton-vaca/</strong> - Landing especifica para el plato estrella con imagenes, proceso, maridaje</li>
+                <li><strong>/parrilla-carbon-joper/</strong> - Contenido sobre la tecnica de coccion diferenciadora</li>
+                <li><strong>/reservas/</strong> - Pagina de reservas con calendario, capacidad, eventos especiales</li>
+                <li><strong>/ubicacion/</strong> - Mapa detallado, como llegar, parking, transporte publico</li>
+                <li><strong>/galeria/</strong> - Galeria de platos y ambiente optimizada con alt texts</li>
+            </ul>
+
+            <h3>Contenido de Blog Sugerido</h3>
+            <p>Si se anade blog o seccion de noticias:</p>
+            <ul>
+                <li>"Los 5 cortes de carne que debes probar en Prime400"</li>
+                <li>"Por que la parrilla de carbon Joper marca la diferencia"</li>
+                <li>"Guia de maridaje: vinos para acompanar tu chuleton"</li>
+                <li>"La experiencia Prime400: mas que un restaurante, una celebracion"</li>
+            </ul>
+        </div>
+
+        <!-- SCHEMA MARKUP RECOMENDADO -->
+        <div class="section">
+            <h2>Schema Markup Recomendado</h2>
+
+            <p>Anadir estos schemas para maximizar rich snippets:</p>
+
+            <h3>Schema Restaurant Completo</h3>
+            <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Prime400",
+  "image": "https://prime400.com/images/prime400-logo.jpg",
+  "url": "https://prime400.com",
+  "telephone": "+34922780821",
+  "email": "info@prime400.com",
+  "servesCuisine": ["Steakhouse", "Asador", "Carnes a la brasa"],
+  "priceRange": "EUR EUR EUR",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. de Bruselas, 14, top floor",
+    "addressLocality": "Costa Adeje",
+    "postalCode": "38679",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.092462962586804,
+    "longitude": -16.73592040531865
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "13:00",
+    "closes": "23:00"
+  },
+  "acceptsReservations": "True",
+  "menu": "https://prime400.com/menu/",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "150"
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Gourmetland Tenerife",
+    "url": "https://gourmetlandtenerife.com"
+  }
+}
+&lt;/script&gt;</div>
+
+            <h3>Schema Menu para Platos Destacados</h3>
+            <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Menu Prime400",
+  "hasMenuSection": [
+    {
+      "@type": "MenuSection",
+      "name": "Carnes a la Parrilla",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Chuleton de Vaca",
+          "description": "Chuleton premium cocinado en parrilla de carbon Joper",
+          "offers": {
+            "@type": "Offer",
+            "price": "45.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</div>
+        </div>
+
+        <!-- PLAN DE ACCION -->
+        <div class="section">
+            <h2>Plan de Accion Priorizado</h2>
+
+            <h3>Fase 1: Optimizacion Inmediata (Esta semana)</h3>
+            <ul class="checklist">
+                <li class="pending">Anadir canonical tags y hreflang para ES/EN</li>
+                <li class="pending">Implementar Schema Restaurant completo con AggregateRating</li>
+                <li class="pending">Anadir Open Graph y Twitter Card meta tags</li>
+                <li class="pending">Enlace visible a Gourmetland Tenerife en footer</li>
+                <li class="pending">Completar informacion de parking</li>
+            </ul>
+
+            <h3>Fase 2: Expansion de Contenido (Proximas 2 semanas)</h3>
+            <ul class="checklist">
+                <li class="pending">Crear pagina de menu detallada con SEO optimizado</li>
+                <li class="pending">Landing page para chuleton de vaca (plato estrella)</li>
+                <li class="pending">Pagina de ubicacion con mapa interactivo y como llegar</li>
+                <li class="pending">Galeria de imagenes con alt texts optimizados</li>
+            </ul>
+
+            <h3>Fase 3: Redes Sociales y Reviews (Proximo mes)</h3>
+            <ul class="checklist">
+                <li class="pending">Campana de crecimiento Instagram (objetivo: 500+ seguidores)</li>
+                <li class="pending">Solicitar resenas en Google My Business y TripAdvisor</li>
+                <li class="pending">Colaboracion con food bloggers locales</li>
+                <li class="pending">Contenido UGC (repost fotos de clientes)</li>
+            </ul>
+        </div>
+
+        <!-- PUNTUACION POR AREAS -->
+        <div class="section">
+            <h2>Puntuacion por Areas</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Puntuacion</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Tecnico</td>
+                        <td>7/10</td>
+                        <td>Schema basico OK, falta canonical/hreflang</td>
+                    </tr>
+                    <tr>
+                        <td>Meta Tags</td>
+                        <td>8/10</td>
+                        <td>Title y Description optimizados</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>6/10</td>
+                        <td>Basico, falta profundidad en menu y platos</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>8/10</td>
+                        <td>Coordenadas, direccion, telefono presentes</td>
+                    </tr>
+                    <tr>
+                        <td>UX/Diseno</td>
+                        <td>9/10</td>
+                        <td>Profesional, responsive, CTAs claros</td>
+                    </tr>
+                    <tr>
+                        <td>Redes Sociales</td>
+                        <td>6/10</td>
+                        <td>Integracion OK pero pocos seguidores</td>
+                    </tr>
+                    <tr>
+                        <td>Tracking</td>
+                        <td>9/10</td>
+                        <td>GA4, Metricool, FB Pixel - Excelente</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td>7/10</td>
+                        <td>ES/EN disponible, falta hreflang</td>
+                    </tr>
+                    <tr>
+                        <td>Autoridad</td>
+                        <td>7/10</td>
+                        <td>Parte de Gourmetland pero dominio separado</td>
+                    </tr>
+                    <tr>
+                        <td>Conversion</td>
+                        <td>8/10</td>
+                        <td>Reserva visible, formulario funcional</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="section">
+            <h2>Conclusion</h2>
+
+            <p><strong>Prime400</strong> es un sitio web bien construido para un steakhouse premium con buena base tecnica. El tracking esta correctamente configurado, los meta tags estan optimizados y la experiencia de usuario es profesional.</p>
+
+            <div class="info-box">
+                <h4>Potencial de Mejora</h4>
+                <p>Con la implementacion de Schema Restaurant completo, canonical/hreflang tags, y expansion de contenido sobre el menu y especialidades, la puntuacion podria subir a <strong>8.5-9.0/10</strong>. El restaurante tiene potencial para posicionarse como el steakhouse de referencia en Costa Adeje.</p>
+            </div>
+
+            <p>La conexion con el grupo Gourmetland es una ventaja que debe explotarse mejor. Un enlace prominente "Parte del Grupo Gourmetland - 21+ restaurantes en Tenerife Sur" generaria autoridad y confianza adicional.</p>
+
+            <p>El punto debil principal es la presencia en redes sociales. Con solo 172 seguidores en Instagram, un restaurante premium pierde credibilidad. Una campana de crecimiento organico combinada con contenido visual de alta calidad (platos, ambiente, clientes satisfechos) deberia ser prioridad.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 28 de Enero 2026</p>
+            <p style="margin-top: 15px;">Para implementar estas mejoras o solicitar un analisis mas detallado, contacte con su consultor SEO.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - Altamira Chillout & Cocktail Bar</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%); color: white; padding: 50px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; }
+        .header p { font-size: 18px; margin: 10px 0; opacity: 0.95; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #8e44ad; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #8e44ad; }
+        h3 { font-size: 22px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        p, li { margin-bottom: 12px; font-size: 18px; }
+        ul { margin-left: 30px; margin-bottom: 20px; }
+        .score-box { background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%); color: white; padding: 50px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
+        .score-box .score { font-size: 80px; font-weight: bold; margin: 20px 0; }
+        .score-box .score-label { font-size: 24px; opacity: 0.9; }
+        .critical { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .critical h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .warning { background: linear-gradient(135deg, #feca57, #ff9f43); color: #333; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .warning h4 { color: #333; margin-top: 0; margin-bottom: 15px; }
+        .success { background: linear-gradient(135deg, #26de81, #20bf6b); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .success h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .info-box { background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .info-box h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #8e44ad; color: white; }
+        tr:hover { background: #f8f9fa; }
+        .priority-alta { background: #ff6b6b; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-media { background: #feca57; color: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-baja { background: #26de81; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .code-block { background: #2d3436; color: #74b9ff; padding: 20px; border-radius: 10px; font-family: 'Consolas', monospace; font-size: 14px; overflow-x: auto; margin: 15px 0; white-space: pre-wrap; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #8e44ad; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .metric-card { background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 12px; text-align: center; }
+        .metric-card .value { font-size: 36px; font-weight: bold; color: #8e44ad; }
+        .metric-card .label { font-size: 14px; color: #666; margin-top: 8px; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin: 3px; background: #8e44ad; color: white; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+        .gourmetland-badge { background: #c0392b; color: white; padding: 8px 20px; border-radius: 25px; font-size: 14px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="gourmetland-badge">GRUPO GOURMETLAND</span>
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>Altamira Chillout & Cocktail Bar</strong></p>
+        <p>altamiratenerife.es</p>
+        <p>Análisis: 28 de Enero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Volver al índice</a>
+
+        <div class="score-box">
+            <div class="score-label">Puntuación SEO</div>
+            <div class="score">7.0/10</div>
+            <p>Sitio bien estructurado con buen SEO técnico, pero oportunidades de mejora en contenido y keywords</p>
+        </div>
+
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+            <p><strong>Altamira Chillout & Cocktail Bar</strong> es un lounge bar con vistas al atardecer ubicado en Costa Adeje. Forma parte del grupo Gourmetland Tenerife y se posiciona como un espacio sofisticado para disfrutar cócteles con una de las mejores puestas de sol de la isla.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">7.0</div>
+                    <div class="label">Puntuación SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Idiomas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">$$</div>
+                    <div class="label">Rango Precio</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">165</div>
+                    <div class="label">Seguidores IG</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Chillout & Cocktail Bar</li>
+                <li><strong>Ubicación:</strong> C. el Beril, 38679 Costa Adeje, Tenerife</li>
+                <li><strong>Teléfono:</strong> +34 922 71 96 37</li>
+                <li><strong>Email:</strong> info@altamiratenerife.es</li>
+                <li><strong>Horario:</strong> Diario 11:00 - 23:00</li>
+                <li><strong>Parking:</strong> Público y privado disponible</li>
+                <li><strong>Idiomas:</strong> Español, English</li>
+            </ul>
+
+            <h3>Oferta</h3>
+            <p>
+                <span class="tag">Cócteles</span>
+                <span class="tag">Bebidas Premium</span>
+                <span class="tag">Entrantes</span>
+                <span class="tag">Postres</span>
+                <span class="tag">Puesta de Sol</span>
+                <span class="tag">Ambiente Lounge</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. META TAGS BIEN OPTIMIZADOS</h4>
+                <p><strong>Title:</strong> "Altamira Chillout & Cocktail bar en Tenerife | Gourmetland Tenerife" (62 chars - OK)</p>
+                <p><strong>Description:</strong> "En el restaurante Altamira Chillout & Cocktail bar en Tenerife sur, disfrutarás de una de las mejores puestas de sol de la isla, ambiente sofisticado y moderno." (161 chars - OK)</p>
+            </div>
+
+            <div class="success">
+                <h4>2. SCHEMA MARKUP IMPLEMENTADO</h4>
+                <p>Schema Organization/Restaurant con: nombre, dirección, teléfono, email, horarios, rango de precios, coordenadas geográficas. Bien estructurado para rich snippets.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. GOOGLE ANALYTICS CONFIGURADO</h4>
+                <p>GA4 (G-3RJDK2Y84M) y Metricool tracking activos. Base sólida para análisis de datos.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. BILINGÜE (ES/EN)</h4>
+                <p>Soporte para español e inglés. Esencial para el mercado turístico de Costa Adeje.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. INFORMACIÓN DE CONTACTO COMPLETA</h4>
+                <p>Dirección, teléfono, email, horarios, parking. Todo lo necesario para conversiones.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. INTEGRACIÓN REDES SOCIALES</h4>
+                <p>Instagram feed integrado, enlaces a Facebook y TripAdvisor. Buena presencia social.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. PROPUESTA DE VALOR CLARA</h4>
+                <p>"Una de las mejores puestas de sol de la isla" - USP bien comunicado en meta description y contenido.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Detectados</h2>
+
+            <div class="warning">
+                <h4>1. BAJO NÚMERO DE SEGUIDORES EN INSTAGRAM</h4>
+                <p>Solo 165 seguidores en @altamirachillouttf. Para un bar con "las mejores puestas de sol", el contenido visual debería atraer más audiencia.</p>
+                <p><strong>Solución:</strong> Estrategia de contenido con fotos/videos de atardeceres, cócteles, ambiente. Usar hashtags locales y de viajes.</p>
+            </div>
+
+            <div class="warning">
+                <h4>2. H1 DUPLICADO/FRAGMENTADO</h4>
+                <p>El H1 está dividido en "CHILLOUT & COCKTAIL BAR" + "Ven a conocer Altamira Chillout". Debería ser un H1 único y claro.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">&lt;h1&gt;Altamira Chillout & Cocktail Bar - Costa Adeje&lt;/h1&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>3. FALTA KEYWORD "SUNSET BAR"</h4>
+                <p>El principal atractivo es la puesta de sol, pero keywords como "sunset bar Tenerife" o "rooftop bar Costa Adeje" no están optimizadas.</p>
+                <p><strong>Keywords a incluir:</strong>
+                <ul>
+                    <li>"sunset bar tenerife" (alta búsqueda turistas)</li>
+                    <li>"cocktail bar costa adeje"</li>
+                    <li>"bar con vistas tenerife"</li>
+                    <li>"rooftop bar tenerife sur"</li>
+                    <li>"donde ver atardecer costa adeje"</li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="warning">
+                <h4>4. FALTA HREFLANG VERIFICABLE</h4>
+                <p>Con 2 idiomas, las etiquetas hreflang deben estar correctamente implementadas para evitar contenido duplicado.</p>
+                <div class="code-block">&lt;link rel="alternate" hreflang="es" href="https://altamiratenerife.es/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://altamiratenerife.es/en/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://altamiratenerife.es/" /&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>5. FALTA CONTENIDO DE BLOG/SEO</h4>
+                <p>No hay sección de blog o artículos. Oportunidad perdida para posicionar contenido como "mejores atardeceres en Tenerife" o "cócteles típicos de Canarias".</p>
+            </div>
+
+            <div class="warning">
+                <h4>6. SIN RESEÑAS SCHEMA</h4>
+                <p>Aunque hay enlace a TripAdvisor, no hay Schema Review implementado para mostrar estrellas en Google.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Quick Wins</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Acción</th>
+                        <th>Impacto</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Unificar H1 con keyword principal</td>
+                        <td>Medio</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir keywords "sunset bar" en contenido</td>
+                        <td>Alto</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Verificar/implementar hreflang</td>
+                        <td>Medio</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir Schema AggregateRating</td>
+                        <td>Medio</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Aumentar actividad Instagram</td>
+                        <td>Medio</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear página "Atardeceres en Altamira"</td>
+                        <td>Alto</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Keywords Recomendadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Idioma</th>
+                        <th>Competencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>sunset bar tenerife</td>
+                        <td>EN</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>cocktail bar costa adeje</td>
+                        <td>EN</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>bar con vistas tenerife</td>
+                        <td>ES</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>where to watch sunset tenerife</td>
+                        <td>EN</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>chillout bar tenerife sur</td>
+                        <td>ES</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                    <tr>
+                        <td>rooftop bar canarias</td>
+                        <td>ES</td>
+                        <td>Baja</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Puntuación por Áreas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Puntuación</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Técnico</td>
+                        <td>8/10</td>
+                        <td>Schema, Analytics OK</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>6/10</td>
+                        <td>Falta optimización keywords</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>8/10</td>
+                        <td>Datos completos</td>
+                    </tr>
+                    <tr>
+                        <td>UX/Diseño</td>
+                        <td>7/10</td>
+                        <td>Diseño atractivo</td>
+                    </tr>
+                    <tr>
+                        <td>Social Media</td>
+                        <td>5/10</td>
+                        <td>Pocos seguidores</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td>7/10</td>
+                        <td>2 idiomas, verificar hreflang</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit</strong></p>
+            <p>Parte del análisis de la cadena Gourmetland Tenerife (23 restaurantes)</p>
+        </div>
+    </div>
+</body>
+</html>

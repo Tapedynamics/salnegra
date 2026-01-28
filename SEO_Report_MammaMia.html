@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - Mamma Mia Tenerife</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #009246 0%, #00a651 50%, #ce2b37 100%); color: white; padding: 50px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .header p { font-size: 18px; margin: 10px 0; opacity: 0.95; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #009246; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #009246; }
+        h3 { font-size: 22px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        p, li { margin-bottom: 12px; font-size: 18px; }
+        ul { margin-left: 30px; margin-bottom: 20px; }
+        .score-box { background: linear-gradient(135deg, #009246 0%, #00a651 100%); color: white; padding: 50px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
+        .score-box .score { font-size: 80px; font-weight: bold; margin: 20px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .score-box .score-label { font-size: 24px; opacity: 0.9; }
+        .critical { background: linear-gradient(135deg, #ce2b37, #b8242f); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .critical h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .warning { background: linear-gradient(135deg, #feca57, #ff9f43); color: #333; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .warning h4 { color: #333; margin-top: 0; margin-bottom: 15px; }
+        .success { background: linear-gradient(135deg, #009246, #00a651); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .success h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #009246; color: white; }
+        tr:hover { background: #f8f9fa; }
+        .priority-alta { background: #ce2b37; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-media { background: #feca57; color: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-baja { background: #009246; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .code-block { background: #2d3436; color: #74b9ff; padding: 20px; border-radius: 10px; font-family: 'Consolas', monospace; font-size: 14px; overflow-x: auto; margin: 15px 0; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #009246; text-decoration: none; font-weight: 600; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .metric-card { background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 12px; text-align: center; border-left: 4px solid #009246; }
+        .metric-card .value { font-size: 36px; font-weight: bold; color: #009246; }
+        .metric-card .label { font-size: 14px; color: #666; margin-top: 8px; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin: 3px; background: #009246; color: white; }
+        .tag-red { background: #ce2b37; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+        .gourmetland-badge { background: #ce2b37; color: white; padding: 8px 20px; border-radius: 25px; font-size: 14px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+        .italian-flag { display: inline-block; width: 30px; height: 20px; background: linear-gradient(to right, #009246 33%, white 33%, white 66%, #ce2b37 66%); border-radius: 3px; margin-right: 10px; vertical-align: middle; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="gourmetland-badge">GRUPO GOURMETLAND</span>
+        <h1><span class="italian-flag"></span> Informe de Auditoria SEO</h1>
+        <p><strong>Mamma Mia! - Restaurante Italiano</strong></p>
+        <p>mammamiatenerife.es</p>
+        <p>Analisis: 28 de Enero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Volver al indice</a>
+
+        <div class="score-box">
+            <div class="score-label">Puntuacion SEO</div>
+            <div class="score">7.5/10</div>
+            <p>Restaurante italiano bien optimizado con Schema completo, analytics y redes sociales. Margen de mejora en meta description y keywords long-tail.</p>
+        </div>
+
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+            <p><strong>Mamma Mia!</strong> es un restaurante italiano ubicado en Playa de las Americas, especializado en autentica gastronomia italiana: pizzas gourmet, pasta fresca, pescados y carnes. Forma parte del grupo Gourmetland y destaca por su excelente implementacion tecnica SEO.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">7.5</div>
+                    <div class="label">Puntuacion SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Idiomas (ES/EN)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">GA4</div>
+                    <div class="label">Analytics Activo</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">179</div>
+                    <div class="label">Seguidores IG</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Restaurante Italiano / Pizzeria Gourmet</li>
+                <li><strong>Ubicacion:</strong> Av. las Americas, 7, 38660 Arona, Playa de las Americas, Tenerife</li>
+                <li><strong>Telefono:</strong> +34 922 79 70 82</li>
+                <li><strong>Email:</strong> info@mammamiatenerife.es</li>
+                <li><strong>Horario:</strong> Diario de 13:00 a 23:00</li>
+                <li><strong>Idiomas:</strong> Espanol, English</li>
+                <li><strong>Rango de Precios:</strong> $$ (Moderado)</li>
+            </ul>
+
+            <h3>Especialidades</h3>
+            <p>
+                <span class="tag">Pizza Gourmet</span>
+                <span class="tag">Pasta Fresca</span>
+                <span class="tag">Pescados</span>
+                <span class="tag">Carnes</span>
+                <span class="tag">Entrantes Italianos</span>
+                <span class="tag">Risotto</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. SCHEMA MARKUP COMPLETO</h4>
+                <p>Implementacion de JSON-LD con Organization, Place y Restaurant. Incluye coordenadas geograficas (28.055, -16.729), area de servicio y moneda aceptada. Excelente para rich snippets.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. GOOGLE ANALYTICS 4 + METRICOOL</h4>
+                <p>GA4 (G-XCL78E0CTT) configurado correctamente junto con Metricool para tracking de redes sociales. Doble capa de analitica.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. DATOS NAP COMPLETOS</h4>
+                <p>Nombre, direccion completa, telefono, email y horarios claramente visibles. Fundamental para SEO local y Google Business.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. REDES SOCIALES INTEGRADAS</h4>
+                <p>Facebook (@mammamialasamericas), Instagram (@mammamia_tenerife) y TripAdvisor integrados con feed de Instagram embebido en la web.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. SISTEMA DE RESERVAS</h4>
+                <p>Pagina /reservar dedicada para reservas online. CTA claro para conversion.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. H1 OPTIMIZADO</h4>
+                <p>"AUTENTICO RESTAURANTE ITALIANO" - H1 claro con keyword principal que comunica la propuesta de valor.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. TITLE Y META DESCRIPTION</h4>
+                <p>Title: "Mamma Mia! - Restaurante Italiano en Tenerife" (44 chars). Meta description presente con keywords relevantes.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. HTTPS Y CANONICAL</h4>
+                <p>SSL activo y canonical URL configurada correctamente (https://mammamiatenerife.es/).</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Detectados</h2>
+
+            <div class="warning">
+                <h4>1. META DESCRIPTION CORTA</h4>
+                <p>"El mejor Restaurante italiano en Tenerife se llama Mamma Mia. Descubre nuevos sabores y disfruta de la autentica gastronomia italiana." - 134 caracteres, pero podria ser mas especifica con ubicacion y CTA.</p>
+                <p><strong>Sugerencia:</strong></p>
+                <div class="code-block">&lt;meta name="description" content="Mamma Mia! Restaurante italiano en Playa de las Americas, Tenerife. Pizzas gourmet, pasta fresca y mariscos. Abierto 13:00-23:00. Reserva: 922 79 70 82"&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>2. TITLE PODRIA INCLUIR MAS KEYWORDS</h4>
+                <p>"Mamma Mia! - Restaurante Italiano en Tenerife" (44 chars) tiene espacio para keywords adicionales como "Playa de las Americas" o "Pizza".</p>
+                <div class="code-block">&lt;title&gt;Mamma Mia! | Restaurante Italiano en Las Americas | Pizza y Pasta Tenerife&lt;/title&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>3. FALTA VERSION EN ALEMAN</h4>
+                <p>Gran volumen de turistas alemanes en Tenerife Sur. Solo hay ES/EN, falta DE para captar este mercado.</p>
+            </div>
+
+            <div class="warning">
+                <h4>4. INSTAGRAM CON POCOS SEGUIDORES</h4>
+                <p>Solo 179 seguidores en Instagram. Para un restaurante establecido, deberia tener mas presencia social.</p>
+            </div>
+
+            <div class="warning">
+                <h4>5. SIN BLOG O CONTENIDO FRESCO</h4>
+                <p>No hay seccion de blog o noticias para generar contenido fresco y atraer trafico organico long-tail.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Quick Wins</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Accion</th>
+                        <th>Impacto</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Optimizar meta description con ubicacion + telefono</td>
+                        <td>Alto</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Expandir title con "Las Americas" o "Pizza"</td>
+                        <td>Alto</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir version en aleman (DE)</td>
+                        <td>Alto</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear Google Business Profile optimizado</td>
+                        <td>Alto</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Aumentar engagement en Instagram</td>
+                        <td>Medio</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir seccion de reviews/testimonios en la web</td>
+                        <td>Medio</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear landing pages para keywords especificas</td>
+                        <td>Medio</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Keywords Recomendadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Idioma</th>
+                        <th>Competencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>restaurante italiano las americas</td>
+                        <td>ES</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>italian restaurant playa de las americas</td>
+                        <td>EN</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>pizza gourmet tenerife</td>
+                        <td>ES/EN</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>pasta fresca tenerife sur</td>
+                        <td>ES</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>best italian food tenerife south</td>
+                        <td>EN</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>mamma mia restaurant tenerife</td>
+                        <td>EN</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                    <tr>
+                        <td>italienisches restaurant teneriffa</td>
+                        <td>DE</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>donde comer italiano en tenerife</td>
+                        <td>ES</td>
+                        <td>Media</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Puntuacion por Areas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Puntuacion</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Tecnico</td>
+                        <td>8/10</td>
+                        <td>Schema completo, HTTPS, canonical OK</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>7/10</td>
+                        <td>H1 y estructura OK, falta blog</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>9/10</td>
+                        <td>NAP completo, geo coords en Schema</td>
+                    </tr>
+                    <tr>
+                        <td>Redes Sociales</td>
+                        <td>6/10</td>
+                        <td>Presencia OK, pocos seguidores IG</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td>6/10</td>
+                        <td>ES/EN OK, falta DE</td>
+                    </tr>
+                    <tr>
+                        <td>Conversion</td>
+                        <td>8/10</td>
+                        <td>Sistema reservas, telefono visible</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Analisis Competitivo</h2>
+            <p>Comparado con otros restaurantes italianos del grupo Gourmetland:</p>
+            <ul>
+                <li><strong>vs Forno d'Oro (5.5/10):</strong> Mamma Mia supera significativamente en SEO tecnico (Schema completo vs ausente) y datos NAP visibles.</li>
+                <li><strong>Ventaja competitiva:</strong> Mejor implementacion de Schema Restaurant y tracking analytics dual (GA4 + Metricool).</li>
+                <li><strong>Oportunidad:</strong> Posicionarse como el "autentico italiano" en Las Americas con contenido diferenciador.</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit</strong></p>
+            <p>Parte del analisis de la cadena Gourmetland Tenerife</p>
+            <p style="margin-top: 15px;"><span class="italian-flag"></span> Mamma Mia! - Autentica Cucina Italiana</p>
+        </div>
+    </div>
+</body>
+</html>

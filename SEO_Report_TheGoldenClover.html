@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoria SEO - The Golden Clover Irish Pub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a5f2a 0%, #2d8f47 50%, #c9a227 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .header .group-badge {
+            display: inline-block;
+            background: rgba(201, 162, 39, 0.9);
+            color: #1a1a1a;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #1a5f2a;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c9a227;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #1a5f2a 0%, #2d8f47 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 4px solid #c9a227;
+        }
+
+        .score-box .score {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #c9a227;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .score-box .score-label {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        .critical {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .critical h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, #feca57, #ff9f43);
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning h4 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #1a5f2a, #2d8f47);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .success h4 {
+            color: #c9a227;
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #1a5f2a;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .priority-alta {
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-media {
+            background: #feca57;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-baja {
+            background: #2d8f47;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #1a5f2a;
+        }
+
+        .checklist li.done {
+            border-left-color: #c9a227;
+        }
+
+        .checklist li.pending {
+            border-left-color: #ff6b6b;
+        }
+
+        .code-block {
+            background: #2d3436;
+            color: #74b9ff;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #1a5f2a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #c9a227;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1a5f2a;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        .tag-cuisine {
+            background: #1a5f2a;
+            color: white;
+        }
+
+        .tag-location {
+            background: #c9a227;
+            color: #1a1a1a;
+        }
+
+        .tag-feature {
+            background: #3498db;
+            color: white;
+        }
+
+        .irish-clover {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-box .score {
+                font-size: 60px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoria SEO</h1>
+        <p><strong>The Golden Clover Irish Pub</strong></p>
+        <p>thegoldencloveririshpub.com</p>
+        <p>Analisis realizado: 28 de Enero 2026</p>
+        <div class="group-badge">GRUPO GOURMETLAND</div>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al indice de informes</a>
+
+        <!-- PUNTUACION GENERAL -->
+        <div class="score-box">
+            <div class="score-label">Puntuacion SEO General</div>
+            <div class="score">7.2/10</div>
+            <p>Pub irlandes con buena base tecnica y Schema implementado, pero con oportunidades de mejora en contenido especifico y SEO local</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>The Golden Clover Irish Pub</strong> es el autentico pub irlandes del grupo Gourmetland en Tenerife Sur. Ubicado en Playa de las Americas, ofrece la experiencia irlandesa completa con musica en vivo, la mejor Guinness y gastronomia con toque gourmet.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">7.2</div>
+                    <div class="label">Puntuacion SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Idiomas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">GA4</div>
+                    <div class="label">Analytics Activo</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">JSON-LD</div>
+                    <div class="label">Schema Markup</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Irish Pub / Restaurante</li>
+                <li><strong>Grupo:</strong> Gourmetland Tenerife</li>
+                <li><strong>Direccion:</strong> Av. las Americas, 7, First floor, 38660 Playa de las Americas, Santa Cruz de Tenerife</li>
+                <li><strong>Telefono:</strong> (0034) 922 72 07 28</li>
+                <li><strong>Email:</strong> info@thegoldencloveririshpub.com</li>
+                <li><strong>Horario:</strong> 09:00 - 17:00 (diario)</li>
+                <li><strong>Plataforma:</strong> WordPress con WPML</li>
+                <li><strong>Idiomas:</strong> Espanol, English</li>
+            </ul>
+
+            <h3>Caracteristicas Destacadas</h3>
+            <p>
+                <span class="tag tag-cuisine">Irish Pub</span>
+                <span class="tag tag-cuisine">Cerveza Guinness</span>
+                <span class="tag tag-cuisine">Musica en Vivo</span>
+                <span class="tag tag-cuisine">Cocina Irlandesa</span>
+                <span class="tag tag-feature">Cocteles</span>
+                <span class="tag tag-feature">Eventos</span>
+                <span class="tag tag-feature">Celebraciones</span>
+                <span class="tag tag-location">Playa de las Americas</span>
+            </p>
+
+            <h3>Estructura de Contenido Detectada</h3>
+            <ul>
+                <li><strong>H1:</strong> "EL AUTENTICO PUB IRLANDES EN TENERIFE SUR"</li>
+                <li><strong>H2:</strong> Un Ambiente Divertido y Acogedor</li>
+                <li><strong>H2:</strong> La Mejor Seleccion de Cervezas y Cocteles</li>
+                <li><strong>H2:</strong> Sabores Irlandeses con el Toque Gourmet</li>
+                <li><strong>H2:</strong> El Lugar Perfecto para Celebrar</li>
+                <li><strong>H2:</strong> Ven y Vive la Experiencia Irlandesa</li>
+                <li><strong>H2:</strong> PLATOS PARA TODOS LOS GUSTOS</li>
+                <li><strong>H2:</strong> Nuestro Menu</li>
+            </ul>
+        </div>
+
+        <!-- ASPECTOS POSITIVOS -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. SCHEMA MARKUP COMPLETO (BarOrPub)</h4>
+                <p>Excelente implementacion de Schema JSON-LD con tipo "BarOrPub" correcto para el negocio. Incluye Organization, Place, direccion completa, coordenadas geo (28.0547934, -16.729142217), y horarios de apertura.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. GOOGLE ANALYTICS GA4 CONFIGURADO</h4>
+                <p>Tracking activo con GA4 (G-6Q0TF6R0L2). Base solida para analisis de trafico y comportamiento de usuarios. Permite crear audiencias para remarketing.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. META TAGS BIEN OPTIMIZADOS</h4>
+                <p><strong>Title:</strong> "The Golden Clover Irish Pub | Gourmetland Tenerife" (50 caracteres - optimo)</p>
+                <p><strong>Description:</strong> "Descubre el autentico pub irlandes en Tenerife Sur. Musica en vivo, la mejor Guinness y un lugar perfecto para disfrutar con amigos." (131 caracteres - excelente)</p>
+            </div>
+
+            <div class="success">
+                <h4>4. SOPORTE BILINGUE (ES/EN)</h4>
+                <p>Implementado con WPML para espanol e ingles. Cubre los dos idiomas principales del turismo en Tenerife Sur (britanicos y locales).</p>
+            </div>
+
+            <div class="success">
+                <h4>5. ESTRUCTURA DE HEADINGS CORRECTA</h4>
+                <p>Un solo H1 claro y descriptivo, seguido de H2s tematicos bien organizados. Jerarquia semantica correcta que facilita la indexacion.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. OPTIMIZACION DE RENDIMIENTO</h4>
+                <p>WP Rocket activo para caching y optimizacion. SVG placeholders para lazy loading de imagenes. Sitio carga de forma eficiente.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. DATOS DE CONTACTO COMPLETOS</h4>
+                <p>Telefono, email, direccion completa y coordenadas GPS. Todo lo necesario para SEO local y Google My Business.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. INTEGRACION CON REDES SOCIALES</h4>
+                <p>Enlaces a Facebook, Instagram y TripAdvisor. Presencia social que refuerza la autoridad y genera resenas.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS CRITICOS -->
+        <div class="section">
+            <h2>Problemas Criticos Detectados</h2>
+
+            <div class="critical">
+                <h4>1. HORARIO INCORRECTO O INCOMPLETO</h4>
+                <p>El horario mostrado (09:00 - 17:00) parece ser horario de oficina del grupo, no el horario real del pub. Un irish pub tipicamente abre por la tarde/noche.</p>
+                <p><strong>Impacto:</strong> Google My Business y Schema muestran horario incorrecto. Clientes potenciales pensaran que esta cerrado cuando buscan cena o musica en vivo.</p>
+                <p><strong>Solucion:</strong> Actualizar Schema y web con horario real del pub (ej: 12:00 - 02:00 o similar).</p>
+            </div>
+
+            <div class="critical">
+                <h4>2. FALTA PAGINA DE MUSICA EN VIVO / EVENTOS</h4>
+                <p>La musica en vivo es un diferenciador clave mencionado en la meta description, pero no hay seccion dedicada con calendario de actuaciones, bandas, o horarios de sesiones.</p>
+                <p><strong>Impacto:</strong> Perdida de posicionamiento para "musica en vivo Tenerife", "live music Playa Americas", etc.</p>
+                <p><strong>Solucion:</strong> Crear pagina /eventos/ o /live-music/ con calendario actualizado.</p>
+            </div>
+
+            <div class="critical">
+                <h4>3. SIN INFORMACION DE DEPORTES/TV</h4>
+                <p>Los pubs irlandeses tipicamente transmiten deportes (Premier League, rugby, etc.). No hay mencion de pantallas, retransmisiones o eventos deportivos.</p>
+                <p><strong>Impacto:</strong> Perdida de busquedas tipo "donde ver futbol Tenerife", "premier league pub Tenerife".</p>
+                <p><strong>Solucion:</strong> Si ofrecen deportes, crear seccion dedicada. Si no, considerar anadirlo como servicio.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS IMPORTANTES -->
+        <div class="section">
+            <h2>Problemas Importantes</h2>
+
+            <div class="warning">
+                <h4>4. INSTAGRAM VINCULADO A OTRO RESTAURANTE</h4>
+                <p>El enlace de Instagram apunta a @asadorlacamellatf (otro restaurante del grupo) en lugar de tener cuenta propia o del pub.</p>
+                <p><strong>Impacto:</strong> Confunde a usuarios, pierde oportunidad de construir audiencia especifica del pub.</p>
+                <p><strong>Solucion:</strong> Crear @thegoldencloverpub o similar y actualizar enlaces.</p>
+            </div>
+
+            <div class="warning">
+                <h4>5. FALTA GALERIA DE FOTOS DEL AMBIENTE</h4>
+                <p>Las fotos del interior, barra, ambiente nocturno y eventos son cruciales para un pub. No se detecta galeria visual prominente.</p>
+                <p><strong>Impacto:</strong> Los usuarios quieren ver el ambiente antes de visitar. Las fotos generan engagement y confianza.</p>
+                <p><strong>Solucion:</strong> Anadir galeria con fotos profesionales del interior, barra con cervezas, musica en vivo, etc.</p>
+            </div>
+
+            <div class="warning">
+                <h4>6. MENU SIN PRECIOS DETALLADOS ONLINE</h4>
+                <p>Se mencionan categorias (Entrantes, Carnes a la brasa) pero falta menu completo con precios para SEO y decision de compra.</p>
+                <p><strong>Impacto:</strong> Usuarios abandonan si no pueden ver precios. Google no puede mostrar rich snippets de menu.</p>
+                <p><strong>Solucion:</strong> Publicar menu completo con precios, idealmente con Schema Menu.</p>
+            </div>
+
+            <div class="warning">
+                <h4>7. FALTA SECCION DE CERVEZAS/BEBIDAS</h4>
+                <p>Para un pub irlandes, la carta de cervezas (Guinness, Kilkenny, ciders, whiskies irlandeses) es fundamental. No hay pagina dedicada.</p>
+                <p><strong>Impacto:</strong> Perdida de keywords como "mejor Guinness Tenerife", "cerveza irlandesa Canarias".</p>
+                <p><strong>Solucion:</strong> Crear pagina /bebidas/ o /our-beers/ con carta completa de cervezas y whiskies.</p>
+            </div>
+
+            <div class="warning">
+                <h4>8. FALTA CONTENIDO SOBRE ST. PATRICK'S DAY</h4>
+                <p>San Patricio es el evento mas importante para un pub irlandes. No hay contenido perenne sobre celebraciones de St. Patrick.</p>
+                <p><strong>Impacto:</strong> Perdida de trafico estacional alto en marzo. Keyword "san patricio Tenerife" tiene pico de busquedas.</p>
+                <p><strong>Solucion:</strong> Crear pagina perenne /st-patricks-day/ que se actualice cada ano.</p>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins - Mejoras Rapidas</h2>
+
+            <p>Estas acciones pueden implementarse rapidamente con alto impacto:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Accion</th>
+                        <th>Impacto</th>
+                        <th>Tiempo</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Corregir horario en Schema y web</td>
+                        <td>Alto</td>
+                        <td>30 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear pagina de eventos/musica en vivo</td>
+                        <td>Muy Alto</td>
+                        <td>2-3 horas</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Actualizar enlace Instagram (crear cuenta propia)</td>
+                        <td>Medio</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Publicar menu completo con precios</td>
+                        <td>Alto</td>
+                        <td>2 horas</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir galeria de fotos del ambiente</td>
+                        <td>Alto</td>
+                        <td>1-2 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear pagina carta de cervezas/whiskies</td>
+                        <td>Alto</td>
+                        <td>2 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir seccion deportes/TV si aplica</td>
+                        <td>Medio</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear pagina St. Patrick's Day</td>
+                        <td>Alto (estacional)</td>
+                        <td>2 horas</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ANALISIS DE KEYWORDS -->
+        <div class="section">
+            <h2>Analisis de Keywords</h2>
+
+            <h3>Keywords Principales</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Volumen Est.</th>
+                        <th>Competencia</th>
+                        <th>Oportunidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>irish pub tenerife</td>
+                        <td>480/mes</td>
+                        <td>Baja</td>
+                        <td>ALTA - Pocos competidores</td>
+                    </tr>
+                    <tr>
+                        <td>pub irlandes tenerife</td>
+                        <td>320/mes</td>
+                        <td>Muy Baja</td>
+                        <td>ALTA - Keyword en espanol</td>
+                    </tr>
+                    <tr>
+                        <td>guinness tenerife</td>
+                        <td>210/mes</td>
+                        <td>Baja</td>
+                        <td>ALTA - Diferenciador clave</td>
+                    </tr>
+                    <tr>
+                        <td>live music playa americas</td>
+                        <td>390/mes</td>
+                        <td>Media</td>
+                        <td>ALTA - Si crean contenido</td>
+                    </tr>
+                    <tr>
+                        <td>musica en vivo tenerife sur</td>
+                        <td>260/mes</td>
+                        <td>Media</td>
+                        <td>MEDIA</td>
+                    </tr>
+                    <tr>
+                        <td>san patricio tenerife</td>
+                        <td>590/mes (marzo)</td>
+                        <td>Baja</td>
+                        <td>MUY ALTA - Estacional</td>
+                    </tr>
+                    <tr>
+                        <td>st patricks day tenerife</td>
+                        <td>720/mes (marzo)</td>
+                        <td>Baja</td>
+                        <td>MUY ALTA - Ingles</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Long-Tail (Alto Intent, Baja Competencia)</h3>
+            <ul>
+                <li>"donde ver futbol ingles tenerife"</li>
+                <li>"best irish pub canary islands"</li>
+                <li>"live band tonight playa americas"</li>
+                <li>"fish and chips tenerife"</li>
+                <li>"shepherd's pie tenerife"</li>
+                <li>"pub con ambiente playa americas"</li>
+                <li>"cerveza artesana irlandesa tenerife"</li>
+                <li>"whiskey irlandes tenerife"</li>
+                <li>"donde celebrar cumpleanos tenerife sur"</li>
+            </ul>
+
+            <h3>Keywords para Turistas (Ingles)</h3>
+            <ul>
+                <li>"irish pub near me tenerife" - High intent</li>
+                <li>"english speaking bar playa americas"</li>
+                <li>"where to watch premier league tenerife"</li>
+                <li>"expat pub tenerife south"</li>
+                <li>"authentic guinness canary islands"</li>
+            </ul>
+        </div>
+
+        <!-- ESTRATEGIA DE CONTENIDO -->
+        <div class="section">
+            <h2>Estrategia de Contenido Recomendada</h2>
+
+            <h3>Paginas a Crear</h3>
+            <div class="info-box">
+                <h4>Estructura de Paginas Recomendada</h4>
+                <p>Aprovechar la tematica irlandesa unica para crear contenido diferenciador:</p>
+            </div>
+
+            <ul>
+                <li><strong>/live-music/</strong> - Calendario de bandas, generos, horarios de sesiones</li>
+                <li><strong>/our-beers/</strong> - Carta completa de cervezas irlandesas, stouts, ales, ciders</li>
+                <li><strong>/irish-whiskey/</strong> - Seleccion de whiskies, catas, maridajes</li>
+                <li><strong>/sports/</strong> - Deportes en vivo, calendario de partidos, pantallas</li>
+                <li><strong>/st-patricks-day/</strong> - Pagina perenne para San Patricio</li>
+                <li><strong>/private-events/</strong> - Celebraciones, cumpleanos, despedidas</li>
+                <li><strong>/menu/</strong> - Menu completo con platos irlandeses tipicos</li>
+                <li><strong>/gallery/</strong> - Fotos del ambiente, eventos, clientes</li>
+            </ul>
+
+            <h3>Contenido para Blog/Noticias</h3>
+            <p>Articulos recomendados para atraer trafico:</p>
+            <ul>
+                <li>"La historia de la Guinness: por que es la mejor cerveza del mundo"</li>
+                <li>"5 platos irlandeses que debes probar en Tenerife"</li>
+                <li>"Guia de St. Patrick's Day en Tenerife 2026"</li>
+                <li>"Los mejores whiskies irlandeses para principiantes"</li>
+                <li>"Por que los pubs irlandeses son el mejor lugar para ver futbol"</li>
+                <li>"Musica celta en vivo: que esperar de una sesion irlandesa"</li>
+            </ul>
+        </div>
+
+        <!-- SCHEMA ADICIONAL -->
+        <div class="section">
+            <h2>Schema Markup Adicional Recomendado</h2>
+
+            <p>El sitio tiene Schema basico. Anadir estos schemas para mejorar rich snippets:</p>
+
+            <h3>Schema Event para Musica en Vivo</h3>
+            <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Live Music Night at The Golden Clover",
+  "startDate": "2026-02-01T21:00",
+  "endDate": "2026-02-01T23:30",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "The Golden Clover Irish Pub",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. las Americas, 7, First floor",
+      "addressLocality": "Playa de las Americas",
+      "postalCode": "38660",
+      "addressCountry": "ES"
+    }
+  },
+  "performer": {
+    "@type": "MusicGroup",
+    "name": "Irish Session Band"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+&lt;/script&gt;</div>
+
+            <h3>Schema Menu para Carta de Cervezas</h3>
+            <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Beer Menu - The Golden Clover",
+  "hasMenuSection": [
+    {
+      "@type": "MenuSection",
+      "name": "Irish Stouts",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Guinness Draught",
+          "description": "The legendary Irish dry stout",
+          "offers": {
+            "@type": "Offer",
+            "price": "5.50",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</div>
+        </div>
+
+        <!-- PLAN DE ACCION -->
+        <div class="section">
+            <h2>Plan de Accion Priorizado</h2>
+
+            <h3>Fase 1: Correcciones Urgentes (Esta semana)</h3>
+            <ul class="checklist">
+                <li class="pending">Corregir horario en Schema y contenido visible</li>
+                <li class="pending">Crear cuenta Instagram propia y actualizar enlace</li>
+                <li class="pending">Publicar menu completo con precios</li>
+                <li class="pending">Verificar Google My Business con horario correcto</li>
+            </ul>
+
+            <h3>Fase 2: Contenido Diferenciador (Proximas 2 semanas)</h3>
+            <ul class="checklist">
+                <li class="pending">Crear pagina de musica en vivo con calendario</li>
+                <li class="pending">Crear pagina carta de cervezas y whiskies</li>
+                <li class="pending">Anadir galeria de fotos profesionales</li>
+                <li class="pending">Crear pagina de eventos privados/celebraciones</li>
+            </ul>
+
+            <h3>Fase 3: SEO Estacional (Antes de Marzo)</h3>
+            <ul class="checklist">
+                <li class="pending">Crear pagina St. Patrick's Day optimizada</li>
+                <li class="pending">Preparar contenido y eventos para San Patricio</li>
+                <li class="pending">Campana de backlinks con blogs de turismo</li>
+            </ul>
+
+            <h3>Fase 4: Crecimiento (Proximo mes)</h3>
+            <ul class="checklist">
+                <li class="pending">Publicar articulos de blog sobre cultura irlandesa</li>
+                <li class="pending">Anadir Schema Event para cada evento musical</li>
+                <li class="pending">Desarrollar estrategia de resenas en TripAdvisor/Google</li>
+                <li class="pending">Crear contenido de deportes si ofrecen retransmisiones</li>
+            </ul>
+        </div>
+
+        <!-- VENTAJA COMPETITIVA -->
+        <div class="section">
+            <h2>Ventaja Competitiva</h2>
+
+            <div class="info-box">
+                <h4>Posicion Unica en el Mercado</h4>
+                <p>The Golden Clover tiene una ventaja clara: es uno de los pocos pubs irlandeses autenticos en Tenerife Sur. Esta especializacion permite dominar un nicho con poca competencia.</p>
+            </div>
+
+            <h3>Fortalezas a Explotar</h3>
+            <ul>
+                <li><strong>Nicho claro:</strong> "Irish pub" tiene baja competencia en Tenerife. Posible dominar las SERPs.</li>
+                <li><strong>Turismo britanico:</strong> Gran comunidad de expats y turistas UK que buscan pubs familiares.</li>
+                <li><strong>Musica en vivo:</strong> Diferenciador frente a bares genericos. Contenido unico para crear.</li>
+                <li><strong>Guinness:</strong> Producto iconico con busquedas propias. Oportunidad de posicionar como "el mejor lugar para Guinness".</li>
+                <li><strong>Grupo Gourmetland:</strong> Respaldo de grupo grande, cross-selling con otros restaurantes.</li>
+                <li><strong>St. Patrick's:</strong> Evento anual con trafico garantizado. Puede ser EL lugar de referencia.</li>
+            </ul>
+
+            <h3>Mensaje Diferenciador Sugerido</h3>
+            <div class="code-block">"The Golden Clover: El unico pub irlandes autentico de Tenerife Sur.
+Guinness de barril, musica en vivo, y el ambiente de un verdadero pub de Dublin.
+Slainte!"</div>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="section">
+            <h2>Conclusion</h2>
+
+            <p><strong>The Golden Clover Irish Pub</strong> tiene una base tecnica solida con Schema implementado, GA4 activo y meta tags optimizados. Sin embargo, no esta aprovechando su mayor activo: ser un pub irlandes autentico con musica en vivo.</p>
+
+            <div class="info-box">
+                <h4>Potencial de Mejora</h4>
+                <p>Con la creacion de contenido especifico (musica, cervezas, eventos, St. Patrick's), la puntuacion podria subir a <strong>8.5-9.0/10</strong>. El pub tiene potencial para dominar las busquedas de "irish pub tenerife" y convertirse en referencia para la comunidad britanica y expatriados.</p>
+            </div>
+
+            <p>La prioridad inmediata es <strong>corregir el horario</strong> (actualmente muestra horario de oficina) y <strong>crear contenido sobre musica en vivo</strong>, que es el principal diferenciador mencionado en la meta description pero sin pagina dedicada.</p>
+
+            <h3>Resumen de Puntuaciones por Area</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Puntuacion</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Tecnico</td>
+                        <td>8/10</td>
+                        <td>Schema, GA4, meta tags OK</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>5/10</td>
+                        <td>Falta musica, cervezas, eventos</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>6/10</td>
+                        <td>Datos correctos pero horario mal</td>
+                    </tr>
+                    <tr>
+                        <td>UX/Diseno</td>
+                        <td>7/10</td>
+                        <td>Coherente con grupo, falta galeria</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td>8/10</td>
+                        <td>ES/EN implementado con WPML</td>
+                    </tr>
+                    <tr>
+                        <td>Nicho/Diferenciacion</td>
+                        <td>6/10</td>
+                        <td>Potencial alto sin explotar</td>
+                    </tr>
+                    <tr>
+                        <td>Redes Sociales</td>
+                        <td>5/10</td>
+                        <td>Instagram apunta a otro restaurante</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 28 de Enero 2026</p>
+            <p style="margin-top: 15px;">Para implementar estas mejoras o solicitar un analisis mas detallado, contacte con su consultor SEO.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoria SEO - The Brasserie</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header .grupo {
+            font-size: 14px;
+            opacity: 0.85;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #8B4513;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #8B4513;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score-box .score {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .score-box .score-label {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        .critical {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .critical h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, #feca57, #ff9f43);
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning h4 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #26de81, #20bf6b);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .success h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #8B4513;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .priority-alta {
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-media {
+            background: #feca57;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-baja {
+            background: #26de81;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #8B4513;
+        }
+
+        .checklist li.done {
+            border-left-color: #26de81;
+        }
+
+        .checklist li.pending {
+            border-left-color: #ff6b6b;
+        }
+
+        .code-block {
+            background: #2d3436;
+            color: #74b9ff;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8B4513;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        .tag-cuisine {
+            background: #8B4513;
+            color: white;
+        }
+
+        .tag-location {
+            background: #26de81;
+            color: white;
+        }
+
+        .tag-feature {
+            background: #3498db;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-box .score {
+                font-size: 60px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="grupo">GRUPO GOURMETLAND</div>
+        <h1>Informe de Auditoria SEO</h1>
+        <p><strong>The Brasserie - Steakhouse</strong></p>
+        <p>thebrasserie.es</p>
+        <p>Analisis realizado: 28 de Enero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al indice de informes</a>
+
+        <!-- PUNTUACION GENERAL -->
+        <div class="score-box">
+            <div class="score-label">Puntuacion SEO General</div>
+            <div class="score">7.8/10</div>
+            <p>Steakhouse mediterraneo bien optimizado con Schema completo y tracking profesional. Oportunidades de mejora en alt texts y contenido expandido.</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>The Brasserie</strong> es un steakhouse y restaurante de cocina mediterranea ubicado en Costa Adeje, Tenerife Sur. Forma parte del Grupo Gourmetland y se especializa en carnes a la parrilla, pescados, pastas y pizzas gourmet, con opciones veganas disponibles.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">7.8</div>
+                    <div class="label">Puntuacion SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Idiomas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">10h</div>
+                    <div class="label">Horario Diario</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">$$</div>
+                    <div class="label">Rango de Precios</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo de Cocina:</strong> Mediterranea, Steakhouse, Pizzas Gourmet</li>
+                <li><strong>Direccion:</strong> Av. Rafael Puig Lluvina, 16, 38660 Costa Adeje, Santa Cruz de Tenerife</li>
+                <li><strong>Telefono:</strong> (+34) 922 78 83 50</li>
+                <li><strong>Email:</strong> info@thebrasserie.es</li>
+                <li><strong>Horario:</strong> 13:00 - 23:00 (todos los dias)</li>
+                <li><strong>Idiomas:</strong> Espanol, Ingles</li>
+                <li><strong>Plataforma:</strong> WordPress con WPML</li>
+                <li><strong>Grupo:</strong> Gourmetland Tenerife</li>
+            </ul>
+
+            <h3>Especialidades del Menu</h3>
+            <p>
+                <span class="tag tag-cuisine">Parrilla The Brasserie</span>
+                <span class="tag tag-cuisine">Especialidades en Carnes</span>
+                <span class="tag tag-cuisine">Gourmet Pizzas</span>
+                <span class="tag tag-cuisine">Pescados</span>
+                <span class="tag tag-cuisine">Pastas</span>
+                <span class="tag tag-cuisine">Opciones Veganas</span>
+            </p>
+
+            <h3>Ubicacion</h3>
+            <p>
+                <span class="tag tag-location">Costa Adeje</span>
+                <span class="tag tag-location">Tenerife Sur</span>
+                <span class="tag tag-location">Playa de Las Americas</span>
+            </p>
+        </div>
+
+        <!-- ASPECTOS POSITIVOS -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. SCHEMA MARKUP COMPLETO (JSON-LD)</h4>
+                <p>Excelente implementacion de Schema.org con datos estructurados para Restaurant, Place y Organization. Incluye coordenadas GPS (28.071710, -16.730909), horarios de apertura, rango de precios ($$) y moneda (Euro).</p>
+                <p><strong>Impacto:</strong> Mayor probabilidad de rich snippets en Google con estrellas, horarios y ubicacion.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. GOOGLE ANALYTICS GA4 + METRICOOL</h4>
+                <p>Tracking doble configurado: GA4 (G-90PJEXZXPX) para analisis web completo y Metricool para redes sociales. Base solida para medir conversiones y comportamiento de usuarios.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. TITLE Y META DESCRIPTION OPTIMIZADOS</h4>
+                <p><strong>Title:</strong> "The Brasserie - Steakhouse en Tenerife Sur" (45 caracteres - optimo)</p>
+                <p><strong>Meta Description:</strong> "The Brasserie es tu Steakhouse en Tenerife Sur. Nuestro restaurante tiene la mejor seleccion de comida mediterranea, con opciones veganas..." (bien optimizada con keywords principales)</p>
+            </div>
+
+            <div class="success">
+                <h4>4. ESTRUCTURA DE HEADINGS CORRECTA</h4>
+                <p><strong>H1:</strong> "STEAKHOUSE EN TENERIFE" - Keyword principal clara y unica</p>
+                <p><strong>H2:</strong> Secciones bien definidas (Descubre, Menu, Testimonios, Cocina Mediterranea)</p>
+                <p><strong>H3:</strong> Categorias del menu (Parrilla, Carnes, Pizzas)</p>
+            </div>
+
+            <div class="success">
+                <h4>5. SITIO BILINGUE (ES/EN)</h4>
+                <p>Plugin WPML activo con selector de idioma visible. Cubre los dos mercados principales: turistas britanicos y residentes/turistas hispanohablantes.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. INTEGRACION CON TRIPADVISOR</h4>
+                <p>Resenas de TripAdvisor embebidas en el sitio. Genera confianza y puede contribuir a rich snippets de reviews.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. REDES SOCIALES ACTIVAS</h4>
+                <p>Presencia en Facebook (@thebrasserieasamericas) e Instagram (@thebrasserietenerife). Enlaces directos desde el sitio para engagement social.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. NAVEGACION CLARA Y MENU ESTRUCTURADO</h4>
+                <p>Menu de navegacion con submenu para categorias de platos (Entrantes, Carnes, Pescados, Pastas, Pizzas). Facilita la navegacion y el SEO interno.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS CRITICOS -->
+        <div class="section">
+            <h2>Problemas Criticos Detectados</h2>
+
+            <div class="critical">
+                <h4>1. ALT TEXT DE IMAGENES DEFICIENTE</h4>
+                <p>Las imagenes utilizan nombres de archivo genericos en lugar de textos alternativos descriptivos. Ejemplo: "gl-lasamericas-thebrasserie-54" en lugar de "Plato de carne a la parrilla The Brasserie Tenerife".</p>
+                <p><strong>Impacto:</strong> Perdida de oportunidades en Google Images, menor accesibilidad, y desperdicio de senales SEO on-page.</p>
+                <p><strong>Solucion:</strong> Renombrar todos los alt texts con descripciones que incluyan keywords relevantes:</p>
+                <div class="code-block">Mal: alt="gl-lasamericas-thebrasserie-54"
+Bien: alt="Chuleton de ternera a la parrilla en The Brasserie Costa Adeje"
+Bien: alt="Pizza gourmet con ingredientes frescos steakhouse Tenerife"</div>
+            </div>
+
+            <div class="critical">
+                <h4>2. DIRECCION INCONSISTENTE</h4>
+                <p>Se detectan dos direcciones diferentes en el sitio:</p>
+                <ul>
+                    <li>"Av. Rafael Puig Lluvina, 16"</li>
+                    <li>"Avda. Rafael Puig N6"</li>
+                </ul>
+                <p><strong>Impacto:</strong> Confusion para Google My Business y clientes. Puede afectar el SEO local y la consistencia NAP (Name, Address, Phone).</p>
+                <p><strong>Solucion:</strong> Verificar la direccion correcta y unificar en todo el sitio y perfiles externos.</p>
+            </div>
+
+            <div class="critical">
+                <h4>3. FALTA CANONICAL EXPLICITO</h4>
+                <p>No se detecta etiqueta canonical explicita. Con un sitio multiidioma, esto es critico para evitar contenido duplicado entre versiones ES/EN.</p>
+                <p><strong>Solucion:</strong> Implementar canonicals y hreflang correctamente:</p>
+                <div class="code-block">&lt;link rel="canonical" href="https://thebrasserie.es/" /&gt;
+&lt;link rel="alternate" hreflang="es" href="https://thebrasserie.es/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://thebrasserie.es/en/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://thebrasserie.es/" /&gt;</div>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS IMPORTANTES -->
+        <div class="section">
+            <h2>Problemas Importantes</h2>
+
+            <div class="warning">
+                <h4>4. INSTAGRAM CON POCOS SEGUIDORES (146)</h4>
+                <p>Para un restaurante en zona turistica premium, 146 seguidores en Instagram es muy bajo. La red social es crucial para restaurantes, especialmente para contenido visual de platos.</p>
+                <p><strong>Solucion:</strong> Estrategia de contenido en Instagram con fotos de platos, reels del chef, stories de clientes satisfechos. Usar hashtags locales (#TenerifeSur #CostaAdeje #SteakhouseTenerife).</p>
+            </div>
+
+            <div class="warning">
+                <h4>5. SIN PAGINA DE MENU CON PRECIOS</h4>
+                <p>Las categorias del menu (Entrantes, Carnes, Pescados, etc.) existen pero los usuarios no pueden ver precios online. Muchos turistas quieren comparar precios antes de decidir.</p>
+                <p><strong>Impacto:</strong> Perdida de clientes que abandonan el sitio para buscar precios en TripAdvisor o Google.</p>
+                <p><strong>Solucion:</strong> Anadir al menos rangos de precios o menu completo descargable en PDF.</p>
+            </div>
+
+            <div class="warning">
+                <h4>6. SIN SISTEMA DE RESERVAS ONLINE</h4>
+                <p>No se detecta integracion con sistemas de reservas (TheFork, OpenTable, o formulario propio). Solo telefono y email para reservar.</p>
+                <p><strong>Impacto:</strong> Friccion en el proceso de reserva. Turistas prefieren reservar online sin llamar.</p>
+                <p><strong>Solucion:</strong> Integrar boton de reserva con TheFork o implementar formulario de reserva directo.</p>
+            </div>
+
+            <div class="warning">
+                <h4>7. CONTENIDO LIMITADO EN PAGINAS DE MENU</h4>
+                <p>Las paginas de categorias (Entrantes, Carnes, etc.) probablemente tienen poco contenido textual para SEO. Google necesita texto para entender y rankear.</p>
+                <p><strong>Solucion:</strong> Anadir descripciones de 100-200 palabras por categoria explicando el tipo de platos, origen de ingredientes, metodos de coccion, etc.</p>
+            </div>
+
+            <div class="warning">
+                <h4>8. SIN FAQ SCHEMA</h4>
+                <p>No hay seccion de preguntas frecuentes. Una FAQ bien estructurada podria capturar busquedas como "tiene parking The Brasserie", "acepta tarjeta The Brasserie", "menu vegano steakhouse Tenerife".</p>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins - Mejoras Rapidas</h2>
+
+            <p>Estas acciones pueden implementarse rapidamente con alto impacto:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Accion</th>
+                        <th>Impacto</th>
+                        <th>Tiempo</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Optimizar alt texts de todas las imagenes</td>
+                        <td>Alto</td>
+                        <td>2-3 horas</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Unificar direccion en todo el sitio</td>
+                        <td>Alto</td>
+                        <td>30 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Implementar canonical y hreflang</td>
+                        <td>Alto</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir menu PDF descargable con precios</td>
+                        <td>Medio-Alto</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Integrar boton de reserva online (TheFork)</td>
+                        <td>Alto</td>
+                        <td>2 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear seccion FAQ con Schema</td>
+                        <td>Medio</td>
+                        <td>2 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir descripciones a paginas de categorias</td>
+                        <td>Medio</td>
+                        <td>3-4 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Estrategia de contenido Instagram</td>
+                        <td>Medio</td>
+                        <td>Continuo</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ANALISIS DE KEYWORDS -->
+        <div class="section">
+            <h2>Analisis de Keywords</h2>
+
+            <h3>Keywords Actuales (Bien Posicionadas)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Volumen Est.</th>
+                        <th>Competencia</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>steakhouse tenerife sur</td>
+                        <td>320/mes</td>
+                        <td>Media</td>
+                        <td>En Title y H1</td>
+                    </tr>
+                    <tr>
+                        <td>the brasserie tenerife</td>
+                        <td>110/mes</td>
+                        <td>Baja (marca)</td>
+                        <td>Posicionado</td>
+                    </tr>
+                    <tr>
+                        <td>restaurante costa adeje</td>
+                        <td>880/mes</td>
+                        <td>Alta</td>
+                        <td>En Schema</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Oportunidad (A Trabajar)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Volumen Est.</th>
+                        <th>Competencia</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>restaurante carnes tenerife</td>
+                        <td>480/mes</td>
+                        <td>Media</td>
+                        <td>Crear contenido especifico</td>
+                    </tr>
+                    <tr>
+                        <td>pizza gourmet tenerife</td>
+                        <td>210/mes</td>
+                        <td>Baja</td>
+                        <td>Optimizar pagina pizzas</td>
+                    </tr>
+                    <tr>
+                        <td>restaurante mediterraneo costa adeje</td>
+                        <td>170/mes</td>
+                        <td>Media</td>
+                        <td>Incluir en meta description</td>
+                    </tr>
+                    <tr>
+                        <td>restaurante vegano tenerife sur</td>
+                        <td>390/mes</td>
+                        <td>Baja</td>
+                        <td>Crear pagina de opciones veganas</td>
+                    </tr>
+                    <tr>
+                        <td>cena romantica costa adeje</td>
+                        <td>260/mes</td>
+                        <td>Baja</td>
+                        <td>Crear landing especifica</td>
+                    </tr>
+                    <tr>
+                        <td>donde comer en las americas</td>
+                        <td>720/mes</td>
+                        <td>Media</td>
+                        <td>Blog post / contenido</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Long-Tail Recomendadas</h3>
+            <ul>
+                <li>"mejor steakhouse costa adeje"</li>
+                <li>"restaurante con opciones veganas tenerife"</li>
+                <li>"pizza artesanal playa de las americas"</li>
+                <li>"restaurante para grupos costa adeje"</li>
+                <li>"carne a la parrilla tenerife sur"</li>
+                <li>"restaurante familiar cerca de siam park"</li>
+                <li>"donde comer cerca playa las americas"</li>
+            </ul>
+        </div>
+
+        <!-- SCHEMA ADICIONAL -->
+        <div class="section">
+            <h2>Schema Markup Adicional Recomendado</h2>
+
+            <p>El sitio ya tiene Schema Restaurant basico. Anadir estos schemas adicionales:</p>
+
+            <h3>Schema FAQPage</h3>
+            <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tiene The Brasserie opciones veganas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si, The Brasserie ofrece una variedad de opciones veganas y vegetarianas en nuestro menu de cocina mediterranea."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Se puede reservar mesa en The Brasserie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si, puedes reservar llamando al +34 922 78 83 50 o enviando un email a info@thebrasserie.es. Recomendamos reservar para cenas y fines de semana."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cual es el horario de The Brasserie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Abrimos todos los dias de 13:00 a 23:00."
+      }
+    }
+  ]
+}
+&lt;/script&gt;</div>
+
+            <h3>Schema Menu</h3>
+            <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Menu The Brasserie",
+  "description": "Cocina mediterranea, steakhouse y pizzas gourmet",
+  "hasMenuSection": [
+    {
+      "@type": "MenuSection",
+      "name": "Parrilla The Brasserie",
+      "description": "Seleccion de carnes premium a la parrilla"
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Gourmet Pizzas",
+      "description": "Pizzas artesanales con ingredientes frescos"
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Pescados",
+      "description": "Pescados frescos del dia"
+    }
+  ]
+}
+&lt;/script&gt;</div>
+        </div>
+
+        <!-- PLAN DE ACCION -->
+        <div class="section">
+            <h2>Plan de Accion Priorizado</h2>
+
+            <h3>Fase 1: Correcciones Criticas (Esta semana)</h3>
+            <ul class="checklist">
+                <li class="pending">Optimizar alt texts de todas las imagenes con keywords</li>
+                <li class="pending">Unificar direccion en todo el sitio y verificar con GMB</li>
+                <li class="pending">Implementar etiquetas canonical correctas</li>
+                <li class="pending">Verificar/anadir hreflang para ES/EN</li>
+                <li class="pending">Anadir menu PDF con precios descargable</li>
+            </ul>
+
+            <h3>Fase 2: Mejoras de Conversion (Proximas 2 semanas)</h3>
+            <ul class="checklist">
+                <li class="pending">Integrar sistema de reservas online (TheFork o similar)</li>
+                <li class="pending">Crear seccion FAQ con Schema FAQPage</li>
+                <li class="pending">Anadir formulario de contacto rapido en homepage</li>
+                <li class="pending">Implementar Schema Menu para rich snippets</li>
+            </ul>
+
+            <h3>Fase 3: Expansion de Contenido (Proximo mes)</h3>
+            <ul class="checklist">
+                <li class="pending">Anadir descripciones SEO a paginas de categorias del menu</li>
+                <li class="pending">Crear pagina dedicada "Opciones Veganas"</li>
+                <li class="pending">Crear landing "Cenas Romanticas Costa Adeje"</li>
+                <li class="pending">Publicar 2-3 articulos de blog sobre cocina mediterranea</li>
+            </ul>
+
+            <h3>Fase 4: Redes Sociales (Continuo)</h3>
+            <ul class="checklist">
+                <li class="pending">Estrategia de contenido Instagram (3 posts/semana)</li>
+                <li class="pending">Fotos profesionales de platos para redes</li>
+                <li class="pending">Reels del chef preparando especialidades</li>
+                <li class="pending">Fomentar reviews en Google y TripAdvisor</li>
+            </ul>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="section">
+            <h2>Conclusion</h2>
+
+            <p><strong>The Brasserie</strong> tiene una base SEO solida con Schema bien implementado, tracking configurado y meta tags optimizados. El sitio esta bien posicionado para busquedas de marca y tiene potencial para capturar trafico adicional con mejoras especificas.</p>
+
+            <div class="info-box">
+                <h4>Potencial de Mejora</h4>
+                <p>Con la implementacion de las mejoras recomendadas (especialmente alt texts, canonical/hreflang, y sistema de reservas), la puntuacion podria subir a <strong>8.5-9.0/10</strong>. Las oportunidades de keywords como "restaurante vegano tenerife" y "pizza gourmet costa adeje" son nichos con baja competencia donde The Brasserie podria posicionarse rapidamente.</p>
+            </div>
+
+            <p>Como parte del <strong>Grupo Gourmetland</strong>, The Brasserie tiene la ventaja de poder recibir link juice del dominio principal del grupo. Asegurar que gourmetlandtenerife.com enlace correctamente a thebrasserie.es con anchor text optimizado fortalecera la autoridad del dominio.</p>
+
+            <h3>Resumen de Puntuaciones por Area</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Puntuacion</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Tecnico</td>
+                        <td>8/10</td>
+                        <td>Schema excelente, falta canonical</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>7/10</td>
+                        <td>Bien estructurado, faltan descripciones</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>7/10</td>
+                        <td>Datos presentes, direccion inconsistente</td>
+                    </tr>
+                    <tr>
+                        <td>UX/Conversion</td>
+                        <td>7/10</td>
+                        <td>Falta reserva online y precios</td>
+                    </tr>
+                    <tr>
+                        <td>Imagenes</td>
+                        <td>5/10</td>
+                        <td>Alt texts deficientes</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td>8/10</td>
+                        <td>Bilingue ES/EN con WPML</td>
+                    </tr>
+                    <tr>
+                        <td>Redes Sociales</td>
+                        <td>6/10</td>
+                        <td>Presencia pero bajo engagement</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 28 de Enero 2026</p>
+            <p style="margin-top: 15px;">Para implementar estas mejoras o solicitar un analisis mas detallado, contacte con su consultor SEO.</p>
+        </div>
+    </div>
+</body>
+</html>

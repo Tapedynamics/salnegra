@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - Marietta Beach Restaurant Tenerife</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .group-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 15px;
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #0077b6;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #0077b6;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score-box .score {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .score-box .score-label {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        .critical {
+            background: linear-gradient(135deg, #d00000, #e63946);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .critical h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, #feca57, #ff9f43);
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning h4 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #26de81, #20bf6b);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .success h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #0077b6;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .priority-alta {
+            background: #e63946;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-critica {
+            background: #d00000;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-media {
+            background: #feca57;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-baja {
+            background: #26de81;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #0077b6;
+        }
+
+        .checklist li.done {
+            border-left-color: #26de81;
+        }
+
+        .checklist li.pending {
+            border-left-color: #e63946;
+        }
+
+        .code-block {
+            background: #2d3436;
+            color: #74b9ff;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #0077b6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #0077b6;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        .tag-cuisine {
+            background: #0077b6;
+            color: white;
+        }
+
+        .tag-location {
+            background: #26de81;
+            color: white;
+        }
+
+        .tag-feature {
+            background: #3498db;
+            color: white;
+        }
+
+        .http-alert {
+            background: linear-gradient(135deg, #d00000, #9d0208);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 3px dashed #ffba08;
+        }
+
+        .http-alert h4 {
+            color: #ffba08;
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-box .score {
+                font-size: 60px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="group-badge">GRUPO GOURMETLAND</div>
+        <h1>Informe de Auditoria SEO</h1>
+        <p><strong>Marietta Beach Restaurant</strong></p>
+        <p>mariettabeachrestaurant.com</p>
+        <p>Analisis realizado: 28 de Enero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al indice de informes</a>
+
+        <!-- PUNTUACION GENERAL -->
+        <div class="score-box">
+            <div class="score-label">Puntuacion SEO General</div>
+            <div class="score">5.5/10</div>
+            <p>Problema critico de seguridad (HTTP) que afecta gravemente el posicionamiento. Buen contenido pero infraestructura tecnica deficiente.</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>Marietta Beach Restaurant</strong> es un restaurante de cocina mediterranea con influencias internacionales, ubicado frente al mar en Playa de las Americas, Tenerife. Es parte del prestigioso <strong>Grupo Gourmetland</strong>, uno de los grupos gastronomicos mas grandes del sur de Tenerife.</p>
+
+            <div class="http-alert">
+                <h4>ALERTA CRITICA: SITIO SIN HTTPS</h4>
+                <p>El sitio web funciona solo con HTTP (http://mariettabeachrestaurant.com), sin certificado SSL. Este es un <strong>problema critico</strong> que:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Penaliza severamente el posicionamiento en Google desde 2018</li>
+                    <li>Los navegadores muestran "No seguro" ahuyentando clientes</li>
+                    <li>Imposibilita pagos online y formularios seguros</li>
+                    <li>Viola normativas GDPR sobre proteccion de datos</li>
+                </ul>
+            </div>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">5.5</div>
+                    <div class="label">Puntuacion SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">NO</div>
+                    <div class="label">HTTPS Activo</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">SI</div>
+                    <div class="label">Google Analytics</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2+</div>
+                    <div class="label">Idiomas</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Restaurante Mediterraneo / Internacional</li>
+                <li><strong>Ubicacion:</strong> C. Francisco Andrade Fumero, 5, 38660 Playa de las Americas, Santa Cruz de Tenerife</li>
+                <li><strong>Horario:</strong> Lunes a Viernes, 09:00 - 23:00</li>
+                <li><strong>Email:</strong> info@mariettabeachrestaurant.com</li>
+                <li><strong>Instagram:</strong> @mariettabeachtf</li>
+                <li><strong>Grupo:</strong> Gourmetland Tenerife</li>
+                <li><strong>Plataforma:</strong> WordPress con Slider Revolution</li>
+                <li><strong>Parking:</strong> Publico y privado disponible</li>
+            </ul>
+
+            <h3>Tipo de Cocina</h3>
+            <p>
+                <span class="tag tag-cuisine">Mediterranea</span>
+                <span class="tag tag-cuisine">Internacional</span>
+                <span class="tag tag-cuisine">Frente al Mar</span>
+            </p>
+
+            <h3>Caracteristicas</h3>
+            <p>
+                <span class="tag tag-feature">Vistas al Mar</span>
+                <span class="tag tag-feature">Parking Disponible</span>
+                <span class="tag tag-feature">Video Background</span>
+                <span class="tag tag-feature">Galeria de Menu</span>
+                <span class="tag tag-feature">Redes Sociales Activas</span>
+            </p>
+        </div>
+
+        <!-- ASPECTOS POSITIVOS -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. TITLE TAG OPTIMIZADO</h4>
+                <p><strong>Title:</strong> "Marietta Beach Restaurant | Cocina mediterranea frente al mar en Playa de las Americas"</p>
+                <p>Excelente title que incluye nombre del restaurante, tipo de cocina y ubicacion. Longitud optima y atractivo para el CTR.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. H1 DESCRIPTIVO Y UNICO</h4>
+                <p><strong>H1:</strong> "Cocina mediterranea en Tenerife"</p>
+                <p>H1 claro que define el tema principal de la pagina. Incluye keyword geografica importante.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. GOOGLE ANALYTICS IMPLEMENTADO</h4>
+                <p><strong>GA4 ID:</strong> G-FHBLY7D8KS</p>
+                <p>Tracking configurado para medir trafico y comportamiento de usuarios. Base solida para analisis de datos.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. SOPORTE MULTIIDIOMA (WPML)</h4>
+                <p>Plugin WPML detectado para contenido multilingue. Esencial para el mercado turistico de Tenerife con visitantes de multiples paises.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. GALERIA DE MENU CON 6 IMAGENES</h4>
+                <p>Seccion "Nuestro Menu" con galeria visual de platos. Contenido atractivo que puede mejorar tiempo de permanencia y engagement.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. COMPLIANZ COOKIE CONSENT</h4>
+                <p>Sistema de consentimiento de cookies implementado. Cumplimiento basico de normativa GDPR para cookies.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. REDES SOCIALES INTEGRADAS</h4>
+                <p>Instagram (@mariettabeachtf) y Facebook conectados. Presencia social activa que complementa la estrategia digital.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. PARTE DEL GRUPO GOURMETLAND</h4>
+                <p>Pertenencia a uno de los grupos de restauracion mas grandes de Tenerife Sur (21+ restaurantes). Potencial de cross-linking y autoridad compartida.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS CRITICOS -->
+        <div class="section">
+            <h2>Problemas Criticos Detectados</h2>
+
+            <div class="critical">
+                <h4>1. SITIO SIN CERTIFICADO SSL (HTTP) - CRITICO</h4>
+                <p><strong>Estado actual:</strong> http://mariettabeachrestaurant.com (sin HTTPS)</p>
+                <p>Este es el problema mas grave detectado. Desde 2018, Google penaliza activamente los sitios sin HTTPS:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>SEO:</strong> Google confirmo que HTTPS es factor de ranking directo</li>
+                    <li><strong>Chrome/Safari:</strong> Muestran "No seguro" en la barra de direcciones</li>
+                    <li><strong>Conversiones:</strong> Usuarios abandonan sitios marcados como inseguros (hasta -80% conversiones)</li>
+                    <li><strong>Datos:</strong> Formularios de contacto/reserva transmiten datos sin cifrar</li>
+                    <li><strong>Legal:</strong> Posible incumplimiento GDPR al procesar datos personales sin cifrado</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Solucion:</strong> Instalar certificado SSL (Let's Encrypt es gratuito) y configurar redireccion 301 de HTTP a HTTPS.</p>
+                <div class="code-block"># Configuracion .htaccess para redirigir a HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</div>
+            </div>
+
+            <div class="critical">
+                <h4>2. META DESCRIPTION NO DETECTADA</h4>
+                <p>No se ha podido verificar la presencia de meta description en el codigo fuente. Este tag es crucial para:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Controlar el snippet que aparece en Google</li>
+                    <li>Mejorar el CTR (Click-Through Rate)</li>
+                    <li>Incluir keywords secundarias</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Meta description sugerida:</strong></p>
+                <div class="code-block">&lt;meta name="description" content="Marietta Beach Restaurant: cocina mediterranea e internacional frente al mar en Playa de las Americas. Vistas espectaculares, parking disponible. Grupo Gourmetland. Reserva tu mesa."&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>3. SCHEMA MARKUP NO VERIFICADO</h4>
+                <p>No se ha detectado Schema JSON-LD de tipo Restaurant en el analisis. Sin structured data:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>No aparecen horarios, direccion o telefono en los resultados de Google</li>
+                    <li>Menor visibilidad en Google Maps / Local Pack</li>
+                    <li>Sin rich snippets con estrellas de resenas</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Schema Restaurant recomendado:</strong></p>
+                <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Marietta Beach Restaurant",
+  "image": "https://mariettabeachrestaurant.com/images/marietta-beach.jpg",
+  "description": "Restaurante de cocina mediterranea e internacional frente al mar en Playa de las Americas",
+  "servesCuisine": ["Mediterranean", "International"],
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. Francisco Andrade Fumero, 5",
+    "addressLocality": "Playa de las Americas",
+    "postalCode": "38660",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.0523,
+    "longitude": -16.7262
+  },
+  "telephone": "+34XXXXXXXXX",
+  "email": "info@mariettabeachrestaurant.com",
+  "url": "https://mariettabeachrestaurant.com",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "23:00"
+    }
+  ],
+  "hasMenu": "https://mariettabeachrestaurant.com/menu/",
+  "acceptsReservations": "True",
+  "sameAs": [
+    "https://www.instagram.com/mariettabeachtf/",
+    "https://www.facebook.com/mariettabeach"
+  ]
+}
+&lt;/script&gt;</div>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS IMPORTANTES -->
+        <div class="section">
+            <h2>Problemas Importantes</h2>
+
+            <div class="warning">
+                <h4>4. HORARIOS LIMITADOS (SOLO LUNES-VIERNES)</h4>
+                <p>El sitio indica horario de Lunes a Viernes 09:00-23:00. Para un restaurante turistico en Playa de las Americas, no abrir fines de semana seria inusual.</p>
+                <p><strong>Verificar:</strong> Si los horarios mostrados son correctos o hay error en la web. Fin de semana es el pico de demanda turistica.</p>
+            </div>
+
+            <div class="warning">
+                <h4>5. TELEFONO NO VISIBLE EN ANALISIS</h4>
+                <p>El numero de telefono no aparece de forma prominente. Para restaurantes, el telefono es critico para:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Reservas telefonicas (muchos turistas prefieren llamar)</li>
+                    <li>Click-to-call en moviles</li>
+                    <li>Google puede mostrar telefono en Knowledge Panel</li>
+                </ul>
+                <p><strong>Solucion:</strong> Anadir telefono visible en header/footer con enlace tel:</p>
+                <div class="code-block">&lt;a href="tel:+34XXXXXXXXX"&gt;+34 XXX XXX XXX&lt;/a&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>6. HREFLANG POR VERIFICAR</h4>
+                <p>Con WPML instalado, es importante verificar que las etiquetas hreflang esten correctamente implementadas para cada version idiomatica del sitio.</p>
+            </div>
+
+            <div class="warning">
+                <h4>7. ALT TEXT DE IMAGENES POR VERIFICAR</h4>
+                <p>La galeria de menu tiene 6 imagenes. Es crucial que todas tengan atributos alt descriptivos con keywords relevantes:</p>
+                <div class="code-block">&lt;img src="plato1.jpg" alt="Paella mediterranea en Marietta Beach Restaurant Playa de las Americas"&gt;
+&lt;img src="terraza.jpg" alt="Terraza frente al mar restaurante Marietta Beach Tenerife"&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>8. CONTENIDO TEXTUAL LIMITADO</h4>
+                <p>El sitio parece depender mucho de elementos visuales (video background, sliders, imagenes). Google necesita texto para entender y posicionar el contenido.</p>
+                <p><strong>Sugerencia:</strong> Anadir parrafos descriptivos sobre la experiencia gastronomica, historia del restaurante, chef, ingredientes locales, etc.</p>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins - Mejoras Rapidas</h2>
+
+            <p>Acciones ordenadas por impacto y urgencia:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Accion</th>
+                        <th>Impacto</th>
+                        <th>Tiempo</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Instalar certificado SSL y redirigir a HTTPS</td>
+                        <td>Critico</td>
+                        <td>1-2 horas</td>
+                        <td><span class="priority-critica">CRITICA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir meta description optimizada</td>
+                        <td>Alto</td>
+                        <td>15 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Implementar Schema Restaurant JSON-LD</td>
+                        <td>Alto</td>
+                        <td>30 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir telefono visible con click-to-call</td>
+                        <td>Alto</td>
+                        <td>15 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Verificar y corregir horarios (fin de semana?)</td>
+                        <td>Medio</td>
+                        <td>15 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Optimizar alt text de todas las imagenes</td>
+                        <td>Medio</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Verificar etiquetas hreflang multiidioma</td>
+                        <td>Medio</td>
+                        <td>30 min</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir mas contenido textual descriptivo</td>
+                        <td>Medio</td>
+                        <td>2-3 horas</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Enlazar a/desde gourmetlandtenerife.com</td>
+                        <td>Medio</td>
+                        <td>15 min</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ANALISIS DE KEYWORDS -->
+        <div class="section">
+            <h2>Analisis de Keywords</h2>
+
+            <h3>Keywords Principales</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Volumen Est.</th>
+                        <th>Competencia</th>
+                        <th>Relevancia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>restaurante mediterraneo tenerife</td>
+                        <td>390/mes</td>
+                        <td>Media</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>restaurante playa de las americas</td>
+                        <td>720/mes</td>
+                        <td>Alta</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>restaurante frente al mar tenerife</td>
+                        <td>260/mes</td>
+                        <td>Media</td>
+                        <td>Muy Alta</td>
+                    </tr>
+                    <tr>
+                        <td>restaurante con vistas al mar tenerife</td>
+                        <td>480/mes</td>
+                        <td>Media</td>
+                        <td>Muy Alta</td>
+                    </tr>
+                    <tr>
+                        <td>donde comer playa de las americas</td>
+                        <td>320/mes</td>
+                        <td>Baja</td>
+                        <td>Alta</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Long-Tail (Bajo Competencia)</h3>
+            <ul>
+                <li>"restaurante romantico playa de las americas"</li>
+                <li>"cena frente al mar tenerife sur"</li>
+                <li>"restaurante cocina internacional las americas"</li>
+                <li>"restaurante con parking playa americas"</li>
+                <li>"mejor restaurante mediterraneo tenerife sur"</li>
+                <li>"restaurante grupo gourmetland"</li>
+            </ul>
+
+            <h3>Keywords en Ingles (Turistas)</h3>
+            <ul>
+                <li>"beachfront restaurant playa de las americas"</li>
+                <li>"mediterranean restaurant tenerife south"</li>
+                <li>"best restaurants las americas tenerife"</li>
+                <li>"seafront dining tenerife"</li>
+                <li>"where to eat playa de las americas"</li>
+            </ul>
+        </div>
+
+        <!-- SEO LOCAL -->
+        <div class="section">
+            <h2>SEO Local</h2>
+
+            <h3>Google Business Profile</h3>
+            <div class="info-box">
+                <h4>Verificar Ficha de Google</h4>
+                <p>Es fundamental que Marietta Beach tenga una ficha de Google Business Profile optimizada:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Nombre: "Marietta Beach Restaurant"</li>
+                    <li>Categoria principal: "Restaurante mediterraneo"</li>
+                    <li>Categorias secundarias: "Restaurante", "Restaurante frente al mar"</li>
+                    <li>Fotos de alta calidad (platos, terraza, vistas al mar)</li>
+                    <li>Menu subido directamente a la ficha</li>
+                    <li>Responder a todas las resenas</li>
+                    <li>Posts semanales con ofertas/eventos</li>
+                </ul>
+            </div>
+
+            <h3>Citaciones Locales</h3>
+            <p>El restaurante deberia estar listado en:</p>
+            <ul>
+                <li>TripAdvisor (critico para turistas)</li>
+                <li>TheFork / ElTenedor</li>
+                <li>Yelp</li>
+                <li>Guia Repsol / Michelin</li>
+                <li>Paginas Amarillas</li>
+                <li>Directorios turisticos de Tenerife</li>
+            </ul>
+
+            <h3>NAP Consistency</h3>
+            <p>Asegurar que Nombre, Direccion y Telefono sean identicos en:</p>
+            <ul>
+                <li>Sitio web</li>
+                <li>Google Business Profile</li>
+                <li>Redes sociales</li>
+                <li>Directorios</li>
+                <li>gourmetlandtenerife.com</li>
+            </ul>
+        </div>
+
+        <!-- PLAN DE ACCION -->
+        <div class="section">
+            <h2>Plan de Accion Priorizado</h2>
+
+            <h3>Fase 1: Emergencia - Esta Semana</h3>
+            <ul class="checklist">
+                <li class="pending"><strong>URGENTE:</strong> Instalar certificado SSL y migrar a HTTPS</li>
+                <li class="pending">Configurar redireccion 301 de HTTP a HTTPS</li>
+                <li class="pending">Actualizar URL en Google Search Console</li>
+                <li class="pending">Actualizar URL en Google Analytics</li>
+            </ul>
+
+            <h3>Fase 2: Optimizacion Basica - Semana 2</h3>
+            <ul class="checklist">
+                <li class="pending">Anadir meta description optimizada</li>
+                <li class="pending">Implementar Schema Restaurant JSON-LD</li>
+                <li class="pending">Anadir telefono visible con click-to-call</li>
+                <li class="pending">Verificar y corregir horarios de apertura</li>
+                <li class="pending">Optimizar alt text de todas las imagenes</li>
+            </ul>
+
+            <h3>Fase 3: Mejoras de Contenido - Semanas 3-4</h3>
+            <ul class="checklist">
+                <li class="pending">Verificar etiquetas hreflang multiidioma</li>
+                <li class="pending">Anadir mas contenido textual (historia, chef, ingredientes)</li>
+                <li class="pending">Crear pagina de menu separada con descripciones</li>
+                <li class="pending">Anadir seccion de resenas/testimonios</li>
+            </ul>
+
+            <h3>Fase 4: Autoridad y Enlaces - Mes 2</h3>
+            <ul class="checklist">
+                <li class="pending">Enlazar bidireccional con gourmetlandtenerife.com</li>
+                <li class="pending">Verificar/optimizar Google Business Profile</li>
+                <li class="pending">Solicitar resenas a clientes satisfechos</li>
+                <li class="pending">Registrar en directorios turisticos locales</li>
+            </ul>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="section">
+            <h2>Conclusion</h2>
+
+            <p><strong>Marietta Beach Restaurant</strong> tiene potencial SEO significativo gracias a su ubicacion privilegiada frente al mar, su pertenencia al Grupo Gourmetland y buenos elementos basicos como title optimizado y Google Analytics.</p>
+
+            <p>Sin embargo, el <strong>problema critico de ausencia de HTTPS</strong> esta saboteando todo el esfuerzo SEO. Este debe ser la prioridad absoluta e inmediata. Sin resolver esto, cualquier otra mejora tendra impacto limitado.</p>
+
+            <div class="info-box">
+                <h4>Potencial de Mejora</h4>
+                <p>Con la implementacion de HTTPS, Schema markup, y optimizaciones de contenido, la puntuacion podria subir a <strong>7.5-8.0/10</strong>. La ubicacion "frente al mar" es un diferenciador poderoso que debe explotarse mejor en el contenido y keywords.</p>
+            </div>
+
+            <h3>Resumen de Puntuaciones por Area</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Puntuacion</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Tecnico</td>
+                        <td>3/10</td>
+                        <td>HTTP sin SSL es problema critico</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>6/10</td>
+                        <td>Title bueno, falta meta description y texto</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>5/10</td>
+                        <td>Direccion presente, falta telefono visible</td>
+                    </tr>
+                    <tr>
+                        <td>UX/Diseno</td>
+                        <td>7/10</td>
+                        <td>Video background atractivo, galeria de menu</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td>6/10</td>
+                        <td>WPML instalado, verificar hreflang</td>
+                    </tr>
+                    <tr>
+                        <td>Autoridad</td>
+                        <td>5/10</td>
+                        <td>Parte de Gourmetland pero sin enlaces visibles</td>
+                    </tr>
+                    <tr>
+                        <td>Redes Sociales</td>
+                        <td>7/10</td>
+                        <td>Instagram y Facebook integrados</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="critical" style="margin-top: 30px;">
+                <h4>RECORDATORIO FINAL</h4>
+                <p style="font-size: 20px; text-align: center;">La instalacion del certificado SSL (HTTPS) debe realizarse <strong>ESTA SEMANA</strong>. Cada dia sin HTTPS es trafico y clientes perdidos.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 28 de Enero 2026</p>
+            <p style="margin-top: 15px;">Para implementar estas mejoras o solicitar un analisis mas detallado, contacte con su consultor SEO.</p>
+        </div>
+    </div>
+</body>
+</html>

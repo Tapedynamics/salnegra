@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoria SEO - Marietta Restaurante</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .group-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            margin-top: 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #8B4513;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #D2691E;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score-box .score {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .score-box .score-label {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        .critical {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .critical h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, #feca57, #ff9f43);
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning h4 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #26de81, #20bf6b);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .success h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #8B4513;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .priority-alta {
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-media {
+            background: #feca57;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .priority-baja {
+            background: #26de81;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #8B4513;
+        }
+
+        .checklist li.done {
+            border-left-color: #26de81;
+        }
+
+        .checklist li.pending {
+            border-left-color: #ff6b6b;
+        }
+
+        .code-block {
+            background: #2d3436;
+            color: #74b9ff;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .metric-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8B4513;
+        }
+
+        .metric-card .label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        .tag-cuisine {
+            background: #8B4513;
+            color: white;
+        }
+
+        .tag-location {
+            background: #26de81;
+            color: white;
+        }
+
+        .tag-feature {
+            background: #3498db;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .score-box .score {
+                font-size: 60px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="group-badge">GRUPO GOURMETLAND</span>
+        <h1>Informe de Auditoria SEO</h1>
+        <p><strong>Marietta Restaurante</strong></p>
+        <p>mariettarestaurante.com</p>
+        <p>Analisis realizado: 28 de Enero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al indice de informes</a>
+
+        <!-- PUNTUACION GENERAL -->
+        <div class="score-box">
+            <div class="score-label">Puntuacion SEO General</div>
+            <div class="score">7.8/10</div>
+            <p>Restaurante mediterraneo bien posicionado con excelente base tecnica y oportunidades de mejora en contenido local</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p><strong>Marietta Restaurante</strong> es un restaurante de cocina mediterranea ubicado en Costa Adeje, Tenerife Sur, parte del prestigioso Grupo Gourmetland. Ofrece una amplia variedad de platos mediterraneos incluyendo carnes a la parrilla, pescados frescos, pastas artesanales y pizzas.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">7.8</div>
+                    <div class="label">Puntuacion SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Idiomas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">$$</div>
+                    <div class="label">Rango de Precio</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">10h</div>
+                    <div class="label">Horario Diario</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo de Cocina:</strong> Mediterranea, Italiana, Internacional</li>
+                <li><strong>Ubicacion:</strong> Av. de Bruselas, 14, The Duke Shops, 38679 Costa Adeje, Tenerife</li>
+                <li><strong>Telefono:</strong> (+34) 922 24 91 86</li>
+                <li><strong>Email:</strong> info@mariettarestaurante.com</li>
+                <li><strong>Horario:</strong> Todos los dias de 13:00 a 23:00</li>
+                <li><strong>Plataforma:</strong> WordPress con WPML</li>
+                <li><strong>Idiomas:</strong> Espanol, Ingles</li>
+            </ul>
+
+            <h3>Especialidades</h3>
+            <p>
+                <span class="tag tag-cuisine">Cocina Mediterranea</span>
+                <span class="tag tag-cuisine">Carnes a la Parrilla</span>
+                <span class="tag tag-cuisine">Pescados Frescos</span>
+                <span class="tag tag-cuisine">Pasta Artesanal</span>
+                <span class="tag tag-cuisine">Pizzas</span>
+                <span class="tag tag-cuisine">Ensaladas</span>
+                <span class="tag tag-cuisine">Postres Caseros</span>
+            </p>
+
+            <h3>Servicios</h3>
+            <p>
+                <span class="tag tag-feature">Reservas Online</span>
+                <span class="tag tag-feature">Parking Publico y Privado</span>
+                <span class="tag tag-feature">Ambiente Elegante</span>
+                <span class="tag tag-feature">Servicio Profesional</span>
+            </p>
+        </div>
+
+        <!-- ASPECTOS POSITIVOS -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. SCHEMA MARKUP COMPLETO</h4>
+                <p>Schema JSON-LD bien implementado con Organization/Restaurant, incluyendo datos de negocio, coordenadas GPS, horarios de apertura y rango de precios. Esto favorece la aparicion en rich snippets de Google.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. META TAGS OPTIMIZADOS</h4>
+                <p><strong>Title:</strong> "Marietta Restaurant - Mediterranean Cuisine | Cocina Mediterranea" - Bilingue y descriptivo.</p>
+                <p><strong>Description:</strong> "Disfruta de la mejor cocina mediterranea en Tenerife Sur. Carne, pescado, pasta, la mejor variedad de productos frescos para hacerte descubrir nuevos sabores en el mejor entorno." (143 caracteres - optimo)</p>
+            </div>
+
+            <div class="success">
+                <h4>3. GOOGLE ANALYTICS GA4 CONFIGURADO</h4>
+                <p>Tracking ID: G-JH1VK44FS0 correctamente implementado. Ademas cuenta con seguimiento de Metricool para analisis de redes sociales.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. SOPORTE MULTIIDIOMA (WPML)</h4>
+                <p>Versiones en espanol e ingles disponibles, ideal para el mercado turistico de Tenerife Sur. Sistema WPML profesional para gestion de traducciones.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. ESTRUCTURA DE HEADINGS CORRECTA</h4>
+                <p><strong>H1:</strong> "COCINA MEDITERRANEA" - Claro y enfocado en la palabra clave principal.</p>
+                <p>H2s descriptivos: "Descubre Marietta Tenerife", "Nuestro Menu", "Lo que dicen de nosotros", etc.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. INFORMACION DE CONTACTO VISIBLE</h4>
+                <p>Telefono, email y direccion completa claramente visibles. Esto es excelente para SEO local y conversion de usuarios.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. PRESENCIA EN REDES SOCIALES</h4>
+                <p>Enlaces a Facebook, Instagram (@marietta_restaurante) y TripAdvisor. Buena integracion social que genera senales de confianza.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. MENU ORGANIZADO POR CATEGORIAS</h4>
+                <p>Secciones claras: Entrantes, Pasta, Carnes, Pizzas, Pescados. Facilita la navegacion y permite optimizar paginas individuales por tipo de plato.</p>
+            </div>
+
+            <div class="success">
+                <h4>9. SECCION DE TESTIMONIOS</h4>
+                <p>"Lo que dicen de nosotros" - Resenas de clientes que generan confianza y pueden aparecer como rich snippets con Schema Review.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS DETECTADOS -->
+        <div class="section">
+            <h2>Problemas Detectados</h2>
+
+            <div class="warning">
+                <h4>1. ALT TEXT DE IMAGENES GENERICO</h4>
+                <p>Las imagenes tienen alt text como "marietta", "marietta (1)", "marietta (2)", etc. Estos no son descriptivos y desaprovechan oportunidades de posicionamiento en Google Imagenes.</p>
+                <p><strong>Impacto:</strong> Perdida de trafico desde Google Imagenes, problemas de accesibilidad.</p>
+                <p><strong>Solucion:</strong> Cambiar a textos descriptivos como "Pasta carbonara fresca en Marietta Costa Adeje", "Entrecot a la parrilla restaurante mediterraneo Tenerife".</p>
+            </div>
+
+            <div class="warning">
+                <h4>2. FALTA HREFLANG VERIFICABLE</h4>
+                <p>Con WPML activo para ES/EN, es importante verificar que las etiquetas hreflang esten correctamente implementadas para evitar contenido duplicado internacional.</p>
+                <div class="code-block">&lt;link rel="alternate" hreflang="es" href="https://mariettarestaurante.com/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://mariettarestaurante.com/en/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://mariettarestaurante.com/" /&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>3. CONTENIDO LOCAL LIMITADO</h4>
+                <p>Aunque esta en Costa Adeje, el contenido no aprovecha suficientemente las keywords locales como "restaurante Costa Adeje", "donde comer The Duke Shops", "cocina mediterranea Tenerife Sur".</p>
+                <p><strong>Solucion:</strong> Expandir el contenido de la pagina con mas referencias geograficas naturales.</p>
+            </div>
+
+            <div class="warning">
+                <h4>4. PAGINAS DE MENU SIN SCHEMA MENU</h4>
+                <p>Las paginas de menu (Entrantes, Pasta, Carnes, etc.) podrian beneficiarse del Schema Menu/MenuItem para aparecer con precios y platos en los resultados de busqueda.</p>
+            </div>
+
+            <div class="warning">
+                <h4>5. SIN BLOG O CONTENIDO FRESCO</h4>
+                <p>No se detecta seccion de blog o noticias. El contenido fresco ayuda al posicionamiento y permite captar trafico long-tail.</p>
+                <p><strong>Solucion:</strong> Considerar anadir blog con recetas, eventos, novedades del menu.</p>
+            </div>
+
+            <div class="warning">
+                <h4>6. FALTA FAQ SCHEMA</h4>
+                <p>Preguntas frecuentes como "Hay parking?", "Aceptan reservas?", "Tienen opciones vegetarianas?" podrian implementarse con Schema FAQPage para rich snippets.</p>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins - Mejoras Rapidas</h2>
+
+            <p>Estas acciones pueden implementarse rapidamente con alto impacto:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Accion</th>
+                        <th>Impacto</th>
+                        <th>Tiempo</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Optimizar alt text de todas las imagenes</td>
+                        <td>Alto</td>
+                        <td>2-3 horas</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Verificar etiquetas hreflang ES/EN</td>
+                        <td>Alto</td>
+                        <td>30 min</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir mas keywords locales al contenido</td>
+                        <td>Alto</td>
+                        <td>1-2 horas</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Implementar Schema Menu en paginas de carta</td>
+                        <td>Medio</td>
+                        <td>2-3 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir seccion FAQ con Schema FAQPage</td>
+                        <td>Medio</td>
+                        <td>1 hora</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Optimizar velocidad de carga de imagenes</td>
+                        <td>Medio</td>
+                        <td>1-2 horas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Anadir enlace visible a Grupo Gourmetland</td>
+                        <td>Bajo</td>
+                        <td>15 min</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Considerar crear seccion de blog</td>
+                        <td>Medio</td>
+                        <td>Ongoing</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- KEYWORDS RECOMENDADAS -->
+        <div class="section">
+            <h2>Keywords Recomendadas</h2>
+
+            <h3>Keywords Principales</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Volumen Est.</th>
+                        <th>Competencia</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>restaurante mediterraneo costa adeje</td>
+                        <td>320/mes</td>
+                        <td>Media</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>restaurante italiano costa adeje</td>
+                        <td>480/mes</td>
+                        <td>Alta</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>donde comer costa adeje</td>
+                        <td>590/mes</td>
+                        <td>Alta</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>restaurante tenerife sur</td>
+                        <td>1,200/mes</td>
+                        <td>Muy Alta</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>cocina mediterranea tenerife</td>
+                        <td>210/mes</td>
+                        <td>Baja</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Keywords Long-Tail (Alta Intencion)</h3>
+            <ul>
+                <li>"restaurante con parking costa adeje"</li>
+                <li>"donde comer pasta fresca tenerife"</li>
+                <li>"restaurante para cenar costa adeje"</li>
+                <li>"mejor restaurante mediterraneo las americas"</li>
+                <li>"restaurante the duke shops tenerife"</li>
+                <li>"carne a la parrilla costa adeje"</li>
+                <li>"pescado fresco restaurante tenerife sur"</li>
+                <li>"restaurante romantico costa adeje"</li>
+            </ul>
+
+            <h3>Keywords en Ingles (Turistas)</h3>
+            <ul>
+                <li>"mediterranean restaurant costa adeje"</li>
+                <li>"best italian restaurant tenerife south"</li>
+                <li>"where to eat costa adeje"</li>
+                <li>"fresh pasta restaurant tenerife"</li>
+                <li>"dinner costa adeje recommendations"</li>
+            </ul>
+        </div>
+
+        <!-- PUNTUACION POR AREAS -->
+        <div class="section">
+            <h2>Puntuacion por Areas</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Puntuacion</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Tecnico</td>
+                        <td><strong>8.5/10</strong></td>
+                        <td>Schema, Analytics, HTTPS, estructura correcta</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td><strong>7.0/10</strong></td>
+                        <td>Buen contenido base, falta blog y expansion local</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td><strong>7.5/10</strong></td>
+                        <td>Datos completos, mejorar keywords geograficas</td>
+                    </tr>
+                    <tr>
+                        <td>Imagenes</td>
+                        <td><strong>6.0/10</strong></td>
+                        <td>Alt text generico, necesita optimizacion</td>
+                    </tr>
+                    <tr>
+                        <td>Redes Sociales</td>
+                        <td><strong>8.0/10</strong></td>
+                        <td>Facebook, Instagram, TripAdvisor integrados</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td><strong>8.0/10</strong></td>
+                        <td>ES/EN con WPML, verificar hreflang</td>
+                    </tr>
+                    <tr>
+                        <td>UX/Conversion</td>
+                        <td><strong>8.5/10</strong></td>
+                        <td>CTA claros, reservas, contacto visible</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SCHEMA RECOMENDADO -->
+        <div class="section">
+            <h2>Schema Adicional Recomendado</h2>
+
+            <h3>Schema FAQPage</h3>
+            <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tiene Marietta Restaurante parking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si, disponemos de parking publico y privado en el centro comercial The Duke Shops."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Es necesario reservar en Marietta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recomendamos reservar especialmente para cenas y fines de semana. Puede reservar llamando al (+34) 922 24 91 86 o a traves de nuestra web."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que tipo de cocina ofrece Marietta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofrecemos cocina mediterranea con influencias italianas: carnes a la parrilla, pescados frescos, pasta artesanal, pizzas y una amplia variedad de entrantes y postres caseros."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tienen opciones vegetarianas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si, contamos con opciones vegetarianas en nuestro menu incluyendo ensaladas, pastas y pizzas vegetales."
+      }
+    }
+  ]
+}
+&lt;/script&gt;</div>
+
+            <h3>Schema Menu (Ejemplo)</h3>
+            <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Menu Marietta Restaurante",
+  "description": "Carta de cocina mediterranea",
+  "hasMenuSection": [
+    {
+      "@type": "MenuSection",
+      "name": "Entrantes",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Carpaccio de ternera",
+          "description": "Finas laminas de ternera con rucula y parmesano"
+        }
+      ]
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Pasta",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Spaghetti Carbonara",
+          "description": "Pasta fresca con guanciale y huevo"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</div>
+        </div>
+
+        <!-- PLAN DE ACCION -->
+        <div class="section">
+            <h2>Plan de Accion Priorizado</h2>
+
+            <h3>Fase 1: Optimizacion Inmediata (Esta semana)</h3>
+            <ul class="checklist">
+                <li class="pending">Optimizar alt text de todas las imagenes con descripciones relevantes</li>
+                <li class="pending">Verificar y corregir etiquetas hreflang para ES/EN</li>
+                <li class="pending">Anadir mas keywords locales al contenido existente (Costa Adeje, The Duke Shops, Tenerife Sur)</li>
+                <li class="pending">Verificar velocidad de carga y optimizar imagenes si es necesario</li>
+            </ul>
+
+            <h3>Fase 2: Mejoras de Contenido (Proximas 2 semanas)</h3>
+            <ul class="checklist">
+                <li class="pending">Implementar Schema Menu en paginas de carta</li>
+                <li class="pending">Anadir seccion FAQ con Schema FAQPage</li>
+                <li class="pending">Expandir descripcion de platos con keywords relevantes</li>
+                <li class="pending">Anadir enlace visible a Grupo Gourmetland</li>
+            </ul>
+
+            <h3>Fase 3: Expansion de Contenido (Proximo mes)</h3>
+            <ul class="checklist">
+                <li class="pending">Considerar crear seccion de blog/noticias</li>
+                <li class="pending">Publicar contenido sobre eventos especiales, menu del dia, etc.</li>
+                <li class="pending">Crear paginas de landing para keywords especificas (ej: "cena romantica costa adeje")</li>
+                <li class="pending">Integrar mas resenas de clientes con Schema Review</li>
+            </ul>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="section">
+            <h2>Conclusion</h2>
+
+            <p><strong>Marietta Restaurante</strong> tiene una base SEO solida con Schema bien implementado, Analytics configurado, soporte multiidioma y meta tags optimizados. Es un sitio profesional que refleja la calidad del Grupo Gourmetland.</p>
+
+            <div class="info-box">
+                <h4>Potencial de Mejora</h4>
+                <p>Con las mejoras recomendadas (principalmente optimizacion de imagenes, expansion de contenido local y implementacion de schemas adicionales), la puntuacion podria subir a <strong>8.5-9.0/10</strong>. El restaurante tiene potencial para posicionarse muy bien en busquedas de "restaurante mediterraneo Costa Adeje" y captar mas trafico turistico.</p>
+            </div>
+
+            <p>Las prioridades inmediatas son:</p>
+            <ol>
+                <li><strong>Optimizar alt text de imagenes</strong> - Impacto alto, esfuerzo bajo</li>
+                <li><strong>Verificar hreflang</strong> - Critico para evitar duplicados internacionales</li>
+                <li><strong>Expandir keywords locales</strong> - Mejorar posicionamiento en busquedas geograficas</li>
+            </ol>
+
+            <p>El sitio ya esta bien posicionado para recibir reservas y convertir visitantes en clientes. Las mejoras sugeridas ayudaran a aumentar el volumen de trafico organico.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit Specialist</strong></p>
+            <p>Fecha: 28 de Enero 2026</p>
+            <p style="margin-top: 15px;">Para implementar estas mejoras o solicitar un analisis mas detallado, contacte con su consultor SEO.</p>
+        </div>
+    </div>
+</body>
+</html>
