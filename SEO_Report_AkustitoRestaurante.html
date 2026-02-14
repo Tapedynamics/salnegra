@@ -200,8 +200,8 @@
 
             <div class="critical">
                 <h4>5. MENÚ INVISIBLE PARA GOOGLE (JAVASCRIPT + GOOGLE SHEETS)</h4>
-                <p>El menú del restaurante se carga dinámicamente mediante JavaScript desde Google Sheets CSV. Esto significa que <strong>Google no puede indexar los platos, precios ni categorías del menú</strong>. Todo ese contenido valioso es invisible para los motores de búsqueda.</p>
-                <p>Aunque es práctico para actualizar el menú, es un desastre para SEO.</p>
+                <p>El menú del restaurante se carga dinámicamente mediante JavaScript desde Google Sheets CSV. Aunque Googlebot puede ejecutar JavaScript, este enfoque presenta <strong>limitaciones SEO significativas</strong>: el contenido solo se indexa en el segundo crawl (con retraso), si el CSV tarda en cargar Google puede no verlo, y el contenido no aparece en el HTML inicial.</p>
+                <p>Aunque es práctico para actualizar el menú, reduce significativamente la visibilidad SEO.</p>
                 <p><strong>Solución:</strong> Implementar Server-Side Rendering (SSR) del menú con PHP (ya usan menu.php) que lea el CSV y genere HTML estático. Mantener la carga dinámica como fallback.</p>
             </div>
 
