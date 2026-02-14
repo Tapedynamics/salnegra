@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - Akustito Restaurante y Coctelería</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #006d2d 0%, #00a847 100%); color: white; padding: 50px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; }
+        .header p { font-size: 18px; margin: 10px 0; opacity: 0.95; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #006d2d; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #006d2d; }
+        h3 { font-size: 22px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        p, li { margin-bottom: 12px; font-size: 18px; }
+        ul { margin-left: 30px; margin-bottom: 20px; }
+        .score-box { background: linear-gradient(135deg, #006d2d 0%, #00a847 100%); color: white; padding: 50px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
+        .score-box .score { font-size: 80px; font-weight: bold; margin: 20px 0; }
+        .score-box .score-label { font-size: 24px; opacity: 0.9; }
+        .critical { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .critical h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .warning { background: linear-gradient(135deg, #feca57, #ff9f43); color: #333; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .warning h4 { color: #333; margin-top: 0; margin-bottom: 15px; }
+        .success { background: linear-gradient(135deg, #26de81, #20bf6b); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .success h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .info-box { background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .info-box h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #006d2d; color: white; }
+        tr:hover { background: #f8f9fa; }
+        .priority-alta { background: #ff6b6b; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-media { background: #feca57; color: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-baja { background: #26de81; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .code-block { background: #2d3436; color: #74b9ff; padding: 20px; border-radius: 10px; font-family: 'Consolas', monospace; font-size: 14px; overflow-x: auto; margin: 15px 0; white-space: pre-wrap; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #006d2d; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .metric-card { background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 12px; text-align: center; }
+        .metric-card .value { font-size: 36px; font-weight: bold; color: #006d2d; }
+        .metric-card .label { font-size: 14px; color: #666; margin-top: 8px; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin: 3px; background: #006d2d; color: white; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>Akustito Restaurante y Coctelería</strong></p>
+        <p>akustitorestaurante.es</p>
+        <p>Análisis: 14 de Febrero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al índice</a>
+
+        <div class="score-box">
+            <div class="score-label">Puntuación SEO</div>
+            <div class="score">4.5/10</div>
+            <p>Restaurante con excelente reputación online pero con problemas SEO técnicos críticos que limitan su visibilidad en buscadores</p>
+        </div>
+
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+            <p><strong>Akustito Restaurante y Coctelería</strong> es un restaurante familiar con coctelería de autor ubicado en Los Cristianos, Tenerife Sur. Abierto desde julio 2017, se ha ganado una excelente reputación con un 4.8 en Google y 5/5 en TripAdvisor (#10 de 417 restaurantes en Los Cristianos). Múltiples premios de Restaurant Guru (2020-2024) y certificados de excelencia TripAdvisor.</p>
+            <p>Sin embargo, el sitio web presenta <strong>problemas técnicos SEO graves</strong> que impiden que esta excelente reputación se traduzca en visibilidad orgánica: certificado SSL roto, sin meta description, sin H1, sin Schema markup y menú cargado por JavaScript (invisible para Google).</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">4.5</div>
+                    <div class="label">Puntuación SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">3</div>
+                    <div class="label">Idiomas (ES/EN/FR)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">4.8</div>
+                    <div class="label">Google Rating</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">1.9K</div>
+                    <div class="label">Seguidores IG</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Restaurante Familiar y Coctelería de Autor</li>
+                <li><strong>Ubicación:</strong> Calle Jesús Domínguez Grillo, 12 - Los Cristianos, Arona, Tenerife</li>
+                <li><strong>Teléfono:</strong> +34 922 89 80 27</li>
+                <li><strong>WhatsApp:</strong> +34 650 57 67 38</li>
+                <li><strong>Horario:</strong> Martes a Sábado 17:30 - 23:30 (Cocina 18:30 - 22:30)</li>
+                <li><strong>Cerrado:</strong> Domingo y Lunes</li>
+                <li><strong>Idiomas:</strong> Español, English, Français</li>
+                <li><strong>Instagram:</strong> @akustito (1.934 seguidores)</li>
+                <li><strong>Google:</strong> 4.8/5 estrellas</li>
+                <li><strong>TripAdvisor:</strong> 5/5 - #10 de 417 en Los Cristianos</li>
+            </ul>
+
+            <h3>Premios y Reconocimientos</h3>
+            <p>
+                <span class="tag">Restaurant Guru 2024</span>
+                <span class="tag">Restaurant Guru 2022</span>
+                <span class="tag">Restaurant Guru 2021</span>
+                <span class="tag">Mejor Restaurante 2020</span>
+                <span class="tag">TripAdvisor Excellence 2020-2024</span>
+                <span class="tag">Sluurpy Recommended 2022</span>
+            </p>
+
+            <h3>Oferta</h3>
+            <p>
+                <span class="tag">Coctelería de Autor</span>
+                <span class="tag">Cocina Internacional</span>
+                <span class="tag">Gambas al Ajillo</span>
+                <span class="tag">Croquetas</span>
+                <span class="tag">Tartar de Salmón</span>
+                <span class="tag">Música en Vivo</span>
+                <span class="tag">Ambiente Familiar</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Críticos</h2>
+
+            <div class="critical">
+                <h4>1. CERTIFICADO SSL ROTO (HTTPS NO FUNCIONA)</h4>
+                <p>El sitio web falla al intentar conectar vía HTTPS. El navegador muestra error de certificado SSL. Esto es un <strong>factor de ranking negativo directo</strong> para Google desde 2014, y Chrome muestra advertencia "No seguro" a los visitantes.</p>
+                <p>Todas las URLs internas y Open Graph apuntan a <code>http://</code> en lugar de <code>https://</code>.</p>
+                <p><strong>Impacto:</strong> Google penaliza sitios sin HTTPS. Los usuarios ven "No seguro" y abandonan. Las conversiones caen significativamente.</p>
+                <p><strong>Solución:</strong> Instalar y configurar un certificado SSL válido (Let's Encrypt gratuito) y redirigir todo el tráfico HTTP a HTTPS.</p>
+            </div>
+
+            <div class="critical">
+                <h4>2. SIN META DESCRIPTION</h4>
+                <p>La página principal <strong>no tiene etiqueta meta description</strong>. Google generará automáticamente un snippet con texto aleatorio de la página, que incluirá nombres de badges como "Restaurant Guru Recommended".</p>
+                <p>La página del menú tiene <code>&lt;meta type="description"&gt;</code> en lugar de <code>&lt;meta name="description"&gt;</code>, lo cual es <strong>sintaxis incorrecta</strong> y Google lo ignora.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">&lt;!-- Homepage --&gt;
+&lt;meta name="description" content="Akustito Restaurante y Coctelería en Los Cristianos, Tenerife. Cocina internacional, cócteles de autor y música en vivo. Martes a Sábado. Reservas: +34 650 57 67 38" /&gt;
+
+&lt;!-- Menu page - CORREGIR type por name --&gt;
+&lt;meta name="description" content="Carta de Akustito Restaurante - Los Cristianos. Entrantes, carnes, pescados y cócteles de autor. Disponible en español, inglés y francés." /&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>3. SIN ETIQUETA H1</h4>
+                <p>La página principal <strong>no tiene ningún H1</strong>. El logo es una imagen sin texto alternativo y no hay encabezado de texto. Los motores de búsqueda dependen del H1 para entender el tema principal de la página.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">&lt;h1&gt;Akustito Restaurante y Coctelería - Los Cristianos, Tenerife&lt;/h1&gt;
+&lt;!-- Puede ir visualmente oculto si interfiere con el diseño del logo --&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>4. SIN SCHEMA MARKUP (DATOS ESTRUCTURADOS)</h4>
+                <p>Cero datos estructurados Schema.org en todo el sitio. Para un restaurante con tan buenas reseñas, esto es una oportunidad enorme perdida: sin rich snippets, sin estrellas en Google, sin horarios en los resultados de búsqueda.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Akustito Restaurante y Coctelería",
+  "image": "https://akustitorestaurante.es/img/akustito2-og.jpg",
+  "url": "https://akustitorestaurante.es",
+  "telephone": "+34922898027",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Jesús Domínguez Grillo, 12",
+    "addressLocality": "Los Cristianos",
+    "addressRegion": "Tenerife",
+    "postalCode": "38650",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.0507622,
+    "longitude": -16.720099
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "17:30",
+      "closes": "23:30"
+    }
+  ],
+  "servesCuisine": ["International", "Cocktails"],
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "1506"
+  },
+  "hasMenu": "https://akustitorestaurante.es/menu.php"
+}
+&lt;/script&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>5. MENÚ INVISIBLE PARA GOOGLE (JAVASCRIPT + GOOGLE SHEETS)</h4>
+                <p>El menú del restaurante se carga dinámicamente mediante JavaScript desde Google Sheets CSV. Esto significa que <strong>Google no puede indexar los platos, precios ni categorías del menú</strong>. Todo ese contenido valioso es invisible para los motores de búsqueda.</p>
+                <p>Aunque es práctico para actualizar el menú, es un desastre para SEO.</p>
+                <p><strong>Solución:</strong> Implementar Server-Side Rendering (SSR) del menú con PHP (ya usan menu.php) que lea el CSV y genere HTML estático. Mantener la carga dinámica como fallback.</p>
+            </div>
+
+            <div class="critical">
+                <h4>6. ATRIBUTO LANG INCORRECTO EN HOMEPAGE</h4>
+                <p>La homepage tiene <code>&lt;html lang="en"&gt;</code> cuando el contenido principal es bilingüe español/inglés y el restaurante está en España. La página del menú correctamente usa <code>lang="es"</code>.</p>
+                <p><strong>Solución:</strong> Cambiar a <code>&lt;html lang="es"&gt;</code> en la homepage y añadir hreflang tags para las versiones en otros idiomas.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Adicionales</h2>
+
+            <div class="warning">
+                <h4>1. SIN GOOGLE ANALYTICS NI TRACKING</h4>
+                <p>No hay Google Analytics, Google Tag Manager ni ningún sistema de tracking instalado. Es imposible medir el tráfico, las conversiones o el comportamiento de los usuarios.</p>
+                <p><strong>Solución:</strong> Instalar GA4 con eventos de clic en WhatsApp, teléfono y página de menú.</p>
+            </div>
+
+            <div class="warning">
+                <h4>2. IMÁGENES SIN ALT TEXT</h4>
+                <p>El logo principal (<code>img/logo.png</code>) y la imagen de footer (<code>img/akustito-footer.jpg</code>) no tienen atributo alt. Las banderas de idiomas tampoco tienen alt descriptivo.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">&lt;img src="img/logo.png" alt="Akustito Restaurante y Coctelería - Los Cristianos" class="img-fluid" /&gt;
+&lt;img src="img/akustito-footer.jpg" alt="Interior de Akustito Restaurante - ambiente acogedor" class="img-fluid" /&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>3. ENLACES TEL: MALFORMADOS</h4>
+                <p>El segundo enlace de teléfono usa <code>href="0034922898027"</code> sin el protocolo <code>tel:</code>. Esto no funciona en dispositivos móviles.</p>
+                <p><strong>Solución:</strong> Cambiar a <code>href="tel:+34922898027"</code></p>
+            </div>
+
+            <div class="warning">
+                <h4>4. ERROR TIPOGRÁFICO EN CSS</h4>
+                <p><code>@media screen and (max-widht:680px)</code> - "widht" debería ser "width". Esta media query no funciona, lo que puede causar problemas de diseño en móviles.</p>
+            </div>
+
+            <div class="warning">
+                <h4>5. SIN HREFLANG TAGS</h4>
+                <p>Con 3 idiomas (ES/EN/FR), faltan las etiquetas hreflang para evitar contenido duplicado y dirigir a los usuarios al idioma correcto.</p>
+                <div class="code-block">&lt;link rel="alternate" hreflang="es" href="https://akustitorestaurante.es/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://akustitorestaurante.es/menu.php?lang=en" /&gt;
+&lt;link rel="alternate" hreflang="fr" href="https://akustitorestaurante.es/menu.php?lang=fr" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://akustitorestaurante.es/" /&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>6. SIN CANONICAL TAG</h4>
+                <p>No hay etiqueta canonical en ninguna página. Con 3 versiones de idioma del menú, Google podría interpretar contenido duplicado.</p>
+            </div>
+
+            <div class="warning">
+                <h4>7. CONTENIDO TEXTUAL MUY ESCASO</h4>
+                <p>La homepage consiste principalmente en badges de premios, banderas de idioma y datos de contacto. No hay texto descriptivo sobre el restaurante, su historia, su filosofía culinaria ni sus platos estrella. Google necesita contenido textual para posicionar.</p>
+            </div>
+
+            <div class="warning">
+                <h4>8. VERSIONES DE BOOTSTRAP INCONSISTENTES</h4>
+                <p>La homepage carga Bootstrap 4.6.1 y la página del menú carga Bootstrap 4.0.0. Esto puede causar inconsistencias visuales y cargar CSS innecesario.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. EXCELENTE REPUTACIÓN ONLINE</h4>
+                <p>Google 4.8/5 con más de 1.500 reseñas. TripAdvisor 5/5, #10 de 417 restaurantes en Los Cristianos. Múltiples premios Restaurant Guru (2020-2024). Esta reputación es un activo enorme que debe traducirse mejor en SEO.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. TRILINGÜE (ES/EN/FR)</h4>
+                <p>Soporte para 3 idiomas cubre los principales mercados turísticos de Tenerife Sur: españoles, británicos y franceses. Ventaja competitiva significativa.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. WHATSAPP INTEGRADO</h4>
+                <p>Botón flotante de WhatsApp siempre visible + número WhatsApp para reservas fuera de horario. Excelente para conversiones, especialmente turistas.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. MENÚ DINÁMICO VÍA GOOGLE SHEETS</h4>
+                <p>Sistema inteligente para actualizar menú fácilmente desde Google Sheets. Aunque tiene problemas SEO, es muy práctico operativamente. Solo necesita SSR para ser perfecto.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. PRESENCIA EN REDES SOCIALES</h4>
+                <p>Instagram (@akustito, 1.934 seguidores), Facebook (AkustitoCocktail), TripAdvisor y Google Maps. Buena cobertura de plataformas.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. INFORMACIÓN DE CONTACTO CLARA</h4>
+                <p>Teléfono, WhatsApp, horarios, días de cierre y horario de cocina claramente visibles tanto en la homepage como en la página del menú.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. OPEN GRAPH TAGS</h4>
+                <p>Tags OG correctamente configuradas con título, descripción, imagen y URL. Esto asegura que el enlace se comparta bien en redes sociales.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Quick Wins</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Acción</th>
+                        <th>Impacto</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Instalar certificado SSL (Let's Encrypt)</td>
+                        <td>Muy Alto</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir meta description en homepage y menú</td>
+                        <td>Alto</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir H1 con keyword principal</td>
+                        <td>Alto</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Implementar Schema Restaurant JSON-LD</td>
+                        <td>Alto</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Corregir lang="en" a lang="es"</td>
+                        <td>Medio</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Instalar Google Analytics 4</td>
+                        <td>Alto</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Corregir meta type="description" por name="description"</td>
+                        <td>Medio</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir alt text a todas las imágenes</td>
+                        <td>Medio</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Corregir enlaces tel: malformados</td>
+                        <td>Medio</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir hreflang tags para 3 idiomas</td>
+                        <td>Medio</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Renderizar menú en servidor (SSR con PHP)</td>
+                        <td>Alto</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir contenido textual descriptivo en homepage</td>
+                        <td>Alto</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Corregir typo CSS "max-widht" → "max-width"</td>
+                        <td>Bajo</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Unificar versión Bootstrap (4.6.1)</td>
+                        <td>Bajo</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Keywords Recomendadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Idioma</th>
+                        <th>Competencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>restaurante los cristianos</td>
+                        <td>ES</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>best restaurant los cristianos</td>
+                        <td>EN</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>coctelería los cristianos tenerife</td>
+                        <td>ES</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>cocktail bar los cristianos</td>
+                        <td>EN</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>donde comer en los cristianos</td>
+                        <td>ES</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>where to eat los cristianos tenerife</td>
+                        <td>EN</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>restaurant los cristianos tenerife</td>
+                        <td>FR</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>live music restaurant tenerife</td>
+                        <td>EN</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>restaurante con música en vivo tenerife</td>
+                        <td>ES</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                    <tr>
+                        <td>mejores cócteles los cristianos</td>
+                        <td>ES</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                    <tr>
+                        <td>signature cocktails tenerife south</td>
+                        <td>EN</td>
+                        <td>Muy Baja</td>
+                    </tr>
+                    <tr>
+                        <td>restaurante familiar tenerife sur</td>
+                        <td>ES</td>
+                        <td>Baja</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Puntuación por Áreas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Puntuación</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEO Técnico</td>
+                        <td>2/10</td>
+                        <td>SSL roto, sin meta desc, sin H1, sin Schema, sin canonical, sin analytics</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido</td>
+                        <td>4/10</td>
+                        <td>Menú existe pero es invisible para Google (JS), contenido textual escaso</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Local</td>
+                        <td>5/10</td>
+                        <td>Dirección, teléfono y horarios visibles pero sin Schema LocalBusiness</td>
+                    </tr>
+                    <tr>
+                        <td>UX/Diseño</td>
+                        <td>6/10</td>
+                        <td>WhatsApp CTA, responsive, claro. Pero homepage sobrecargada de badges</td>
+                    </tr>
+                    <tr>
+                        <td>Social Media</td>
+                        <td>7/10</td>
+                        <td>Instagram 1.9K, Facebook, TripAdvisor 5/5, Google 4.8, premios</td>
+                    </tr>
+                    <tr>
+                        <td>Internacional</td>
+                        <td>5/10</td>
+                        <td>3 idiomas disponibles pero sin hreflang, lang attr incorrecto</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Análisis Competitivo</h2>
+            <p>Akustito está en una posición paradójica: tiene una de las <strong>mejores reputaciones online</strong> de Los Cristianos (4.8 Google, 5/5 TripAdvisor, múltiples premios), pero su web tiene un SEO técnico entre los peores del análisis.</p>
+
+            <div class="info-box">
+                <h4>OPORTUNIDAD ENORME</h4>
+                <p>Con las correcciones técnicas propuestas (SSL, meta tags, Schema, H1), Akustito podría saltar de <strong>4.5/10 a 7.5/10</strong> en pocos días. La reputación ya la tiene - solo necesita que Google pueda leerla correctamente.</p>
+                <p>Los restaurantes competidores en Los Cristianos con peor reputación pero mejor SEO técnico les están ganando posiciones en las búsquedas.</p>
+            </div>
+
+            <h3>Prioridad de Implementación</h3>
+            <p><strong>Semana 1 (Impacto inmediato):</strong></p>
+            <ul>
+                <li>Instalar certificado SSL + redirect HTTPS</li>
+                <li>Añadir meta description en todas las páginas</li>
+                <li>Añadir H1 con keyword principal</li>
+                <li>Corregir lang="en" a lang="es"</li>
+                <li>Instalar Google Analytics 4</li>
+            </ul>
+            <p><strong>Semana 2 (SEO estructural):</strong></p>
+            <ul>
+                <li>Implementar Schema Restaurant JSON-LD</li>
+                <li>Añadir hreflang tags</li>
+                <li>Añadir canonical tags</li>
+                <li>Corregir alt text en imágenes</li>
+                <li>Fix enlaces tel: malformados</li>
+            </ul>
+            <p><strong>Semana 3-4 (Contenido):</strong></p>
+            <ul>
+                <li>Renderizar menú server-side (PHP)</li>
+                <li>Añadir sección descriptiva sobre el restaurante</li>
+                <li>Crear sitemap.xml y robots.txt</li>
+                <li>Optimizar keywords en contenido</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit</strong></p>
+            <p>Análisis del código fuente real del sitio web akustitorestaurante.es</p>
+        </div>
+    </div>
+</body>
+</html>
