@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - BT Studio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #1a1a1a 0%, #444444 100%); color: white; padding: 50px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; color: #e8c547; }
+        .header p { font-size: 18px; margin: 10px 0; opacity: 0.95; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #1a1a1a; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #e8c547; }
+        h3 { font-size: 22px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        p, li { margin-bottom: 12px; font-size: 18px; }
+        ul { margin-left: 30px; margin-bottom: 20px; }
+        .score-box { background: linear-gradient(135deg, #1a1a1a 0%, #444444 100%); color: white; padding: 50px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
+        .score-box .score { font-size: 80px; font-weight: bold; margin: 20px 0; color: #e8c547; }
+        .score-box .score-label { font-size: 24px; opacity: 0.9; }
+        .critical { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .critical h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .warning { background: linear-gradient(135deg, #feca57, #ff9f43); color: #333; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .warning h4 { color: #333; margin-top: 0; margin-bottom: 15px; }
+        .success { background: linear-gradient(135deg, #26de81, #20bf6b); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .success h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .info-box { background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .info-box h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #1a1a1a; color: #e8c547; }
+        tr:hover { background: #f8f9fa; }
+        .priority-alta { background: #ff6b6b; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-media { background: #feca57; color: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-baja { background: #26de81; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .code-block { background: #2d3436; color: #e8c547; padding: 20px; border-radius: 10px; font-family: 'Consolas', monospace; font-size: 14px; overflow-x: auto; margin: 15px 0; white-space: pre-wrap; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #1a1a1a; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .metric-card { background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 12px; text-align: center; }
+        .metric-card .value { font-size: 36px; font-weight: bold; color: #1a1a1a; }
+        .metric-card .label { font-size: 14px; color: #666; margin-top: 8px; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin: 3px; background: #1a1a1a; color: #e8c547; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>BT Studio - Creative Video Production</strong></p>
+        <p>bt.studio</p>
+        <p>Análisis: 22 de Febrero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al índice</a>
+
+        <div class="score-box">
+            <div class="score-label">Puntuación SEO</div>
+            <div class="score">5.5/10</div>
+            <p>Productora de video con diseño profesional excepcional pero con carencias SEO técnicas significativas que limitan su visibilidad orgánica</p>
+        </div>
+
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+            <p><strong>BT Studio</strong> es una productora de video creativa con sede en <strong>San Francisco, California</strong>. Desde 2015 produce contenido de video comercial, corporativo y narrativo para marcas reconocidas. Sus servicios incluyen lanzamientos y anuncios, historias de clientes, documentales corporativos y cinematografía.</p>
+            <p>El sitio está construido con <strong>Webflow</strong> y tiene un diseño visual excepcional con un H1 rotativo, testimonios de clientes y un portfolio bien organizado. Sin embargo, presenta carencias SEO significativas: no se confirma meta description, no hay Schema.org para una productora de video, el H1 rotativo puede confundir a crawlers, y falta un sitemap explícito.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">5.5</div>
+                    <div class="label">Puntuación SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2015</div>
+                    <div class="label">Activos desde</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">SF</div>
+                    <div class="label">San Francisco</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">Webflow</div>
+                    <div class="label">Plataforma</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Productora de Video Creativa / Creative Agency</li>
+                <li><strong>Ubicación:</strong> San Francisco, California, USA</li>
+                <li><strong>Email:</strong> info@bt.studio</li>
+                <li><strong>Teléfono:</strong> (415) 234-3871</li>
+                <li><strong>Idioma:</strong> English</li>
+                <li><strong>Instagram:</strong> @_bt.studio</li>
+                <li><strong>LinkedIn:</strong> bt-studio-sf</li>
+                <li><strong>Plataforma:</strong> Webflow</li>
+            </ul>
+
+            <h3>Servicios</h3>
+            <p>
+                <span class="tag">Launches & Announcements</span>
+                <span class="tag">Customer Stories</span>
+                <span class="tag">Corporate Documentaries</span>
+                <span class="tag">Cinematography</span>
+                <span class="tag">Commercial Production</span>
+                <span class="tag">Narrative Film</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Críticos</h2>
+
+            <div class="critical">
+                <h4>1. META DESCRIPTION NO CONFIRMADA</h4>
+                <p>No se detecta una meta description explícita en el HTML del sitio. Sin meta description, Google genera automáticamente un snippet con texto aleatorio de la página, que puede no ser el más atractivo para los usuarios.</p>
+                <p><strong>Impacto:</strong> El CTR (Click-Through Rate) en los resultados de búsqueda se reduce significativamente sin una meta description atractiva y controlada.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">&lt;meta name="description" content="BT Studio is a creative video production company in San Francisco. We produce commercial, corporate, and narrative film for companies with big dreams. From script to screen since 2015." /&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>2. SIN SCHEMA.ORG (VIDEOPRODUCTIONCOMPANY)</h4>
+                <p>No hay datos estructurados Schema.org. Para una productora de video, el markup es fundamental para aparecer con rich snippets en búsquedas de servicios de producción. Google ofrece tipos específicos como <code>VideoProductionCompany</code> y <code>CreativeWork</code> para videos del portfolio.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "additionalType": "https://schema.org/VideoProductionCompany",
+  "name": "BT Studio",
+  "url": "https://www.bt.studio",
+  "logo": "https://www.bt.studio/logo.png",
+  "image": "https://www.bt.studio/hero-image.jpg",
+  "description": "Creative video production company in San Francisco specializing in commercial, corporate, and narrative film.",
+  "telephone": "+14152343871",
+  "email": "info@bt.studio",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Francisco",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.instagram.com/_bt.studio",
+    "https://www.linkedin.com/company/bt-studio-sf"
+  ],
+  "foundingDate": "2015",
+  "knowsAbout": ["Video Production", "Commercial Film", "Corporate Documentary", "Cinematography"]
+}
+&lt;/script&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>3. H1 CON TEXTO ROTATIVO (JAVASCRIPT)</h4>
+                <p>El H1 de la homepage usa texto rotativo via JavaScript: "Creative production for companies with <strong>[big dreams / a mission / personality / a message / a purpose]</strong>". Los crawlers pueden ver solo una variante o texto incompleto, lo que debilita la señal de relevancia.</p>
+                <p><strong>Impacto:</strong> Google puede indexar una versión aleatoria del H1, o no entenderlo correctamente.</p>
+                <p><strong>Solución:</strong> Establecer un texto base estático visible en el HTML y usar JavaScript solo para el efecto visual. El texto por defecto debería ser la variante más relevante para SEO.</p>
+                <div class="code-block">&lt;h1&gt;Creative Video Production Company in San Francisco
+  &lt;span class="rotating-text" aria-hidden="true"&gt;for companies with big dreams&lt;/span&gt;
+&lt;/h1&gt;
+&lt;!-- El texto base "Creative Video Production Company in San Francisco"
+     siempre visible para crawlers --&gt;</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Adicionales</h2>
+
+            <div class="warning">
+                <h4>1. SIN SITEMAP EXPLÍCITO</h4>
+                <p>No se confirma la existencia de un sitemap.xml. Webflow genera uno automáticamente, pero debería verificarse que existe y está registrado en Google Search Console.</p>
+            </div>
+
+            <div class="warning">
+                <h4>2. SIN CANONICAL TAG CONFIRMADO</h4>
+                <p>No se detecta etiqueta canonical explícita. Webflow suele añadirla automáticamente, pero debe verificarse para evitar problemas de contenido duplicado.</p>
+            </div>
+
+            <div class="warning">
+                <h4>3. COPYRIGHT 2025 (DESACTUALIZADO)</h4>
+                <p>El footer muestra "© 2025" en lugar de 2026. Aunque menor, da señal de sitio no actualizado.</p>
+            </div>
+
+            <div class="warning">
+                <h4>4. SIN BLOG O CONTENIDO EDUCATIVO VISIBLE</h4>
+                <p>Existe un enlace a /blog en la navegación, pero no hay contenido de blog visible en la homepage. El marketing de contenidos es clave para posicionar en keywords de "video production" de cola larga.</p>
+            </div>
+
+            <div class="warning">
+                <h4>5. ANIMACIONES WEBFLOW Y CORE WEB VITALS</h4>
+                <p>El sitio usa animaciones pesadas de Webflow (translate3d, opacity transitions, sliders jQuery). Estas pueden afectar el CLS (Cumulative Layout Shift) y el LCP si no están optimizadas.</p>
+            </div>
+
+            <div class="warning">
+                <h4>6. SIN FAQ SCHEMA PARA SERVICIOS</h4>
+                <p>Preguntas como "How much does video production cost?", "What's the production timeline?" son búsquedas frecuentes que podrían captarse con una sección FAQ con Schema.</p>
+            </div>
+
+            <div class="warning">
+                <h4>7. PORTFOLIO SIN SCHEMA CREATIVEWORK</h4>
+                <p>Los trabajos del portfolio deberían tener markup Schema <code>CreativeWork</code> o <code>VideoObject</code> para aparecer en búsquedas de video y mostrar rich snippets.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. TÍTULO EXCELENTE CON GEO + SERVICIO</h4>
+                <p>"BT Studio | Creative Video Production Company San Francisco" - Incluye marca, servicio principal y ciudad. Perfecto para SEO local y de servicio.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. ALT TEXT DESCRIPTIVO EN IMÁGENES CLAVE</h4>
+                <p>Las imágenes principales tienen alt text descriptivos y contextuales: "Behind the scenes of production, Doug directs little girl in kitchen", "Write icon depicting pencil". Excelente práctica.</p>
+            </div>
+
+            <div class="success">
+                <h4>3. BUENA JERARQUÍA DE ENCABEZADOS</h4>
+                <p>Estructura H1 → H2 → H3 bien definida con secciones claras: "What We Do", "What Our Clients Say", "Start your video project". Buena señalización temática.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. URLS LIMPIAS Y DESCRIPTIVAS</h4>
+                <p>/portfolio/featured-work, /portfolio/customer-stories, /portfolio/corporate-documentaries, /blog, /contact. Estructura URL excelente.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. TESTIMONIOS DE CLIENTES (SOCIAL PROOF)</h4>
+                <p>6 testimonios de clientes con nombres y cargos. Contenido generado por usuarios que refuerza la autoridad y confianza.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. FORMULARIO DE CONTACTO CLARO</h4>
+                <p>CTA "Collaborate With Us" con formulario de contacto (nombre, email, comentarios). Buen embudo de conversión.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. DISEÑO RESPONSIVE Y PROFESIONAL</h4>
+                <p>Breakpoints para desktop (992px+) y tablet (768-991px). El diseño visual es de nivel premium, acorde con una productora de video.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. SSL/HTTPS VÍA CDN</h4>
+                <p>HTTPS activo servido desde CDN de Webflow (cdn.prod.website-files.com). Buena seguridad y rendimiento de entrega.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Quick Wins</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Acción</th>
+                        <th>Impacto</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Añadir meta description optimizada</td><td>Muy Alto</td><td><span class="priority-alta">ALTA</span></td></tr>
+                    <tr><td>Implementar Schema ProfessionalService / VideoProductionCompany</td><td>Alto</td><td><span class="priority-alta">ALTA</span></td></tr>
+                    <tr><td>Fijar H1 estático con keyword "Video Production San Francisco"</td><td>Alto</td><td><span class="priority-alta">ALTA</span></td></tr>
+                    <tr><td>Verificar sitemap.xml en Google Search Console</td><td>Alto</td><td><span class="priority-alta">ALTA</span></td></tr>
+                    <tr><td>Verificar canonical tags en todas las páginas</td><td>Medio</td><td><span class="priority-media">MEDIA</span></td></tr>
+                    <tr><td>Actualizar copyright a 2026</td><td>Bajo</td><td><span class="priority-baja">BAJA</span></td></tr>
+                    <tr><td>Añadir Schema VideoObject/CreativeWork al portfolio</td><td>Alto</td><td><span class="priority-media">MEDIA</span></td></tr>
+                    <tr><td>Crear FAQ section con Schema FAQPage</td><td>Alto</td><td><span class="priority-media">MEDIA</span></td></tr>
+                    <tr><td>Publicar contenido en blog regularmente</td><td>Alto</td><td><span class="priority-media">MEDIA</span></td></tr>
+                    <tr><td>Optimizar animaciones para CLS</td><td>Medio</td><td><span class="priority-media">MEDIA</span></td></tr>
+                    <tr><td>Añadir Schema Review para testimonios</td><td>Medio</td><td><span class="priority-baja">BAJA</span></td></tr>
+                    <tr><td>Crear Google Business Profile</td><td>Alto</td><td><span class="priority-alta">ALTA</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Keywords Recomendadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Idioma</th>
+                        <th>Competencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>video production company san francisco</td><td>EN</td><td>Alta</td></tr>
+                    <tr><td>corporate video production sf</td><td>EN</td><td>Media</td></tr>
+                    <tr><td>commercial video production bay area</td><td>EN</td><td>Media</td></tr>
+                    <tr><td>brand video production san francisco</td><td>EN</td><td>Media</td></tr>
+                    <tr><td>product launch video production</td><td>EN</td><td>Media</td></tr>
+                    <tr><td>customer story video production</td><td>EN</td><td>Baja</td></tr>
+                    <tr><td>corporate documentary production</td><td>EN</td><td>Baja</td></tr>
+                    <tr><td>video production company near me</td><td>EN</td><td>Alta</td></tr>
+                    <tr><td>best video production companies sf</td><td>EN</td><td>Alta</td></tr>
+                    <tr><td>startup video production san francisco</td><td>EN</td><td>Baja</td></tr>
+                    <tr><td>tech company video production</td><td>EN</td><td>Media</td></tr>
+                    <tr><td>creative production company california</td><td>EN</td><td>Media</td></tr>
+                    <tr><td>cinematographer san francisco</td><td>EN</td><td>Baja</td></tr>
+                    <tr><td>video production cost san francisco</td><td>EN</td><td>Baja</td></tr>
+                    <tr><td>narrative film production bay area</td><td>EN</td><td>Muy Baja</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Puntuación por Áreas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Puntuación</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>SEO Técnico</td><td>4/10</td><td>Sin meta desc, sin Schema, H1 rotativo, sitemap no verificado</td></tr>
+                    <tr><td>Contenido</td><td>6/10</td><td>Buen título, testimonios, portfolio organizado. Blog vacío</td></tr>
+                    <tr><td>SEO Local</td><td>5/10</td><td>Ciudad en título, contacto visible. Sin Schema LocalBusiness</td></tr>
+                    <tr><td>UX/Diseño</td><td>9/10</td><td>Diseño premium, responsive, CTA claros, portfolio visual</td></tr>
+                    <tr><td>Imágenes</td><td>7/10</td><td>Buenos alt text en imágenes principales</td></tr>
+                    <tr><td>Social/Autoridad</td><td>6/10</td><td>Instagram y LinkedIn activos, portfolio de marcas reconocidas</td></tr>
+                    <tr><td>Rendimiento</td><td>5/10</td><td>CDN de Webflow ayuda, pero animaciones pesadas</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Análisis Competitivo</h2>
+            <p>BT Studio compite en el mercado de producción de video de <strong>San Francisco / Bay Area</strong>, uno de los más competitivos del mundo por la concentración de empresas tech. Competidores como Sandwich Video, Dissolve y productoras locales tienen mejor SEO técnico.</p>
+
+            <div class="info-box">
+                <h4>OPORTUNIDAD: CONTENIDO + SEO TÉCNICO</h4>
+                <p>BT Studio tiene el <strong>mejor activo posible</strong>: un portfolio visual excepcional y testimonios reales de clientes. Lo que falta es traducir esto en SEO. Con Schema VideoObject en cada trabajo del portfolio, una meta description sólida, y contenido de blog sobre producción de video, podría pasar de <strong>5.5/10 a 8.0/10</strong>.</p>
+                <p>El nicho de "corporate video production" y "customer story video" tiene competencia moderada comparado con "video production" genérico, y es exactamente donde BT Studio tiene más experiencia.</p>
+            </div>
+
+            <h3>Prioridad de Implementación</h3>
+            <p><strong>Semana 1 (Impacto inmediato):</strong></p>
+            <ul>
+                <li>Añadir meta description en todas las páginas</li>
+                <li>Implementar Schema ProfessionalService</li>
+                <li>Fijar H1 estático con keyword principal</li>
+                <li>Verificar sitemap en Google Search Console</li>
+                <li>Crear Google Business Profile</li>
+            </ul>
+            <p><strong>Semana 2 (Portfolio SEO):</strong></p>
+            <ul>
+                <li>Schema VideoObject/CreativeWork en cada proyecto</li>
+                <li>Optimizar títulos y descripciones de páginas de portfolio</li>
+                <li>Verificar canonical tags</li>
+            </ul>
+            <p><strong>Semana 3-4 (Contenido):</strong></p>
+            <ul>
+                <li>Crear FAQ con Schema FAQPage</li>
+                <li>Publicar primeros artículos de blog</li>
+                <li>Optimizar animaciones Webflow</li>
+                <li>Actualizar copyright</li>
+            </ul>
+            <p><strong>Mes 2 (Autoridad):</strong></p>
+            <ul>
+                <li>Estrategia de contenido: behind-the-scenes, tips de video production</li>
+                <li>Schema Review para testimonios</li>
+                <li>Link building con publicaciones de la industria</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit</strong></p>
+            <p>Análisis del código fuente real del sitio web bt.studio</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - Zest Family</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #e85d26 0%, #ff8c42 100%); color: white; padding: 50px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; }
+        .header p { font-size: 18px; margin: 10px 0; opacity: 0.95; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #e85d26; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #e85d26; }
+        h3 { font-size: 22px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        p, li { margin-bottom: 12px; font-size: 18px; }
+        ul { margin-left: 30px; margin-bottom: 20px; }
+        .score-box { background: linear-gradient(135deg, #e85d26 0%, #ff8c42 100%); color: white; padding: 50px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
+        .score-box .score { font-size: 80px; font-weight: bold; margin: 20px 0; }
+        .score-box .score-label { font-size: 24px; opacity: 0.9; }
+        .critical { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .critical h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .warning { background: linear-gradient(135deg, #feca57, #ff9f43); color: #333; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .warning h4 { color: #333; margin-top: 0; margin-bottom: 15px; }
+        .success { background: linear-gradient(135deg, #26de81, #20bf6b); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .success h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .info-box { background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .info-box h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #e85d26; color: white; }
+        tr:hover { background: #f8f9fa; }
+        .priority-alta { background: #ff6b6b; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-media { background: #feca57; color: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-baja { background: #26de81; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .code-block { background: #2d3436; color: #74b9ff; padding: 20px; border-radius: 10px; font-family: 'Consolas', monospace; font-size: 14px; overflow-x: auto; margin: 15px 0; white-space: pre-wrap; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #e85d26; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .metric-card { background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 12px; text-align: center; }
+        .metric-card .value { font-size: 36px; font-weight: bold; color: #e85d26; }
+        .metric-card .label { font-size: 14px; color: #666; margin-top: 8px; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin: 3px; background: #e85d26; color: white; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>Zest Family - Viaggi di Gruppo per Ragazzi</strong></p>
+        <p>zestfamily.it/viaggi</p>
+        <p>Análisis: 22 de Febrero 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al índice</a>
+
+        <div class="score-box">
+            <div class="score-label">Puntuación SEO</div>
+            <div class="score">7.0/10</div>
+            <p>Agencia de viajes para jóvenes con excelente Schema.org y buena base SEO, pero penalizada por rendimiento de carga y carencias de accesibilidad</p>
+        </div>
+
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+            <p><strong>Zest Family SRL</strong> es una agencia de viajes con sede en Milán (Viale Bianca Maria, 41) especializada en <strong>viajes de grupo para jóvenes de 18 a 35 años</strong>. Organiza experiencias en Italia, Europa y el mundo. La página analizada es /viaggi/, que funciona como catálogo de destinos con filtros interactivos.</p>
+            <p>El sitio destaca por un <strong>excelente uso de Schema.org</strong> (TravelAgency, LocalBusiness con geo-coordenadas) y una buena configuración técnica vía Rank Math SEO. Sin embargo, el rendimiento se ve afectado por el peso de Elementor + 6 familias de fuentes custom, y faltan elementos de accesibilidad como alt text en imágenes.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">7.0</div>
+                    <div class="label">Puntuación SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">18-35</div>
+                    <div class="label">Target Edad</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">5</div>
+                    <div class="label">Sitemaps Rank Math</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">Milano</div>
+                    <div class="label">Sede</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Agencia de Viajes (TravelAgency)</li>
+                <li><strong>Razón Social:</strong> Zest Family SRL</li>
+                <li><strong>Dirección:</strong> Viale Bianca Maria, 41, 20122 Milano, Lombardia</li>
+                <li><strong>Email:</strong> info@zestfamily.it</li>
+                <li><strong>Teléfono:</strong> +39 3780675353</li>
+                <li><strong>Horario:</strong> Lun-Vie 09:00-17:00</li>
+                <li><strong>Idioma:</strong> Italiano (it-IT)</li>
+                <li><strong>Redes:</strong> Facebook, Instagram</li>
+                <li><strong>Plataforma:</strong> WordPress + Elementor Pro</li>
+                <li><strong>SEO Plugin:</strong> Rank Math SEO</li>
+            </ul>
+
+            <h3>Destinos y Servicios</h3>
+            <p>
+                <span class="tag">Viajes Italia</span>
+                <span class="tag">Viajes Europa</span>
+                <span class="tag">Viajes Mundo</span>
+                <span class="tag">Grupos 18-35</span>
+                <span class="tag">Experiencias Únicas</span>
+                <span class="tag">Tour Organizados</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Críticos</h2>
+
+            <div class="critical">
+                <h4>1. RENDIMIENTO: ELEMENTOR + 6 FAMILIAS DE FUENTES</h4>
+                <p>La página carga <strong>6 familias de fuentes diferentes</strong>: Beatrice Deck, Blinker, DM Sans, Poppins, Comodo Free y Gotham. Cada fuente requiere múltiples peticiones HTTP y bloquea el renderizado. Combinado con el peso de Elementor Pro, Happy Addons y Presto Player, esto impacta gravemente los <strong>Core Web Vitals</strong> (LCP, CLS).</p>
+                <p><strong>Impacto:</strong> Google penaliza sitios con mala experiencia de usuario desde 2021. Un LCP alto hace que los usuarios abandonen antes de ver el contenido.</p>
+                <p><strong>Solución:</strong></p>
+                <ul>
+                    <li>Reducir a máximo 2 familias de fuentes (una para títulos, otra para texto)</li>
+                    <li>Precargar las fuentes críticas con <code>&lt;link rel="preload"&gt;</code></li>
+                    <li>Usar <code>font-display: swap</code> para evitar FOIT</li>
+                    <li>Activar caché de Elementor y minificación</li>
+                </ul>
+                <div class="code-block">&lt;link rel="preload" href="/fonts/beatrice-deck.woff2" as="font" type="font/woff2" crossorigin /&gt;
+&lt;link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin /&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>2. IMÁGENES SIN ALT TEXT</h4>
+                <p>Las imágenes principales (hero, logo, backgrounds) <strong>carecen de atributos alt descriptivos</strong>. Para una agencia de viajes, las imágenes son el principal atractivo visual y deberían estar optimizadas para Google Imágenes.</p>
+                <p><strong>Solución:</strong> Añadir alt text descriptivo a cada imagen con keywords de destino:</p>
+                <div class="code-block">&lt;img src="group-travel.jpg" alt="Grupo de jóvenes viajando por Europa con Zest Family" /&gt;
+&lt;img src="bali-trip.jpg" alt="Viaje de grupo a Bali para jóvenes 18-35 años" /&gt;</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Adicionales</h2>
+
+            <div class="warning">
+                <h4>1. SIN HREFLANG TAGS</h4>
+                <p>El sitio está solo en italiano. Para una agencia que organiza viajes internacionales y podría captar clientes de toda Europa, una versión en inglés sería muy beneficiosa. En cualquier caso, el hreflang debería declarar <code>it</code> como idioma predeterminado.</p>
+            </div>
+
+            <div class="warning">
+                <h4>2. FAVICON NO DECLARADO</h4>
+                <p>No se detecta una declaración explícita de favicon en el <code>&lt;head&gt;</code>. El favicon ayuda al reconocimiento de marca en pestañas, favoritos y resultados de búsqueda móviles.</p>
+            </div>
+
+            <div class="warning">
+                <h4>3. SIN BREADCRUMBS VISIBLES</h4>
+                <p>No hay navegación de breadcrumbs visible en la página. Para un sitio con estructura de destinos y categorías, los breadcrumbs mejoran la UX y generan rich snippets en Google.</p>
+            </div>
+
+            <div class="warning">
+                <h4>4. CONTENIDO CON FECHA ANTIGUA</h4>
+                <p>La fecha de publicación del artículo es <strong>11 de marzo 2025</strong> (modificado febrero 2026). Google favorece contenido fresco, especialmente en el sector viajes donde la estacionalidad es clave.</p>
+                <p><strong>Solución:</strong> Actualizar regularmente la página con nuevos destinos y cambiar la fecha de modificación.</p>
+            </div>
+
+            <div class="warning">
+                <h4>5. LINKS LEGALES LIMITADOS EN FOOTER</h4>
+                <p>No se detectan links a aviso legal, política de privacidad, términos y condiciones en el footer visible. Para una agencia de viajes, estos documentos son obligatorios por ley italiana y de la UE.</p>
+            </div>
+
+            <div class="warning">
+                <h4>6. SIN SCHEMA FAQ PARA PREGUNTAS FRECUENTES</h4>
+                <p>Una agencia de viajes para jóvenes genera muchas preguntas ("¿Qué incluye el viaje?", "¿Cuál es la edad mínima?", "¿Viajan solos?"). Una sección FAQ con Schema FAQPage generaría rich snippets valiosos.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>1. EXCELENTE SCHEMA.ORG (TRAVELAGENCY + LOCALBUSINESS)</h4>
+                <p>Implementación destacada de Schema.org con tipos TravelAgency y LocalBusiness, incluyendo geo-coordenadas (45.4668, 9.2056), horarios de apertura, dirección, teléfono y perfiles sociales. Este es uno de los mejores Schema que hemos visto en nuestros análisis.</p>
+            </div>
+
+            <div class="success">
+                <h4>2. TÍTULO Y META DESCRIPTION OPTIMIZADOS</h4>
+                <p>"Viaggi di Gruppo per Ragazzi | Zest Family" - Título con keyword principal + marca. Meta description clara con target demográfico (18-35 anni) y alcance geográfico (Italia, Europa, mondo).</p>
+            </div>
+
+            <div class="success">
+                <h4>3. CANONICAL TAG CORRECTO</h4>
+                <p>Tag canonical correctamente configurado apuntando a <code>https://zestfamily.it/viaggi/</code>. Evita problemas de contenido duplicado.</p>
+            </div>
+
+            <div class="success">
+                <h4>4. RANK MATH SEO BIEN CONFIGURADO</h4>
+                <p>Rank Math genera 5 sitemaps especializados: pages, trips, videos, destinations, trip_tags. Estructura excelente para un sitio de viajes.</p>
+            </div>
+
+            <div class="success">
+                <h4>5. SITEMAP COMPRENSIVO CON 5 CATEGORÍAS</h4>
+                <p>Sitemaps separados para páginas, viajes, videos, destinos y tags de viaje. Permite a Google indexar eficientemente todo el contenido turístico.</p>
+            </div>
+
+            <div class="success">
+                <h4>6. ANALYTICS TRACKING ACTIVO</h4>
+                <p>PixelYourSite v11.2.0.2 instalado para tracking avanzado. Permite medir conversiones y comportamiento de usuarios.</p>
+            </div>
+
+            <div class="success">
+                <h4>7. INTERFAZ DE FILTROS DE VIAJES INTERACTIVA</h4>
+                <p>Sistema de filtros custom con dropdowns para explorar viajes por destino/categoría. Excelente UX que mantiene a los usuarios en la página.</p>
+            </div>
+
+            <div class="success">
+                <h4>8. OG TAGS PRESENTES</h4>
+                <p>Open Graph tags configurados con tipo Article e imagen. Los enlaces se comparten correctamente en redes sociales.</p>
+            </div>
+
+            <div class="success">
+                <h4>9. SSL/HTTPS ACTIVO</h4>
+                <p>Certificado SSL correctamente configurado.</p>
+            </div>
+
+            <div class="success">
+                <h4>10. DISEÑO RESPONSIVE CON MÚLTIPLES BREAKPOINTS</h4>
+                <p>Breakpoints para desktop (1024px+), tablet (768-1024px) y móvil (&lt;767px). La experiencia de usuario es buena en todos los dispositivos.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Quick Wins</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Acción</th>
+                        <th>Impacto</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Reducir fuentes de 6 a 2 familias</td><td>Muy Alto</td><td><span class="priority-alta">ALTA</span></td></tr>
+                    <tr><td>Precargar fuentes críticas con preload</td><td>Alto</td><td><span class="priority-alta">ALTA</span></td></tr>
+                    <tr><td>Añadir alt text a todas las imágenes</td><td>Alto</td><td><span class="priority-alta">ALTA</span></td></tr>
+                    <tr><td>Declarar favicon en &lt;head&gt;</td><td>Bajo</td><td><span class="priority-media">MEDIA</span></td></tr>
+                    <tr><td>Añadir breadcrumbs con Schema BreadcrumbList</td><td>Medio</td><td><span class="priority-media">MEDIA</span></td></tr>
+                    <tr><td>Actualizar fecha de publicación del contenido</td><td>Medio</td><td><span class="priority-media">MEDIA</span></td></tr>
+                    <tr><td>Añadir links legales visibles en footer</td><td>Medio</td><td><span class="priority-alta">ALTA</span></td></tr>
+                    <tr><td>Crear sección FAQ con Schema FAQPage</td><td>Alto</td><td><span class="priority-media">MEDIA</span></td></tr>
+                    <tr><td>Activar caché y minificación de Elementor</td><td>Alto</td><td><span class="priority-alta">ALTA</span></td></tr>
+                    <tr><td>Implementar lazy loading avanzado para imágenes</td><td>Medio</td><td><span class="priority-media">MEDIA</span></td></tr>
+                    <tr><td>Añadir hreflang it como idioma predeterminado</td><td>Bajo</td><td><span class="priority-baja">BAJA</span></td></tr>
+                    <tr><td>Crear versión en inglés de páginas principales</td><td>Alto</td><td><span class="priority-baja">BAJA</span></td></tr>
+                    <tr><td>Verificar Google Search Console</td><td>Alto</td><td><span class="priority-alta">ALTA</span></td></tr>
+                    <tr><td>Optimizar imágenes con WebP y compresión</td><td>Medio</td><td><span class="priority-media">MEDIA</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Keywords Recomendadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Idioma</th>
+                        <th>Competencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>viaggi di gruppo per giovani</td><td>IT</td><td>Media</td></tr>
+                    <tr><td>viaggi di gruppo 18-35 anni</td><td>IT</td><td>Baja</td></tr>
+                    <tr><td>vacanze per ragazzi organizzate</td><td>IT</td><td>Media</td></tr>
+                    <tr><td>viaggi organizzati giovani europa</td><td>IT</td><td>Media</td></tr>
+                    <tr><td>viaggi di gruppo economici</td><td>IT</td><td>Alta</td></tr>
+                    <tr><td>tour di gruppo per single giovani</td><td>IT</td><td>Baja</td></tr>
+                    <tr><td>viaggi avventura per giovani</td><td>IT</td><td>Baja</td></tr>
+                    <tr><td>group travel for young adults italy</td><td>EN</td><td>Baja</td></tr>
+                    <tr><td>viaggi estate 2026 giovani</td><td>IT</td><td>Media</td></tr>
+                    <tr><td>agenzia viaggi per ragazzi milano</td><td>IT</td><td>Muy Baja</td></tr>
+                    <tr><td>viaggi di gruppo italia</td><td>IT</td><td>Alta</td></tr>
+                    <tr><td>esperienze di gruppo per giovani</td><td>IT</td><td>Baja</td></tr>
+                    <tr><td>vacanze organizzate 20-30 anni</td><td>IT</td><td>Muy Baja</td></tr>
+                    <tr><td>weekend di gruppo per giovani</td><td>IT</td><td>Baja</td></tr>
+                    <tr><td>zest family recensioni</td><td>IT</td><td>Muy Baja</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Puntuación por Áreas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Puntuación</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>SEO Técnico</td><td>8/10</td><td>Rank Math, canonical, sitemap 5 categorías, Schema excelente</td></tr>
+                    <tr><td>Contenido</td><td>7/10</td><td>Buen título, meta desc, target claro. Falta blog/FAQ</td></tr>
+                    <tr><td>SEO Local</td><td>8/10</td><td>Schema LocalBusiness con geo, dirección, horarios completos</td></tr>
+                    <tr><td>Rendimiento</td><td>4/10</td><td>6 fuentes + Elementor + múltiples plugins = carga pesada</td></tr>
+                    <tr><td>UX/Diseño</td><td>8/10</td><td>Filtros interactivos, diseño moderno, responsive</td></tr>
+                    <tr><td>Imágenes</td><td>4/10</td><td>Sin alt text, lazy loading básico, sin WebP</td></tr>
+                    <tr><td>Social/OG</td><td>7/10</td><td>OG tags presentes, Facebook e Instagram activos</td></tr>
+                    <tr><td>Legal/Compliance</td><td>5/10</td><td>Links legales no visibles en footer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Análisis Competitivo</h2>
+            <p>Zest Family opera en el nicho de <strong>viajes de grupo para jóvenes en Italia</strong>, compitiendo con marcas como WeRoad, Avventure nel Mondo y SiVola. La ventaja de Zest Family es el enfoque en la franja 18-35 con experiencias curadas.</p>
+
+            <div class="info-box">
+                <h4>PUNTO FUERTE: SCHEMA Y ESTRUCTURA TÉCNICA</h4>
+                <p>La base técnica SEO de Zest Family es superior a la media del sector turístico italiano para agencias pequeñas. Con Schema TravelAgency, 5 sitemaps especializados y Rank Math bien configurado, el sitio tiene una <strong>excelente fundación</strong>.</p>
+                <p>El principal obstáculo es el <strong>rendimiento de carga</strong>. Resolver las 6 fuentes y optimizar Elementor podría mejorar significativamente el ranking, especialmente en móviles donde los jóvenes buscan viajes.</p>
+            </div>
+
+            <h3>Prioridad de Implementación</h3>
+            <p><strong>Semana 1 (Rendimiento):</strong></p>
+            <ul>
+                <li>Reducir de 6 a 2 familias de fuentes</li>
+                <li>Activar caché y minificación de Elementor</li>
+                <li>Precargar fuentes críticas</li>
+                <li>Verificar Google Search Console</li>
+            </ul>
+            <p><strong>Semana 2 (Accesibilidad y contenido):</strong></p>
+            <ul>
+                <li>Alt text en todas las imágenes</li>
+                <li>Breadcrumbs con Schema</li>
+                <li>Links legales visibles en footer</li>
+                <li>Favicon declarado</li>
+            </ul>
+            <p><strong>Semana 3-4 (Contenido y conversión):</strong></p>
+            <ul>
+                <li>Sección FAQ con Schema FAQPage</li>
+                <li>Actualizar fechas de publicación</li>
+                <li>Optimizar imágenes con WebP</li>
+                <li>Blog con artículos sobre destinos</li>
+            </ul>
+            <p><strong>Mes 2 (Expansión):</strong></p>
+            <ul>
+                <li>Versión en inglés de páginas principales</li>
+                <li>Estrategia de contenido estacional (verano, Navidad, puentes)</li>
+                <li>Reviews y testimonios con Schema Review</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>Informe generado por Claude Code - AI SEO Audit</strong></p>
+            <p>Análisis del código fuente real del sitio web zestfamily.it</p>
+        </div>
+    </div>
+</body>
+</html>
