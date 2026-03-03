@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO Follow-Up #3 - Sal Negra Tenerife (Marzo 2026)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .header .subtitle {
+            font-size: 24px;
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .header .method-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .score-section {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .score-comparison {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .old-score {
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        .old-score .value {
+            font-size: 48px;
+            font-weight: bold;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .old-score .label {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .arrow {
+            font-size: 48px;
+            color: #fd7e14;
+        }
+
+        .new-score .value {
+            font-size: 100px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #fd7e14 0%, #e67e22 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .new-score .label {
+            font-size: 24px;
+            color: #666;
+        }
+
+        .stagnation-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fd7e14, #e67e22);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .score-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .score-item {
+            background: #f8f9fa;
+            padding: 20px 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .score-item .value {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .score-item .label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .score-item .change {
+            font-size: 13px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .score-item .value.green { color: #28a745; }
+        .score-item .value.yellow { color: #ffc107; }
+        .score-item .value.orange { color: #fd7e14; }
+        .score-item .value.red { color: #dc3545; }
+        .score-item .change.positive { color: #28a745; }
+        .score-item .change.negative { color: #dc3545; }
+        .score-item .change.neutral { color: #6c757d; }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #c41e3a;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c41e3a;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-size: 19px;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .critical-item {
+            background: #f8d7da;
+            border-left: 6px solid #dc3545;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .critical-item h4 {
+            color: #721c24;
+            margin-top: 0;
+        }
+
+        .still-good {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border-left: 6px solid #28a745;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .still-good h4 {
+            color: #155724;
+            margin-top: 0;
+        }
+
+        .not-done {
+            background: #fff3cd;
+            border-left: 6px solid #ffc107;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .not-done h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        .new-issue {
+            background: #cce5ff;
+            border-left: 6px solid #004085;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .new-issue h4 {
+            color: #004085;
+            margin-top: 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        .comparison-table th {
+            background: #c41e3a;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .status-fixed {
+            background: #28a745;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .status-partial {
+            background: #ffc107;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .status-pending {
+            background: #dc3545;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .status-new {
+            background: #17a2b8;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3cd, #ffeeba);
+            border: 3px solid #ffc107;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-card .number {
+            font-size: 42px;
+            font-weight: bold;
+            color: #c41e3a;
+        }
+
+        .stat-card .label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+
+        .code-good {
+            background: #1e3a1e;
+            border: 2px solid #28a745;
+        }
+
+        .code-bad {
+            background: #3a1e1e;
+            border: 2px solid #dc3545;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #c41e3a;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: #c41e3a;
+            border-radius: 50%;
+        }
+
+        .alert {
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+        }
+
+        .alert-danger {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            color: #721c24;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            border: 2px solid #17a2b8;
+            color: #0c5460;
+        }
+
+        .footer {
+            background: #2d2d2d;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .badge-success { background: #28a745; color: white; }
+        .badge-warning { background: #ffc107; color: #333; }
+        .badge-danger { background: #dc3545; color: white; }
+        .badge-info { background: #17a2b8; color: white; }
+
+        .evolution-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .evolution-bar {
+            text-align: center;
+        }
+
+        .evolution-bar .bar {
+            width: 80px;
+            border-radius: 8px 8px 0 0;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .evolution-bar .date {
+            font-size: 13px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 28px; }
+            .new-score .value { font-size: 60px; }
+            .score-comparison { flex-direction: column; }
+            .section { padding: 25px; }
+            .evolution-chart { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="method-badge">TERCER INFORME - VERIFICACION MARZO 2026</div>
+        <div class="subtitle">FOLLOW-UP #3</div>
+        <h1>Sal Negra Tenerife</h1>
+        <p>Tercera Auditoria SEO - Verificacion de Progreso</p>
+        <p>Fecha: 3 Marzo 2026 | Informes Anteriores: Nov 2025 (6.0) y Dic 2025 (7.5)</p>
+        <p><a href="https://salnegratenerife.com" target="_blank">salnegratenerife.com</a></p>
+    </div>
+
+    <div class="container">
+        <!-- Evolucion Visual -->
+        <div class="score-section">
+            <h3 style="margin-top: 0; color: #c41e3a;">Evolucion de Puntuacion</h3>
+            <div class="evolution-chart">
+                <div class="evolution-bar">
+                    <div class="bar" style="height: 120px; background: #dc3545;">6.0</div>
+                    <div class="date">Nov 2025</div>
+                </div>
+                <div class="evolution-bar">
+                    <div class="bar" style="height: 150px; background: #28a745;">7.5</div>
+                    <div class="date">Dic 2025</div>
+                </div>
+                <div class="evolution-bar">
+                    <div class="bar" style="height: 140px; background: #fd7e14;">7.0</div>
+                    <div class="date">Mar 2026</div>
+                </div>
+            </div>
+
+            <div class="score-comparison">
+                <div class="old-score">
+                    <div class="value">7.5</div>
+                    <div class="label">Diciembre 2025</div>
+                </div>
+                <div class="arrow">&#8594;</div>
+                <div class="new-score">
+                    <div class="value">7.0/10</div>
+                    <div class="label">Puntuacion SEO Actual</div>
+                </div>
+            </div>
+            <div class="stagnation-badge">-0.5 puntos: recomendaciones no implementadas</div>
+
+            <div class="score-breakdown">
+                <div class="score-item">
+                    <div class="value green">9/10</div>
+                    <div class="label">Schema Menu</div>
+                    <div class="change neutral">= Sin cambio</div>
+                </div>
+                <div class="score-item">
+                    <div class="value green">8/10</div>
+                    <div class="label">Meta Tags</div>
+                    <div class="change neutral">= Sin cambio</div>
+                </div>
+                <div class="score-item">
+                    <div class="value green">8/10</div>
+                    <div class="label">Contenido</div>
+                    <div class="change neutral">= Sin cambio</div>
+                </div>
+                <div class="score-item">
+                    <div class="value orange">5/10</div>
+                    <div class="label">Datos Estructurados</div>
+                    <div class="change negative">Horarios erroneos</div>
+                </div>
+                <div class="score-item">
+                    <div class="value orange">5/10</div>
+                    <div class="label">Local SEO</div>
+                    <div class="change negative">Sin Schema contacto</div>
+                </div>
+                <div class="score-item">
+                    <div class="value red">3/10</div>
+                    <div class="label">Sitemap</div>
+                    <div class="change negative">Desactualizado</div>
+                </div>
+                <div class="score-item">
+                    <div class="value yellow">6/10</div>
+                    <div class="label">Accesibilidad</div>
+                    <div class="change neutral">= Sin cambio</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Problema Critico #1 -->
+        <div class="section">
+            <h2>Problema Critico: Horarios Incorrectos en Schema</h2>
+
+            <div class="critical-item">
+                <h4>URGENTE: Discrepancia de Horarios</h4>
+                <p>El Schema JSON-LD de la homepage declara horarios <strong>completamente diferentes</strong> a los que muestra el footer del sitio. Esto confunde a Google y puede mostrar informacion erronea en los resultados de busqueda.</p>
+
+                <h4 style="margin-top: 20px;">Lo que dice el Schema (JSON-LD):</h4>
+                <div class="code code-bad">"openingHoursSpecification": {
+  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+  "opens": "09:00",
+  "closes": "17:00"
+}</div>
+
+                <h4>Lo que dice el Footer del sitio:</h4>
+                <div class="code code-good">Horarios: 13:00 - 00:00 (todos los dias)</div>
+
+                <div class="alert alert-danger">
+                    <strong>Impacto:</strong> Google puede mostrar "Cerrado" cuando el restaurante esta abierto, o viceversa. Esto afecta directamente a clientes que buscan "restaurante abierto ahora" en Google Maps y resultados de busqueda.
+                </div>
+
+                <h4>Solucion:</h4>
+                <div class="code code-good">"openingHoursSpecification": {
+  "@type": "OpeningHoursSpecification",
+  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+  "opens": "13:00",
+  "closes": "00:00"
+}</div>
+                <p><strong>Esfuerzo:</strong> 5 minutos | <strong>Prioridad:</strong> INMEDIATA</p>
+            </div>
+        </div>
+
+        <!-- Sitemap Desactualizado -->
+        <div class="section">
+            <h2>Problema Critico: Sitemap Sin Actualizar</h2>
+
+            <div class="critical-item">
+                <h4>Sitemap.xml con fechas de Noviembre 2025</h4>
+                <p>Todas las 7 URLs del sitemap muestran <code>lastmod: 2025-11-25</code>, lo que significa que <strong>no se ha actualizado en mas de 3 meses</strong>.</p>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>URL</th>
+                        <th>lastmod</th>
+                        <th>Estado</th>
+                    </tr>
+                    <tr>
+                        <td>/ (Homepage)</td>
+                        <td>2025-11-25</td>
+                        <td><span class="status-pending">DESACTUALIZADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>/carta.html</td>
+                        <td>2025-11-25</td>
+                        <td><span class="status-pending">DESACTUALIZADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>/sobre-nosotros.html</td>
+                        <td>2025-11-25</td>
+                        <td><span class="status-pending">DESACTUALIZADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>/reservas.html</td>
+                        <td>2025-11-25</td>
+                        <td><span class="status-pending">DESACTUALIZADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>/menus-especiales.html</td>
+                        <td>2025-11-25</td>
+                        <td><span class="status-pending">DESACTUALIZADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>/eventos.html</td>
+                        <td>2025-11-25</td>
+                        <td><span class="status-pending">DESACTUALIZADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>/contacto.html</td>
+                        <td>2025-11-25</td>
+                        <td><span class="status-pending">DESACTUALIZADO</span></td>
+                    </tr>
+                </table>
+
+                <div class="alert alert-warning">
+                    <strong>Impacto:</strong> Google interpreta fechas antiguas como "contenido sin actualizar" y puede reducir la frecuencia de rastreo. Si se han hecho cambios en el sitio, Google no lo sabe.
+                </div>
+
+                <p><strong>Solucion:</strong> Actualizar todas las fechas <code>lastmod</code> a la fecha real de ultima modificacion de cada pagina.</p>
+                <p><strong>Esfuerzo:</strong> 10 minutos | <strong>Prioridad:</strong> ALTA</p>
+            </div>
+        </div>
+
+        <!-- Recomendaciones V2 No Implementadas -->
+        <div class="section">
+            <h2>Seguimiento: Recomendaciones del Informe #2</h2>
+            <p>En el informe de Diciembre 2025 se identificaron 5 areas de mejora prioritarias. Este es el estado actual:</p>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>Recomendacion</th>
+                    <th>Prioridad</th>
+                    <th>Estado Mar 2026</th>
+                </tr>
+                <tr>
+                    <td>Schema LocalBusiness en pagina Contacto</td>
+                    <td>1 (Alta)</td>
+                    <td><span class="status-pending">NO IMPLEMENTADO</span></td>
+                </tr>
+                <tr>
+                    <td>H1 Semantico en Homepage</td>
+                    <td>2 (Media)</td>
+                    <td><span class="status-fixed">IMPLEMENTADO</span></td>
+                </tr>
+                <tr>
+                    <td>Focus States CSS (:focus-visible)</td>
+                    <td>3 (Media)</td>
+                    <td><span class="status-pending">NO IMPLEMENTADO</span></td>
+                </tr>
+                <tr>
+                    <td>Schema Menu en Menus Especiales</td>
+                    <td>4 (Media)</td>
+                    <td><span class="status-pending">NO IMPLEMENTADO</span></td>
+                </tr>
+                <tr>
+                    <td>AggregateRating / Resenas</td>
+                    <td>5 (Baja)</td>
+                    <td><span class="status-pending">NO IMPLEMENTADO</span></td>
+                </tr>
+            </table>
+
+            <div class="alert alert-warning">
+                <strong>Resultado:</strong> Solo 1 de 5 recomendaciones implementada. El H1 de la homepage ahora es textual: <em>"Sabor Autentico con Vistas al Mar"</em>, lo cual es positivo. Sin embargo, las 4 recomendaciones restantes siguen pendientes.
+            </div>
+
+            <div class="not-done">
+                <h4>Schema LocalBusiness en Contacto (Pendiente)</h4>
+                <p>La pagina <code>contacto.html</code> sigue sin Schema LocalBusiness. Tiene NAP consistente (nombre, direccion, telefono) pero Google no puede interpretar esta informacion de forma estructurada.</p>
+                <p>Ademas, <strong>no hay Google Maps embebido</strong> en la pagina de contacto y <strong>no hay formulario de contacto</strong>.</p>
+                <p><strong>Impacto perdido:</strong> Menor visibilidad en busquedas locales tipo "restaurante cerca de mi".</p>
+            </div>
+
+            <div class="not-done">
+                <h4>AggregateRating (Pendiente)</h4>
+                <p>No se ha implementado ninguna seccion de resenas ni Schema AggregateRating. El restaurante pierde la oportunidad de mostrar <strong>estrellas en los resultados de Google</strong>.</p>
+            </div>
+        </div>
+
+        <!-- Lo que sigue funcionando bien -->
+        <div class="section">
+            <h2>Aspectos Positivos que se Mantienen</h2>
+
+            <div class="still-good">
+                <h4>Title Tags Optimizados</h4>
+                <p>Todos los title tags siguen bien optimizados con keywords relevantes:</p>
+                <ul>
+                    <li><strong>Homepage:</strong> "Sal Negra Tenerife - Restaurante con Vistas al Mar | Mariscos y Pescados"</li>
+                    <li><strong>Carta:</strong> "Carta y Menu | Sal Negra Tenerife - Precios y Platos"</li>
+                    <li><strong>Eventos:</strong> "Eventos y Musica en Directo | Sal Negra Tenerife"</li>
+                </ul>
+            </div>
+
+            <div class="still-good">
+                <h4>Schema Restaurant en Homepage</h4>
+                <p>El Schema Restaurant de la homepage sigue completo con nombre, direccion, coordenadas, tipo de cocina y URL del menu. Solo necesita correccion de horarios.</p>
+            </div>
+
+            <div class="still-good">
+                <h4>Pagina de Carta Excelente</h4>
+                <p>La carta sigue siendo el punto fuerte del sitio:</p>
+                <ul>
+                    <li><strong>Schema Menu</strong> con 11 categorias y 50+ platos con precios</li>
+                    <li><strong>Alt text descriptivos</strong> en imagenes de platos ("Sopa de pescado y marisco", "Gambas al ajillo")</li>
+                    <li><strong>Estructura heading</strong> correcta: H1 &rarr; H3 &rarr; H4</li>
+                    <li><strong>9 secciones</strong>: Entrantes, Tapas, Pastas, Arroces, Pescados, Parrilladas, Carnes, Ensaladas, Guarniciones</li>
+                </ul>
+            </div>
+
+            <div class="still-good">
+                <h4>Schema Event en Eventos</h4>
+                <p>La pagina de eventos mantiene Schema ItemList con MusicEvent y FoodEvent. El evento del saxofon los jueves sigue destacado.</p>
+            </div>
+
+            <div class="still-good">
+                <h4>Navegacion y Estructura</h4>
+                <p>7 paginas bien enlazadas: Inicio, Sobre Nosotros, Carta, Reservas, Menus Especiales, Eventos, Contacto. Footer con informacion NAP, redes sociales (Facebook, Instagram, TikTok) y enlace a politica de privacidad.</p>
+            </div>
+
+            <div class="still-good">
+                <h4>Google Analytics Activo</h4>
+                <p>Tracking implementado con <code>G-7G77T77WRT</code>.</p>
+            </div>
+        </div>
+
+        <!-- Problemas Adicionales Detectados -->
+        <div class="section">
+            <h2>Nuevos Problemas Detectados</h2>
+
+            <div class="new-issue">
+                <h4>Alt Text Generico en Homepage</h4>
+                <p>Las imagenes hero de la homepage siguen con alt text demasiado generico:</p>
+                <ul>
+                    <li><code>hero-left.jpg</code> &rarr; alt: "Sal Negra Restaurant"</li>
+                    <li><code>hero-right.jpg</code> &rarr; alt: "Sal Negra Restaurant"</li>
+                    <li><code>logo-header.png</code> &rarr; alt: "Sal Negra"</li>
+                </ul>
+                <p><strong>Mejor:</strong> "Terraza del restaurante Sal Negra con vistas al mar en Los Cristianos" y "Plato de mariscos frescos servido en Sal Negra Tenerife".</p>
+            </div>
+
+            <div class="new-issue">
+                <h4>Pagina de Contacto Minima</h4>
+                <p>La pagina de contacto carece de elementos importantes para SEO local:</p>
+                <ul>
+                    <li>Sin Google Maps embebido</li>
+                    <li>Sin formulario de contacto</li>
+                    <li>Sin Schema LocalBusiness</li>
+                    <li>Solo ofrece telefono y WhatsApp como canales</li>
+                </ul>
+            </div>
+
+            <div class="new-issue">
+                <h4>Eventos sin Fechas Especificas</h4>
+                <p>La pagina de eventos menciona "Todos los jueves" para el saxofon pero no incluye fechas concretas en el Schema. Google no puede mostrar estos eventos como rich results con fecha.</p>
+            </div>
+
+            <div class="new-issue">
+                <h4>Robots.txt: Disallow /.claude/</h4>
+                <p>El robots.txt bloquea <code>/.claude/</code> - una carpeta de desarrollo que no deberia estar en produccion. No es danino pero revela configuracion del entorno de desarrollo.</p>
+            </div>
+        </div>
+
+        <!-- Comparativa Historica -->
+        <div class="section">
+            <h2>Comparativa Historica Completa</h2>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>Elemento</th>
+                    <th>Nov 2025</th>
+                    <th>Dic 2025</th>
+                    <th>Mar 2026</th>
+                </tr>
+                <tr>
+                    <td>Puntuacion Global</td>
+                    <td style="color: #dc3545;">6.0/10</td>
+                    <td style="color: #28a745;">7.5/10</td>
+                    <td style="color: #fd7e14;">7.0/10</td>
+                </tr>
+                <tr>
+                    <td>Meta Description</td>
+                    <td style="color: #dc3545;">ITALIANO</td>
+                    <td style="color: #28a745;">Espanol correcto</td>
+                    <td style="color: #28a745;">Espanol correcto</td>
+                </tr>
+                <tr>
+                    <td>Title Tags</td>
+                    <td>"Inicio - Sal Negra"</td>
+                    <td>Optimizados</td>
+                    <td style="color: #28a745;">Optimizados</td>
+                </tr>
+                <tr>
+                    <td>Schema Types</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>5 (sin cambio)</td>
+                </tr>
+                <tr>
+                    <td>Carta</td>
+                    <td>Vacia</td>
+                    <td>80+ platos</td>
+                    <td style="color: #28a745;">80+ platos con Schema</td>
+                </tr>
+                <tr>
+                    <td>Horarios Schema</td>
+                    <td>No evaluado</td>
+                    <td>No evaluado</td>
+                    <td style="color: #dc3545;">ERRONEOS (09-17 vs 13-00)</td>
+                </tr>
+                <tr>
+                    <td>Sitemap lastmod</td>
+                    <td>2025-11-25</td>
+                    <td>2025-11-25</td>
+                    <td style="color: #dc3545;">2025-11-25 (sin actualizar)</td>
+                </tr>
+                <tr>
+                    <td>Schema Contacto</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td style="color: #dc3545;">No</td>
+                </tr>
+                <tr>
+                    <td>AggregateRating</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td style="color: #dc3545;">No</td>
+                </tr>
+                <tr>
+                    <td>Google Maps Contacto</td>
+                    <td>No evaluado</td>
+                    <td>No evaluado</td>
+                    <td style="color: #dc3545;">No</td>
+                </tr>
+                <tr>
+                    <td>Open Graph</td>
+                    <td>Parcial</td>
+                    <td>Completo</td>
+                    <td style="color: #28a745;">Completo</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Plan de Accion -->
+        <div class="section">
+            <h2>Plan de Accion Prioritario</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>URGENTE: Corregir Horarios en Schema</h4>
+                    <p>Cambiar <code>opens: "09:00", closes: "17:00"</code> por <code>opens: "13:00", closes: "00:00"</code></p>
+                    <p><strong>Impacto:</strong> Google puede mostrar "Cerrado" cuando el restaurante esta abierto</p>
+                    <p><strong>Esfuerzo:</strong> 5 minutos</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Prioridad 1: Actualizar Sitemap.xml</h4>
+                    <p>Cambiar todos los <code>lastmod</code> a la fecha real de ultima modificacion</p>
+                    <p><strong>Impacto:</strong> Google entiende que el sitio esta activo y actualizado</p>
+                    <p><strong>Esfuerzo:</strong> 10 minutos</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Prioridad 2: Schema LocalBusiness en Contacto</h4>
+                    <p>Anadir JSON-LD con NAP, coordenadas y horarios reales</p>
+                    <p><strong>Impacto:</strong> +15-20% visibilidad en busquedas locales</p>
+                    <p><strong>Esfuerzo:</strong> 30 minutos</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Prioridad 3: Embeber Google Maps en Contacto</h4>
+                    <p>Anadir iframe de Google Maps con ubicacion exacta del restaurante</p>
+                    <p><strong>Impacto:</strong> Mejor UX, confirma ubicacion a Google</p>
+                    <p><strong>Esfuerzo:</strong> 15 minutos</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Prioridad 4: Mejorar Alt Text Homepage</h4>
+                    <p>Cambiar "Sal Negra Restaurant" por descripciones unicas y relevantes</p>
+                    <p><strong>Impacto:</strong> Mejor Google Images + accesibilidad</p>
+                    <p><strong>Esfuerzo:</strong> 20 minutos</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Prioridad 5: AggregateRating Schema</h4>
+                    <p>Implementar seccion de resenas con Schema para mostrar estrellas en Google</p>
+                    <p><strong>Impacto:</strong> Estrellas en SERP = +20-30% CTR</p>
+                    <p><strong>Esfuerzo:</strong> 2-3 horas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Wins -->
+        <div class="section">
+            <h2>Quick Wins con Codigo</h2>
+
+            <h3>1. Correccion de Horarios (5 min)</h3>
+            <p>En <code>index.html</code>, buscar el bloque <code>openingHoursSpecification</code> y cambiar:</p>
+            <div class="code code-good">"openingHoursSpecification": [{
+  "@type": "OpeningHoursSpecification",
+  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+  "opens": "13:00",
+  "closes": "00:00"
+}]</div>
+
+            <h3>2. Schema LocalBusiness en Contacto (30 min)</h3>
+            <p>Anadir antes de <code>&lt;/head&gt;</code> en <code>contacto.html</code>:</p>
+            <div class="code code-good">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Sal Negra Tenerife",
+  "image": "https://salnegratenerife.com/images/logo-header.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avda. La Habana, CC San Telmo, Local 13b",
+    "addressLocality": "Arona",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "postalCode": "38650",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.0525,
+    "longitude": -16.7248
+  },
+  "telephone": "+34 922 30 69 58",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "13:00",
+    "closes": "00:00"
+  }],
+  "servesCuisine": ["Mediterranean", "Seafood", "Spanish"],
+  "priceRange": "$$",
+  "url": "https://salnegratenerife.com",
+  "sameAs": [
+    "https://www.facebook.com/salnegratenerife",
+    "https://www.instagram.com/salnegratenerife",
+    "https://www.tiktok.com/@salnegratenerife"
+  ]
+}
+&lt;/script&gt;</div>
+
+            <h3>3. Alt Text Mejorados (20 min)</h3>
+            <div class="code code-good">&lt;!-- En lugar de --&gt;
+&lt;img src="hero-left.jpg" alt="Sal Negra Restaurant"&gt;
+
+&lt;!-- Usar --&gt;
+&lt;img src="hero-left.jpg" alt="Terraza del restaurante Sal Negra con vistas al oceano en Los Cristianos, Tenerife"&gt;
+
+&lt;img src="hero-right.jpg" alt="Plato de mariscos frescos y paella servido en el restaurante Sal Negra Tenerife"&gt;</div>
+        </div>
+
+        <!-- Conclusiones -->
+        <div class="section" style="background: linear-gradient(135deg, #fff3cd, #ffeeba); border: 3px solid #ffc107;">
+            <h2>Conclusiones</h2>
+
+            <h3>Diagnostico: Estancamiento con Riesgo</h3>
+            <p>El sitio <strong>no ha implementado</strong> las recomendaciones del informe anterior (4 de 5 pendientes) y se ha detectado un <strong>error critico</strong> en los horarios del Schema que puede estar afectando negativamente al negocio.</p>
+
+            <div class="highlight-box">
+                <h3>Resumen de la Situacion</h3>
+                <ul>
+                    <li><strong>Problema urgente:</strong> Horarios erroneos en Schema (09:00-17:00 vs 13:00-00:00)</li>
+                    <li><strong>Sitemap obsoleto:</strong> Fechas de noviembre 2025 en todas las paginas</li>
+                    <li><strong>4 de 5 recomendaciones:</strong> No implementadas desde diciembre 2025</li>
+                    <li><strong>Puntos fuertes:</strong> Carta con Schema Menu excelente, title tags optimizados, eventos con Schema</li>
+                    <li><strong>Oportunidad perdida:</strong> Sin estrellas en Google (AggregateRating) ni presencia local optimizada</li>
+                </ul>
+            </div>
+
+            <h3>Puntuacion Final</h3>
+            <div class="alert alert-warning" style="font-size: 22px; text-align: center;">
+                <strong>6.0</strong> (Nov 2025) &rarr; <strong>7.5</strong> (Dic 2025) &rarr; <strong>7.0</strong> (Mar 2026)<br><br>
+                <span style="font-size: 28px;">-0.5 puntos respecto al ultimo informe</span><br><br>
+                <span style="font-size: 16px;">La bajada se debe a horarios erroneos en Schema, sitemap sin actualizar y recomendaciones no implementadas. Las mejoras realizadas entre Nov y Dic 2025 siguen activas, pero sin progreso adicional.</span>
+            </div>
+
+            <h3>Proxima Auditoria</h3>
+            <p><strong>Recomendada: Junio 2026</strong> - Para verificar correccion de horarios, actualizacion de sitemap y implementacion de Schema LocalBusiness en contacto.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p style="font-size: 22px; margin-bottom: 15px;"><strong>Informe SEO Follow-Up #3</strong></p>
+        <p style="font-size: 20px;">Sal Negra Tenerife - Verificacion Marzo 2026</p>
+        <p style="font-size: 16px; margin-top: 15px;">Generado: 3 Marzo 2026 | Powered by Claude Code AI</p>
+        <p style="font-size: 14px; margin-top: 10px;">Historico: Nov 2025 (6.0) &rarr; Dic 2025 (7.5) &rarr; <strong>Mar 2026 (7.0)</strong></p>
+    </div>
+</body>
+</html>
