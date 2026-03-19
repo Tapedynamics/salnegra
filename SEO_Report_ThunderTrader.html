@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - The Thunder Trader</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #0a0a2e 0%, #1a1a5e 50%, #d4af37 100%); color: white; padding: 50px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; }
+        .header p { font-size: 18px; margin: 10px 0; opacity: 0.95; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #0a0a2e; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #d4af37; }
+        h3 { font-size: 22px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        p, li { margin-bottom: 12px; font-size: 18px; }
+        ul { margin-left: 30px; margin-bottom: 20px; }
+        .score-box { background: linear-gradient(135deg, #0a0a2e 0%, #1a1a5e 50%, #d4af37 100%); color: white; padding: 50px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
+        .score-box .score { font-size: 80px; font-weight: bold; margin: 20px 0; }
+        .score-box .score-label { font-size: 24px; opacity: 0.9; }
+        .critical { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .critical h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .warning { background: linear-gradient(135deg, #feca57, #ff9f43); color: #333; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .warning h4 { color: #333; margin-top: 0; margin-bottom: 15px; }
+        .success { background: linear-gradient(135deg, #26de81, #20bf6b); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .success h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .info-box { background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .info-box h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #0a0a2e; color: white; }
+        tr:hover { background: #f8f9fa; }
+        .priority-alta { background: #ff6b6b; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-media { background: #feca57; color: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-baja { background: #26de81; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .code-block { background: #2d3436; color: #74b9ff; padding: 20px; border-radius: 10px; font-family: 'Consolas', monospace; font-size: 14px; overflow-x: auto; margin: 15px 0; white-space: pre-wrap; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #0a0a2e; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .metric-card { background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 12px; text-align: center; }
+        .metric-card .value { font-size: 36px; font-weight: bold; color: #0a0a2e; }
+        .metric-card .label { font-size: 14px; color: #666; margin-top: 8px; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin: 3px; background: #0a0a2e; color: white; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+        .bar-container { background: #e9ecef; border-radius: 10px; height: 30px; margin: 8px 0 20px 0; position: relative; }
+        .bar { height: 100%; border-radius: 10px; display: flex; align-items: center; padding-left: 15px; color: white; font-weight: bold; font-size: 14px; }
+        .bar-red { background: linear-gradient(90deg, #ff6b6b, #ee5a5a); }
+        .bar-orange { background: linear-gradient(90deg, #feca57, #ff9f43); color: #333; }
+        .bar-green { background: linear-gradient(90deg, #26de81, #20bf6b); }
+        .bar-blue { background: linear-gradient(90deg, #74b9ff, #0984e3); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>The Thunder Trader</strong></p>
+        <p>thethundertrader.com</p>
+        <p>Análisis: 19 de Marzo 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al índice</a>
+
+        <div class="score-box">
+            <div class="score-label">Puntuación SEO</div>
+            <div class="score">4.0/10</div>
+            <p>Plataforma de torneos de trading con buen diseño y contenido claro, pero con deficiencias SEO técnicas importantes: sin meta descriptions, navegación rota (404), post de prueba indexado, y falta de Schema markup</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+            <p><strong>The Thunder Trader</strong> es una plataforma de torneos de trading en Forex y Crypto que se posiciona como alternativa a las prop firms tradicionales. Ofrece una "Performance Arena" donde los traders compiten semanalmente con buy-ins desde $150 hasta $1.000 y premios basados en ranking. El sitio está construido con WordPress + Elementor sobre tema Blocksy, con soporte bilingüe IT/EN vía TranslatePress.</p>
+            <p>El diseño es profesional y el contenido está bien estructurado, pero presenta <strong>problemas SEO técnicos significativos</strong>: ausencia total de meta descriptions en todas las páginas, enlaces de navegación rotos (/il-torneo/ y /regole/ devuelven 404), un post "Hello World" de WordPress indexado, sitemap de usuarios que expone el username del admin, y falta completa de Schema.org markup.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">4.0</div>
+                    <div class="label">Puntuación SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Idiomas (IT/EN)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">4</div>
+                    <div class="label">Páginas en Sitemap</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">2</div>
+                    <div class="label">Páginas en 404</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS CRÍTICOS -->
+        <div class="section">
+            <h2>Problemas Críticos</h2>
+
+            <div class="critical">
+                <h4>1. Sin meta description en ninguna página</h4>
+                <p>Ninguna de las páginas del sitio tiene meta description. Google generará automáticamente snippets del contenido, pero estos serán genéricos y poco atractivos para el usuario. La meta description es el "anuncio gratuito" del sitio en los resultados de búsqueda.</p>
+                <div class="code-block">&lt;!-- Homepage --&gt;
+&lt;meta name="description" content="The Thunder Trader: la prima piattaforma di tornei di trading su Forex e Crypto. Competi, dimostra il tuo valore e ottieni payout reali. Entry da $150."&gt;
+
+&lt;!-- Tornei --&gt;
+&lt;meta name="description" content="Tornei di trading settimanali su Forex e Crypto. 4 livelli di partecipazione, prize pool trasparente, classifiche in tempo reale."&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>2. Enlaces de navegación principales rotos (404)</h4>
+                <p>Dos de los tres enlaces del menú principal devuelven error 404:</p>
+                <ul>
+                    <li><strong>/il-torneo/</strong> — 404 (el contenido está en /tornei/ pero el enlace del menú apunta a la URL incorrecta)</li>
+                    <li><strong>/regole/</strong> — 404 (la página de reglas no existe como página independiente, el contenido está embebido en /tornei/)</li>
+                </ul>
+                <p><strong>Impacto:</strong> 2 de 3 enlaces de navegación llevan a páginas rotas. Google penaliza los errores de rastreo y los usuarios abandonan inmediatamente.</p>
+            </div>
+
+            <div class="critical">
+                <h4>3. Post "Hello World" indexado</h4>
+                <p>El post por defecto de WordPress (<code>/hello-world/</code>) sigue publicado e indexado en el sitemap. Contiene texto genérico "Welcome to WordPress. This is your first post. Edit or delete it, then start writing!" Esto transmite falta de profesionalidad y desperdicia crawl budget.</p>
+                <p><strong>Solución:</strong> Eliminar el post o configurarlo como borrador.</p>
+            </div>
+
+            <div class="critical">
+                <h4>4. Sin Schema.org / JSON-LD</h4>
+                <p>El sitio no tiene ningún tipo de Schema markup. Para una plataforma de servicios financieros/trading, los siguientes schemas son esenciales:</p>
+                <ul>
+                    <li><strong>Organization</strong> — datos de la empresa, logo, redes sociales</li>
+                    <li><strong>WebSite</strong> — nombre del sitio, URL canónica</li>
+                    <li><strong>FAQPage</strong> — las preguntas frecuentes (presentes en homepage, tornei y customer service) podrían generar rich snippets</li>
+                    <li><strong>Service</strong> — descripción de los niveles de torneo</li>
+                    <li><strong>Product</strong> — los tickets de entrada con precios</li>
+                </ul>
+            </div>
+
+            <div class="critical">
+                <h4>5. Sitemap de usuarios expone username del admin</h4>
+                <p>El archivo <code>/wp-sitemap-users-1.xml</code> revela la URL <code>/author/admin/</code>, exponiendo el nombre de usuario del administrador de WordPress. Esto es un <strong>riesgo de seguridad</strong> que facilita ataques de fuerza bruta al login.</p>
+                <div class="code-block"># Añadir a functions.php para deshabilitar sitemap de usuarios:
+add_filter('wp_sitemaps_add_provider', function($provider, $name) {
+    if ($name === 'users') return false;
+    return $provider;
+}, 10, 2);</div>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS ADICIONALES -->
+        <div class="section">
+            <h2>Problemas Adicionales</h2>
+
+            <div class="warning">
+                <h4>6. Sin Open Graph tags completos</h4>
+                <p>Las páginas no tienen tags Open Graph (og:title, og:description, og:image, og:type). Cuando se comparte el sitio en redes sociales, la vista previa será genérica o no aparecerá imagen. Para una plataforma que probablemente se promueve en redes de traders, esto es especialmente perjudicial.</p>
+            </div>
+
+            <div class="warning">
+                <h4>7. Sin etiquetas hreflang para bilingüe IT/EN</h4>
+                <p>El sitio usa TranslatePress para IT/EN pero no se detectan etiquetas hreflang en el HTML. Google podría considerar las versiones /en/ como contenido duplicado en lugar de versiones alternativas del mismo contenido.</p>
+                <div class="code-block">&lt;link rel="alternate" hreflang="it" href="https://thethundertrader.com/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://thethundertrader.com/en/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://thethundertrader.com/" /&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>8. Solo 4 páginas en el sitemap (contenido escaso)</h4>
+                <p>El sitemap solo incluye 4 páginas: Homepage, Tornei, Customer Service y Terms & Conditions. Para competir en el nicho de trading/prop firms, Google necesita más contenido temático para establecer autoridad: blog con artículos sobre trading, guías educativas, comparativas, etc.</p>
+            </div>
+
+            <div class="warning">
+                <h4>9. Versiones EN de las páginas internas no verificadas en sitemap</h4>
+                <p>El sitemap solo incluye las URLs en italiano. Las versiones en inglés (/en/tornei/, /en/customer-service/, etc.) no están listadas, lo que significa que Google podría no descubrirlas ni indexarlas correctamente.</p>
+            </div>
+
+            <div class="warning">
+                <h4>10. Tabla de precios como imagen (Table.png)</h4>
+                <p>La tabla de precios/compensación se muestra como una imagen PNG en lugar de HTML. Google no puede leer el contenido de imágenes, por lo que toda esa información de precios y estructura de premios es invisible para los motores de búsqueda. Además, no es accesible para lectores de pantalla.</p>
+            </div>
+
+            <div class="warning">
+                <h4>11. Sin blog activo / contenido recurrente</h4>
+                <p>El único post existente es el "Hello World" por defecto. Un blog con contenido sobre trading, resultados de torneos, análisis de mercados y guías para traders sería fundamental para:</p>
+                <ul>
+                    <li>Atraer tráfico orgánico de long-tail keywords</li>
+                    <li>Demostrar expertise (E-E-A-T) en el sector financiero</li>
+                    <li>Generar backlinks naturales</li>
+                    <li>Mantener el sitio "fresco" para Google</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ASPECTOS POSITIVOS -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>Dominio propio con custom domain</h4>
+                <p>El sitio tiene un dominio profesional (thethundertrader.com) correctamente configurado con HTTPS. Esto es la base fundamental para cualquier estrategia SEO.</p>
+            </div>
+
+            <div class="success">
+                <h4>robots.txt correctamente configurado</h4>
+                <p>El archivo robots.txt existe y está bien configurado: bloquea /wp-admin/ pero permite admin-ajax.php, e incluye referencia al sitemap XML.</p>
+            </div>
+
+            <div class="success">
+                <h4>Sitemap XML presente (WordPress nativo)</h4>
+                <p>El sitemap existe y se genera automáticamente vía WordPress. Incluye sitemap index con posts, pages, categorías y usuarios (este último debería deshabilitarse).</p>
+            </div>
+
+            <div class="success">
+                <h4>Diseño profesional y coherente</h4>
+                <p>El sitio tiene un look premium con gradientes oscuros (navy/gold), tipografía cuidada y un diseño que transmite confianza — esencial para una plataforma que maneja dinero real de traders.</p>
+            </div>
+
+            <div class="success">
+                <h4>Estructura de contenido clara en las páginas funcionales</h4>
+                <p>La homepage y la página de torneos tienen una jerarquía de headings correcta (H1 → H2 → contenido), con secciones bien diferenciadas: propuesta de valor, cómo funciona, precios, FAQ.</p>
+            </div>
+
+            <div class="success">
+                <h4>Soporte bilingüe IT/EN con TranslatePress</h4>
+                <p>La versión inglesa está genuinamente traducida (no auto-traducida) con contenido localizado. Esto amplía el mercado potencial significativamente.</p>
+            </div>
+
+            <div class="success">
+                <h4>Disclaimers legales y transparencia</h4>
+                <p>Incluye Terms & Conditions detallados, disclaimers sobre que "no es un producto de inversión", requisito de 18+ y formulario de contacto funcional. Esto contribuye positivamente al E-E-A-T en el sector financiero.</p>
+            </div>
+
+            <div class="success">
+                <h4>Página de Customer Service con formulario de contacto</h4>
+                <p>Formulario funcional con compromiso de respuesta en 24 horas. Esto es importante para la confianza del usuario y señales de calidad para Google.</p>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins — Acciones Prioritarias</h2>
+            <table>
+                <tr>
+                    <th>Acción</th>
+                    <th>Impacto</th>
+                    <th>Prioridad</th>
+                    <th>Tiempo</th>
+                </tr>
+                <tr>
+                    <td>Añadir meta description a todas las páginas</td>
+                    <td>Mejora CTR en resultados de Google drásticamente</td>
+                    <td><span class="priority-alta">ALTA</span></td>
+                    <td>30 min</td>
+                </tr>
+                <tr>
+                    <td>Corregir enlaces de navegación (/il-torneo/ → /tornei/, crear /regole/)</td>
+                    <td>Elimina 404s del menú principal, mejora rastreo</td>
+                    <td><span class="priority-alta">ALTA</span></td>
+                    <td>15 min</td>
+                </tr>
+                <tr>
+                    <td>Eliminar o despublicar post "Hello World"</td>
+                    <td>Elimina contenido de prueba indexado</td>
+                    <td><span class="priority-alta">ALTA</span></td>
+                    <td>2 min</td>
+                </tr>
+                <tr>
+                    <td>Deshabilitar sitemap de usuarios (wp-sitemap-users)</td>
+                    <td>Cierra vulnerabilidad de seguridad</td>
+                    <td><span class="priority-alta">ALTA</span></td>
+                    <td>5 min</td>
+                </tr>
+                <tr>
+                    <td>Añadir Schema.org FAQPage a páginas con FAQ</td>
+                    <td>Rich snippets en Google (mayor visibilidad)</td>
+                    <td><span class="priority-alta">ALTA</span></td>
+                    <td>1 hora</td>
+                </tr>
+                <tr>
+                    <td>Implementar hreflang tags para IT/EN</td>
+                    <td>Indexación correcta del contenido bilingüe</td>
+                    <td><span class="priority-media">MEDIA</span></td>
+                    <td>30 min</td>
+                </tr>
+                <tr>
+                    <td>Añadir Open Graph tags (og:title, og:description, og:image)</td>
+                    <td>Mejora shares en redes sociales de traders</td>
+                    <td><span class="priority-media">MEDIA</span></td>
+                    <td>30 min</td>
+                </tr>
+                <tr>
+                    <td>Convertir tabla de precios de PNG a HTML</td>
+                    <td>Google puede leer los precios, accesibilidad</td>
+                    <td><span class="priority-media">MEDIA</span></td>
+                    <td>1 hora</td>
+                </tr>
+                <tr>
+                    <td>Añadir URLs en inglés al sitemap</td>
+                    <td>Indexación del contenido EN</td>
+                    <td><span class="priority-media">MEDIA</span></td>
+                    <td>30 min</td>
+                </tr>
+                <tr>
+                    <td>Crear blog con contenido sobre trading/mercados</td>
+                    <td>Tráfico orgánico, autoridad, E-E-A-T</td>
+                    <td><span class="priority-media">MEDIA</span></td>
+                    <td>Ongoing</td>
+                </tr>
+                <tr>
+                    <td>Añadir Schema Organization y WebSite</td>
+                    <td>Identidad del sitio clara para Google</td>
+                    <td><span class="priority-baja">BAJA</span></td>
+                    <td>30 min</td>
+                </tr>
+                <tr>
+                    <td>Instalar plugin SEO (Yoast o Rank Math)</td>
+                    <td>Automatiza meta tags, sitemap, Schema, OG</td>
+                    <td><span class="priority-baja">BAJA</span></td>
+                    <td>1 hora</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- KEYWORDS -->
+        <div class="section">
+            <h2>Keywords Recomendadas</h2>
+            <h3>Keywords Principales (IT)</h3>
+            <p>
+                <span class="tag">tornei di trading</span>
+                <span class="tag">prop firm alternative</span>
+                <span class="tag">competizioni trading forex</span>
+                <span class="tag">tornei trading crypto</span>
+                <span class="tag">piattaforma trading competitivo</span>
+                <span class="tag">trading contest</span>
+            </p>
+
+            <h3>Keywords Long-Tail (IT)</h3>
+            <p>
+                <span class="tag">tornei trading con premio</span>
+                <span class="tag">alternativa prop firm senza restrizioni</span>
+                <span class="tag">competizione trading settimanale</span>
+                <span class="tag">arena trading forex e crypto</span>
+                <span class="tag">classifica trader in tempo reale</span>
+                <span class="tag">come partecipare torneo trading</span>
+            </p>
+
+            <h3>Keywords (EN)</h3>
+            <p>
+                <span class="tag">trading tournament platform</span>
+                <span class="tag">forex trading competition</span>
+                <span class="tag">prop firm alternative 2026</span>
+                <span class="tag">crypto trading contest</span>
+                <span class="tag">trading arena with payouts</span>
+                <span class="tag">weekly trading tournament</span>
+            </p>
+
+            <h3>Keywords Competitivas</h3>
+            <p>
+                <span class="tag">FTMO alternative</span>
+                <span class="tag">MyForexFunds alternative</span>
+                <span class="tag">migliori prop firm 2026</span>
+                <span class="tag">best prop firm alternative</span>
+                <span class="tag">funded trading competition</span>
+            </p>
+        </div>
+
+        <!-- PUNTUACIÓN POR ÁREAS -->
+        <div class="section">
+            <h2>Puntuación por Áreas</h2>
+
+            <h3>SEO Técnico — 3.5/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-red" style="width: 35%;">3.5</div>
+            </div>
+            <p>Robots.txt y sitemap presentes (positivo), pero sin meta descriptions, sin Schema, sin hreflang, sitemap de usuarios expuesto, post Hello World indexado, 2 enlaces de navegación en 404.</p>
+
+            <h3>Contenido On-Page — 4.5/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-orange" style="width: 45%;">4.5</div>
+            </div>
+            <p>Buena jerarquía de headings y contenido claro en las páginas funcionales. Penalizado por falta total de meta descriptions, tabla de precios como imagen, y ausencia de blog/contenido recurrente.</p>
+
+            <h3>Estructura y Navegación — 4.0/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-orange" style="width: 40%;">4.0</div>
+            </div>
+            <p>Solo 4 páginas reales. Menú con 3 enlaces de los cuales 2 son 404. Estructura extremadamente limitada para un sitio de servicios financieros que necesita generar confianza.</p>
+
+            <h3>Experiencia de Usuario (UX) — 6.5/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-orange" style="width: 65%;">6.5</div>
+            </div>
+            <p>Diseño premium con Elementor, coherencia visual, responsive. Formulario de contacto funcional. Penalizado por navegación rota y tabla de precios como imagen (no responsive).</p>
+
+            <h3>E-E-A-T (Experiencia, Expertise, Autoridad, Confianza) — 4.0/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-orange" style="width: 40%;">4.0</div>
+            </div>
+            <p>Disclaimers legales y T&C detallados (positivo). Sin embargo, falta página "About" con equipo fundador, sin blog que demuestre expertise, sin testimonios verificables, sin presencia en directorios del sector.</p>
+
+            <h3>SEO Internacional — 3.0/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-red" style="width: 30%;">3.0</div>
+            </div>
+            <p>Versión EN genuinamente traducida (positivo), pero sin hreflang, URLs en inglés no en sitemap, y sin estrategia de contenido diferenciada por idioma.</p>
+        </div>
+
+        <!-- ANÁLISIS COMPETITIVO -->
+        <div class="section">
+            <h2>Análisis Competitivo</h2>
+            <p>The Thunder Trader se posiciona como alternativa a las prop firms en el nicho de <strong>trading tournaments / funded trading</strong>:</p>
+
+            <table>
+                <tr>
+                    <th>Competidor</th>
+                    <th>Fortalezas</th>
+                    <th>Oportunidad para Thunder Trader</th>
+                </tr>
+                <tr>
+                    <td><strong>FTMO</strong></td>
+                    <td>Brand consolidada, miles de reviews, blog extenso, SEO perfecto</td>
+                    <td>Diferenciarse como torneo (no evaluación), menos restrizioni</td>
+                </tr>
+                <tr>
+                    <td><strong>TopStep</strong></td>
+                    <td>Gran presencia YouTube, comunidad activa, funded accounts</td>
+                    <td>Formato torneo es más emocionante/compartible</td>
+                </tr>
+                <tr>
+                    <td><strong>The Trading Pit</strong></td>
+                    <td>Modelo similar de competición, ya establecido, multilingüe</td>
+                    <td>Competidor directo — necesita diferenciación clara</td>
+                </tr>
+                <tr>
+                    <td><strong>Prop firms menores</strong></td>
+                    <td>Precios agresivos, marketing en redes sociales</td>
+                    <td>Thunder Trader puede competir en transparencia y formato torneo</td>
+                </tr>
+            </table>
+
+            <h3>Ventaja competitiva potencial</h3>
+            <ul>
+                <li><strong>Formato torneo:</strong> Único selling point vs evaluaciones tradicionales. Más emocionante, más compartible en redes</li>
+                <li><strong>Transparencia:</strong> 80% del buy-in al prize pool, reglas bloqueadas una vez iniciado el torneo</li>
+                <li><strong>Mercado italiano:</strong> Pocos competidores en el mercado IT — oportunidad de posicionarse primero</li>
+                <li><strong>Low barrier:</strong> Entry desde $150 vs $300-600 de la mayoría de prop firms</li>
+            </ul>
+
+            <h3>Estrategia de contenido recomendada</h3>
+            <p>Para competir SEO con las prop firms establecidas, Thunder Trader necesita crear contenido que capture tráfico de usuarios que buscan alternativas:</p>
+            <ul>
+                <li>Artículos comparativos: "Thunder Trader vs FTMO", "Migliori alternative prop firm 2026"</li>
+                <li>Guías educativas: "Come funzionano i tornei di trading", "Strategie per competizioni forex"</li>
+                <li>Resultados y transparencia: publicar resultados de torneos pasados, estadísticas</li>
+                <li>Testimonios de participantes (cuando los haya)</li>
+            </ul>
+        </div>
+
+        <!-- INVENTARIO PÁGINAS -->
+        <div class="section">
+            <h2>Inventario Completo de Páginas</h2>
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Estado</th>
+                    <th>Meta Description</th>
+                    <th>Notas</th>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td><span class="priority-baja">200 OK</span></td>
+                    <td><span class="priority-alta">NO</span></td>
+                    <td>Homepage completa, buen H1</td>
+                </tr>
+                <tr>
+                    <td>/tornei/</td>
+                    <td><span class="priority-baja">200 OK</span></td>
+                    <td><span class="priority-alta">NO</span></td>
+                    <td>Página de torneos con precios y FAQ</td>
+                </tr>
+                <tr>
+                    <td>/customer-service/</td>
+                    <td><span class="priority-baja">200 OK</span></td>
+                    <td><span class="priority-alta">NO</span></td>
+                    <td>Formulario de contacto funcional</td>
+                </tr>
+                <tr>
+                    <td>/terms-conditions/</td>
+                    <td><span class="priority-baja">200 OK</span></td>
+                    <td><span class="priority-alta">NO</span></td>
+                    <td>T&C detallados</td>
+                </tr>
+                <tr>
+                    <td>/en/</td>
+                    <td><span class="priority-baja">200 OK</span></td>
+                    <td><span class="priority-alta">NO</span></td>
+                    <td>Versión inglesa (TranslatePress)</td>
+                </tr>
+                <tr>
+                    <td>/il-torneo/</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>—</td>
+                    <td>Enlazado desde menú, no existe</td>
+                </tr>
+                <tr>
+                    <td>/regole/</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>—</td>
+                    <td>Enlazado desde menú, no existe</td>
+                </tr>
+                <tr>
+                    <td>/hello-world/</td>
+                    <td><span class="priority-media">200 OK</span></td>
+                    <td><span class="priority-alta">NO</span></td>
+                    <td>Post de prueba WordPress — ELIMINAR</td>
+                </tr>
+                <tr>
+                    <td>/author/admin/</td>
+                    <td><span class="priority-media">Expuesto</span></td>
+                    <td>—</td>
+                    <td>Username admin expuesto — RIESGO SEGURIDAD</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- CTA -->
+        <div class="section" style="text-align: center; background: linear-gradient(135deg, #0a0a2e 0%, #1a1a5e 50%, #d4af37 100%); color: white;">
+            <h2 style="color: white; border-bottom-color: rgba(255,255,255,0.3);">¿Quieres mejorar tu SEO?</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">The Thunder Trader tiene un producto innovador en un nicho con alta demanda. Con las correcciones técnicas y una estrategia de contenido, el score puede subir a <strong>7.0+</strong> en pocas semanas.</p>
+            <p style="font-size: 18px;">Contacta con <strong>TapeDynamics</strong> para implementar las mejoras:</p>
+            <p style="font-size: 22px; margin-top: 15px;"><strong>tapedynamics8283@gmail.com</strong></p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Informe generado por TapeDynamics — Auditoría SEO Profesional</p>
+        <p>© 2026 TapeDynamics. Todos los derechos reservados.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - Golf SwingBet</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #1a472a 0%, #2d8a4e 100%); color: white; padding: 50px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; }
+        .header p { font-size: 18px; margin: 10px 0; opacity: 0.95; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #1a472a; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #1a472a; }
+        h3 { font-size: 22px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        p, li { margin-bottom: 12px; font-size: 18px; }
+        ul { margin-left: 30px; margin-bottom: 20px; }
+        .score-box { background: linear-gradient(135deg, #1a472a 0%, #2d8a4e 100%); color: white; padding: 50px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
+        .score-box .score { font-size: 80px; font-weight: bold; margin: 20px 0; }
+        .score-box .score-label { font-size: 24px; opacity: 0.9; }
+        .critical { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .critical h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .warning { background: linear-gradient(135deg, #feca57, #ff9f43); color: #333; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .warning h4 { color: #333; margin-top: 0; margin-bottom: 15px; }
+        .success { background: linear-gradient(135deg, #26de81, #20bf6b); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .success h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .info-box { background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .info-box h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #1a472a; color: white; }
+        tr:hover { background: #f8f9fa; }
+        .priority-alta { background: #ff6b6b; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-media { background: #feca57; color: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-baja { background: #26de81; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .code-block { background: #2d3436; color: #74b9ff; padding: 20px; border-radius: 10px; font-family: 'Consolas', monospace; font-size: 14px; overflow-x: auto; margin: 15px 0; white-space: pre-wrap; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #1a472a; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .metric-card { background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 12px; text-align: center; }
+        .metric-card .value { font-size: 36px; font-weight: bold; color: #1a472a; }
+        .metric-card .label { font-size: 14px; color: #666; margin-top: 8px; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin: 3px; background: #1a472a; color: white; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+        .bar-container { background: #e9ecef; border-radius: 10px; height: 30px; margin: 8px 0 20px 0; position: relative; }
+        .bar { height: 100%; border-radius: 10px; display: flex; align-items: center; padding-left: 15px; color: white; font-weight: bold; font-size: 14px; }
+        .bar-red { background: linear-gradient(90deg, #ff6b6b, #ee5a5a); }
+        .bar-orange { background: linear-gradient(90deg, #feca57, #ff9f43); color: #333; }
+        .bar-green { background: linear-gradient(90deg, #26de81, #20bf6b); }
+        .bar-blue { background: linear-gradient(90deg, #74b9ff, #0984e3); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>Golf SwingBet</strong></p>
+        <p>stalwart-paletas-61f695.netlify.app</p>
+        <p>Análisis: 19 de Marzo 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al índice</a>
+
+        <div class="score-box">
+            <div class="score-label">Puntuación SEO</div>
+            <div class="score">3.5/10</div>
+            <p>Portal de apuestas de golf con diseño profesional y buen contenido, pero gravemente penalizado por 13 páginas internas rotas (404), ausencia de robots.txt y sitemap.xml, y configuración técnica incompleta</p>
+        </div>
+
+        <!-- RESUMEN EJECUTIVO -->
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+            <p><strong>Golf SwingBet</strong> es un portal informativo sobre apuestas de golf que ofrece cuotas en tiempo real, análisis de torneos, noticias y guías educativas. El sitio está alojado en Netlify y presenta un diseño profesional con soporte multilingüe (EN/IT/ES), sección de newsletter y contenido responsable sobre juego.</p>
+            <p>Sin embargo, el sitio tiene un <strong>problema estructural crítico</strong>: de las 16+ páginas internas enlazadas desde la homepage y el footer, <strong>13 devuelven error 404</strong>. Esto incluye páginas fundamentales como About, Privacy Policy, Responsible Gambling, Players, Tournaments y 5 de las 6 guías educativas. Además, faltan completamente los archivos robots.txt y sitemap.xml, y el Schema.org apunta a un dominio diferente (swing-bet.com) del actual.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">3.5</div>
+                    <div class="label">Puntuación SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">3</div>
+                    <div class="label">Idiomas (EN/IT/ES)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">13</div>
+                    <div class="label">Páginas en 404</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">3</div>
+                    <div class="label">Páginas funcionales</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS CRÍTICOS -->
+        <div class="section">
+            <h2>Problemas Críticos</h2>
+
+            <div class="critical">
+                <h4>1. 13 páginas internas devuelven 404 (Error gravísimo)</h4>
+                <p>La mayoría de las páginas enlazadas desde la navegación y el footer no existen. Esto destruye la experiencia de usuario y la capacidad de rastreo de Google:</p>
+                <ul>
+                    <li><strong>/pages/about.html</strong> — Página "Sobre nosotros" (404)</li>
+                    <li><strong>/pages/privacy.html</strong> — Política de privacidad (404)</li>
+                    <li><strong>/pages/responsible-gambling.html</strong> — Juego responsable (404)</li>
+                    <li><strong>/pages/players.html</strong> — Directorio de jugadores (404)</li>
+                    <li><strong>/pages/tournaments.html</strong> — Directorio de torneos (404)</li>
+                    <li><strong>/pages/learn/rules-of-golf.html</strong> — Reglas del golf (404)</li>
+                    <li><strong>/pages/learn/major-championships.html</strong> — Majors (404)</li>
+                    <li><strong>/pages/learn/betting-strategies.html</strong> — Estrategias (404)</li>
+                    <li><strong>/pages/learn/golf-statistics.html</strong> — Estadísticas (404)</li>
+                    <li><strong>/pages/learn/types-of-golf-bets.html</strong> — Tipos de apuestas (404)</li>
+                </ul>
+                <p><strong>Solo 3 páginas funcionan:</strong> Homepage (/), Blog (/pages/blog), Understanding Odds (/pages/learn/understanding-odds)</p>
+                <p><strong>Impacto:</strong> Google rastreará estos enlaces rotos, acumulará errores en Search Console y reducirá el crawl budget. Los usuarios que hagan clic abandonarán inmediatamente.</p>
+            </div>
+
+            <div class="critical">
+                <h4>2. No existe robots.txt</h4>
+                <p>El archivo robots.txt devuelve 404. Sin este archivo, los motores de búsqueda no tienen instrucciones sobre qué rastrear o no. Además, no pueden encontrar el sitemap.xml (que tampoco existe).</p>
+                <div class="code-block">User-agent: *
+Allow: /
+Sitemap: https://swing-bet.com/sitemap.xml</div>
+            </div>
+
+            <div class="critical">
+                <h4>3. No existe sitemap.xml</h4>
+                <p>El archivo sitemap.xml devuelve 404. Google no tiene un mapa de todas las URLs del sitio, lo que dificulta significativamente la indexación, especialmente para un sitio con estructura de carpetas profunda (/pages/learn/...).</p>
+            </div>
+
+            <div class="critical">
+                <h4>4. Canonical y Schema.org apuntan a dominio diferente</h4>
+                <p>El Schema.org JSON-LD declara <code>"url": "https://swing-bet.com"</code> pero el sitio está desplegado en <code>stalwart-paletas-61f695.netlify.app</code>. Esto crea confusión para Google sobre cuál es la URL canónica del sitio.</p>
+                <p><strong>Solución:</strong> Si swing-bet.com es el dominio definitivo, configurar custom domain en Netlify. Si no, actualizar Schema.org con la URL actual.</p>
+            </div>
+
+            <div class="critical">
+                <h4>5. Newsletter Brevo no configurada</h4>
+                <p>El formulario de newsletter contiene el placeholder <code>REPLACE_WITH_YOUR_BREVO</code> en el código. El formulario no funciona — los usuarios que intenten suscribirse no recibirán nada. Esto es especialmente grave porque la newsletter es uno de los CTA principales del sitio.</p>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS ADICIONALES -->
+        <div class="section">
+            <h2>Problemas Adicionales</h2>
+
+            <div class="warning">
+                <h4>6. Imagen hero desde Unsplash (hotlinking)</h4>
+                <p>La imagen principal del hero se carga directamente desde <code>images.unsplash.com</code>. Esto presenta varios problemas:</p>
+                <ul>
+                    <li>Dependencia de servidor externo (si Unsplash cae, el hero desaparece)</li>
+                    <li>No se puede optimizar (WebP, compresión, lazy loading real)</li>
+                    <li>Posibles problemas de licencia si no se atribuye correctamente</li>
+                    <li>Aumenta el tiempo de carga (DNS lookup adicional)</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h4>7. Sin página 404 personalizada</h4>
+                <p>Con 13 páginas devolviendo 404, los usuarios ven la página genérica de Netlify. No hay redirección ni página personalizada que los guíe de vuelta al contenido funcional.</p>
+            </div>
+
+            <div class="warning">
+                <h4>8. Schema.org limitado a WebSite</h4>
+                <p>Solo existe un Schema tipo <code>WebSite</code> en la homepage. Faltan schemas importantes:</p>
+                <ul>
+                    <li><strong>SportsEvent</strong> — para los torneos (Masters, PGA Championship, etc.)</li>
+                    <li><strong>Article / NewsArticle</strong> — para los artículos del blog (solo Understanding Odds lo tiene)</li>
+                    <li><strong>FAQPage</strong> — para las secciones de preguntas frecuentes</li>
+                    <li><strong>BreadcrumbList</strong> — para la navegación de las subpáginas</li>
+                    <li><strong>Organization</strong> — para datos del publisher</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h4>9. Sin etiquetas hreflang para multilingüe</h4>
+                <p>El sitio ofrece cambio de idioma EN/IT/ES con JavaScript, pero no implementa etiquetas <code>hreflang</code>. Google no puede identificar las versiones en diferentes idiomas, lo que puede causar problemas de contenido duplicado y mala geolocalización.</p>
+                <div class="code-block">&lt;link rel="alternate" hreflang="en" href="https://swing-bet.com/" /&gt;
+&lt;link rel="alternate" hreflang="it" href="https://swing-bet.com/it/" /&gt;
+&lt;link rel="alternate" hreflang="es" href="https://swing-bet.com/es/" /&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>10. Contenido i18n renderizado por JavaScript</h4>
+                <p>La traducción se hace en el cliente con JavaScript. Google puede tener dificultades para indexar las versiones IT y ES si el contenido no está pre-renderizado. Para SEO multilingüe efectivo, se recomienda tener URLs separadas por idioma (ej. /it/, /es/) con contenido HTML estático.</p>
+            </div>
+
+            <div class="warning">
+                <h4>11. No hay Open Graph image</h4>
+                <p>Falta la meta tag <code>og:image</code>. Cuando se comparte el sitio en redes sociales (Twitter, Facebook, WhatsApp), no aparecerá una imagen de vista previa, reduciendo significativamente el CTR de los shares.</p>
+            </div>
+        </div>
+
+        <!-- ASPECTOS POSITIVOS -->
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>Diseño profesional y responsive</h4>
+                <p>El sitio tiene un diseño premium con tipografías cuidadas (Playfair Display + Inter), animaciones CSS3 sutiles, y es completamente responsive con breakpoints en 1024px, 768px y 480px. La experiencia visual transmite profesionalidad y credibilidad.</p>
+            </div>
+
+            <div class="success">
+                <h4>Meta tags básicos presentes en homepage</h4>
+                <p>La homepage tiene title tag descriptivo ("Golf SwingBet – Golf Betting Odds, News & Analysis") y meta description optimizada. El Schema.org WebSite está presente aunque apunta al dominio incorrecto.</p>
+            </div>
+
+            <div class="success">
+                <h4>Contenido de calidad en las páginas funcionales</h4>
+                <p>Las 3 páginas que funcionan (homepage, blog, understanding odds) tienen contenido bien escrito, informativo y estructurado. La guía de odds incluye calculadora interactiva, tabla de conversión y sección FAQ.</p>
+            </div>
+
+            <div class="success">
+                <h4>Estructura de contenido bien planificada</h4>
+                <p>La arquitectura de información es sólida: sección Learn con 6 guías temáticas, blog con artículos categorizados, directorio de jugadores y torneos. Si todas las páginas funcionaran, sería una estructura excelente para SEO.</p>
+            </div>
+
+            <div class="success">
+                <h4>Cumplimiento de juego responsable</h4>
+                <p>Incluye disclaimers de 18+, información de contacto de GamCare, BeGambleAware y NCPG. Esto es esencial para la credibilidad en el sector de apuestas y puede ayudar con E-E-A-T de Google.</p>
+            </div>
+
+            <div class="success">
+                <h4>Buena jerarquía de headings en homepage</h4>
+                <p>Un solo H1 ("Your edge on the green"), H2s descriptivos para cada sección, H3s para subsecciones. La estructura semántica es correcta.</p>
+            </div>
+        </div>
+
+        <!-- QUICK WINS -->
+        <div class="section">
+            <h2>Quick Wins — Acciones Prioritarias</h2>
+            <table>
+                <tr>
+                    <th>Acción</th>
+                    <th>Impacto</th>
+                    <th>Prioridad</th>
+                    <th>Tiempo</th>
+                </tr>
+                <tr>
+                    <td>Crear/desplegar las 13 páginas en 404 (o eliminar los enlaces)</td>
+                    <td>Elimina errores masivos de rastreo, mejora UX drásticamente</td>
+                    <td><span class="priority-alta">ALTA</span></td>
+                    <td>1-3 días</td>
+                </tr>
+                <tr>
+                    <td>Crear robots.txt con referencia al sitemap</td>
+                    <td>Permite rastreo correcto por bots</td>
+                    <td><span class="priority-alta">ALTA</span></td>
+                    <td>10 min</td>
+                </tr>
+                <tr>
+                    <td>Crear sitemap.xml con todas las URLs funcionales</td>
+                    <td>Mejora indexación y descubrimiento de páginas</td>
+                    <td><span class="priority-alta">ALTA</span></td>
+                    <td>30 min</td>
+                </tr>
+                <tr>
+                    <td>Configurar custom domain o corregir Schema.org/canonical</td>
+                    <td>Resuelve confusión de dominio para Google</td>
+                    <td><span class="priority-alta">ALTA</span></td>
+                    <td>30 min</td>
+                </tr>
+                <tr>
+                    <td>Configurar integración Brevo (newsletter)</td>
+                    <td>Activa captación de leads, principal CTA del sitio</td>
+                    <td><span class="priority-alta">ALTA</span></td>
+                    <td>1 hora</td>
+                </tr>
+                <tr>
+                    <td>Descargar imagen hero y servirla localmente (WebP)</td>
+                    <td>Mejora velocidad de carga, elimina dependencia externa</td>
+                    <td><span class="priority-media">MEDIA</span></td>
+                    <td>15 min</td>
+                </tr>
+                <tr>
+                    <td>Crear página 404 personalizada + netlify.toml redirect</td>
+                    <td>Mejora UX para usuarios que llegan a páginas rotas</td>
+                    <td><span class="priority-media">MEDIA</span></td>
+                    <td>30 min</td>
+                </tr>
+                <tr>
+                    <td>Añadir og:image a todas las páginas</td>
+                    <td>Mejora apariencia en redes sociales</td>
+                    <td><span class="priority-media">MEDIA</span></td>
+                    <td>20 min</td>
+                </tr>
+                <tr>
+                    <td>Implementar hreflang tags para EN/IT/ES</td>
+                    <td>SEO multilingüe correcto</td>
+                    <td><span class="priority-media">MEDIA</span></td>
+                    <td>1 hora</td>
+                </tr>
+                <tr>
+                    <td>Añadir Schema Article a blog posts y guías</td>
+                    <td>Rich snippets en resultados de Google</td>
+                    <td><span class="priority-baja">BAJA</span></td>
+                    <td>1-2 horas</td>
+                </tr>
+                <tr>
+                    <td>Crear URLs estáticas por idioma (/it/, /es/) en lugar de i18n JS</td>
+                    <td>Indexación correcta de contenido multilingüe</td>
+                    <td><span class="priority-baja">BAJA</span></td>
+                    <td>2-3 días</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- KEYWORDS -->
+        <div class="section">
+            <h2>Keywords Recomendadas</h2>
+            <h3>Keywords Principales (EN)</h3>
+            <p>
+                <span class="tag">golf betting odds</span>
+                <span class="tag">golf betting tips</span>
+                <span class="tag">masters 2025 odds</span>
+                <span class="tag">pga championship betting</span>
+                <span class="tag">golf tournament odds</span>
+                <span class="tag">live golf odds</span>
+                <span class="tag">golf betting guide</span>
+            </p>
+
+            <h3>Keywords Long-Tail</h3>
+            <p>
+                <span class="tag">how to bet on golf</span>
+                <span class="tag">golf betting odds explained</span>
+                <span class="tag">masters 2025 favourites</span>
+                <span class="tag">scheffler odds masters</span>
+                <span class="tag">mcilroy career grand slam odds</span>
+                <span class="tag">each way betting golf</span>
+                <span class="tag">strokes gained golf betting</span>
+                <span class="tag">golf outright betting tips</span>
+            </p>
+
+            <h3>Keywords por Idioma</h3>
+            <p><strong>IT:</strong>
+                <span class="tag">scommesse golf</span>
+                <span class="tag">quote golf</span>
+                <span class="tag">masters 2025 pronostici</span>
+            </p>
+            <p><strong>ES:</strong>
+                <span class="tag">apuestas golf</span>
+                <span class="tag">cuotas golf</span>
+                <span class="tag">masters 2025 favoritos</span>
+            </p>
+        </div>
+
+        <!-- PUNTUACIÓN POR ÁREAS -->
+        <div class="section">
+            <h2>Puntuación por Áreas</h2>
+
+            <h3>SEO Técnico — 2.0/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-red" style="width: 20%;">2.0</div>
+            </div>
+            <p>Sin robots.txt, sin sitemap.xml, 13 páginas en 404, canonical/Schema apuntando a dominio diferente, sin hreflang, i18n solo JavaScript.</p>
+
+            <h3>Contenido On-Page — 5.5/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-orange" style="width: 55%;">5.5</div>
+            </div>
+            <p>Buen title y meta description en homepage. H1 único. Contenido de calidad en las páginas funcionales. Sin embargo, el 80% de las páginas no existe.</p>
+
+            <h3>Estructura y Navegación — 3.0/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-red" style="width: 30%;">3.0</div>
+            </div>
+            <p>La arquitectura planificada es excelente (Learn, Blog, Players, Tournaments), pero en la práctica la navegación lleva a páginas rotas. Footer con 11 enlaces de los cuales 9 son 404.</p>
+
+            <h3>Experiencia de Usuario (UX) — 6.0/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-orange" style="width: 60%;">6.0</div>
+            </div>
+            <p>Diseño profesional y responsive, animaciones cuidadas, buena tipografía. Penalizado severamente por los 404 masivos y el formulario de newsletter roto.</p>
+
+            <h3>SEO Local / Nicho — 4.0/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-orange" style="width: 40%;">4.0</div>
+            </div>
+            <p>Buen enfoque de nicho (golf betting), contenido E-E-A-T con disclaimers responsables, datos actualizados de torneos. Falta consistencia en la implementación.</p>
+
+            <h3>Rendimiento y Velocidad — 5.0/10</h3>
+            <div class="bar-container">
+                <div class="bar bar-orange" style="width: 50%;">5.0</div>
+            </div>
+            <p>CSS y JS inline (bueno para single-page). Hotlinking de imagen hero desde Unsplash penaliza. Fuentes externas (Google Fonts) añaden latencia. Sin lazy loading visible.</p>
+        </div>
+
+        <!-- ANÁLISIS COMPETITIVO -->
+        <div class="section">
+            <h2>Análisis Competitivo</h2>
+            <p>Golf SwingBet compite en el nicho de <strong>golf betting content</strong>, donde los principales competidores incluyen:</p>
+
+            <table>
+                <tr>
+                    <th>Competidor</th>
+                    <th>Fortalezas</th>
+                    <th>Debilidad vs SwingBet</th>
+                </tr>
+                <tr>
+                    <td><strong>GolfBettingSystem.co.uk</strong></td>
+                    <td>Autoridad de dominio alta, años de contenido, backlinks</td>
+                    <td>Diseño menos moderno</td>
+                </tr>
+                <tr>
+                    <td><strong>GolfBettingTips.org</strong></td>
+                    <td>SEO técnico sólido, sitemap completo, Schema rich</td>
+                    <td>Sin soporte multilingüe</td>
+                </tr>
+                <tr>
+                    <td><strong>Action Network (Golf)</strong></td>
+                    <td>Datos en tiempo real, gran comunidad, app móvil</td>
+                    <td>Demasiado genérico (cubre todos los deportes)</td>
+                </tr>
+            </table>
+
+            <h3>Ventaja competitiva potencial de SwingBet</h3>
+            <ul>
+                <li><strong>Multilingüe:</strong> Pocos portales de golf betting ofrecen contenido en IT y ES — oportunidad enorme</li>
+                <li><strong>Diseño premium:</strong> Look & feel superior a la mayoría de sitios de betting content</li>
+                <li><strong>Enfoque educativo:</strong> La sección Learn con 6 guías es un diferenciador si se implementa</li>
+                <li><strong>Nicho puro golf:</strong> Especialización vs portales generalistas de deportes</li>
+            </ul>
+
+            <p><strong>Nota crítica:</strong> Ninguna de estas ventajas competitivas se materializa mientras el 80% del sitio esté en 404. La prioridad absoluta es completar la implementación antes de cualquier estrategia SEO avanzada.</p>
+        </div>
+
+        <!-- INVENTARIO PÁGINAS -->
+        <div class="section">
+            <h2>Inventario Completo de Páginas</h2>
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Estado</th>
+                    <th>Notas</th>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td><span class="priority-baja">200 OK</span></td>
+                    <td>Homepage completa con todas las secciones</td>
+                </tr>
+                <tr>
+                    <td>/pages/blog</td>
+                    <td><span class="priority-baja">200 OK</span></td>
+                    <td>Blog con 5 artículos, filtros por categoría</td>
+                </tr>
+                <tr>
+                    <td>/pages/learn/understanding-odds</td>
+                    <td><span class="priority-baja">200 OK</span></td>
+                    <td>Guía completa con Schema Article</td>
+                </tr>
+                <tr>
+                    <td>/pages/about.html</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Importante para E-E-A-T</td>
+                </tr>
+                <tr>
+                    <td>/pages/privacy.html</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Obligatoria legalmente (GDPR)</td>
+                </tr>
+                <tr>
+                    <td>/pages/responsible-gambling.html</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Crítica para sector gambling</td>
+                </tr>
+                <tr>
+                    <td>/pages/players.html</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Directorio jugadores</td>
+                </tr>
+                <tr>
+                    <td>/pages/tournaments.html</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Directorio torneos</td>
+                </tr>
+                <tr>
+                    <td>/pages/learn/rules-of-golf.html</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Guía enlazada desde homepage y footer</td>
+                </tr>
+                <tr>
+                    <td>/pages/learn/major-championships.html</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Guía enlazada desde homepage y footer</td>
+                </tr>
+                <tr>
+                    <td>/pages/learn/betting-strategies.html</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Guía enlazada desde homepage y footer</td>
+                </tr>
+                <tr>
+                    <td>/pages/learn/golf-statistics.html</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Guía enlazada desde homepage y footer</td>
+                </tr>
+                <tr>
+                    <td>/pages/learn/types-of-golf-bets.html</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Guía enlazada desde homepage y footer</td>
+                </tr>
+                <tr>
+                    <td>/robots.txt</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Archivo fundamental SEO</td>
+                </tr>
+                <tr>
+                    <td>/sitemap.xml</td>
+                    <td><span class="priority-alta">404</span></td>
+                    <td>Archivo fundamental SEO</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- CTA -->
+        <div class="section" style="text-align: center; background: linear-gradient(135deg, #1a472a 0%, #2d8a4e 100%); color: white;">
+            <h2 style="color: white; border-bottom-color: rgba(255,255,255,0.3);">¿Quieres mejorar tu SEO?</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">Golf SwingBet tiene un potencial enorme — diseño premium, nicho definido, contenido multilingüe. Con las correcciones técnicas implementadas, el score puede subir a <strong>7.0+</strong> rápidamente.</p>
+            <p style="font-size: 18px;">Contacta con <strong>TapeDynamics</strong> para implementar las mejoras:</p>
+            <p style="font-size: 22px; margin-top: 15px;"><strong>tapedynamics8283@gmail.com</strong></p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Informe generado por TapeDynamics — Auditoría SEO Profesional</p>
+        <p>© 2026 TapeDynamics. Todos los derechos reservados.</p>
+    </div>
+</body>
+</html>
