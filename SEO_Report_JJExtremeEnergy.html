@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - JJ Extreme Energy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #1a1a2e 0%, #e94560 100%); color: white; padding: 50px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; }
+        .header p { font-size: 18px; margin: 10px 0; opacity: 0.95; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #e94560; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #e94560; }
+        h3 { font-size: 22px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        p, li { margin-bottom: 12px; font-size: 18px; }
+        ul { margin-left: 30px; margin-bottom: 20px; }
+        .score-box { background: linear-gradient(135deg, #1a1a2e 0%, #e94560 100%); color: white; padding: 50px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
+        .score-box .score { font-size: 80px; font-weight: bold; margin: 20px 0; }
+        .score-box .score-label { font-size: 24px; opacity: 0.9; }
+        .critical { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .critical h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .warning { background: linear-gradient(135deg, #feca57, #ff9f43); color: #333; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .warning h4 { color: #333; margin-top: 0; margin-bottom: 15px; }
+        .success { background: linear-gradient(135deg, #26de81, #20bf6b); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .success h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        .info-box { background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .info-box h4 { color: white; margin-top: 0; margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #e94560; color: white; }
+        tr:hover { background: #f8f9fa; }
+        .priority-alta { background: #ff6b6b; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-media { background: #feca57; color: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .priority-baja { background: #26de81; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        .code-block { background: #2d3436; color: #74b9ff; padding: 20px; border-radius: 10px; font-family: 'Consolas', monospace; font-size: 14px; overflow-x: auto; margin: 15px 0; white-space: pre-wrap; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #e94560; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .metric-card { background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 12px; text-align: center; }
+        .metric-card .value { font-size: 36px; font-weight: bold; color: #e94560; }
+        .metric-card .label { font-size: 14px; color: #666; margin-top: 8px; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin: 3px; background: #e94560; color: white; }
+        .bar-container { background: #e9ecef; border-radius: 10px; height: 30px; margin: 8px 0; overflow: hidden; }
+        .bar { height: 100%; border-radius: 10px; display: flex; align-items: center; padding-left: 12px; color: white; font-weight: bold; font-size: 14px; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Informe de Auditoría SEO</h1>
+        <p><strong>JJ Extreme Energy</strong></p>
+        <p>jjextremeenergy.com</p>
+        <p>Análisis: 22 de Marzo 2026</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al índice</a>
+
+        <div class="score-box">
+            <div class="score-label">Puntuación SEO</div>
+            <div class="score">3.5/10</div>
+            <p>Sitio web de coaching fitness/nutrición con múltiples problemas SEO técnicos graves. Construido en Webador, lo que limita el control técnico. Falta optimización on-page básica en todas las páginas.</p>
+        </div>
+
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+            <p><strong>JJ Extreme Energy</strong> es un negocio de entrenamiento personal, asesoramiento nutricional y coaching de desarrollo personal, operado por dos socios (Jess y James) desde España. El sitio está construido con la plataforma <strong>Webador</strong> (plan Business) y ofrece servicios presenciales/online además de productos digitales (PDFs de entrenamiento, retos fitness).</p>
+            <p>El sitio presenta <strong>carencias SEO fundamentales</strong>: sin meta descriptions en ninguna página, imágenes sin alt text, múltiples H1 en la homepage, Schema.org mínimo (solo Organization básico), sitemap sin fechas de modificación, y dependencia total de una plataforma que limita el control técnico.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">3.5</div>
+                    <div class="label">Puntuación SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">28</div>
+                    <div class="label">URLs en Sitemap</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">3</div>
+                    <div class="label">Servicios</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">3</div>
+                    <div class="label">Productos Digitales</div>
+                </div>
+            </div>
+
+            <h3>Datos del Negocio</h3>
+            <ul>
+                <li><strong>Tipo:</strong> Entrenamiento Personal, Nutrición y Coaching de Desarrollo Personal</li>
+                <li><strong>Teléfono:</strong> +34 613 649 186</li>
+                <li><strong>Email:</strong> jjextremeenergy@proton.me</li>
+                <li><strong>WhatsApp:</strong> +34 634 309 065</li>
+                <li><strong>Idioma:</strong> Español (es-ES)</li>
+                <li><strong>Plataforma:</strong> Webador (plan Business)</li>
+                <li><strong>Instagram:</strong> @jessxjamesito</li>
+                <li><strong>YouTube:</strong> @jjextremeenergy</li>
+                <li><strong>TikTok:</strong> @jj.extreme.energy</li>
+            </ul>
+
+            <h3>Servicios</h3>
+            <p>
+                <span class="tag">Entrenamiento Personalizado</span>
+                <span class="tag">Asesoramiento Nutricional</span>
+                <span class="tag">Coaching Desarrollo Personal</span>
+                <span class="tag">Planes de Entrenamiento PDF</span>
+                <span class="tag">Reto 45 Días</span>
+                <span class="tag">PNL / Reprogramación Subconsciente</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Críticos</h2>
+
+            <div class="critical">
+                <h4>1. SIN META DESCRIPTION EN NINGUNA PÁGINA</h4>
+                <p>Ninguna página del sitio tiene etiqueta <code>&lt;meta name="description"&gt;</code>. Google generará snippets automáticos con texto aleatorio de la página, lo que resulta en descripciones poco atractivas en los resultados de búsqueda.</p>
+                <p><strong>Impacto:</strong> CTR (tasa de clics) muy bajo en Google. Los usuarios no entienden qué ofrece el sitio antes de hacer clic.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">&lt;!-- Homepage --&gt;
+&lt;meta name="description" content="JJ Extreme Energy - Entrenamiento personalizado, asesoramiento nutricional y coaching de desarrollo personal. Transforma tu cuerpo, mente y emociones. Contacto: +34 613 649 186" /&gt;
+
+&lt;!-- Servicios --&gt;
+&lt;meta name="description" content="Servicios de JJ Extreme Energy: entrenamiento personal adaptado, planes nutricionales personalizados y coaching de desarrollo personal con PNL." /&gt;
+
+&lt;!-- Contacto --&gt;
+&lt;meta name="description" content="Contacta con JJ Extreme Energy para empezar tu transformación. WhatsApp, email o formulario. Presupuesto sin compromiso." /&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>2. MÚLTIPLES H1 EN LA HOMEPAGE</h4>
+                <p>La página principal tiene <strong>múltiples etiquetas H1</strong>, lo que confunde a Google sobre el tema principal de la página. Solo debe haber <strong>un único H1</strong> por página.</p>
+                <p><strong>Impacto:</strong> Google no puede determinar el tema principal de la página. Dilución de relevancia semántica.</p>
+                <p><strong>Solución:</strong> Mantener solo un H1 principal: "JJ Extreme Energy - Entrenamiento Personal y Coaching" y cambiar los demás a H2.</p>
+            </div>
+
+            <div class="critical">
+                <h4>3. IMÁGENES SIN ATRIBUTO ALT</h4>
+                <p><strong>Todas las imágenes del sitio carecen de atributo alt.</strong> Esto incluye las imágenes de servicios, fotos del equipo y imágenes de productos. Sin alt text, Google no puede indexar las imágenes ni entender su contenido.</p>
+                <p><strong>Impacto:</strong> Pérdida total de tráfico desde Google Imágenes. Problemas de accesibilidad (WCAG). Oportunidad SEO desaprovechada.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">&lt;!-- Ejemplo para imagen de entrenamiento --&gt;
+&lt;img src="..." alt="Sesión de entrenamiento personalizado JJ Extreme Energy" /&gt;
+
+&lt;!-- Ejemplo para imagen de nutrición --&gt;
+&lt;img src="..." alt="Plan de asesoramiento nutricional personalizado" /&gt;
+
+&lt;!-- Ejemplo para imagen del equipo --&gt;
+&lt;img src="..." alt="Jess y James - Entrenadores personales JJ Extreme Energy" /&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>4. SCHEMA.ORG MÍNIMO E INCOMPLETO</h4>
+                <p>Solo existe un Schema básico de tipo <code>Organization</code> con nombre, URL, email y teléfono. Para un negocio de servicios fitness, faltan schemas esenciales.</p>
+                <p><strong>Faltan:</strong></p>
+                <ul>
+                    <li><code>LocalBusiness</code> o <code>HealthAndBeautyBusiness</code> con dirección, horarios, área de servicio</li>
+                    <li><code>Service</code> para cada servicio (entrenamiento, nutrición, coaching)</li>
+                    <li><code>Person</code> para cada entrenador (Jess y James) con credenciales</li>
+                    <li><code>Product</code> para los productos digitales (PDFs, retos)</li>
+                    <li><code>FAQPage</code> para la sección de preguntas frecuentes (oportunidad de rich snippets)</li>
+                    <li><code>BreadcrumbList</code> para navegación</li>
+                </ul>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "JJ Extreme Energy",
+  "url": "https://www.jjextremeenergy.com",
+  "telephone": "+34613649186",
+  "email": "jjextremeenergy@proton.me",
+  "description": "Entrenamiento personalizado, asesoramiento nutricional y coaching de desarrollo personal",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Entrenamiento Personalizado"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Asesoramiento Nutricional"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Coaching de Desarrollo Personal"}}
+    ]
+  },
+  "sameAs": [
+    "https://instagram.com/jessxjamesito",
+    "https://youtube.com/@jjextremeenergy",
+    "https://tiktok.com/@jj.extreme.energy"
+  ]
+}
+&lt;/script&gt;</div>
+            </div>
+
+            <div class="critical">
+                <h4>5. PÁGINA DE SERVICIOS SIN H1</h4>
+                <p>La página <code>/servicios</code> no tiene etiqueta H1. Salta directamente a H2 para cada servicio. Sin H1, Google no identifica el tema principal de esta página clave.</p>
+                <p><strong>Solución:</strong> Añadir un H1 como "Nuestros Servicios de Entrenamiento y Coaching" al inicio de la página.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Adicionales</h2>
+
+            <div class="warning">
+                <h4>6. SITEMAP.XML SIN FECHAS DE MODIFICACIÓN</h4>
+                <p>El sitemap contiene 28 URLs con prioridades asignadas, pero <strong>ninguna tiene lastmod ni changefreq</strong>. Esto impide que Google sepa cuándo se actualizó cada página y con qué frecuencia rastrearla.</p>
+                <p><strong>Solución:</strong> Configurar Webador para incluir <code>&lt;lastmod&gt;</code> en cada URL del sitemap, o si la plataforma no lo permite, considerar generar un sitemap manual.</p>
+            </div>
+
+            <div class="warning">
+                <h4>7. SIN OPEN GRAPH NI TWITTER CARDS</h4>
+                <p>No se detectaron etiquetas Open Graph (og:title, og:description, og:image) ni Twitter Cards. Cuando alguien comparte el sitio en redes sociales, se muestra sin imagen ni descripción atractiva.</p>
+                <p><strong>Impacto:</strong> Para un negocio que depende de redes sociales (Instagram, TikTok, YouTube), esto es especialmente perjudicial. Los compartidos en WhatsApp tampoco muestran preview.</p>
+                <p><strong>Solución:</strong></p>
+                <div class="code-block">&lt;meta property="og:type" content="website" /&gt;
+&lt;meta property="og:url" content="https://www.jjextremeenergy.com/" /&gt;
+&lt;meta property="og:title" content="JJ Extreme Energy - Entrenamiento Personal y Coaching" /&gt;
+&lt;meta property="og:description" content="Transforma tu cuerpo, mente y emociones con entrenamiento personalizado y coaching." /&gt;
+&lt;meta property="og:image" content="https://www.jjextremeenergy.com/og-image.jpg" /&gt;</div>
+            </div>
+
+            <div class="warning">
+                <h4>8. SIN CANONICAL TAGS</h4>
+                <p>No se detectaron etiquetas <code>&lt;link rel="canonical"&gt;</code> en ninguna página. Esto puede causar problemas de contenido duplicado si Google accede al sitio con y sin www, o con parámetros de URL.</p>
+                <p><strong>Solución:</strong> Añadir canonical en cada página apuntando a la URL preferida.</p>
+            </div>
+
+            <div class="warning">
+                <h4>9. DIRECCIÓN FÍSICA NO VISIBLE</h4>
+                <p>El sitio ofrece servicios presenciales de entrenamiento pero <strong>no muestra ninguna dirección física</strong> ni zona de servicio. No hay mapa embedido en la página de contacto. Esto impide el posicionamiento en búsquedas locales ("entrenador personal cerca de mí").</p>
+                <p><strong>Solución:</strong> Añadir dirección/zona de servicio en la página de contacto y en el footer. Incluir Google Maps embed. Crear ficha de Google Business Profile.</p>
+            </div>
+
+            <div class="warning">
+                <h4>10. DEPENDENCIA DE PLATAFORMA WEBADOR</h4>
+                <p>El sitio está construido en Webador, lo que limita significativamente el control SEO técnico:</p>
+                <ul>
+                    <li>No se puede editar el <code>&lt;head&gt;</code> libremente para meta tags</li>
+                    <li>Las imágenes se sirven desde CDN externo (jwwb.nl) sin control de nombres de archivo</li>
+                    <li>JavaScript pesado del builder incluido en todas las páginas</li>
+                    <li>Control limitado sobre la estructura HTML y Schema.org</li>
+                    <li>Dependencia de jQuery y librerías del builder</li>
+                </ul>
+                <p><strong>Solución a largo plazo:</strong> Migrar a un sitio estático o WordPress donde se tenga control total del SEO técnico.</p>
+            </div>
+
+            <div class="warning">
+                <h4>11. DOS NÚMEROS DE TELÉFONO DIFERENTES</h4>
+                <p>El Schema.org y la página principal muestran <code>+34 613 649 186</code>, pero el enlace de WhatsApp usa <code>+34 634 309 065</code>. Esta inconsistencia puede confundir tanto a usuarios como a Google (NAP consistency).</p>
+                <p><strong>Solución:</strong> Unificar a un solo número principal o documentar claramente cuál es para llamadas y cuál para WhatsApp.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Aspectos Positivos</h2>
+
+            <div class="success">
+                <h4>SSL/HTTPS Activo</h4>
+                <p>El sitio tiene certificado SSL correctamente configurado. Todas las conexiones se sirven via HTTPS.</p>
+            </div>
+
+            <div class="success">
+                <h4>Sitemap.xml Presente</h4>
+                <p>Existe un sitemap.xml con 28 URLs y prioridades asignadas correctamente (0.9 homepage, 0.8 páginas principales, 0.7 productos).</p>
+            </div>
+
+            <div class="success">
+                <h4>Buena Estructura de Navegación</h4>
+                <p>Menú de navegación claro con 8 items principales bien organizados: Inicio, Servicios, Sobre Nosotros, Contacto, Planes de Entrenamiento, Desarrollo Personal, Legal y Privacidad.</p>
+            </div>
+
+            <div class="success">
+                <h4>Sección FAQ Presente</h4>
+                <p>La homepage incluye preguntas frecuentes, lo que es excelente para SEO si se marca con Schema FAQPage (actualmente no lo está).</p>
+            </div>
+
+            <div class="success">
+                <h4>Presencia en Redes Sociales</h4>
+                <p>Links a 4 plataformas sociales (Instagram, YouTube, TikTok, WhatsApp). Buena base para estrategia de contenido multicanal.</p>
+            </div>
+
+            <div class="success">
+                <h4>Analytics Configurado</h4>
+                <p>Google Analytics (G-E6PZPGE4QM) y Plausible Analytics activos. Doble tracking permite verificar datos.</p>
+            </div>
+
+            <div class="success">
+                <h4>E-commerce Habilitado</h4>
+                <p>Funcionalidad de tienda activa con carrito, wishlist y productos digitales. Potencial de monetización online.</p>
+            </div>
+
+            <div class="success">
+                <h4>Formulario de Captación de Leads</h4>
+                <p>Formulario de email para contenido gratuito ("Accede al contenido gratuito"). Buena estrategia de lead generation.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Quick Wins - Acciones Rápidas</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Acción</th>
+                        <th>Impacto</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Añadir meta description a TODAS las páginas</td>
+                        <td>Mejora CTR en Google +30-50%</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Corregir estructura H1 (un solo H1 por página)</td>
+                        <td>Mejora relevancia semántica</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir alt text a TODAS las imágenes</td>
+                        <td>Tráfico Google Imágenes + accesibilidad</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Implementar FAQPage Schema en las preguntas frecuentes</td>
+                        <td>Rich snippets en Google (FAQ expandibles)</td>
+                        <td><span class="priority-alta">ALTA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir Open Graph tags para redes sociales</td>
+                        <td>Previews atractivas al compartir en WhatsApp/RRSS</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ampliar Schema.org con Service y Person</td>
+                        <td>Rich results y Knowledge Panel</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir canonical tags en todas las páginas</td>
+                        <td>Previene contenido duplicado</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crear Google Business Profile</td>
+                        <td>Visibilidad local en Maps y búsquedas</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Añadir dirección/zona de servicio + mapa en contacto</td>
+                        <td>SEO local</td>
+                        <td><span class="priority-media">MEDIA</span></td>
+                    </tr>
+                    <tr>
+                        <td>Considerar migración fuera de Webador</td>
+                        <td>Control total SEO técnico</td>
+                        <td><span class="priority-baja">BAJA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Keywords Recomendadas</h2>
+            <p>Basado en los servicios ofrecidos y el mercado español, estas son las keywords objetivo:</p>
+
+            <h3>Keywords Principales (Alta Intención)</h3>
+            <p>
+                <span class="tag">entrenador personal online</span>
+                <span class="tag">entrenamiento personalizado</span>
+                <span class="tag">asesoramiento nutricional online</span>
+                <span class="tag">coaching desarrollo personal</span>
+                <span class="tag">plan de entrenamiento personalizado</span>
+            </p>
+
+            <h3>Keywords Long-Tail (Conversión)</h3>
+            <p>
+                <span class="tag">entrenador personal España online</span>
+                <span class="tag">plan nutricional personalizado precio</span>
+                <span class="tag">coaching PNL desarrollo personal</span>
+                <span class="tag">reto fitness 45 días</span>
+                <span class="tag">rutina entrenamiento personalizada</span>
+                <span class="tag">transformación cuerpo y mente coaching</span>
+            </p>
+
+            <h3>Keywords Locales (si aplica)</h3>
+            <p>
+                <span class="tag">entrenador personal Tenerife</span>
+                <span class="tag">nutricionista deportivo Tenerife</span>
+                <span class="tag">entrenamiento personal Canarias</span>
+                <span class="tag">coach personal Tenerife</span>
+            </p>
+
+            <h3>Keywords de Contenido (Blog/RRSS)</h3>
+            <p>
+                <span class="tag">tips nutricionales para entrenar</span>
+                <span class="tag">ejercicios en casa para principiantes</span>
+                <span class="tag">cómo empezar a entrenar</span>
+                <span class="tag">plan alimenticio para ganar músculo</span>
+                <span class="tag">reprogramación mental ejercicio</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Puntuación por Áreas</h2>
+
+            <div style="margin: 20px 0;">
+                <p><strong>SEO Técnico</strong> - 3/10</p>
+                <div class="bar-container">
+                    <div class="bar" style="width: 30%; background: linear-gradient(135deg, #ff6b6b, #ee5a5a);">3/10</div>
+                </div>
+                <p style="font-size: 14px; color: #666;">Sin meta descriptions, sin canonical, sin Open Graph, múltiples H1, sitemap sin lastmod</p>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <p><strong>Contenido</strong> - 5/10</p>
+                <div class="bar-container">
+                    <div class="bar" style="width: 50%; background: linear-gradient(135deg, #feca57, #ff9f43);">5/10</div>
+                </div>
+                <p style="font-size: 14px; color: #666;">Buen contenido de servicios y FAQ, pero falta optimización por keywords y blog activo</p>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <p><strong>Schema / Datos Estructurados</strong> - 2/10</p>
+                <div class="bar-container">
+                    <div class="bar" style="width: 20%; background: linear-gradient(135deg, #ff6b6b, #ee5a5a);">2/10</div>
+                </div>
+                <p style="font-size: 14px; color: #666;">Solo Organization básico. Faltan Service, Person, FAQPage, Product, BreadcrumbList</p>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <p><strong>SEO Local</strong> - 2/10</p>
+                <div class="bar-container">
+                    <div class="bar" style="width: 20%; background: linear-gradient(135deg, #ff6b6b, #ee5a5a);">2/10</div>
+                </div>
+                <p style="font-size: 14px; color: #666;">Sin dirección, sin Google Business Profile, sin mapa, NAP inconsistente</p>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <p><strong>Accesibilidad</strong> - 2/10</p>
+                <div class="bar-container">
+                    <div class="bar" style="width: 20%; background: linear-gradient(135deg, #ff6b6b, #ee5a5a);">2/10</div>
+                </div>
+                <p style="font-size: 14px; color: #666;">Imágenes sin alt text, iconos sin aria-labels, estructura de encabezados incorrecta</p>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <p><strong>Experiencia de Usuario</strong> - 5/10</p>
+                <div class="bar-container">
+                    <div class="bar" style="width: 50%; background: linear-gradient(135deg, #feca57, #ff9f43);">5/10</div>
+                </div>
+                <p style="font-size: 14px; color: #666;">Navegación clara, CTAs visibles, WhatsApp integrado. Penaliza: slider pesado, plataforma builder</p>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <p><strong>Redes Sociales / Off-page</strong> - 5/10</p>
+                <div class="bar-container">
+                    <div class="bar" style="width: 50%; background: linear-gradient(135deg, #feca57, #ff9f43);">5/10</div>
+                </div>
+                <p style="font-size: 14px; color: #666;">Presencia en 4 plataformas, pero sin OG tags. No se aprovecha el potencial de compartidos</p>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <p><strong>E-commerce / Productos</strong> - 3/10</p>
+                <div class="bar-container">
+                    <div class="bar" style="width: 30%; background: linear-gradient(135deg, #ff6b6b, #ee5a5a);">3/10</div>
+                </div>
+                <p style="font-size: 14px; color: #666;">Tienda habilitada con 3 productos digitales, pero sin Schema Product, sin reviews visibles</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Análisis Competitivo</h2>
+            <p>En el mercado de entrenamiento personal online en español, la competencia es intensa. JJ Extreme Energy compite tanto con entrenadores locales (Tenerife/Canarias) como con plataformas nacionales.</p>
+
+            <h3>Ventajas Competitivas</h3>
+            <ul>
+                <li><strong>Triple servicio:</strong> Fitness + Nutrición + Coaching personal es una propuesta diferenciadora</li>
+                <li><strong>Productos digitales:</strong> PDFs y retos permiten escalar sin límite geográfico</li>
+                <li><strong>Presencia multicanal:</strong> Instagram, YouTube, TikTok cubren distintas audiencias</li>
+                <li><strong>Precio competitivo:</strong> Productos digitales accesibles como puerta de entrada</li>
+            </ul>
+
+            <h3>Desventajas vs Competidores</h3>
+            <ul>
+                <li><strong>Plataforma limitada:</strong> Competidores con WordPress o sitios custom tienen mejor SEO técnico</li>
+                <li><strong>Sin blog activo:</strong> La mayoría de competidores posicionan con contenido educativo regular</li>
+                <li><strong>Sin testimonios/reviews:</strong> Falta prueba social visible en el sitio (Google reviews, testimonios con foto)</li>
+                <li><strong>Sin Google Business Profile:</strong> Invisibles en búsquedas locales mientras competidores aparecen en Maps</li>
+                <li><strong>Dominio relativamente nuevo:</strong> Menor autoridad de dominio que competidores establecidos</li>
+            </ul>
+
+            <h3>Oportunidades</h3>
+            <ul>
+                <li>Crear blog con contenido SEO (tips entrenamiento, nutrición, motivación) - captar tráfico informacional</li>
+                <li>Implementar FAQPage Schema para obtener rich snippets antes que competidores</li>
+                <li>YouTube SEO: optimizar títulos y descripciones de videos para búsquedas fitness</li>
+                <li>Crear Google Business Profile para captar búsquedas locales "entrenador personal + ciudad"</li>
+                <li>Recopilar y mostrar testimonios/reviews de clientes actuales</li>
+            </ul>
+        </div>
+
+        <div class="section" style="background: linear-gradient(135deg, #1a1a2e 0%, #e94560 100%); color: white; text-align: center;">
+            <h2 style="color: white; border-color: rgba(255,255,255,0.3);">Próximos Pasos Recomendados</h2>
+            <p style="font-size: 20px; margin-bottom: 20px;">Con las correcciones indicadas, JJ Extreme Energy podría subir de <strong>3.5/10 a 6.5/10</strong> en las primeras 4-6 semanas.</p>
+            <p><strong>Prioridad 1 (Semana 1):</strong> Meta descriptions + Alt text + Corregir H1s</p>
+            <p><strong>Prioridad 2 (Semana 2):</strong> Schema.org completo (FAQPage, Service, Person) + Open Graph</p>
+            <p><strong>Prioridad 3 (Semana 3-4):</strong> Google Business Profile + Canonical tags + Dirección en contacto</p>
+            <p><strong>Prioridad 4 (Mes 2+):</strong> Blog SEO + Estrategia de contenido + Considerar migración de plataforma</p>
+            <br>
+            <p style="font-size: 16px; opacity: 0.9;">Informe generado por <strong>Tape Dynamics</strong> - Auditoría SEO Profesional</p>
+            <p style="font-size: 16px; opacity: 0.9;">info@tapedynamics8283.com | tapedynamics8283.com</p>
+            <p style="font-size: 14px; opacity: 0.7; margin-top: 10px;">Entrega del informe: 3-5 días laborables</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Informe SEO generado el 22 de Marzo 2026 | Tape Dynamics</p>
+    </div>
+</body>
+</html>
