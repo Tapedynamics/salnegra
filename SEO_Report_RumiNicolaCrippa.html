@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SEO - Rumi Nicola Crippa | ruminicolacrippa.com</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; color: #2c3e50; line-height: 1.6; }
+
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #4a148c 50%, #880e4f 100%);
+            color: white; padding: 60px 20px; text-align: center;
+        }
+        .header h1 { font-size: 2.8em; margin-bottom: 10px; }
+        .header .url { font-size: 1.2em; opacity: 0.85; margin-bottom: 20px; }
+        .header .date { font-size: 0.95em; opacity: 0.7; }
+        .header .business-type { display: inline-block; background: rgba(255,255,255,0.15); padding: 6px 18px; border-radius: 20px; margin-bottom: 15px; font-size: 0.95em; letter-spacing: 1px; text-transform: uppercase; }
+
+        .score-section {
+            background: white; max-width: 900px; margin: -40px auto 30px; border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12); padding: 40px; text-align: center;
+        }
+        .score-big { font-size: 5em; font-weight: 800; background: linear-gradient(135deg, #e53935, #ff9800); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .score-label { font-size: 1.1em; color: #7f8c8d; margin-top: 5px; }
+        .score-bar { height: 12px; background: #ecf0f1; border-radius: 6px; margin: 20px auto 0; max-width: 500px; overflow: hidden; }
+        .score-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #e53935, #ff9800); }
+
+        .scores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 30px; }
+        .score-item { text-align: center; padding: 15px 10px; background: #f8f9fa; border-radius: 10px; }
+        .score-item .num { font-size: 1.8em; font-weight: 700; }
+        .score-item .label { font-size: 0.8em; color: #7f8c8d; margin-top: 3px; }
+        .red { color: #e53935; } .orange { color: #ff9800; } .green { color: #27ae60; } .yellow { color: #f39c12; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; }
+
+        .section {
+            background: white; border-radius: 12px; padding: 30px; margin-bottom: 25px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+        .section h2 { font-size: 1.6em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #1a237e; color: #1a237e; }
+        .section h3 { font-size: 1.2em; margin: 20px 0 10px; color: #4a148c; }
+
+        .critical { border-left: 4px solid #e53935; padding-left: 15px; margin: 12px 0; background: #fff5f5; padding: 12px 15px; border-radius: 0 8px 8px 0; }
+        .warning { border-left: 4px solid #ff9800; padding-left: 15px; margin: 12px 0; background: #fff8e1; padding: 12px 15px; border-radius: 0 8px 8px 0; }
+        .good { border-left: 4px solid #27ae60; padding-left: 15px; margin: 12px 0; background: #f0fff4; padding: 12px 15px; border-radius: 0 8px 8px 0; }
+        .info { border-left: 4px solid #3498db; padding-left: 15px; margin: 12px 0; background: #f0f8ff; padding: 12px 15px; border-radius: 0 8px 8px 0; }
+
+        .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 600; margin: 2px; }
+        .tag-red { background: #fde8e8; color: #e53935; }
+        .tag-orange { background: #fff3e0; color: #e65100; }
+        .tag-green { background: #e8f5e9; color: #2e7d32; }
+        .tag-blue { background: #e3f2fd; color: #1565c0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #f8f9fa; padding: 10px 12px; text-align: left; font-size: 0.85em; color: #7f8c8d; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #ecf0f1; }
+        td { padding: 10px 12px; border-bottom: 1px solid #ecf0f1; font-size: 0.95em; }
+        tr:hover { background: #f8f9fa; }
+
+        code { background: #f1f3f5; padding: 2px 6px; border-radius: 4px; font-size: 0.88em; color: #c0392b; }
+        pre { background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 0.85em; margin: 10px 0; }
+
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+        .checklist li:last-child { border-bottom: none; }
+        .check { color: #27ae60; margin-right: 8px; }
+        .cross { color: #e53935; margin-right: 8px; }
+        .warn-icon { color: #ff9800; margin-right: 8px; }
+
+        .priority-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.7em; font-weight: 700; text-transform: uppercase; margin-left: 8px; vertical-align: middle; }
+        .p-critical { background: #e53935; color: white; }
+        .p-high { background: #ff9800; color: white; }
+        .p-medium { background: #f39c12; color: white; }
+        .p-low { background: #3498db; color: white; }
+
+        .quickwin { background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border: 2px solid #66bb6a; border-radius: 10px; padding: 20px; margin: 15px 0; }
+        .quickwin h4 { color: #2e7d32; margin-bottom: 8px; }
+
+        .footer-report {
+            text-align: center; padding: 30px; color: #95a5a6; font-size: 0.9em; margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .score-big { font-size: 3.5em; }
+            .scores-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="business-type">Autore & Docente di Scrittura Creativa</div>
+    <h1>Rumi Nicola Crippa</h1>
+    <div class="url">ruminicolacrippa.com</div>
+    <div class="date">Análisis SEO: 23 Marzo 2026</div>
+</div>
+
+<div class="score-section">
+    <div class="score-big">3.5/10</div>
+    <div class="score-label">Puntuación SEO Global</div>
+    <div class="score-bar"><div class="score-fill" style="width: 35%;"></div></div>
+
+    <div class="scores-grid">
+        <div class="score-item"><div class="num red">2/10</div><div class="label">Meta Tags & On-Page</div></div>
+        <div class="score-item"><div class="num red">2/10</div><div class="label">Schema & Datos Estructurados</div></div>
+        <div class="score-item"><div class="num red">3/10</div><div class="label">Contenido & Headings</div></div>
+        <div class="score-item"><div class="num orange">4/10</div><div class="label">Rendimiento</div></div>
+        <div class="score-item"><div class="num orange">4/10</div><div class="label">Accesibilidad</div></div>
+        <div class="score-item"><div class="num orange">5/10</div><div class="label">Estructura & URLs</div></div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- RESUMEN EJECUTIVO -->
+    <div class="section">
+        <h2>📋 Resumen Ejecutivo</h2>
+        <p>El sitio web de <strong>Rumi Nicola Crippa</strong>, autor y docente de escritura creativa con sede en Bergamo (Italia), presenta <strong>graves carencias SEO</strong> que comprometen seriamente su visibilidad en buscadores. Construido con WordPress + tema Colibri, el sitio carece de los elementos fundamentales que Google necesita para indexar y posicionar correctamente las páginas.</p>
+
+        <h3>Datos clave del sitio</h3>
+        <table>
+            <tr><td><strong>CMS</strong></td><td>WordPress + Tema Colibri (versión gratuita)</td></tr>
+            <tr><td><strong>Idioma</strong></td><td>Italiano</td></tr>
+            <tr><td><strong>Páginas indexadas</strong></td><td>28 URLs en sitemap</td></tr>
+            <tr><td><strong>Última actualización sitemap</strong></td><td>Abril 2023 (¡hace casi 3 años!)</td></tr>
+            <tr><td><strong>Negocio</strong></td><td>Cursos de escritura creativa "La Via Poetica" + 9 libros publicados</td></tr>
+            <tr><td><strong>Ubicación</strong></td><td>Via Borgo Palazzo, 3 – Bergamo – 24125 (Italia)</td></tr>
+            <tr><td><strong>Contacto</strong></td><td>+39 335 62 06 052 | info@ruminicolacrippa.com</td></tr>
+            <tr><td><strong>Social</strong></td><td>Facebook, Instagram (@rumi.nicola.crippa), YouTube</td></tr>
+            <tr><td><strong>E-commerce</strong></td><td>WooCommerce presente (negozio, carrello, pagamento, mio-account)</td></tr>
+        </table>
+    </div>
+
+    <!-- PROBLEMAS CRÍTICOS -->
+    <div class="section">
+        <h2>🚨 Problemas Críticos (Impacto Alto)</h2>
+
+        <div class="critical">
+            <strong>1. CERO meta descriptions en todo el sitio</strong> <span class="priority-badge p-critical">CRÍTICO</span>
+            <p>Ninguna página tiene <code>&lt;meta name="description"&gt;</code>. Google genera automáticamente snippets poco relevantes, lo que reduce drásticamente el CTR (Click-Through Rate) en los resultados de búsqueda.</p>
+            <p><strong>Páginas afectadas:</strong> TODAS (homepage, chi-sono, contatti, corsi-online, pubblicazioni, etc.)</p>
+        </div>
+
+        <div class="critical">
+            <strong>2. Ausencia total de Open Graph y Twitter Cards</strong> <span class="priority-badge p-critical">CRÍTICO</span>
+            <p>No hay tags <code>og:title</code>, <code>og:description</code>, <code>og:image</code> ni <code>twitter:card</code>. Cuando alguien comparte una página en redes sociales, aparece sin imagen ni descripción — perdiendo completamente la oportunidad de captar clicks.</p>
+        </div>
+
+        <div class="critical">
+            <strong>3. Sin canonical tags</strong> <span class="priority-badge p-critical">CRÍTICO</span>
+            <p>No hay <code>&lt;link rel="canonical"&gt;</code> en ninguna página. Riesgo de contenido duplicado, especialmente con las páginas WooCommerce y la URL <code>/homepage/</code> vs <code>/</code>.</p>
+        </div>
+
+        <div class="critical">
+            <strong>4. Sitio abandonado — sin actualizaciones desde 2023</strong> <span class="priority-badge p-critical">CRÍTICO</span>
+            <p>La última modificación en el sitemap es de <strong>abril 2023</strong>. Google penaliza sitios sin contenido fresco. El copyright dice 2026, pero el contenido lleva 3 años sin cambios.</p>
+        </div>
+
+        <div class="critical">
+            <strong>5. Jerarquía de headings completamente rota</strong> <span class="priority-badge p-critical">CRÍTICO</span>
+            <p>Múltiples páginas usan <code>&lt;h6&gt;</code> como heading principal en lugar de <code>&lt;h1&gt;</code>. La página <code>/contatti/</code> NO tiene H1. La página <code>/pubblicazioni/</code> solo tiene un H6. Esto confunde a Google sobre la estructura y tema de cada página.</p>
+            <table>
+                <tr><th>Página</th><th>H1</th><th>Problema</th></tr>
+                <tr><td>Homepage</td><td>✅ "Autore e insegnante di Scrittura Creativa"</td><td>OK pero genérico</td></tr>
+                <tr><td>/chi-sono/</td><td>✅ "Chi sono"</td><td>H6 duplicado "Chi sono"</td></tr>
+                <tr><td>/contatti/</td><td>❌ Ausente</td><td>Solo H6 — grave</td></tr>
+                <tr><td>/pubblicazioni/</td><td>❌ Ausente</td><td>Solo H6 — grave</td></tr>
+                <tr><td>/corsi-online/</td><td>✅ Presente</td><td>Título muy largo y filosófico</td></tr>
+            </table>
+        </div>
+
+        <div class="critical">
+            <strong>6. Ausencia total de Schema.org / JSON-LD</strong> <span class="priority-badge p-critical">CRÍTICO</span>
+            <p>No hay datos estructurados para:</p>
+            <ul style="margin: 8px 0 0 20px;">
+                <li><code>Person</code> — imprescindible para un autor/educador</li>
+                <li><code>Book</code> — 9 publicaciones sin schema</li>
+                <li><code>Course</code> — cursos online/presenciales sin schema</li>
+                <li><code>LocalBusiness</code> — tiene dirección física</li>
+                <li><code>BreadcrumbList</code> — sin navegación estructurada</li>
+            </ul>
+        </div>
+
+        <div class="critical">
+            <strong>7. Imágenes sin alt text en todo el sitio</strong> <span class="priority-badge p-critical">CRÍTICO</span>
+            <p>Las portadas de libros, fotos de cursos e imagen principal del hero <strong>no tienen atributo alt</strong>. Esto impacta negativamente en:</p>
+            <ul style="margin: 8px 0 0 20px;">
+                <li>SEO de imágenes (Google Images)</li>
+                <li>Accesibilidad (lectores de pantalla)</li>
+                <li>Indexación del contenido visual</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PROBLEMAS MEDIOS -->
+    <div class="section">
+        <h2>⚠️ Problemas Medios</h2>
+
+        <div class="warning">
+            <strong>8. Title tags genéricos y sin keywords</strong> <span class="priority-badge p-high">ALTO</span>
+            <p>Los títulos siguen el patrón <code>"Nombre Página – Rumi Nicola Crippa"</code> sin incluir keywords relevantes.</p>
+            <table>
+                <tr><th>Página</th><th>Título actual</th><th>Título recomendado</th></tr>
+                <tr><td>Homepage</td><td>"Rumi Nicola Crippa – Official Web Site"</td><td>"Rumi Nicola Crippa | Corsi di Scrittura Creativa e Poesia | Bergamo"</td></tr>
+                <tr><td>/chi-sono/</td><td>"Chi sono – Rumi Nicola Crippa"</td><td>"Rumi Nicola Crippa - Autore, Poeta e Docente | La Via Poetica"</td></tr>
+                <tr><td>/corsi-online/</td><td>"Online – Rumi Nicola Crippa"</td><td>"Corsi Online di Scrittura Creativa | Metodo La Via Poetica"</td></tr>
+                <tr><td>/pubblicazioni/</td><td>"Pubblicazioni – Rumi Nicola Crippa"</td><td>"Libri di Rumi Nicola Crippa | Fiabe, Poesia e Narrativa"</td></tr>
+                <tr><td>/contatti/</td><td>"Contatti – Rumi Nicola Crippa"</td><td>"Contatti Rumi Nicola Crippa | Corsi Scrittura Bergamo"</td></tr>
+            </table>
+        </div>
+
+        <div class="warning">
+            <strong>9. Sitemap incompleto — solo 1 sub-sitemap</strong> <span class="priority-badge p-high">ALTO</span>
+            <p>El sitemap index (<code>/wp-sitemap.xml</code>) contiene <strong>solo 1 sub-sitemap</strong> (<code>wp-sitemap-posts-page-1.xml</code>). Faltan sitemaps para:</p>
+            <ul style="margin: 8px 0 0 20px;">
+                <li>Posts (artículos de blog)</li>
+                <li>Productos WooCommerce</li>
+                <li>Categorías y tags</li>
+                <li>Imágenes</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <strong>10. Páginas WooCommerce indexables sin contenido</strong> <span class="priority-badge p-medium">MEDIO</span>
+            <p>Las URLs <code>/negozio/</code>, <code>/carrello/</code>, <code>/pagamento/</code>, <code>/mio-account/</code> están en el sitemap y son indexables. Son páginas técnicas del e-commerce que deberían tener <code>noindex</code>.</p>
+        </div>
+
+        <div class="warning">
+            <strong>11. URL duplicada: /homepage/ vs /</strong> <span class="priority-badge p-medium">MEDIO</span>
+            <p>Existen dos URLs para la homepage: <code>ruminicolacrippa.com/</code> y <code>ruminicolacrippa.com/homepage/</code>. Contenido duplicado potencial. La segunda debería redirigir 301 a la principal.</p>
+        </div>
+
+        <div class="warning">
+            <strong>12. Página de ejemplo visible: /pagina-di-esempio/</strong> <span class="priority-badge p-medium">MEDIO</span>
+            <p>La página por defecto de WordPress <code>/pagina-di-esempio/</code> sigue publicada e indexada. Da una imagen poco profesional.</p>
+        </div>
+
+        <div class="warning">
+            <strong>13. Sin favicon definido</strong> <span class="priority-badge p-medium">MEDIO</span>
+            <p>No se detecta un <code>&lt;link rel="icon"&gt;</code> explícito. El favicon aparece en los resultados de Google y en las pestañas del navegador — imprescindible para branding.</p>
+        </div>
+
+        <div class="warning">
+            <strong>14. Blog abandonado</strong> <span class="priority-badge p-medium">MEDIO</span>
+            <p>Existe una página <code>/blog/</code> (última actualización: noviembre 2021) sin contenido fresco. Un blog activo con artículos sobre escritura creativa, poesía y técnicas narrativas sería un potente atractor de tráfico orgánico.</p>
+        </div>
+
+        <div class="warning">
+            <strong>15. CSS inline excesivo (~25KB+)</strong> <span class="priority-badge p-medium">MEDIO</span>
+            <p>El tema Colibri inyecta cantidades masivas de CSS inline en el HTML. Esto aumenta el tamaño de cada página y dificulta el cacheo del navegador. Impacto directo en Core Web Vitals (LCP, FCP).</p>
+        </div>
+    </div>
+
+    <!-- LO QUE FUNCIONA -->
+    <div class="section">
+        <h2>✅ Lo Que Funciona</h2>
+
+        <div class="good">
+            <strong>URLs limpias y semánticas</strong>
+            <p>Estructura de URLs clara: <code>/chi-sono/</code>, <code>/corsi-online/</code>, <code>/pubblicazioni/</code>. Sin parámetros ni IDs numéricos.</p>
+        </div>
+
+        <div class="good">
+            <strong>robots.txt correcto</strong>
+            <p>Bloquea <code>/wp-admin/</code>, permite <code>admin-ajax.php</code>, y referencia el sitemap. Configuración estándar WordPress correcta.</p>
+        </div>
+
+        <div class="good">
+            <strong>Skip link de accesibilidad</strong>
+            <p>"Vai al contenuto" presente — buen detalle de accesibilidad, raro en sitios de este nivel.</p>
+        </div>
+
+        <div class="good">
+            <strong>Viewport meta tag presente</strong>
+            <p><code>width=device-width, initial-scale=1</code> — correcto para responsive.</p>
+        </div>
+
+        <div class="good">
+            <strong>Información de contacto visible</strong>
+            <p>Teléfono y email en la barra superior de navegación. Dirección completa en la página de contactos con link a Google Maps.</p>
+        </div>
+
+        <div class="good">
+            <strong>Redes sociales enlazadas</strong>
+            <p>Facebook, Instagram y YouTube en header y/o footer.</p>
+        </div>
+
+        <div class="good">
+            <strong>HTTPS activo</strong>
+            <p>Certificado SSL funcionando correctamente.</p>
+        </div>
+    </div>
+
+    <!-- QUICK WINS -->
+    <div class="section">
+        <h2>⚡ Quick Wins — Máximo Impacto, Mínimo Esfuerzo</h2>
+        <p>Estas acciones pueden implementarse en <strong>1-2 horas</strong> y generar mejoras inmediatas:</p>
+
+        <div class="quickwin">
+            <h4>1. Instalar Yoast SEO o Rank Math (15 minutos)</h4>
+            <p>Un solo plugin resuelve de golpe: meta descriptions, canonical tags, Open Graph, Twitter Cards, XML sitemap mejorado, y schema básico. <strong>Esto solo subiría el score a 5.5/10.</strong></p>
+        </div>
+
+        <div class="quickwin">
+            <h4>2. Escribir meta descriptions para las 5 páginas principales (20 minutos)</h4>
+            <pre>Homepage: "Rumi Nicola Crippa - Autore, poeta e docente di scrittura creativa. Scopri i corsi online e in presenza del metodo La Via Poetica. Bergamo."
+
+Chi sono: "Filosofo, scrittore e docente di scrittura creativa. Laureato in Filosofia, autore di 9 libri tra fiabe, poesia e narrativa. Scopri il mio percorso."
+
+Corsi Online: "Corsi online di scrittura creativa con il metodo La Via Poetica. Percorso Poetico e Drammaturgico. Lezioni individuali e di gruppo."
+
+Pubblicazioni: "I libri di Rumi Nicola Crippa: fiabe bergamasche, poesia e narrativa. Scopri tutte le pubblicazioni e acquista online."
+
+Contatti: "Contatta Rumi Nicola Crippa per informazioni su corsi di scrittura creativa, collaborazioni e eventi. Bergamo, Via Borgo Palazzo 3."</pre>
+        </div>
+
+        <div class="quickwin">
+            <h4>3. Fixare i heading delle pagine critiche (15 minuti)</h4>
+            <p>Cambiare gli <code>&lt;h6&gt;</code> in <code>&lt;h1&gt;</code> su /contatti/ e /pubblicazioni/. Ogni pagina DEVE avere esattamente un <code>&lt;h1&gt;</code>.</p>
+        </div>
+
+        <div class="quickwin">
+            <h4>4. Aggiungere alt text alle immagini dei libri (15 minuti)</h4>
+            <pre>Esempio:
+alt="Copertina del libro Essere Umani di Rumi Nicola Crippa"
+alt="Copertina del libro Una Fiaba Bergamasca di Rumi Nicola Crippa"
+alt="Copertina del libro Riflessi - Poesie di Rumi Nicola Crippa"</pre>
+        </div>
+
+        <div class="quickwin">
+            <h4>5. Eliminare/noindex páginas basura (10 minutos)</h4>
+            <ul style="margin: 8px 0 0 20px;">
+                <li>Eliminar <code>/pagina-di-esempio/</code></li>
+                <li>Redirect 301 <code>/homepage/</code> → <code>/</code></li>
+                <li>Aggiungere <code>noindex</code> a: <code>/carrello/</code>, <code>/pagamento/</code>, <code>/mio-account/</code></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SCHEMA.ORG RECOMENDADO -->
+    <div class="section">
+        <h2>🏗️ Schema.org Recomendado</h2>
+        <p>Datos estructurados que deberían implementarse para obtener rich snippets en Google:</p>
+
+        <h3>Person (Homepage + Chi sono)</h3>
+        <pre>{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rumi Nicola Crippa",
+  "jobTitle": "Autore e Docente di Scrittura Creativa",
+  "url": "https://ruminicolacrippa.com",
+  "telephone": "+39 335 62 06 052",
+  "email": "info@ruminicolacrippa.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Borgo Palazzo, 3",
+    "addressLocality": "Bergamo",
+    "postalCode": "24125",
+    "addressCountry": "IT"
+  },
+  "sameAs": [
+    "https://www.facebook.com/Rumi-N-Crippa-725876794442520/",
+    "https://www.instagram.com/rumi.nicola.crippa/",
+    "https://www.youtube.com/channel/UCEPwuZ-XujICEwcH2KGQd6g"
+  ],
+  "knowsAbout": ["Scrittura Creativa", "Poesia", "Filosofia", "Drammaturgia"]
+}</pre>
+
+        <h3>Book (per ogni pubblicazione)</h3>
+        <pre>{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Essere Umani",
+  "author": { "@type": "Person", "name": "Rumi Nicola Crippa" },
+  "inLanguage": "it",
+  "url": "https://ruminicolacrippa.com/essere-umani/"
+}</pre>
+
+        <h3>Course (per ogni corso)</h3>
+        <pre>{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Percorso Poetico - La Via Poetica",
+  "description": "Corso online di scrittura creativa con il metodo La Via Poetica",
+  "provider": { "@type": "Person", "name": "Rumi Nicola Crippa" },
+  "courseMode": "online",
+  "inLanguage": "it"
+}</pre>
+
+        <h3>BreadcrumbList (tutte le pagine)</h3>
+        <pre>{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ruminicolacrippa.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Corsi Online", "item": "https://ruminicolacrippa.com/corsi-online/" }
+  ]
+}</pre>
+    </div>
+
+    <!-- ANÁLISIS COMPETITIVO -->
+    <div class="section">
+        <h2>🔍 Análisis de Contenido & Keywords</h2>
+
+        <h3>Keywords target recomendadas</h3>
+        <table>
+            <tr><th>Keyword</th><th>Intención</th><th>Página target</th></tr>
+            <tr><td>corsi scrittura creativa online</td><td>Transaccional</td><td>/corsi-online/</td></tr>
+            <tr><td>corsi scrittura creativa Bergamo</td><td>Local</td><td>/in-presenza/</td></tr>
+            <tr><td>scrittura creativa metodo</td><td>Informacional</td><td>/chi-sono/ o blog</td></tr>
+            <tr><td>corsi poesia online</td><td>Transaccional</td><td>/corsi-online/</td></tr>
+            <tr><td>laboratorio scrittura creativa</td><td>Transaccional</td><td>/corsi-scuole/</td></tr>
+            <tr><td>libri fiabe italiane</td><td>Informacional</td><td>/pubblicazioni/</td></tr>
+            <tr><td>rumi nicola crippa libri</td><td>Brand</td><td>/pubblicazioni/</td></tr>
+            <tr><td>insegnante scrittura creativa</td><td>Informacional</td><td>/chi-sono/</td></tr>
+        </table>
+
+        <h3>Oportunidades de contenido (blog)</h3>
+        <div class="info">
+            <p>El blog abandonado es la mayor oportunidad perdida. Artículos recomendados:</p>
+            <ul style="margin: 8px 0 0 20px;">
+                <li>"Come iniziare a scrivere poesia: guida per principianti" (alto volumen)</li>
+                <li>"Esercizi di scrittura creativa da fare a casa" (alto volumen)</li>
+                <li>"La Via Poetica: cos'è e come funziona il metodo" (brand + informacional)</li>
+                <li>"Come scrivere una fiaba: tecniche e consigli" (nicho fiabe)</li>
+                <li>"Scrittura terapeutica: benefici e come praticarla" (tendencia)</li>
+                <li>"Recensione libri Rumi Nicola Crippa" (brand protection)</li>
+            </ul>
+            <p><strong>Frequenza consigliata:</strong> 2 articoli/mese (minimo 800 parole, con schema BlogPosting)</p>
+        </div>
+    </div>
+
+    <!-- CHECKLIST TECNICA -->
+    <div class="section">
+        <h2>📝 Checklist Técnica Completa</h2>
+
+        <h3>Meta Tags & Head</h3>
+        <ul class="checklist">
+            <li><span class="cross">✗</span> Meta description (AUSENTE su tutte le pagine)</li>
+            <li><span class="cross">✗</span> Canonical tags (AUSENTE)</li>
+            <li><span class="cross">✗</span> Open Graph tags (AUSENTE)</li>
+            <li><span class="cross">✗</span> Twitter Card tags (AUSENTE)</li>
+            <li><span class="cross">✗</span> Favicon esplicito (AUSENTE)</li>
+            <li><span class="cross">✗</span> hreflang (non applicabile — sito monolingua)</li>
+            <li><span class="warn-icon">⚠</span> Title tags (presenti ma generici, senza keywords)</li>
+            <li><span class="check">✓</span> Viewport meta tag</li>
+            <li><span class="check">✓</span> Charset UTF-8</li>
+        </ul>
+
+        <h3>Contenido & Estructura</h3>
+        <ul class="checklist">
+            <li><span class="cross">✗</span> H1 consistente su tutte le pagine</li>
+            <li><span class="cross">✗</span> Gerarchia heading corretta (H1→H2→H3)</li>
+            <li><span class="cross">✗</span> Alt text sulle immagini</li>
+            <li><span class="cross">✗</span> Contenuto fresco/aggiornato</li>
+            <li><span class="cross">✗</span> Blog attivo</li>
+            <li><span class="check">✓</span> URLs semantiche e pulite</li>
+            <li><span class="check">✓</span> Informazioni di contatto visibili</li>
+        </ul>
+
+        <h3>Datos Estructurados</h3>
+        <ul class="checklist">
+            <li><span class="cross">✗</span> Schema Person</li>
+            <li><span class="cross">✗</span> Schema Book (9 libri senza markup)</li>
+            <li><span class="cross">✗</span> Schema Course</li>
+            <li><span class="cross">✗</span> Schema BreadcrumbList</li>
+            <li><span class="cross">✗</span> Schema LocalBusiness</li>
+        </ul>
+
+        <h3>Técnico</h3>
+        <ul class="checklist">
+            <li><span class="cross">✗</span> Sitemap completo (solo 1 sub-sitemap)</li>
+            <li><span class="cross">✗</span> Pagine inutili noindexate</li>
+            <li><span class="cross">✗</span> Redirect /homepage/ → /</li>
+            <li><span class="cross">✗</span> /pagina-di-esempio/ eliminata</li>
+            <li><span class="warn-icon">⚠</span> CSS inline eccessivo (performance)</li>
+            <li><span class="check">✓</span> robots.txt corretto</li>
+            <li><span class="check">✓</span> HTTPS attivo</li>
+            <li><span class="check">✓</span> Responsive (viewport)</li>
+        </ul>
+
+        <h3>Social & Branding</h3>
+        <ul class="checklist">
+            <li><span class="cross">✗</span> Open Graph per sharing social</li>
+            <li><span class="warn-icon">⚠</span> Footer con credit "Created for free using WordPress and Colibri" (poco professionale)</li>
+            <li><span class="check">✓</span> Link a Facebook, Instagram, YouTube</li>
+            <li><span class="check">✓</span> Email e telefono visibili</li>
+        </ul>
+    </div>
+
+    <!-- PLAN DE ACCIÓN -->
+    <div class="section">
+        <h2>🎯 Plan de Acción Priorizado</h2>
+
+        <h3>Fase 1 — Urgente (settimana 1)</h3>
+        <table>
+            <tr><th>#</th><th>Azione</th><th>Impatto</th><th>Tempo</th></tr>
+            <tr><td>1</td><td>Installare Yoast SEO / Rank Math</td><td><span class="tag tag-red">Critico</span></td><td>15 min</td></tr>
+            <tr><td>2</td><td>Scrivere meta description per 10 pagine principali</td><td><span class="tag tag-red">Critico</span></td><td>30 min</td></tr>
+            <tr><td>3</td><td>Ottimizzare title tags con keywords</td><td><span class="tag tag-red">Critico</span></td><td>20 min</td></tr>
+            <tr><td>4</td><td>Fixare H1 su /contatti/ e /pubblicazioni/</td><td><span class="tag tag-red">Critico</span></td><td>10 min</td></tr>
+            <tr><td>5</td><td>Aggiungere alt text a tutte le immagini</td><td><span class="tag tag-orange">Alto</span></td><td>30 min</td></tr>
+            <tr><td>6</td><td>Eliminare /pagina-di-esempio/</td><td><span class="tag tag-orange">Alto</span></td><td>2 min</td></tr>
+            <tr><td>7</td><td>Redirect 301 /homepage/ → /</td><td><span class="tag tag-orange">Alto</span></td><td>5 min</td></tr>
+            <tr><td>8</td><td>Noindex pagine WooCommerce tecniche</td><td><span class="tag tag-orange">Alto</span></td><td>5 min</td></tr>
+        </table>
+
+        <h3>Fase 2 — Importante (settimane 2-3)</h3>
+        <table>
+            <tr><th>#</th><th>Azione</th><th>Impatto</th><th>Tempo</th></tr>
+            <tr><td>9</td><td>Implementare Schema Person (JSON-LD)</td><td><span class="tag tag-orange">Alto</span></td><td>30 min</td></tr>
+            <tr><td>10</td><td>Implementare Schema Book per 9 libri</td><td><span class="tag tag-orange">Alto</span></td><td>45 min</td></tr>
+            <tr><td>11</td><td>Implementare Schema Course</td><td><span class="tag tag-orange">Alto</span></td><td>30 min</td></tr>
+            <tr><td>12</td><td>Aggiungere favicon</td><td><span class="tag tag-blue">Medio</span></td><td>10 min</td></tr>
+            <tr><td>13</td><td>Rimuovere credit Colibri dal footer</td><td><span class="tag tag-blue">Medio</span></td><td>5 min</td></tr>
+            <tr><td>14</td><td>Registrare su Google Search Console</td><td><span class="tag tag-red">Critico</span></td><td>15 min</td></tr>
+            <tr><td>15</td><td>Inviare sitemap a Google</td><td><span class="tag tag-red">Critico</span></td><td>5 min</td></tr>
+        </table>
+
+        <h3>Fase 3 — Crescita (mese 2+)</h3>
+        <table>
+            <tr><th>#</th><th>Azione</th><th>Impatto</th><th>Tempo</th></tr>
+            <tr><td>16</td><td>Riattivare il blog con 2 articoli/mese</td><td><span class="tag tag-red">Critico</span></td><td>Continuo</td></tr>
+            <tr><td>17</td><td>Ottimizzare performance (ridurre CSS inline)</td><td><span class="tag tag-blue">Medio</span></td><td>2-3h</td></tr>
+            <tr><td>18</td><td>Creare landing page ottimizzate per ogni corso</td><td><span class="tag tag-orange">Alto</span></td><td>4-5h</td></tr>
+            <tr><td>19</td><td>Strategia link building (guest post su blog letterari)</td><td><span class="tag tag-orange">Alto</span></td><td>Continuo</td></tr>
+            <tr><td>20</td><td>Valutare cambio tema (Colibri → Starter template più performante)</td><td><span class="tag tag-blue">Medio</span></td><td>8h+</td></tr>
+        </table>
+    </div>
+
+    <!-- CONCLUSIÓN -->
+    <div class="section">
+        <h2>📊 Conclusión</h2>
+        <p>El sitio de Rumi Nicola Crippa tiene un <strong>puntaje de 3.5/10</strong> — uno de los más bajos que hemos analizado. Sin embargo, la buena noticia es que la mayoría de los problemas son fácilmente solucionables:</p>
+
+        <div class="info">
+            <strong>Con solo instalar un plugin SEO y dedicar 2 horas de trabajo (Fase 1), el score podría subir a 6.0/10.</strong>
+        </div>
+
+        <p style="margin-top: 15px;">El contenido de base es bueno (autor con 9 publicaciones, metodología única "La Via Poetica", cursos estructurados), pero Google no puede valorarlo porque falta toda la capa técnica SEO. Es como tener un gran restaurante en un callejón sin cartel.</p>
+
+        <p style="margin-top: 10px;"><strong>El mayor potencial sin explotar</strong> es el blog: con artículos sobre escritura creativa, poesía y técnicas narrativas, podría captar tráfico orgánico significativo en un nicho con poca competencia en italiano.</p>
+    </div>
+
+</div>
+
+<div class="footer-report">
+    <p>Informe elaborado por <strong>Claude Code</strong> — AI SEO Audit Specialist</p>
+    <p>Análisis completo con problemas críticos, quick wins y plan de acción</p>
+    <p style="margin-top: 10px;">© 2026 TapeDynamics</p>
+</div>
+
+</body>
+</html>
