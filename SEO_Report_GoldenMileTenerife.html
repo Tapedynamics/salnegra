@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoría SEO - RE/MAX Golden Mile Tenerife</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; padding: 0; }
+        .header { background: #003366; color: white; padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; font-weight: bold; }
+        .header p { font-size: 18px; margin: 10px 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #003366; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #003366; }
+        h3 { font-size: 24px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        h4 { font-size: 20px; color: #555; margin-top: 25px; margin-bottom: 15px; }
+        p { margin-bottom: 15px; font-size: 18px; }
+        ul, ol { margin-left: 30px; margin-bottom: 20px; }
+        li { margin-bottom: 12px; font-size: 18px; }
+        .score-box { background: linear-gradient(135deg, #003366, #001a33); color: white; padding: 50px; border-radius: 10px; text-align: center; margin-bottom: 30px; }
+        .score-number { font-size: 80px; font-weight: bold; margin-bottom: 10px; }
+        .score-text { font-size: 24px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin: 30px 0; }
+        .metric { background: #f8f9fa; padding: 30px; border-radius: 8px; text-align: center; border: 2px solid #e0e0e0; }
+        .metric-value { font-size: 36px; font-weight: bold; margin-bottom: 10px; }
+        .metric-value.green { color: #28a745; }
+        .metric-value.red { color: #dc3545; }
+        .metric-value.orange { color: #ff9800; }
+        .metric-value.blue { color: #003366; }
+        .metric-label { font-size: 16px; color: #666; }
+        .problem-box { background: white; border-left: 6px solid #dc3545; padding: 30px; margin: 25px 0; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .problem-box.critical { border-left-color: #dc3545; }
+        .problem-box.high { border-left-color: #ff9800; }
+        .problem-box.medium { border-left-color: #003366; }
+        .problem-box h3 { margin-top: 0; font-size: 24px; }
+        .badge { display: inline-block; padding: 8px 15px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-left: 10px; }
+        .badge-critical { background: #dc3545; color: white; }
+        .badge-high { background: #ff9800; color: white; }
+        .badge-medium { background: #003366; color: white; }
+        .badge-success { background: #28a745; color: white; }
+        .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0; }
+        .before, .after { background: #f8f9fa; padding: 25px; border-radius: 8px; }
+        .before { border: 3px solid #dc3545; }
+        .after { border: 3px solid #28a745; }
+        .before h5 { color: #dc3545; font-size: 20px; margin-bottom: 15px; }
+        .after h5 { color: #28a745; font-size: 20px; margin-bottom: 15px; }
+        .code { background: #2d2d2d; color: #f8f8f2; padding: 25px; border-radius: 6px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 15px; line-height: 1.6; margin: 15px 0; }
+        .alert { padding: 20px 25px; border-radius: 6px; margin: 20px 0; font-size: 17px; }
+        .alert-success { background: #d4edda; border: 2px solid #28a745; color: #155724; }
+        .alert-danger { background: #f8d7da; border: 2px solid #dc3545; color: #721c24; }
+        .alert-warning { background: #fff3cd; border: 2px solid #ff9800; color: #856404; }
+        .alert-info { background: #d1ecf1; border: 2px solid #003366; color: #0c5460; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 17px; }
+        th { background: #003366; color: white; padding: 15px; text-align: left; font-size: 18px; }
+        td { padding: 15px; border-bottom: 1px solid #ddd; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li { padding: 15px; background: #f8f9fa; margin: 10px 0; border-left: 4px solid #003366; font-size: 18px; }
+        .checklist li::before { content: "☐ "; color: #003366; font-size: 22px; margin-right: 10px; }
+        .phase { background: #f8f9fa; padding: 30px; margin: 25px 0; border-radius: 8px; border-left: 6px solid #003366; }
+        .phase h3 { margin-top: 0; color: #003366; }
+        .tag { display: inline-block; background: #e0e0e0; padding: 8px 15px; margin: 5px; border-radius: 20px; font-size: 16px; }
+        .tag.green { background: #d4edda; color: #155724; }
+        .tag.red { background: #f8d7da; color: #721c24; }
+        .tag.orange { background: #fff3cd; color: #856404; }
+        strong { font-weight: bold; color: #1a1a1a; }
+        .footer { background: #2d2d2d; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
+        .toc { background: #f8f9fa; padding: 30px; margin-bottom: 30px; border-radius: 8px; border: 2px solid #003366; }
+        .toc h3 { margin-top: 0; color: #003366; }
+        .toc ul { margin-left: 20px; }
+        .toc a { color: #003366; text-decoration: none; font-size: 18px; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { body { font-size: 16px; } .header h1 { font-size: 24px; } h2 { font-size: 22px; } h3 { font-size: 20px; } .comparison { grid-template-columns: 1fr; } .section { padding: 25px; } .score-number { font-size: 60px; } .metric-value { font-size: 28px; } }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>INFORME DE AUDITORÍA SEO</h1>
+    <p><strong>RE/MAX Golden Mile Tenerife</strong></p>
+    <p>Fecha: 31 Marzo 2026</p>
+    <p>URL analizada: goldenmiletenerife.com</p>
+</div>
+
+<div class="container">
+
+    <!-- SCORE -->
+    <div class="score-box">
+        <div class="score-number">3.5/10</div>
+        <div class="score-text">Base SEO MUY DÉBIL — Problemas técnicos graves impiden la indexación</div>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+        <h3>Índice del Informe</h3>
+        <ul>
+            <li><a href="#metricas">1. Métricas Principales</a></li>
+            <li><a href="#puntos-fuertes">2. Puntos Fuertes</a></li>
+            <li><a href="#problemas-criticos">3. Problemas Críticos (5)</a></li>
+            <li><a href="#problemas-importantes">4. Problemas Importantes (5)</a></li>
+            <li><a href="#competencia">5. Análisis Competitivo</a></li>
+            <li><a href="#plan-accion">6. Plan de Acción</a></li>
+            <li><a href="#roi">7. ROI Estimado e Impacto Económico</a></li>
+            <li><a href="#conclusiones">8. Conclusiones</a></li>
+        </ul>
+    </div>
+
+    <!-- SECCIÓN 1: MÉTRICAS PRINCIPALES -->
+    <div class="section" id="metricas">
+        <h2>1. Métricas Principales</h2>
+
+        <div class="metrics-grid">
+            <div class="metric">
+                <div class="metric-value red">3</div>
+                <div class="metric-label">Páginas Indexadas en Google</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value red">5</div>
+                <div class="metric-label">Problemas Críticos</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value orange">5</div>
+                <div class="metric-label">Problemas Importantes</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value blue">137</div>
+                <div class="metric-label">Propiedades en Portafolio</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">10</div>
+                <div class="metric-label">Idiomas Soportados</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">9.6/10</div>
+                <div class="metric-label">Rating Reseñas Verificadas</div>
+            </div>
+        </div>
+
+        <h3>Puntuación por Categoría</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Puntuación</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Infraestructura (CDN, SSL, HTTP/3)</td>
+                    <td><strong>9/10</strong></td>
+                    <td><span class="tag green">Excelente</span></td>
+                </tr>
+                <tr>
+                    <td>Seguridad (Headers, HSTS)</td>
+                    <td><strong>2/10</strong></td>
+                    <td><span class="tag red">Crítico</span></td>
+                </tr>
+                <tr>
+                    <td>Indexación (Sitemap, Soft 404, www)</td>
+                    <td><strong>1/10</strong></td>
+                    <td><span class="tag red">Crítico</span></td>
+                </tr>
+                <tr>
+                    <td>On-Page (Titles, Meta, H1)</td>
+                    <td><strong>3/10</strong></td>
+                    <td><span class="tag red">Deficiente</span></td>
+                </tr>
+                <tr>
+                    <td>Schema Markup</td>
+                    <td><strong>2/10</strong></td>
+                    <td><span class="tag red">Crítico</span></td>
+                </tr>
+                <tr>
+                    <td>Multilingua (Hreflang, URL)</td>
+                    <td><strong>4/10</strong></td>
+                    <td><span class="tag orange">Deficiente</span></td>
+                </tr>
+                <tr>
+                    <td>Contenido y Keywords</td>
+                    <td><strong>5/10</strong></td>
+                    <td><span class="tag orange">Regular</span></td>
+                </tr>
+                <tr>
+                    <td>Backlinks y Autoridad</td>
+                    <td><strong>7/10</strong></td>
+                    <td><span class="tag green">Bueno</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECCIÓN 2: PUNTOS FUERTES -->
+    <div class="section" id="puntos-fuertes">
+        <h2>2. Puntos Fuertes</h2>
+
+        <div class="alert alert-success">
+            <strong>1. Infraestructura Técnica de Primer Nivel ⭐⭐⭐⭐⭐</strong><br><br>
+            <ul>
+                <li>Nuxt.js (Vue) con SSR capability — renderizado del lado del servidor listo para SEO</li>
+                <li>Cloudflare CDN global — tiempos de carga excelentes desde cualquier país</li>
+                <li>TLS 1.3 + certificado Google Trust Services — máxima seguridad SSL</li>
+                <li>HTTP/3 (QUIC) soportado — protocolo de última generación, muy pocos sitios inmobiliarios lo tienen</li>
+                <li>Compresión gzip/brotli activa — páginas más ligeras y rápidas</li>
+            </ul>
+            <br>
+            <strong>Impacto:</strong> Base técnica sólida que facilita todas las mejoras. Los competidores no tienen esta ventaja.
+        </div>
+
+        <div class="alert alert-success">
+            <strong>2. Perfil de Backlinks Sólido ⭐⭐⭐⭐</strong><br><br>
+            <ul>
+                <li>Links desde remax.es y global.remax.com (alta autoridad de dominio)</li>
+                <li>Presencia en idealista.com — el portal inmobiliario número 1 de España</li>
+                <li>CEST.org (asociación turística de Tenerife)</li>
+                <li><strong>Rating 9.6/10 en 83 reseñas verificadas</strong> — señal de confianza muy fuerte</li>
+            </ul>
+            <br>
+            <strong>Impacto:</strong> Autoridad de dominio buena. No falta autoridad, falta visibilidad técnica.
+        </div>
+
+        <div class="alert alert-success">
+            <strong>3. Cobertura Multilingua Amplia ⭐⭐⭐⭐</strong><br><br>
+            <ul>
+                <li>10 idiomas disponibles: EN, DE, FR, ES, IT, RU, KO, JA, ZH, AR</li>
+                <li>Mercado internacional cubierto — compradores de todos los continentes</li>
+                <li>Estructura URL con prefijo de idioma: /en/, /es/, /de/, /fr/...</li>
+                <li>Ventaja competitiva clara frente a competidores con 1-5 idiomas</li>
+            </ul>
+            <br>
+            <strong>Impacto:</strong> Potencial de capturar tráfico internacional enorme si se corrige la indexación.
+        </div>
+
+        <div class="alert alert-success">
+            <strong>4. Robots.txt Inteligente ⭐⭐⭐</strong><br><br>
+            <ul>
+                <li>Googlebot permitido correctamente para todas las rutas principales</li>
+                <li>AI crawlers bloqueados correctamente: ClaudeBot, GPTBot, CCBot, anthropic-ai</li>
+                <li>Content-Signal claro: <em>search=yes, ai-train=no</em></li>
+            </ul>
+            <br>
+            <strong>Impacto:</strong> Buena práctica que protege el contenido de scraping no autorizado.
+        </div>
+    </div>
+
+    <!-- SECCIÓN 3: PROBLEMAS CRÍTICOS -->
+    <div class="section" id="problemas-criticos">
+        <h2>3. Problemas Críticos</h2>
+
+        <div class="problem-box critical">
+            <h3>Problema 1: SOLO 3 Páginas Indexadas en Google <span class="badge badge-critical">CRÍTICO</span></h3>
+            <p>De un sitio con <strong>137+ propiedades, páginas de agentes y 10 idiomas</strong>, se estima un potencial de 500+ páginas indexables. Google actualmente solo reconoce <strong>3 páginas</strong>.</p>
+            <ul>
+                <li><strong>Causa principal:</strong> Combinación de sitemap.xml inaccesible (403) + soft 404 universal + posible problema de hidratación SSR en Nuxt.js</li>
+                <li><strong>Impacto:</strong> El 99% del contenido es INVISIBLE en Google. Ninguna propiedad aparece en búsquedas orgánicas</li>
+            </ul>
+            <div class="alert alert-danger">
+                Un portal inmobiliario con 137 propiedades y solo 3 páginas indexadas equivale a tener una tienda con el escaparate completamente tapado.
+            </div>
+            <p><strong>Solución:</strong> Verificar configuración SSR en Nuxt (hydration errors), corregir sitemap, enviar todas las URLs a Google Search Console manualmente.</p>
+            <p><strong>Tiempo estimado:</strong> 2-4 horas | <strong>ROI:</strong> +1000% páginas indexadas</p>
+        </div>
+
+        <div class="problem-box critical">
+            <h3>Problema 2: www.goldenmiletenerife.com devuelve 404 <span class="badge badge-critical">CRÍTICO</span></h3>
+            <p>La versión con <strong>www</strong> del dominio devuelve un error 404 en lugar de redireccionar automáticamente a la versión sin www. Cualquier enlace, citación en prensa o referencia que incluya www conduce a una página de error.</p>
+            <ul>
+                <li>Pérdida directa de link juice — backlinks con www no transfieren autoridad</li>
+                <li>Tráfico directo perdido — usuarios que escriben www en el navegador rebotan inmediatamente</li>
+                <li>Google puede interpretar el dominio www y non-www como dos sitios distintos con contenido duplicado</li>
+            </ul>
+            <div class="comparison">
+                <div class="before">
+                    <h5>✗ Situación Actual</h5>
+                    <p>www.goldenmiletenerife.com → <strong>404 Error</strong></p>
+                    <p>Tráfico y link juice: PERDIDOS</p>
+                </div>
+                <div class="after">
+                    <h5>✓ Solución: Cloudflare Page Rule</h5>
+                    <div class="code">URL: www.goldenmiletenerife.com/*
+Setting: Forwarding URL
+Status: 301 - Permanent Redirect
+Destination: https://goldenmiletenerife.com/$1</div>
+                </div>
+            </div>
+            <p><strong>Tiempo estimado:</strong> 15 minutos | <strong>ROI:</strong> Recuperación inmediata del tráfico y autoridad perdidos</p>
+        </div>
+
+        <div class="problem-box critical">
+            <h3>Problema 3: Soft 404 Universal <span class="badge badge-critical">CRÍTICO</span></h3>
+            <p>Cualquier URL inexistente del sitio devuelve <strong>HTTP 200 OK</strong> en lugar del correcto <strong>HTTP 404 Not Found</strong>. Esto significa que Google indexa páginas fantasma y desperdicia el crawl budget disponible en URLs sin contenido real.</p>
+            <ul>
+                <li>Google ve cientos de "páginas" que en realidad no existen</li>
+                <li>El crawl budget se agota en URLs fantasma en lugar de propiedades reales</li>
+                <li>Las páginas de error aparecen en el índice de Google, dañando la reputación del sitio</li>
+            </ul>
+            <div class="comparison">
+                <div class="before">
+                    <h5>✗ Situación Actual (Nuxt sin configurar)</h5>
+                    <div class="code">GET /pagina-inexistente
+→ HTTP 200 OK (incorrecto)
+→ Google indexa página vacía</div>
+                </div>
+                <div class="after">
+                    <h5>✓ Solución: Error Handling Nuxt</h5>
+                    <div class="code">// error.vue (Nuxt 3)
+// pages/[...slug].vue
+definePageMeta({
+  validate: async (route) => {
+    // si no existe → throw 404
+    return false
+  }
+})
+
+// nuxt.config.ts
+routeRules: {
+  '/**': { headers: { } }
+}</div>
+                </div>
+            </div>
+            <p><strong>Tiempo estimado:</strong> 1-2 horas | <strong>ROI:</strong> Crawl budget recuperado, indexación limpia</p>
+        </div>
+
+        <div class="problem-box critical">
+            <h3>Problema 4: Sitemap.xml Inaccesible (403 Forbidden) <span class="badge badge-critical">CRÍTICO</span></h3>
+            <p>La URL <code>goldenmiletenerife.com/sitemap.xml</code> devuelve <strong>403 Forbidden</strong>. Google no puede descubrir automáticamente las URLs del sitio. Además, no existe ninguna referencia al sitemap en el archivo robots.txt.</p>
+            <ul>
+                <li>Google descubre solo las 3 páginas que ya conoce (por backlinks externos)</li>
+                <li>Las 137 propiedades, los perfiles de agentes y las 10 versiones de idioma son invisibles para el crawler</li>
+            </ul>
+            <h4>Ejemplo de Sitemap para Portal Inmobiliario:</h4>
+            <div class="code">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;sitemap&gt;
+    &lt;loc&gt;https://goldenmiletenerife.com/sitemap-main.xml&lt;/loc&gt;
+  &lt;/sitemap&gt;
+  &lt;sitemap&gt;
+    &lt;loc&gt;https://goldenmiletenerife.com/sitemap-properties.xml&lt;/loc&gt;
+  &lt;/sitemap&gt;
+  &lt;sitemap&gt;
+    &lt;loc&gt;https://goldenmiletenerife.com/sitemap-agents.xml&lt;/loc&gt;
+  &lt;/sitemap&gt;
+&lt;/sitemapindex&gt;
+
+&lt;!-- sitemap-properties.xml (ejemplo entrada) --&gt;
+&lt;url&gt;
+  &lt;loc&gt;https://goldenmiletenerife.com/en/properties/villa-arona-ref123&lt;/loc&gt;
+  &lt;lastmod&gt;2026-03-31&lt;/lastmod&gt;
+  &lt;changefreq&gt;weekly&lt;/changefreq&gt;
+  &lt;priority&gt;0.9&lt;/priority&gt;
+  &lt;xhtml:link rel="alternate" hreflang="en"
+    href="https://goldenmiletenerife.com/en/properties/villa-arona-ref123"/&gt;
+  &lt;xhtml:link rel="alternate" hreflang="es"
+    href="https://goldenmiletenerife.com/es/propiedades/villa-arona-ref123"/&gt;
+  &lt;xhtml:link rel="alternate" hreflang="de"
+    href="https://goldenmiletenerife.com/de/immobilien/villa-arona-ref123"/&gt;
+&lt;/url&gt;</div>
+            <p><strong>Solución:</strong> Instalar módulo <code>@nuxtjs/sitemap</code>, generar sitemap automático a partir del listado de propiedades y añadir <code>Sitemap: https://goldenmiletenerife.com/sitemap.xml</code> en robots.txt.</p>
+            <p><strong>Tiempo estimado:</strong> 1-2 horas | <strong>ROI:</strong> Google descubre todas las páginas en 1-2 semanas</p>
+        </div>
+
+        <div class="problem-box critical">
+            <h3>Problema 5: Ausencia Total de Security Headers <span class="badge badge-critical">CRÍTICO</span></h3>
+            <p>El sitio no implementa ninguno de los headers de seguridad estándar. Adicionalmente, el header <code>x-powered-by: Nuxt</code> expone el stack tecnológico a atacantes potenciales.</p>
+            <ul>
+                <li>Sin HSTS — conexiones HTTP no forzadas a HTTPS</li>
+                <li>Sin X-Frame-Options — vulnerable a ataques de clickjacking</li>
+                <li>Sin X-Content-Type-Options — vulnerable a MIME-type sniffing</li>
+                <li>Sin Content-Security-Policy — vulnerable a XSS</li>
+                <li>Sin Referrer-Policy — fuga de información a sitios externos</li>
+            </ul>
+            <div class="comparison">
+                <div class="before">
+                    <h5>✗ Situación Actual</h5>
+                    <p>x-powered-by: Nuxt</p>
+                    <p>Sin HSTS</p>
+                    <p>Sin X-Frame-Options</p>
+                    <p>Sin CSP</p>
+                    <p>Puntuación SecurityHeaders.com: F</p>
+                </div>
+                <div class="after">
+                    <h5>✓ Cloudflare Transform Rules</h5>
+                    <div class="code">Strict-Transport-Security:
+  max-age=31536000; includeSubDomains
+
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=()
+
+# Eliminar header expuesto:
+Remove: x-powered-by</div>
+                </div>
+            </div>
+            <p><strong>Tiempo estimado:</strong> 30 minutos en Cloudflare | <strong>ROI:</strong> Seguridad mejorada + señal de confianza para Google</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 4: PROBLEMAS IMPORTANTES -->
+    <div class="section" id="problemas-importantes">
+        <h2>4. Problemas Importantes</h2>
+
+        <div class="problem-box high">
+            <h3>Problema 6: Titles No Optimizados para Keywords <span class="badge badge-high">ALTO</span></h3>
+            <p>Los títulos de página (title tags) presentan múltiples problemas que reducen el CTR en los resultados de búsqueda y desperdician el potencial SEO de cada URL.</p>
+            <ul>
+                <li>Homepage EN: <em>"Home - Remax Golden Mile - Real estate agency in Tenerife"</em> — la palabra "Home" no tiene valor SEO, ocupa el primer puesto del title</li>
+                <li>Propiedades en ALL CAPS: <em>"DOUBLE DETACHED VILLA IN Arona CASCO!"</em> — no profesional, dificulta la lectura en SERP</li>
+                <li>Error ortográfico en francés: <em>"Accueuil"</em> en lugar de <em>"Accueil"</em> — daña la credibilidad con mercado francófono</li>
+                <li>Marca inconsistente: mezcla "Remax" y "RE/MAX" en distintas páginas</li>
+            </ul>
+            <div class="comparison">
+                <div class="before">
+                    <h5>✗ Title Actual</h5>
+                    <p>"Home - Remax Golden Mile - Real estate agency in Tenerife"</p>
+                    <p>Keyword al final, "Home" sin valor al inicio</p>
+                </div>
+                <div class="after">
+                    <h5>✓ Title Optimizado</h5>
+                    <p>"Properties for Sale in Tenerife South | RE/MAX Golden Mile"</p>
+                    <p>Keyword principal al inicio, marca al final</p>
+                </div>
+            </div>
+            <p><strong>Tiempo estimado:</strong> 2-3 horas | <strong>ROI:</strong> +15-25% CTR en resultados de búsqueda</p>
+        </div>
+
+        <div class="problem-box high">
+            <h3>Problema 7: Schema Markup Ausente o Insuficiente <span class="badge badge-high">ALTO</span></h3>
+            <p>No se detectan rich snippets en Google para este sitio. Los competidores que sí implementan Schema.org aparecen con estrellas de valoración, precios y dirección directamente en los resultados de búsqueda, ocupando más espacio visual y generando más clics.</p>
+            <ul>
+                <li>Sin Schema RealEstateAgent — Google no identifica el negocio como agencia inmobiliaria</li>
+                <li>Sin Schema RealEstateListing — las propiedades no aparecen con precio y características en SERP</li>
+                <li>Sin Schema Person para agentes — los perfiles de agentes no generan rich snippets</li>
+                <li>Sin BreadcrumbList — no se muestran migas de pan en los resultados</li>
+                <li>Sin LocalBusiness — sin mapa, dirección ni horarios en Google</li>
+            </ul>
+            <h4>Ejemplo JSON-LD Recomendado:</h4>
+            <div class="code">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "RE/MAX Golden Mile Tenerife",
+  "url": "https://goldenmiletenerife.com",
+  "logo": "https://goldenmiletenerife.com/logo.png",
+  "description": "Agencia inmobiliaria especializada en propiedades de lujo en el sur de Tenerife",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Costa Adeje",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "addressCountry": "ES"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "9.6",
+    "reviewCount": "83",
+    "bestRating": "10"
+  },
+  "areaServed": "Tenerife Sur",
+  "sameAs": [
+    "https://www.remax.es/golden-mile"
+  ]
+}
+&lt;/script&gt;
+
+&lt;!-- Para cada propiedad --&gt;
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateListing",
+  "name": "Villa de lujo en Costa Adeje",
+  "description": "Villa independiente con piscina privada y vistas al mar",
+  "url": "https://goldenmiletenerife.com/en/properties/villa-costa-adeje-ref456",
+  "offers": {
+    "@type": "Offer",
+    "price": "850000",
+    "priceCurrency": "EUR"
+  },
+  "numberOfRooms": 4,
+  "floorSize": {
+    "@type": "QuantitativeValue",
+    "value": 320,
+    "unitCode": "MTK"
+  }
+}
+&lt;/script&gt;</div>
+            <p><strong>Tiempo estimado:</strong> 4-6 horas | <strong>ROI:</strong> +20-30% visibilidad SERP con rich snippets activos</p>
+        </div>
+
+        <div class="problem-box high">
+            <h3>Problema 8: URLs Multilingua Inconsistentes <span class="badge badge-high">MEDIO-ALTO</span></h3>
+            <p>La estructura de URLs multilingua presenta inconsistencias que confunden a Google y dificultan el crawling correcto de cada versión de idioma.</p>
+            <ul>
+                <li><code>/en/propiedades/</code> — el segmento "propiedades" es español en una URL inglesa (debería ser <code>/en/properties/</code>)</li>
+                <li><code>/en/contacto-en/</code> — el sufijo "-en" es redundante ya que el prefijo /en/ ya indica el idioma</li>
+                <li><code>/unete/</code> — página sin prefijo de idioma, URL huérfana no asociada a ninguna versión lingüística</li>
+                <li><code>/fr/equipe-3</code> — slug numérico no descriptivo, debería ser <code>/fr/equipe/nom-agente</code></li>
+                <li>Hreflang tags posiblemente incorrectos o ausentes en estas páginas inconsistentes</li>
+            </ul>
+            <p><strong>Solución:</strong> Auditar completa la estructura de URLs, corregir slugs en cada idioma y configurar redirects 301 desde las URLs antiguas hacia las nuevas.</p>
+            <p><strong>Tiempo estimado:</strong> 3-4 horas | <strong>ROI:</strong> Mejor crawling multilingua, más páginas indexadas por idioma</p>
+        </div>
+
+        <div class="problem-box high">
+            <h3>Problema 9: LinkedIn Registrado como Perfil Personal <span class="badge badge-high">MEDIO</span></h3>
+            <p>La presencia en LinkedIn de RE/MAX Golden Mile está registrada como <code>linkedin.com/in/</code> (perfil personal) en lugar de <code>linkedin.com/company/</code> (página de empresa). Esta diferencia tiene implicaciones significativas para la visibilidad B2B.</p>
+            <ul>
+                <li>Sin acceso a LinkedIn Company Analytics</li>
+                <li>No se pueden publicar actualizaciones de empresa visibles para seguidores</li>
+                <li>Los agentes no pueden vincular su perfil a la empresa</li>
+                <li>Menor credibilidad ante inversores internacionales que buscan en LinkedIn</li>
+            </ul>
+            <p><strong>Solución:</strong> Crear Company Page oficial y migrar seguidores y contenido existente.</p>
+            <p><strong>Tiempo estimado:</strong> 1 hora | <strong>ROI:</strong> Visibilidad B2B + herramienta de reclutamiento de agentes</p>
+        </div>
+
+        <div class="problem-box high">
+            <h3>Problema 10: Sin Google Analytics Confirmado <span class="badge badge-high">MEDIO</span></h3>
+            <p>No se detecta con certeza la presencia de GA4 ni Google Tag Manager activo en el sitio. Es posible que Cloudflare esté bloqueando la detección externa, pero la ausencia de datos confirmados es una señal de alerta.</p>
+            <ul>
+                <li>Sin analytics = imposible medir qué páginas generan más interés</li>
+                <li>No se puede saber desde qué países llegan los visitantes (crítico para priorizar idiomas)</li>
+                <li>Sin datos de conversión (formularios de contacto, llamadas, WhatsApp)</li>
+                <li>No se pueden tomar decisiones de contenido basadas en datos reales</li>
+            </ul>
+            <p><strong>Solución:</strong> Verificar implementación de GA4 desde Google Search Console. Si no está activo, implementar GA4 vía Cloudflare Zaraz (sin afectar velocidad) o GTM.</p>
+            <p><strong>Tiempo estimado:</strong> 1 hora | <strong>ROI:</strong> Base para todas las decisiones SEO y de marketing futuras</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 5: ANÁLISIS COMPETITIVO -->
+    <div class="section" id="competencia">
+        <h2>5. Análisis Competitivo</h2>
+        <p>Comparativa con los principales competidores en el mercado inmobiliario de Tenerife Sur:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Factor</th>
+                    <th>Golden Mile</th>
+                    <th>DOM Tenerife</th>
+                    <th>TenerifeReal</th>
+                    <th>ML Tenerife</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Framework</strong></td>
+                    <td>Nuxt.js (Vue)</td>
+                    <td>PHP custom</td>
+                    <td>JS custom</td>
+                    <td>WordPress</td>
+                </tr>
+                <tr>
+                    <td><strong>CDN</strong></td>
+                    <td><span class="tag green">Cloudflare ✓</span></td>
+                    <td><span class="tag red">No ✗</span></td>
+                    <td><span class="tag red">No ✗</span></td>
+                    <td><span class="tag red">No ✗</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Schema Markup</strong></td>
+                    <td><span class="tag red">No confirmado</span></td>
+                    <td><span class="tag orange">Probable</span></td>
+                    <td><span class="tag green">LocalBusiness + WebSite</span></td>
+                    <td><span class="tag green">Organization + WebPage</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Google Analytics</strong></td>
+                    <td><span class="tag red">No confirmado</span></td>
+                    <td><span class="tag green">UA activo</span></td>
+                    <td><span class="tag green">GTM activo</span></td>
+                    <td><span class="tag green">GA4 activo</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Idiomas</strong></td>
+                    <td><span class="tag green">10 ✓✓</span></td>
+                    <td><span class="tag orange">5</span></td>
+                    <td><span class="tag orange">4</span></td>
+                    <td><span class="tag red">1 (EN)</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Páginas Indexadas</strong></td>
+                    <td><span class="tag red">3 ✗✗✗</span></td>
+                    <td><span class="tag green">50+</span></td>
+                    <td><span class="tag green">30+</span></td>
+                    <td><span class="tag orange">20+</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Optimización Titles</strong></td>
+                    <td><span class="tag red">Pobre</span></td>
+                    <td><span class="tag green">Buena</span></td>
+                    <td><span class="tag green">Buena</span></td>
+                    <td><span class="tag orange">Regular</span></td>
+                </tr>
+                <tr>
+                    <td><strong>SSL/HTTPS</strong></td>
+                    <td><span class="tag green">TLS 1.3 ✓✓</span></td>
+                    <td><span class="tag green">Sí</span></td>
+                    <td><span class="tag green">Sí</span></td>
+                    <td><span class="tag green">Sí</span></td>
+                </tr>
+                <tr>
+                    <td><strong>HTTP/3</strong></td>
+                    <td><span class="tag green">Sí ✓✓</span></td>
+                    <td><span class="tag red">No</span></td>
+                    <td><span class="tag red">No</span></td>
+                    <td><span class="tag red">No</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert alert-warning">
+            <strong>La Paradoja RE/MAX Golden Mile:</strong> A pesar de tener la <strong>MEJOR infraestructura técnica</strong> (Cloudflare, Nuxt.js, TLS 1.3, HTTP/3) y el <strong>portafolio MÁS GRANDE</strong> (137 propiedades en 10 idiomas), RE/MAX Golden Mile es el <strong>MENOS visible en Google</strong> entre los competidores analizados. La paradoja se debe a errores de configuración técnica, no a falta de contenido, autoridad o inversión en la plataforma.
+        </div>
+    </div>
+
+    <!-- SECCIÓN 6: PLAN DE ACCIÓN -->
+    <div class="section" id="plan-accion">
+        <h2>6. Plan de Acción</h2>
+
+        <div class="phase">
+            <h3>FASE 1: Emergencia Técnica — 1 Semana</h3>
+            <p><em>Objetivo: Hacer el sitio visible para Google. De 3 a 100+ páginas indexadas.</em></p>
+            <ul class="checklist">
+                <li>Corregir redirect 301 www → non-www (Cloudflare Page Rules — 15 min)</li>
+                <li>Corregir soft 404 en Nuxt.js — configurar error handling correcto (1-2h)</li>
+                <li>Generar y publicar sitemap.xml con Nuxt sitemap module (1-2h)</li>
+                <li>Añadir referencia al sitemap en robots.txt (5 min)</li>
+                <li>Registrar y verificar Google Search Console INMEDIATAMENTE (30 min)</li>
+                <li>Enviar sitemap.xml a Google Search Console (5 min)</li>
+                <li>Añadir security headers vía Cloudflare Transform Rules (30 min)</li>
+                <li>Eliminar header x-powered-by (5 min)</li>
+            </ul>
+            <p><strong>ROI esperado Fase 1:</strong> De 3 a 100+ páginas indexadas en 2-4 semanas.</p>
+        </div>
+
+        <div class="phase">
+            <h3>FASE 2: Optimización On-Page — 2-3 Semanas</h3>
+            <p><em>Objetivo: Maximizar visibilidad de las páginas ya indexadas. Rich snippets activos.</em></p>
+            <ul class="checklist">
+                <li>Reescribir TODOS los title tags con keyword principal al inicio (homepage, propiedades, agentes)</li>
+                <li>Implementar Schema JSON-LD: RealEstateAgent + LocalBusiness en homepage</li>
+                <li>Implementar Schema RealEstateListing en cada página de propiedad</li>
+                <li>Implementar Schema Person en cada página de agente</li>
+                <li>Corregir URLs multilingua inconsistentes con redirects 301 (en/propiedades → en/properties)</li>
+                <li>Verificar e implementar hreflang tags correctos en todas las páginas</li>
+                <li>Verificar e implementar GA4 + eventos de conversión (formularios, WhatsApp)</li>
+                <li>Implementar FAQ schema en páginas de preguntas frecuentes</li>
+                <li>Añadir Open Graph tags completos para compartir en redes sociales</li>
+            </ul>
+            <p><strong>ROI esperado Fase 2:</strong> +200% visibilidad SERP, rich snippets activos con estrellas y precios.</p>
+        </div>
+
+        <div class="phase">
+            <h3>FASE 3: Crecimiento Orgánico — 1-3 Meses</h3>
+            <p><em>Objetivo: Capturar tráfico de largo plazo. Posicionamiento en top keywords del sector.</em></p>
+            <ul class="checklist">
+                <li>Crear landing pages SEO por zona: Costa Adeje, Los Cristianos, Las Américas, El Madroñal</li>
+                <li>Crear landing pages por tipo de propiedad: villas, apartamentos, áticos, terrenos</li>
+                <li>Lanzar blog inmobiliario: guías de compra para extranjeros, mercado Tenerife, aspectos legales</li>
+                <li>Link building: blogs de expat, portales turísticos, prensa local Tenerife</li>
+                <li>Crear Company Page oficial en LinkedIn y migrar seguidores</li>
+                <li>Content marketing multilingua — un artículo por idioma al mes</li>
+                <li>A/B testing meta descriptions para mejorar CTR</li>
+                <li>Configurar alertas de reseñas y responder activamente en Google Business Profile</li>
+            </ul>
+            <p><strong>ROI esperado Fase 3:</strong> +50% tráfico orgánico en 6 meses, posicionamiento top 5 en keywords principales.</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 7: ROI E IMPACTO ECONÓMICO -->
+    <div class="section" id="roi">
+        <h2>7. ROI Estimado e Impacto Económico</h2>
+
+        <div class="metrics-grid">
+            <div class="metric">
+                <div class="metric-value green">+300%</div>
+                <div class="metric-label">Páginas indexadas en 3 meses (escenario conservador)</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">+50%</div>
+                <div class="metric-label">Tráfico orgánico en 3 meses</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">5-10</div>
+                <div class="metric-label">Leads extra/mes (escenario conservador)</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">+1000%</div>
+                <div class="metric-label">Páginas indexadas en 6 meses (escenario optimista)</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">+150%</div>
+                <div class="metric-label">Tráfico orgánico en 6 meses</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">20-30</div>
+                <div class="metric-label">Leads extra/mes (escenario optimista)</div>
+            </div>
+        </div>
+
+        <div class="alert alert-success" style="font-size: 18px; padding: 30px;">
+            <strong>Impacto Económico Directo:</strong><br><br>
+            Asumiendo valor medio de transacción inmobiliaria en Tenerife Sur: <strong>€250,000 – €400,000</strong><br>
+            Comisión media RE/MAX: ~5% = <strong>€12,500 – €20,000 por venta</strong><br><br>
+            Con solo <strong>1-2 ventas extra al mes</strong> generadas por la mejora SEO:<br>
+            <strong style="font-size: 22px; color: #155724;">Incremento mensual estimado: €12,500 – €40,000</strong>
+        </div>
+
+        <h3>KPIs y Objetivos de Seguimiento</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Métrica</th>
+                    <th>Actual</th>
+                    <th>Objetivo 3 Meses</th>
+                    <th>Objetivo 6 Meses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Páginas indexadas en Google</td>
+                    <td><strong>3</strong></td>
+                    <td>100+</td>
+                    <td>300+</td>
+                </tr>
+                <tr>
+                    <td>Ranking "buy property tenerife south"</td>
+                    <td>No presente</td>
+                    <td>Página 2</td>
+                    <td>Top 10</td>
+                </tr>
+                <tr>
+                    <td>Ranking "real estate tenerife"</td>
+                    <td>No presente</td>
+                    <td>Página 2</td>
+                    <td>Top 5</td>
+                </tr>
+                <tr>
+                    <td>Ranking "immobilien tenerife" (alemán)</td>
+                    <td>No presente</td>
+                    <td>Página 2</td>
+                    <td>Top 5</td>
+                </tr>
+                <tr>
+                    <td>Tráfico orgánico mensual</td>
+                    <td>~Mínimo</td>
+                    <td>+200%</td>
+                    <td>+500%</td>
+                </tr>
+                <tr>
+                    <td>Leads orgánicos/mes</td>
+                    <td>~0</td>
+                    <td>5-10</td>
+                    <td>15-25</td>
+                </tr>
+                <tr>
+                    <td>Rich snippets activos en Google</td>
+                    <td>0</td>
+                    <td>5+</td>
+                    <td>15+</td>
+                </tr>
+                <tr>
+                    <td>Páginas indexadas por idioma (ej: /de/)</td>
+                    <td>0-1</td>
+                    <td>20+</td>
+                    <td>50+</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECCIÓN 8: CONCLUSIONES -->
+    <div class="section" id="conclusiones">
+        <h2>8. Conclusiones</h2>
+
+        <div class="score-box">
+            <div class="score-text" style="font-size: 20px; margin-bottom: 20px; font-weight: bold;">VEREDICTO FINAL</div>
+            <p style="font-size: 19px; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                El sitio <strong>goldenmiletenerife.com</strong> presenta una <strong>PARADOJA TÉCNICA</strong>: infraestructura de primer nivel (Cloudflare, Nuxt.js, TLS 1.3, HTTP/3) combinada con una configuración SEO que impide a Google indexar el contenido.<br><br>
+                Con <strong>137 propiedades activas</strong> y <strong>10 idiomas</strong>, este sitio DEBERÍA dominar las búsquedas inmobiliarias en Tenerife Sur para compradores europeos, asiáticos y de Oriente Medio. En cambio, solo <strong>3 páginas son visibles en Google</strong> — menos que cualquier competidor analizado.<br><br>
+                <strong>La buena noticia:</strong> los problemas son TODOS técnicos y resolubles. No falta contenido. No falta autoridad. No faltan backlinks. Falta configuración correcta. Las mejoras de Fase 1 — <em>1 semana de trabajo técnico</em> — pueden multiplicar por 30 las páginas indexadas.
+            </p>
+        </div>
+
+        <h3>Próximos Pasos Inmediatos</h3>
+        <ul class="checklist">
+            <li>Contactar al desarrollador del sitio para acceso a Nuxt config y panel Cloudflare</li>
+            <li>Registrar Google Search Console INMEDIATAMENTE con el dominio goldenmiletenerife.com</li>
+            <li>Corregir redirect www → non-www (15 minutos con acceso a Cloudflare)</li>
+            <li>Corregir soft 404 en Nuxt.js error handling (1 hora con acceso al código)</li>
+            <li>Generar y publicar sitemap.xml (1 hora con Nuxt sitemap module)</li>
+            <li>Enviar sitemap a Google Search Console y solicitar reindexación</li>
+        </ul>
+
+        <div class="alert alert-info">
+            <strong>Próxima Auditoría Recomendada:</strong> Julio 2026<br>
+            Revisión de resultados de Fase 1 y 2. Verificación de páginas indexadas, posicionamiento en keywords target y leads generados desde canal orgánico.
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p><strong>SEO Audit Report — RE/MAX Golden Mile Tenerife</strong></p>
+    <p style="margin-top: 10px; color: #aaa;">Informe generado el 31 Marzo 2026 | Powered by TapeDynamics AI</p>
+    <p style="margin-top: 5px; color: #aaa;">tapedynamics8283.com</p>
+</div>
+
+</body>
+</html>
