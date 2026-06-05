@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoría SEO - InMedina.com (Riads & Tours Marruecos)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; padding: 0; }
+        .header { background: linear-gradient(135deg, #8a3e02, #c2410c); color: white; padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; font-weight: bold; }
+        .header p { font-size: 18px; margin: 10px 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #8a3e02; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #c2410c; }
+        h3 { font-size: 24px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        h4 { font-size: 20px; color: #555; margin-top: 25px; margin-bottom: 15px; }
+        p { margin-bottom: 15px; font-size: 18px; }
+        ul, ol { margin-left: 30px; margin-bottom: 20px; }
+        li { margin-bottom: 12px; font-size: 18px; }
+        .score-box { background: linear-gradient(135deg, #8a3e02, #c2410c); color: white; padding: 50px; border-radius: 10px; text-align: center; margin-bottom: 30px; }
+        .score-number { font-size: 80px; font-weight: bold; margin-bottom: 10px; }
+        .score-text { font-size: 24px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin: 30px 0; }
+        .metric { background: #f8f9fa; padding: 30px; border-radius: 8px; text-align: center; border: 2px solid #e0e0e0; }
+        .metric-value { font-size: 36px; font-weight: bold; margin-bottom: 10px; }
+        .metric-value.green { color: #28a745; }
+        .metric-value.red { color: #dc3545; }
+        .metric-value.orange { color: #ff9800; }
+        .metric-value.blue { color: #8a3e02; }
+        .metric-label { font-size: 16px; color: #666; }
+        .problem-box { background: white; border-left: 6px solid #dc3545; padding: 30px; margin: 25px 0; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .problem-box.critical { border-left-color: #dc3545; }
+        .problem-box.high { border-left-color: #ff9800; }
+        .problem-box.medium { border-left-color: #c2410c; }
+        .problem-box h3 { margin-top: 0; font-size: 24px; }
+        .badge { display: inline-block; padding: 8px 15px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-left: 10px; }
+        .badge-critical { background: #dc3545; color: white; }
+        .badge-high { background: #ff9800; color: white; }
+        .badge-medium { background: #c2410c; color: white; }
+        .badge-success { background: #28a745; color: white; }
+        .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0; }
+        .before, .after { background: #f8f9fa; padding: 25px; border-radius: 8px; }
+        .before { border: 3px solid #dc3545; }
+        .after { border: 3px solid #28a745; }
+        .before h5 { color: #dc3545; font-size: 20px; margin-bottom: 15px; }
+        .after h5 { color: #28a745; font-size: 20px; margin-bottom: 15px; }
+        .code { background: #2d2d2d; color: #f8f8f2; padding: 25px; border-radius: 6px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.6; margin: 15px 0; white-space: pre-wrap; word-break: break-word; }
+        .alert { padding: 20px 25px; border-radius: 6px; margin: 20px 0; font-size: 17px; }
+        .alert-success { background: #d4edda; border: 2px solid #28a745; color: #155724; }
+        .alert-danger { background: #f8d7da; border: 2px solid #dc3545; color: #721c24; }
+        .alert-warning { background: #fff3cd; border: 2px solid #ff9800; color: #856404; }
+        .alert-info { background: #fdebd0; border: 2px solid #c2410c; color: #7a3a0c; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 17px; }
+        th { background: #8a3e02; color: white; padding: 15px; text-align: left; font-size: 18px; }
+        td { padding: 15px; border-bottom: 1px solid #ddd; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li { padding: 15px; background: #f8f9fa; margin: 10px 0; border-left: 4px solid #c2410c; font-size: 18px; }
+        .checklist li::before { content: "\2610 "; color: #c2410c; font-size: 22px; margin-right: 10px; }
+        .phase { background: #f8f9fa; padding: 30px; margin: 25px 0; border-radius: 8px; border-left: 6px solid #c2410c; }
+        .phase h3 { margin-top: 0; color: #8a3e02; }
+        .tag { display: inline-block; background: #e0e0e0; padding: 8px 15px; margin: 5px; border-radius: 20px; font-size: 16px; }
+        .tag.green { background: #d4edda; color: #155724; }
+        .tag.red { background: #f8d7da; color: #721c24; }
+        .tag.orange { background: #fff3cd; color: #856404; }
+        strong { font-weight: bold; color: #1a1a1a; }
+        code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; font-size: 16px; }
+        .footer { background: #2d2d2d; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
+        .toc { background: #f8f9fa; padding: 30px; margin-bottom: 30px; border-radius: 8px; border: 2px solid #c2410c; }
+        .toc h3 { margin-top: 0; color: #8a3e02; }
+        .toc ul { margin-left: 20px; }
+        .toc a { color: #8a3e02; text-decoration: none; font-size: 18px; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { body { font-size: 16px; } .header h1 { font-size: 24px; } h2 { font-size: 22px; } h3 { font-size: 20px; } .comparison { grid-template-columns: 1fr; } .section { padding: 25px; } .score-number { font-size: 60px; } .metric-value { font-size: 28px; } }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>INFORME DE AUDITORÍA SEO</h1>
+    <p><strong>InMedina.com — Riads, Tours &amp; Experiencias en Marruecos (Medina de Marrakech)</strong></p>
+    <p>Fecha: 5 Junio 2026</p>
+    <p>URL analizada: inmedina.com</p>
+</div>
+
+<div class="container">
+
+    <!-- SCORE -->
+    <div class="score-box">
+        <div class="score-number">6/10</div>
+        <div class="score-text">Buena base WordPress + AIOSEO y catálogo amplio (56 riads, 31 experiencias), pero el sitio es monolingüe en inglés, el Schema es pobre y faltan los headers de seguridad — dejando fuera la mayor parte del tráfico turístico internacional.</div>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+        <h3>Índice del Informe</h3>
+        <ul>
+            <li><a href="#metricas">1. Métricas Principales</a></li>
+            <li><a href="#puntos-fuertes">2. Puntos Fuertes</a></li>
+            <li><a href="#problemas-criticos">3. Problemas Críticos (4)</a></li>
+            <li><a href="#problemas-importantes">4. Problemas Importantes (6)</a></li>
+            <li><a href="#competencia">5. Análisis Competitivo</a></li>
+            <li><a href="#plan-accion">6. Plan de Acción Priorizado</a></li>
+            <li><a href="#snippets">7. Código Listo para Copiar (Redirect, Headers, Schema, hreflang)</a></li>
+            <li><a href="#roi">8. ROI Estimado e Impacto Económico</a></li>
+            <li><a href="#conclusiones">9. Conclusiones</a></li>
+        </ul>
+    </div>
+
+    <!-- SECCIÓN 1: MÉTRICAS PRINCIPALES -->
+    <div class="section" id="metricas">
+        <h2>1. Métricas Principales</h2>
+
+        <div class="metrics-grid">
+            <div class="metric">
+                <div class="metric-value red">1</div>
+                <div class="metric-label">Idiomas indexables (solo EN, en-US)</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value red">0</div>
+                <div class="metric-label">Etiquetas hreflang en el HTML</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value orange">http</div>
+                <div class="metric-label">Redirect HTTP mal config. (afecta solo a peticiones http://, no al navegador)</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value blue">56</div>
+                <div class="metric-label">Riads / alojamientos en sitemap</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value blue">31</div>
+                <div class="metric-label">Experiencias / tours en sitemap</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value red">0</div>
+                <div class="metric-label">Security headers HTTP</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value red">0</div>
+                <div class="metric-label">Imágenes en formato WebP</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">404</div>
+                <div class="metric-label">HTTP 404 real en página inexistente &#10003;</div>
+            </div>
+        </div>
+
+        <h3>Puntuación por Categoría</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Puntuación</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Infraestructura (Apache, SSL, redirect HTTP&#10142;HTTPS)</td>
+                    <td><strong>6/10</strong></td>
+                    <td><span class="tag orange">Redirect http mal config.</span></td>
+                </tr>
+                <tr>
+                    <td>Indexación (sitemap AIOSEO, robots.txt, 404 real, www&#10142;non-www)</td>
+                    <td><strong>7/10</strong></td>
+                    <td><span class="tag green">Bueno</span></td>
+                </tr>
+                <tr>
+                    <td>On-Page Homepage (Title, Meta, Canonical)</td>
+                    <td><strong>6/10</strong></td>
+                    <td><span class="tag orange">Mejorable</span></td>
+                </tr>
+                <tr>
+                    <td>Open Graph / Social (OG duplicado, og:type erróneo, og:image pequeña)</td>
+                    <td><strong>4/10</strong></td>
+                    <td><span class="tag red">Conflictivo</span></td>
+                </tr>
+                <tr>
+                    <td>Multilingua (FR/ES/DE/IT, hreflang, plugin WPML/Polylang)</td>
+                    <td><strong>1/10</strong></td>
+                    <td><span class="tag red">Crítico</span></td>
+                </tr>
+                <tr>
+                    <td>Schema Markup (LodgingBusiness, Product/Offer, TouristTrip, FAQ)</td>
+                    <td><strong>3/10</strong></td>
+                    <td><span class="tag red">Crítico</span></td>
+                </tr>
+                <tr>
+                    <td>Seguridad (Headers HSTS, X-Frame, CSP, versión servidor expuesta)</td>
+                    <td><strong>2/10</strong></td>
+                    <td><span class="tag red">Crítico</span></td>
+                </tr>
+                <tr>
+                    <td>Imágenes (lazy-load OK, sin WebP, 8 sin alt)</td>
+                    <td><strong>5/10</strong></td>
+                    <td><span class="tag orange">Mejorable</span></td>
+                </tr>
+                <tr>
+                    <td>Contenido y Keywords (riad Marrakech, tours Marruecos)</td>
+                    <td><strong>6/10</strong></td>
+                    <td><span class="tag orange">Regular</span></td>
+                </tr>
+                <tr>
+                    <td>Blog &amp; Content Marketing</td>
+                    <td><strong>2/10</strong></td>
+                    <td><span class="tag red">Casi inexistente (4 posts)</span></td>
+                </tr>
+                <tr>
+                    <td>Conversión (WhatsApp, booking Homey)</td>
+                    <td><strong>6/10</strong></td>
+                    <td><span class="tag orange">Regular</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECCIÓN 2: PUNTOS FUERTES -->
+    <div class="section" id="puntos-fuertes">
+        <h2>2. Puntos Fuertes &#10003;</h2>
+
+        <div class="alert alert-success">
+            <strong>Lo que ya funciona bien.</strong> No hay que tocarlo.
+        </div>
+
+        <ul>
+            <li><strong>All in One SEO (AIOSEO v4.9.4.1) instalado y activo:</strong> genera title, meta description, canonical, Open Graph y Twitter Card en cada página, además del sitemap dinámico.</li>
+            <li><strong>Title de homepage correcto:</strong> <code>"Unique riads and tailor-made tours across Morocco | InMedina.com"</code> — incluye keywords clave (riads, tours, Morocco) y la marca, dentro del límite de Google.</li>
+            <li><strong>Meta description bien dimensionada:</strong> ~155 caracteres, con llamada a la acción ("Book now your unique experience") y keywords (Marrakech Medina, private trips, luxury desert camps).</li>
+            <li><strong>Canonical URL correcto y único:</strong> 1 sola etiqueta canonical autorreferente en homepage.</li>
+            <li><strong>Sitemap index válido (AIOSEO):</strong> <code>sitemap.xml</code> con sub-sitemaps segmentados — <code>listing-sitemap.xml</code> (56 riads), <code>experience-sitemap.xml</code> (31 tours), <code>product-sitemap.xml</code> (21), <code>page-sitemap.xml</code> (35), <code>post-sitemap.xml</code> (4). Catálogo amplio y bien estructurado en taxonomías.</li>
+            <li><strong>robots.txt correcto:</strong> Disallow de rutas WooCommerce sensibles (carrito, logs, uploads), Allow de <code>admin-ajax.php</code>, y enlace a los 2 sitemaps.</li>
+            <li><strong>Páginas 404 reales:</strong> una URL inexistente devuelve HTTP 404 (no un falso 200, error típico de WordPress mal configurado).</li>
+            <li><strong>Redirect www &#10142; non-www correcto:</strong> <code>https://www.inmedina.com/</code> &#10142; 301 &#10142; <code>https://inmedina.com/</code>. Canonicalización de host bien resuelta (el problema está solo en el redirect HTTP, ver 3.1).</li>
+            <li><strong>Una sola etiqueta H1</strong> en homepage ("Discover Authentic Moroccan Riads &amp; Vacation Rentals") y jerarquía H2 temática coherente (Best Offers, Destinations, Accommodation Type, Excursions, Experiences, Blog).</li>
+            <li><strong>Lazy-load activo:</strong> 40 de 63 imágenes con <code>loading="lazy"</code>, mejora el LCP en móvil.</li>
+            <li><strong>WhatsApp integrado</strong> como canal de contacto/reserva — clave en turismo internacional.</li>
+            <li><strong>HTTPS forzado con certificado válido</strong> (sin warnings) y theme de booking dedicado (Homey) con tipos de contenido propios (listing, experience, cancel_policy).</li>
+        </ul>
+    </div>
+
+    <!-- SECCIÓN 3: PROBLEMAS CRÍTICOS -->
+    <div class="section" id="problemas-criticos">
+        <h2>3. Problemas Críticos (4)</h2>
+
+        <div class="alert alert-danger">
+            <strong>Estos puntos cierran la puerta al tráfico turístico internacional</strong>, que es justamente el público de InMedina: el sitio es monolingüe, sin Schema rico, sin security headers y con previews sociales rotas. El redirect HTTP mal configurado (3.1) se ha reclasificado como <em>Importante</em> porque solo afecta a peticiones <code>http://</code>, no al usuario con navegador.
+        </div>
+
+        <!-- CRÍTICO 1 -->
+        <div class="problem-box high">
+            <h3>3.1 Redirect HTTP &#10142; HTTPS mal configurado (pierde el <code>.com</code>) <span class="badge badge-high">IMPORTANTE</span></h3>
+
+            <div class="alert alert-info" style="margin-top:0">
+                <strong>Aclaración importante.</strong> En el navegador el sitio se abre <strong>perfectamente</strong> al teclear <code>inmedina.com</code>: los navegadores modernos (Chrome, Safari, Firefox, Edge) van directos a HTTPS desde 2021, así que nunca tocan la versión <code>http://</code>. El problema solo aparece cuando una petición parte explícitamente de <code>http://</code>. No es un "sitio caído", es un header mal formado con impacto acotado.
+            </div>
+
+            <p><strong>Qué pasa:</strong> al entrar por <code>http://</code> (sin S), el servidor emite un <code>Location</code> que pierde el <code>.com</code>. Reproducible en varias rutas:</p>
+
+            <div class="code">curl -I http://inmedina.com/        &#10142; Location: https://inmedina/        (falta el .com)
+curl -I http://inmedina.com/riads/  &#10142; Location: https://inmedina/riads/  (falta el .com)</div>
+
+            <p>La regla de reescritura de Apache está perdiendo el TLD del host. <code>https://inmedina/</code> no resuelve.</p>
+
+            <p><strong>Quién se ve afectado (impacto acotado, no catastrófico):</strong></p>
+            <ul>
+                <li><strong>Backlinks históricos en <code>http://</code></strong> — Google no puede seguir un 301 hacia un host que no resuelve, así que se pierde esa equidad de enlace.</li>
+                <li>Algunos <strong>crawlers, link-checkers y unfurlers</strong> (previews de enlaces) que prueban <code>http://</code> primero.</li>
+                <li>Clientes no-navegador (ciertos clientes de email, bots, integraciones).</li>
+            </ul>
+            <p><strong>Quién NO se ve afectado:</strong> el usuario normal con navegador moderno — por eso al verificarlo "a mano" el sitio carga bien.</p>
+
+            <p><strong>Fix:</strong> corregir la regla en Apache (<code>.htaccess</code> o virtual host) para conservar el host completo, y añadir <code>HSTS</code> (ver 3.4) para que el navegador ni intente HTTP. 10 minutos. Snippet en sección 7.1.</p>
+            <div class="code"># Correcto:  http://inmedina.com/...  &#10142;  https://inmedina.com/...
+# (conservando %{HTTP_HOST}, no reescribiéndolo a "inmedina")</div>
+        </div>
+
+        <!-- CRÍTICO 2 -->
+        <div class="problem-box critical">
+            <h3>3.2 Sitio monolingüe (solo inglés) en un mercado multi-idioma <span class="badge badge-critical">CRÍTICO</span></h3>
+
+            <p><strong>Qué pasa:</strong> todo el sitio sirve <code>&lt;html lang="en-US"&gt;</code> y <code>og:locale = en_US</code>. No hay plugin multilingüe (no se detecta WPML, Polylang, TranslatePress ni Weglot), no existen URLs <code>/fr/</code>, <code>/es/</code>, <code>/de/</code>, <code>/it/</code> y <strong>cero etiquetas hreflang</strong> en el HTML.</p>
+
+            <p><strong>Por qué es crítico:</strong> el turismo a Marruecos es, por definición, <strong>internacional y multi-idioma</strong>, y el viajero busca en su propia lengua. Francia es históricamente el primer mercado emisor hacia Marruecos, seguido de mercado hispano, alemán e italiano. Hoy InMedina solo es visible para quien busca en inglés:</p>
+            <ul>
+                <li>"riad marrakech" (FR) &mdash; volumen muy alto, mercado #1 hacia Marruecos</li>
+                <li>"riad marrakech" / "viaje a Marruecos" (ES) &mdash; mercado emisor relevante</li>
+                <li>"riad marrakesch" (DE) &mdash; alto poder adquisitivo, gran gasto medio</li>
+                <li>"riad marrakech" / "tour marocco" (IT)</li>
+                <li>"riads in marrakech" (EN) &larr; <strong>el ÚNICO mercado al que llegas hoy</strong></li>
+            </ul>
+            <p><em>(Volúmenes exactos a confirmar con Google Keyword Planner; el patrón de mercado es indiscutible.)</em> Estás renunciando a una porción enorme de la demanda — fácilmente el <strong>60-70% del tráfico potencial</strong> — en un nicho donde el inglés NO es el idioma dominante de búsqueda.</p>
+
+            <p><strong>Fix:</strong> instalar <strong>Polylang</strong> (gratis) o <strong>WPML</strong> (~99&euro;/año, mejor con WooCommerce/Homey). Prioridad de traducción: <strong>FR &#10142; ES &#10142; DE</strong>. URLs en subdirectorio (<code>/fr/</code>, <code>/es/</code>...). Ambos generan <code>hreflang</code> y sitemaps localizados automáticamente.</p>
+        </div>
+
+        <!-- CRÍTICO 3 -->
+        <div class="problem-box critical">
+            <h3>3.3 Schema.org pobre — sin <code>LodgingBusiness</code>, <code>Product/Offer</code> ni <code>TouristTrip</code> <span class="badge badge-critical">CRÍTICO</span></h3>
+
+            <p><strong>Qué pasa:</strong> el único Schema presente es genérico — <code>Organization</code> + <code>ContactPoint</code> + <code>ImageObject</code> + <code>SiteNavigationElement</code>. Para un sitio de 56 riads y 31 experiencias en venta, <strong>esto es prácticamente nada</strong>.</p>
+
+            <p><strong>Lo que falta (y debería estar):</strong></p>
+            <ul>
+                <li><code>LodgingBusiness</code> / <code>Hotel</code> en cada ficha de riad, con <code>address</code>, <code>geo</code> (lat+lng), <code>priceRange</code>, <code>amenityFeature[]</code>, <code>starRating</code>, <code>aggregateRating</code> + <code>review</code></li>
+                <li><code>Product</code> + <code>Offer</code> (price, priceCurrency, availability) en los listings y productos WooCommerce &#10142; habilita el <strong>rich snippet de precio + estrellas</strong> en Google</li>
+                <li><code>TouristTrip</code> / <code>Trip</code> en cada experiencia/excursión (itinerario, duración, punto de salida)</li>
+                <li><code>TravelAgency</code> en la homepage (categoría correcta del negocio)</li>
+                <li><code>FAQPage</code> en páginas de info (visados, mejor época, transporte) &#10142; rich snippet que multiplica CTR x2-3</li>
+                <li><code>BreadcrumbList</code> en páginas internas</li>
+            </ul>
+
+            <p><strong>Por qué es crítico:</strong> sin estos tipos Google no te muestra en los paneles ricos de "Hoteles" y "Cosas que hacer" (Things to do), ni genera las estrellas/precio en el resultado de búsqueda. En un sector tan visual y competitivo, perder el rich snippet es perder clics frente a Booking, Airbnb y agencias que sí lo tienen.</p>
+
+            <p><strong>Fix:</strong> AIOSEO Pro permite Schema por tipo de contenido; alternativamente <strong>Rank Math</strong> (gratis) trae nativo Hotel/LocalBusiness/Product. Ver snippets en sección 7.3-7.4.</p>
+        </div>
+
+        <!-- CRÍTICO 4 -->
+        <div class="problem-box critical">
+            <h3>3.4 Cero security headers HTTP + versión de servidor expuesta <span class="badge badge-critical">CRÍTICO</span></h3>
+
+            <p><strong>Qué pasa:</strong> la respuesta del servidor no incluye <strong>ningún</strong> header de seguridad, y revela la versión exacta de software:</p>
+            <div class="code">curl -I https://inmedina.com/
+HTTP/1.1 200 OK
+Server: Apache/2.4.52 (Ubuntu)     &#10142; versión + SO expuestos innecesariamente
+Content-Type: text/html; charset=UTF-8
+(sin Strict-Transport-Security / HSTS)
+(sin X-Frame-Options)
+(sin X-Content-Type-Options)
+(sin Referrer-Policy)
+(sin Permissions-Policy)
+(sin Content-Security-Policy)</div>
+
+            <p><strong>Por qué es crítico:</strong></p>
+            <ul>
+                <li><strong>Clickjacking:</strong> sin <code>X-Frame-Options</code>, el formulario de reserva/pago de Homey puede embeberse en un sitio fraudulento que capture datos de tarjeta.</li>
+                <li><strong>Downgrade attack:</strong> sin <code>HSTS</code>, un atacante en WiFi público de hotel/aeropuerto puede degradar HTTPS&#10142;HTTP en la primera visita — especialmente grave porque el público viaja y usa redes abiertas.</li>
+                <li><strong>MIME sniffing:</strong> sin <code>X-Content-Type-Options: nosniff</code>, riesgo XSS vía upload.</li>
+                <li><strong>Reconocimiento:</strong> <code>Apache/2.4.52 (Ubuntu)</code> dice al atacante exactamente qué CVEs probar.</li>
+                <li>Google Lighthouse penaliza "Best Practices" (-10 a -15 puntos típico), señal indirecta de calidad.</li>
+            </ul>
+
+            <p><strong>Fix:</strong> añadir los headers al <code>.htaccess</code> + ocultar la firma del servidor (<code>ServerTokens Prod</code> / <code>ServerSignature Off</code>). 10 minutos, coste cero. Ver snippet 7.2.</p>
+        </div>
+
+        <!-- CRÍTICO 5 -->
+        <div class="problem-box critical">
+            <h3>3.5 Open Graph duplicado y con <code>og:type</code> erróneo — previews sociales rotas <span class="badge badge-critical">CRÍTICO</span></h3>
+
+            <p><strong>Qué pasa:</strong> la homepage inyecta <strong>dos juegos de etiquetas Open Graph</strong> en conflicto (2&times; <code>og:title</code>, 2&times; <code>og:url</code>, 2&times; <code>og:type</code>...), probablemente porque AIOSEO <em>y</em> el theme Homey las generan ambos. Además:</p>
+            <ul>
+                <li><code>og:type = "article"</code> en la <strong>homepage</strong> &#10142; debería ser <code>"website"</code> (article es para entradas de blog).</li>
+                <li><code>og:image</code> apunta a una miniatura pequeña <code>...-300x200.jpg</code> &#10142; los estándares sociales piden <strong>1200&times;630</strong>.</li>
+            </ul>
+
+            <p><strong>Por qué es crítico:</strong> cuando alguien comparte InMedina en WhatsApp, Facebook, Instagram o LinkedIn (canales clave en turismo, boca a boca digital), la preview sale <strong>rota o con imagen diminuta y datos contradictorios</strong>. Facebook/WhatsApp eligen una de las dos etiquetas de forma impredecible. Cada share fallido es publicidad gratuita desperdiciada y peor CTR social.</p>
+
+            <p><strong>Fix:</strong> dejar <strong>una sola</strong> fuente de OG (desactivar OG del theme Homey o de AIOSEO, no ambos), forzar <code>og:type=website</code> en homepage y subir una <code>og:image</code> dedicada 1200&times;630 (foto de riad + claim). Verificar en el <a href="https://developers.facebook.com/tools/debug/" target="_blank">Facebook Sharing Debugger</a>.</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 4: PROBLEMAS IMPORTANTES -->
+    <div class="section" id="problemas-importantes">
+        <h2>4. Problemas Importantes (6)</h2>
+
+        <div class="alert alert-warning">
+            Incluye el <strong>redirect HTTP de la sección 3.1</strong> (reclasificado aquí por impacto acotado) más los 5 siguientes.
+        </div>
+
+        <!-- IMP 1 -->
+        <div class="problem-box high">
+            <h3>4.1 Cero imágenes en WebP — sitio pesado en un nicho muy visual <span class="badge badge-high">IMPORTANTE</span></h3>
+            <p><strong>Actual:</strong> el 100% de las imágenes son JPEG/PNG; <strong>0 en WebP</strong>. En un sitio de riads donde la foto es el principal motor de venta, esto infla el peso de página y empeora el LCP, sobre todo en móvil con conexión de viaje (4G/roaming).</p>
+            <p><strong>Fix:</strong> instalar un plugin de optimización (<strong>Imagify</strong>, <strong>ShortPixel</strong> o <strong>Converter for Media</strong>) que convierta y sirva WebP automáticamente con fallback. Reducción típica de 25-40% de peso sin pérdida visible. Combinar con caché (WP Rocket / LiteSpeed Cache si migran).</p>
+        </div>
+
+        <!-- IMP 2 -->
+        <div class="problem-box high">
+            <h3>4.2 8 imágenes sin atributo <code>alt</code> <span class="badge badge-high">IMPORTANTE</span></h3>
+            <p><strong>Actual:</strong> de 63 imágenes en homepage, <strong>8 no tienen <code>alt</code></strong>. En turismo, <strong>Google Images es una fuente de tráfico real</strong> ("riad piscina marrakech", "desert camp merzouga"), y el alt es lo que te posiciona ahí + accesibilidad (WCAG).</p>
+            <p><strong>Fix:</strong> rellenar alt descriptivos con keyword + ubicación ("Riad with rooftop pool in Marrakech Medina"). En WordPress se edita desde la Media Library o el campo alt de cada bloque.</p>
+        </div>
+
+        <!-- IMP 3 -->
+        <div class="problem-box high">
+            <h3>4.3 Blog casi inexistente — sin contenido SEO long-tail <span class="badge badge-high">IMPORTANTE</span></h3>
+            <p><strong>Actual:</strong> el <code>post-sitemap.xml</code> contiene solo <strong>4 entradas</strong>, con <code>lastmod 2025-05-16</code> (más de un año sin publicar). El blog está, en la práctica, abandonado.</p>
+            <p><strong>Por qué importa:</strong> el viajero <strong>investiga durante semanas antes de reservar</strong>. Cada guía bien hecha capta tráfico orgánico gratuito y mete el lead en tu funnel:</p>
+            <ul>
+                <li>"best time to visit Marrakech" / "meilleure période pour visiter Marrakech"</li>
+                <li>"how many days in Marrakech" / "Marrakech en 3 días"</li>
+                <li>"is it safe to travel to Morocco" / "Marrakesch Reisetipps"</li>
+                <li>"Marrakech to Sahara desert tour 3 days"</li>
+                <li>"what to wear in Marrakech medina"</li>
+            </ul>
+            <p><strong>Fix:</strong> reactivar el blog, 2 posts/mes de 1000-1500 palabras, enlazando internamente a riads y experiencias relevantes. Cuando el sitio sea multilingüe, publicar al menos en EN+FR.</p>
+        </div>
+
+        <!-- IMP 4 -->
+        <div class="problem-box high">
+            <h3>4.4 Sin headers de caché ni HSTS — rendimiento y visitas recurrentes <span class="badge badge-high">IMPORTANTE</span></h3>
+            <p><strong>Actual:</strong> la respuesta no muestra <code>Cache-Control</code> ni <code>Strict-Transport-Security</code>. Sin política de caché explícita, el navegador no reutiliza assets de forma óptima entre páginas (un usuario que compara 5 riads recarga recursos innecesariamente).</p>
+            <p><strong>Fix:</strong> activar caché de página + browser caching de assets estáticos (plugin de caché o reglas <code>Expires</code> en <code>.htaccess</code>) y añadir HSTS (incluido en el snippet 7.2). Mejora directa de PageSpeed y experiencia.</p>
+        </div>
+
+        <!-- IMP 5 -->
+        <div class="problem-box high">
+            <h3>4.5 Meta viewport mal formado — bloquea el zoom <span class="badge badge-high">IMPORTANTE</span></h3>
+            <p><strong>Actual:</strong> <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0,"&gt;</code> — con una coma final sobrante y, sobre todo, <code>maximum-scale=5.0</code>.</p>
+            <p><strong>Problema:</strong> limitar el zoom es un anti-patrón de <strong>accesibilidad</strong> (usuarios con baja visión no pueden ampliar a gusto) que Lighthouse marca en la auditoría de accesibilidad. La coma final es sintaxis sucia.</p>
+            <p><strong>Fix:</strong> <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> (sin maximum-scale, sin coma final).</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 5: COMPETENCIA -->
+    <div class="section" id="competencia">
+        <h2>5. Análisis Competitivo</h2>
+
+        <p>Posicionamiento frente a los grandes agregadores y agencias que dominan "riad marrakech" / "Morocco tours" en Google. InMedina compite como agencia-boutique con catálogo curado, pero el gap técnico es claro:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Competidor / Tipo</th>
+                    <th>Idiomas reales</th>
+                    <th>hreflang</th>
+                    <th>Schema rich (precio/estrellas)</th>
+                    <th>Blog activo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>InMedina.com</strong> (tú)</td>
+                    <td><span class="tag red">Solo EN</span></td>
+                    <td><span class="tag red">No</span></td>
+                    <td><span class="tag red">No (genérico)</span></td>
+                    <td><span class="tag red">Abandonado</span></td>
+                </tr>
+                <tr>
+                    <td>Booking.com / Airbnb (agregadores)</td>
+                    <td><span class="tag green">40+ idiomas</span></td>
+                    <td><span class="tag green">Sí</span></td>
+                    <td><span class="tag green">Hotel + price + rating</span></td>
+                    <td><span class="tag green">Sí (guías)</span></td>
+                </tr>
+                <tr>
+                    <td>Agencias riad locales (riadXXX.com)</td>
+                    <td><span class="tag green">EN+FR (mínimo)</span></td>
+                    <td><span class="tag orange">Parcial</span></td>
+                    <td><span class="tag green">LodgingBusiness</span></td>
+                    <td><span class="tag orange">Variable</span></td>
+                </tr>
+                <tr>
+                    <td>Tour operators Sahara (EN+FR+ES)</td>
+                    <td><span class="tag green">3-4 idiomas</span></td>
+                    <td><span class="tag green">Sí</span></td>
+                    <td><span class="tag green">TouristTrip + Offer</span></td>
+                    <td><span class="tag green">Sí</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert alert-warning">
+            <strong>Conclusión competitiva:</strong> InMedina no va a ganarle a Booking/Airbnb en volumen, pero sí puede captar el nicho de viajero que busca <strong>autenticidad y trato boutique</strong> — siempre que sea visible en su idioma. Hoy compite con una mano atada: monolingüe, sin rich snippets y con un blog muerto. Los <strong>tres pilares</strong> que separan a InMedina de las agencias-riad que rankean son: <strong>multilingüe (FR mínimo) + Schema rico + contenido vivo</strong>. Cerrar ese gap es un proyecto de 3-4 semanas.
+        </div>
+    </div>
+
+    <!-- SECCIÓN 6: PLAN DE ACCIÓN -->
+    <div class="section" id="plan-accion">
+        <h2>6. Plan de Acción Priorizado</h2>
+
+        <div class="phase">
+            <h3>FASE 0 — Fix técnico rápido (30 minutos)</h3>
+            <ol>
+                <li><strong>Arreglar el redirect HTTP mal configurado</strong> (3.1) — corregir la regla en <code>.htaccess</code> para conservar <code>%{HTTP_HOST}</code> (snippet 7.1) y verificar con <code>curl -I http://inmedina.com/</code> que el <code>Location</code> sea <code>https://inmedina.com/</code> con el <code>.com</code>. Impacto acotado (backlinks http antiguos + crawlers) pero el fix es trivial y recupera esa equidad de enlace.</li>
+            </ol>
+        </div>
+
+        <div class="phase">
+            <h3>FASE 1 — Quick wins técnicos (2-3 horas)</h3>
+            <ol>
+                <li><strong>Security headers + ocultar versión Apache</strong> via <code>.htaccess</code> (snippet 7.2).</li>
+                <li><strong>Arreglar Open Graph:</strong> una sola fuente (AIOSEO o theme), <code>og:type=website</code> en home, og:image 1200&times;630 dedicada.</li>
+                <li><strong>Corregir meta viewport</strong> (quitar <code>maximum-scale</code> y la coma final).</li>
+                <li><strong>Rellenar los 8 <code>alt</code></strong> que faltan con keyword + ubicación.</li>
+                <li><strong>Activar conversión a WebP</strong> (Imagify/ShortPixel) + caché de página y assets.</li>
+            </ol>
+        </div>
+
+        <div class="phase">
+            <h3>FASE 2 — Multilingua real (1-2 semanas)</h3>
+            <ol>
+                <li><strong>Backup completo</strong> WP+DB antes de cualquier plugin de traducción.</li>
+                <li><strong>Instalar Polylang</strong> (gratis) o <strong>WPML</strong> (~99&euro;/año, mejor con WooCommerce/Homey).</li>
+                <li>Configurar idiomas: EN (actual) + <strong>FR (prioridad #1)</strong> + ES + DE.</li>
+                <li>Estructura URL en subdirectorio: <code>/fr/</code>, <code>/es/</code>, <code>/de/</code>.</li>
+                <li><strong>Traducir primero FR:</strong> Home, principales riads, experiencias estrella (Sahara, excursiones), página de contacto/booking.</li>
+                <li>Verificar que <code>hreflang</code> se generan solos (View Source) y enviar sitemap actualizado a Google Search Console.</li>
+            </ol>
+        </div>
+
+        <div class="phase">
+            <h3>FASE 3 — Schema completo (4-6 horas)</h3>
+            <ol>
+                <li><code>TravelAgency</code> + NAP completo en homepage.</li>
+                <li><code>LodgingBusiness/Hotel</code> en cada riad con <code>geo</code>, <code>amenityFeature[]</code>, <code>priceRange</code>, <code>aggregateRating</code>.</li>
+                <li><code>Product</code> + <code>Offer</code> (precio/moneda/disponibilidad) en listings y productos WooCommerce.</li>
+                <li><code>TouristTrip</code> en cada experiencia/excursión.</li>
+                <li><code>FAQPage</code> en páginas de info y <code>BreadcrumbList</code> en internas.</li>
+                <li>Validar todo en <a href="https://validator.schema.org/" target="_blank">validator.schema.org</a> y en Rich Results Test de Google.</li>
+            </ol>
+        </div>
+
+        <div class="phase">
+            <h3>FASE 4 — Content marketing (continuo)</h3>
+            <ol>
+                <li>Reactivar blog, 2 posts/mes (1000-1500 palabras), en EN+FR.</li>
+                <li>Topics piloto: "Best time to visit Marrakech", "3 days Sahara desert tour", "Marrakech medina riad guide", "Morocco travel tips 2026", "Marrakech en 3 días" (FR/ES).</li>
+                <li>Cada post con Schema <code>BlogPosting</code> + internal link a riads/experiencias.</li>
+                <li>Promo cruzada en Instagram/Facebook (turismo = altamente social).</li>
+            </ol>
+        </div>
+
+        <div class="phase">
+            <h3>FASE 5 — Off-site &amp; autoridad</h3>
+            <ol>
+                <li>Google Business Profile con NAP idéntico al Schema.</li>
+                <li>Reviews post-estancia (Google + TripAdvisor) &#10142; <code>aggregateRating</code> + E-E-A-T.</li>
+                <li>Listings/partnerships en directorios de viaje y blogs de Marruecos para link building.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 7: SNIPPETS -->
+    <div class="section" id="snippets">
+        <h2>7. Código Listo para Copiar</h2>
+
+        <h3>7.1 Arreglar el redirect HTTP&#10142;HTTPS roto — <code>.htaccess</code> raíz</h3>
+        <p>Sustituir la regla actual (que pierde el dominio) por una que conserva el host completo:</p>
+        <div class="code">&lt;IfModule mod_rewrite.c&gt;
+  RewriteEngine On
+  # Forzar HTTPS conservando el host completo (inmedina.com, no "inmedina")
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+&lt;/IfModule&gt;</div>
+        <p>Verificación posterior obligatoria:</p>
+        <div class="code">curl -I http://inmedina.com/
+# Esperado:  Location: https://inmedina.com/   (CON el .com)</div>
+
+        <h3>7.2 Security headers + ocultar versión — <code>.htaccess</code> raíz</h3>
+        <div class="code">&lt;IfModule mod_headers.c&gt;
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(self), camera=(), microphone=()"
+  Header always unset X-Powered-By
+&lt;/IfModule&gt;
+
+# Ocultar firma/versión de Apache (en apache2.conf o conf disponible):
+ServerTokens Prod
+ServerSignature Off</div>
+
+        <h3>7.3 Schema TravelAgency + NAP — homepage (antes de <code>&lt;/head&gt;</code>)</h3>
+        <p>Reemplaza <code>__...__</code> con los datos reales:</p>
+        <div class="code">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "@id": "https://inmedina.com/#org",
+  "name": "InMedina",
+  "url": "https://inmedina.com/",
+  "image": "https://inmedina.com/wp-content/uploads/__og-image-1200x630__.jpg",
+  "description": "Unique riads and tailor-made tours across Morocco. Accommodations in the Marrakech Medina, private trips and luxury desert camps.",
+  "priceRange": "&euro;&euro;",
+  "telephone": "+212 __TELEFONO__",
+  "email": "__EMAIL__",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "__DIRECCION__",
+    "addressLocality": "Marrakech",
+    "addressCountry": "MA"
+  },
+  "areaServed": "Morocco",
+  "sameAs": [
+    "https://www.instagram.com/__inmedina__/",
+    "https://www.facebook.com/__inmedina__"
+  ]
+}
+&lt;/script&gt;</div>
+
+        <h3>7.4 Schema LodgingBusiness — para cada ficha de riad</h3>
+        <div class="code">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Riad __NOMBRE__",
+  "description": "__Descripcion del riad__",
+  "image": ["https://inmedina.com/wp-content/uploads/__foto__.webp"],
+  "priceRange": "&euro;&euro;",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Marrakech",
+    "addressCountry": "MA"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": "__LAT__", "longitude": "__LNG__" },
+  "amenityFeature": [
+    {"@type":"LocationFeatureSpecification","name":"Pool","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Rooftop Terrace","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Free WiFi","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Breakfast","value":true}
+  ],
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"__N__"}
+}
+&lt;/script&gt;</div>
+
+        <h3>7.5 hreflang esperado tras instalar Polylang/WPML</h3>
+        <div class="code">&lt;link rel="alternate" hreflang="en" href="https://inmedina.com/riad-xxx/" /&gt;
+&lt;link rel="alternate" hreflang="fr" href="https://inmedina.com/fr/riad-xxx/" /&gt;
+&lt;link rel="alternate" hreflang="es" href="https://inmedina.com/es/riad-xxx/" /&gt;
+&lt;link rel="alternate" hreflang="de" href="https://inmedina.com/de/riad-xxx/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://inmedina.com/riad-xxx/" /&gt;</div>
+    </div>
+
+    <!-- SECCIÓN 8: ROI -->
+    <div class="section" id="roi">
+        <h2>8. ROI Estimado e Impacto Económico</h2>
+
+        <div class="alert alert-info">
+            Estimaciones cualitativas basadas en el patrón de mercado del turismo a Marruecos (idiomas emisores), el catálogo actual (56 riads + 31 experiencias) y benchmarks de CTR/conversión del sector viajes. Los volúmenes exactos deben confirmarse con Google Keyword Planner + Search Console; aquí se presentan rangos y dirección, no cifras garantizadas.
+        </div>
+
+        <h3>Estado actual</h3>
+        <table>
+            <thead><tr><th>Métrica</th><th>Valor</th></tr></thead>
+            <tbody>
+                <tr><td>Mercados accesibles por idioma</td><td>Solo anglófono (~30-40% de la demanda)</td></tr>
+                <tr><td>Equidad de enlace de backlinks http:// antiguos</td><td><span class="tag orange">Parcialmente perdida</span> (redirect http mal config.)</td></tr>
+                <tr><td>Visibilidad en paneles ricos Google (Hotel / Things to do)</td><td><span class="tag red">Nula</span> (sin Schema)</td></tr>
+                <tr><td>CTR social al compartir (WhatsApp/FB)</td><td>Bajo (preview OG rota)</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Estado post-fix (estimación 6 meses)</h3>
+        <table>
+            <thead><tr><th>Métrica</th><th>Valor</th></tr></thead>
+            <tbody>
+                <tr><td>Mercados accesibles</td><td>EN + FR + ES + DE (~90% de la demanda)</td></tr>
+                <tr><td>Tráfico orgánico</td><td><strong>Multiplicador realista &times;2 a &times;4</strong> al sumar idiomas + recuperar HTTP</td></tr>
+                <tr><td>Rich snippets (precio + estrellas + Things to do)</td><td><span class="tag green">Activos</span> vía Schema</td></tr>
+                <tr><td>CTR social</td><td>Normalizado (OG correcto + imagen 1200&times;630)</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Lectura económica</h3>
+        <p>En un negocio de reservas de riad/tour, el ticket medio es alto y cada reserva adicional pesa. El cuello de botella hoy <strong>no es el producto ni el catálogo</strong> (ambos sólidos), sino la <strong>visibilidad</strong>:</p>
+        <ul>
+            <li><strong>FASE 0 (redirect):</strong> recupera tráfico que ya se está perdiendo, coste casi cero, impacto inmediato.</li>
+            <li><strong>FASE 2 (multilingüe FR):</strong> abre el mayor mercado emisor hacia Marruecos — el de mayor ROI esperado.</li>
+            <li><strong>FASE 3 (Schema):</strong> mejora CTR sobre el tráfico que ya tienes, sin necesidad de más visitas.</li>
+        </ul>
+
+        <div class="alert alert-success">
+            <strong>Prioridad de inversión:</strong> Fase 0 + Fase 1 (técnico) son días de trabajo y coste mínimo con retorno inmediato. La traducción FR (Fase 2) es la inversión con mayor ROI esperado. Payback estimado del paquete técnico: muy rápido.
+        </div>
+    </div>
+
+    <!-- SECCIÓN 9: CONCLUSIONES -->
+    <div class="section" id="conclusiones">
+        <h2>9. Conclusiones</h2>
+
+        <p>InMedina parte de una <strong>base sólida</strong>: WordPress bien montado, AIOSEO configurado, sitemap segmentado, robots.txt correcto, 404 reales, catálogo amplio (56 riads + 31 experiencias) y un theme de booking dedicado. El producto y la estructura no son el problema.</p>
+
+        <p>El problema es de <strong>visibilidad</strong>, y se concentra en tres frentes muy concretos:</p>
+        <ol>
+            <li><strong>Sitio monolingüe en un mercado multi-idioma:</strong> vendes Marruecos a un público internacional pero solo eres visible en inglés. El francés (mercado #1) está completamente fuera. Es el mayor ROI disponible.</li>
+            <li><strong>Schema pobre:</strong> 56 riads y 31 tours sin <code>LodgingBusiness</code> / <code>Product</code> / <code>TouristTrip</code> = sin estrellas, sin precio, sin paneles ricos en Google. Pierdes clics frente a quien sí los tiene.</li>
+            <li><strong>Higiene técnica:</strong> cero security headers, versión de Apache expuesta, OG duplicado y roto, imágenes sin WebP, y un redirect <code>http://</code> mal configurado. Cada uno es un fix de minutos/horas con mejora medible — y ninguno afecta a cómo se ve el sitio hoy en el navegador.</li>
+        </ol>
+
+        <p>La buena noticia: <strong>ninguno es un problema de fondo</strong>. Son configuraciones y plugins, no rediseños. Con la Fase 0 + Fase 1 + traducción FR, InMedina pasa de un <strong>6/10</strong> a un realista <strong>8/10</strong> en 4-6 semanas, y abre la puerta a la mayor parte de la demanda turística que hoy ni siquiera te encuentra.</p>
+
+        <p><strong>Prioridad #1:</strong> multilingüe real empezando por francés (mayor ROI).<br>
+        <strong>Prioridad #2:</strong> Schema rico + security headers + OG limpio.<br>
+        <strong>Prioridad #3:</strong> fixes técnicos rápidos (redirect http, viewport, alt, WebP).</p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p><strong>InMedina.com — Auditoría SEO 5 Junio 2026</strong></p>
+    <p style="margin-top: 10px; font-size: 0.9em;">Informe elaborado por Tape Dynamics — AI SEO Audit Specialist</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Auditoría SEO - Borza Real Estate Tenerife</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #f5f5f5; padding: 0; }
+        .header { background: #0b3d2e; color: white; padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 15px; font-weight: bold; }
+        .header p { font-size: 18px; margin: 10px 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { font-size: 28px; color: #0b3d2e; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #0b3d2e; }
+        h3 { font-size: 24px; color: #333; margin-top: 30px; margin-bottom: 20px; }
+        h4 { font-size: 20px; color: #555; margin-top: 25px; margin-bottom: 15px; }
+        p { margin-bottom: 15px; font-size: 18px; }
+        ul, ol { margin-left: 30px; margin-bottom: 20px; }
+        li { margin-bottom: 12px; font-size: 18px; }
+        .score-box { background: linear-gradient(135deg, #0b3d2e, #063221); color: white; padding: 50px; border-radius: 10px; text-align: center; margin-bottom: 30px; }
+        .score-number { font-size: 80px; font-weight: bold; margin-bottom: 10px; }
+        .score-text { font-size: 24px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin: 30px 0; }
+        .metric { background: #f8f9fa; padding: 30px; border-radius: 8px; text-align: center; border: 2px solid #e0e0e0; }
+        .metric-value { font-size: 36px; font-weight: bold; margin-bottom: 10px; }
+        .metric-value.green { color: #28a745; }
+        .metric-value.red { color: #dc3545; }
+        .metric-value.orange { color: #ff9800; }
+        .metric-value.blue { color: #0b3d2e; }
+        .metric-label { font-size: 16px; color: #666; }
+        .problem-box { background: white; border-left: 6px solid #dc3545; padding: 30px; margin: 25px 0; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .problem-box.critical { border-left-color: #dc3545; }
+        .problem-box.high { border-left-color: #ff9800; }
+        .problem-box.medium { border-left-color: #0b3d2e; }
+        .problem-box h3 { margin-top: 0; font-size: 24px; }
+        .badge { display: inline-block; padding: 8px 15px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-left: 10px; }
+        .badge-critical { background: #dc3545; color: white; }
+        .badge-high { background: #ff9800; color: white; }
+        .badge-medium { background: #0b3d2e; color: white; }
+        .badge-success { background: #28a745; color: white; }
+        .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0; }
+        .before, .after { background: #f8f9fa; padding: 25px; border-radius: 8px; }
+        .before { border: 3px solid #dc3545; }
+        .after { border: 3px solid #28a745; }
+        .before h5 { color: #dc3545; font-size: 20px; margin-bottom: 15px; }
+        .after h5 { color: #28a745; font-size: 20px; margin-bottom: 15px; }
+        .code { background: #2d2d2d; color: #f8f8f2; padding: 25px; border-radius: 6px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 15px; line-height: 1.6; margin: 15px 0; white-space: pre-wrap; word-break: break-word; }
+        .alert { padding: 20px 25px; border-radius: 6px; margin: 20px 0; font-size: 17px; }
+        .alert-success { background: #d4edda; border: 2px solid #28a745; color: #155724; }
+        .alert-danger { background: #f8d7da; border: 2px solid #dc3545; color: #721c24; }
+        .alert-warning { background: #fff3cd; border: 2px solid #ff9800; color: #856404; }
+        .alert-info { background: #d1ecf1; border: 2px solid #0b3d2e; color: #0c5460; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 17px; }
+        th { background: #0b3d2e; color: white; padding: 15px; text-align: left; font-size: 18px; }
+        td { padding: 15px; border-bottom: 1px solid #ddd; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li { padding: 15px; background: #f8f9fa; margin: 10px 0; border-left: 4px solid #0b3d2e; font-size: 18px; }
+        .checklist li::before { content: "☐ "; color: #0b3d2e; font-size: 22px; margin-right: 10px; }
+        .phase { background: #f8f9fa; padding: 30px; margin: 25px 0; border-radius: 8px; border-left: 6px solid #0b3d2e; }
+        .phase h3 { margin-top: 0; color: #0b3d2e; }
+        .tag { display: inline-block; background: #e0e0e0; padding: 8px 15px; margin: 5px; border-radius: 20px; font-size: 16px; }
+        .tag.green { background: #d4edda; color: #155724; }
+        .tag.red { background: #f8d7da; color: #721c24; }
+        .tag.orange { background: #fff3cd; color: #856404; }
+        strong { font-weight: bold; color: #1a1a1a; }
+        code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; font-size: 16px; }
+        .footer { background: #2d2d2d; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
+        .toc { background: #f8f9fa; padding: 30px; margin-bottom: 30px; border-radius: 8px; border: 2px solid #0b3d2e; }
+        .toc h3 { margin-top: 0; color: #0b3d2e; }
+        .toc ul { margin-left: 20px; }
+        .toc a { color: #0b3d2e; text-decoration: none; font-size: 18px; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { body { font-size: 16px; } .header h1 { font-size: 24px; } h2 { font-size: 22px; } h3 { font-size: 20px; } .comparison { grid-template-columns: 1fr; } .section { padding: 25px; } .score-number { font-size: 60px; } .metric-value { font-size: 28px; } }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>INFORME DE AUDITORÍA SEO</h1>
+    <p><strong>Borza Real Estate — Inmobiliaria Tenerife Sur</strong></p>
+    <p>Fecha: 23 Abril 2026</p>
+    <p>URL analizada: borzarealestate.com</p>
+</div>
+
+<div class="container">
+
+    <!-- SCORE -->
+    <div class="score-box">
+        <div class="score-number">5.5/10</div>
+        <div class="score-text">Base sólida, ejecución SEO a medio hacer — errores visibles hunden la primera impresión</div>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+        <h3>Índice del Informe</h3>
+        <ul>
+            <li><a href="#metricas">1. Métricas Principales</a></li>
+            <li><a href="#puntos-fuertes">2. Puntos Fuertes</a></li>
+            <li><a href="#problemas-criticos">3. Problemas Críticos (5)</a></li>
+            <li><a href="#problemas-importantes">4. Problemas Importantes (5)</a></li>
+            <li><a href="#competencia">5. Análisis Competitivo</a></li>
+            <li><a href="#plan-accion">6. Plan de Acción</a></li>
+            <li><a href="#roi">7. ROI Estimado e Impacto Económico</a></li>
+            <li><a href="#conclusiones">8. Conclusiones</a></li>
+        </ul>
+    </div>
+
+    <!-- SECCIÓN 1: MÉTRICAS PRINCIPALES -->
+    <div class="section" id="metricas">
+        <h2>1. Métricas Principales</h2>
+
+        <div class="metrics-grid">
+            <div class="metric">
+                <div class="metric-value blue">178</div>
+                <div class="metric-label">Propiedades en Cartera</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value blue">10</div>
+                <div class="metric-label">Agentes</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value orange">3</div>
+                <div class="metric-label">Idiomas Activos (ES/EN/IT)</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value red">5</div>
+                <div class="metric-label">Problemas Críticos</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value orange">5</div>
+                <div class="metric-label">Problemas Importantes</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value red">9</div>
+                <div class="metric-label">Artículos Blog (último: Dic 2025)</div>
+            </div>
+        </div>
+
+        <h3>Puntuación por Categoría</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Puntuación</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Infraestructura (CDN Cloudflare, SSL, HTTP/3)</td>
+                    <td><strong>8/10</strong></td>
+                    <td><span class="tag green">Bueno</span></td>
+                </tr>
+                <tr>
+                    <td>Indexación (Sitemap Yoast, robots.txt, 301 www)</td>
+                    <td><strong>8/10</strong></td>
+                    <td><span class="tag green">Bueno</span></td>
+                </tr>
+                <tr>
+                    <td>On-Page Homepage (Title, Meta, H1)</td>
+                    <td><strong>3/10</strong></td>
+                    <td><span class="tag red">Crítico</span></td>
+                </tr>
+                <tr>
+                    <td>Multilingua (URL slugs, hreflang, WPML)</td>
+                    <td><strong>3/10</strong></td>
+                    <td><span class="tag red">Crítico</span></td>
+                </tr>
+                <tr>
+                    <td>Schema Markup (Real Estate específico)</td>
+                    <td><strong>4/10</strong></td>
+                    <td><span class="tag orange">Deficiente</span></td>
+                </tr>
+                <tr>
+                    <td>Seguridad (Headers, HSTS, CSP)</td>
+                    <td><strong>2/10</strong></td>
+                    <td><span class="tag red">Crítico</span></td>
+                </tr>
+                <tr>
+                    <td>Imágenes (alt, lazy-load, WebP)</td>
+                    <td><strong>7/10</strong></td>
+                    <td><span class="tag green">Bueno</span></td>
+                </tr>
+                <tr>
+                    <td>Contenido y Keywords</td>
+                    <td><strong>4/10</strong></td>
+                    <td><span class="tag orange">Deficiente</span></td>
+                </tr>
+                <tr>
+                    <td>Blog y Content Marketing</td>
+                    <td><strong>3/10</strong></td>
+                    <td><span class="tag red">Muy flojo</span></td>
+                </tr>
+                <tr>
+                    <td>Conversión (CTA, WhatsApp, formularios)</td>
+                    <td><strong>6/10</strong></td>
+                    <td><span class="tag orange">Regular</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECCIÓN 2: PUNTOS FUERTES -->
+    <div class="section" id="puntos-fuertes">
+        <h2>2. Puntos Fuertes</h2>
+
+        <div class="alert alert-success">
+            <strong>1. Stack Técnico Profesional ⭐⭐⭐⭐</strong><br><br>
+            <ul>
+                <li>WordPress + tema Houzez — el estándar del sector inmobiliario, con ficha de propiedad nativa, filtros avanzados y gestión de agentes</li>
+                <li>Yoast SEO instalado — sitemap_index.xml generado automáticamente, meta editor por página</li>
+                <li>Cloudflare CDN global + TLS + HTTP/3 (alt-svc) — carga rápida desde cualquier país</li>
+                <li>Redirect 301 correcto <code>www.borzarealestate.com → borzarealestate.com</code></li>
+                <li>Elementor Pro para landing — flexibilidad de maquetación</li>
+                <li>WPML activo para gestión multilingua (3 idiomas)</li>
+            </ul>
+            <br>
+            <strong>Impacto:</strong> Base sólida que no hay que reconstruir. Las mejoras son de configuración, no de tecnología.
+        </div>
+
+        <div class="alert alert-success">
+            <strong>2. Sitemap XML Bien Estructurado ⭐⭐⭐⭐</strong><br><br>
+            <ul>
+                <li><code>sitemap_index.xml</code> accesible (HTTP 200) y referenciado en robots.txt</li>
+                <li>16 sub-sitemaps segmentados: properties, pages, posts, agents, agency, city, state, country, property_type, property_status, property_feature, property_label, post_tag, category, author</li>
+                <li><strong>178 URLs de propiedades</strong> descubribles + 101 pages + 10 agentes</li>
+                <li>Lastmod actualizado — sitemap property lastmod <code>2026-04-22</code> (ayer)</li>
+            </ul>
+            <br>
+            <strong>Impacto:</strong> Google puede descubrir todo el catálogo. Este suele ser el mayor bloqueador de indexación en portales inmobiliarios — aquí está resuelto.
+        </div>
+
+        <div class="alert alert-success">
+            <strong>3. Robots.txt Bien Configurado ⭐⭐⭐⭐</strong><br><br>
+            <ul>
+                <li>Googlebot permitido en todas las rutas públicas</li>
+                <li>AI crawlers bloqueados: GPTBot, ClaudeBot, CCBot, Google-Extended, Bytespider, Amazonbot, Applebot-Extended — buena protección contra scraping masivo para training de modelos</li>
+                <li>Content-Signal declarado: <code>search=yes, ai-train=no</code> — alineado con Article 4 EU Copyright Directive</li>
+                <li><code>/wp-admin/</code> excluido correctamente</li>
+                <li><code>Sitemap:</code> declarado al final</li>
+            </ul>
+            <br>
+            <strong>Impacto:</strong> Protección legal + control de crawling correcto. Pocas inmobiliarias en Canarias tienen este nivel.
+        </div>
+
+        <div class="alert alert-success">
+            <strong>4. Cobertura Geográfica Amplia ⭐⭐⭐</strong><br><br>
+            <ul>
+                <li>9 municipios con página dedicada: Adeje, Arico, Arona, Granadilla de Abona, San Isidro, San Miguel de Abona, Santiago del Teide, Santa Cruz de Tenerife, San Cristóbal de La Laguna</li>
+                <li>Cobertura completa de Tenerife Sur + capital + La Laguna (zona universitaria)</li>
+                <li>Portafolio de 178 propiedades activas — crítico para SEO long-tail por zona</li>
+                <li>Potencial de ranking en keywords tipo <em>"comprar casa [municipio]"</em>, <em>"alquiler vacacional [zona]"</em></li>
+            </ul>
+            <br>
+            <strong>Impacto:</strong> Suficiente masa crítica para competir en long-tail geográfico si se optimiza on-page.
+        </div>
+
+        <div class="alert alert-success">
+            <strong>5. Imágenes Correctamente Etiquetadas ⭐⭐⭐</strong><br><br>
+            <ul>
+                <li>28/28 imágenes con atributo <code>alt</code> en homepage — 100% accesibilidad básica</li>
+                <li>Formato WebP en uso (logo, banners)</li>
+                <li>Lazy-loading nativo <code>loading="lazy"</code> activo en 14/28 imágenes</li>
+            </ul>
+            <br>
+            <strong>Impacto:</strong> Buena base de accesibilidad e imagen SEO. Google Images puede indexar el catálogo.
+        </div>
+    </div>
+
+    <!-- SECCIÓN 3: PROBLEMAS CRÍTICOS -->
+    <div class="section" id="problemas-criticos">
+        <h2>3. Problemas Críticos</h2>
+
+        <div class="problem-box critical">
+            <h3>Problema 1: Typo Grave en Title y Slug Homepage <span class="badge badge-critical">CRÍTICO</span></h3>
+            <p>La página principal del sitio contiene un <strong>doble error ortográfico visible en Google</strong>. El title tag actual es:</p>
+            <div class="code">&lt;title&gt;Borza Real Estate Inmobiliaria en en Tenerife Sur&lt;/title&gt;</div>
+            <p>La palabra <strong>"en" aparece duplicada</strong> — probablemente un placeholder no sustituido durante la maquetación. Peor aún, el error se ha propagado al slug de la página original:</p>
+            <div class="code">https://borzarealestate.com/borza-real-estate-inmobiliaria-en-en-tenerife-sur-2/</div>
+            <ul>
+                <li><strong>Aparece tal cual en los resultados de Google</strong> — primera impresión desastrosa para un cliente que busca "inmobiliaria Tenerife"</li>
+                <li>Marca inconsistente en el mismo fragmento: <em>"Borza Real Estate Inmobiliaria"</em> — redundante (Real Estate + Inmobiliaria = misma cosa en dos idiomas)</li>
+                <li>Estructura del title <strong>brand-first</strong> — la keyword comercial "Tenerife Sur" queda al final donde Google la pondera menos</li>
+            </ul>
+            <div class="comparison">
+                <div class="before">
+                    <h5>✗ Title Actual</h5>
+                    <p><em>"Borza Real Estate Inmobiliaria en en Tenerife Sur"</em></p>
+                    <p>Typo visible + keyword al final + marca redundante</p>
+                </div>
+                <div class="after">
+                    <h5>✓ Title Optimizado</h5>
+                    <p><em>"Inmobiliaria Tenerife Sur — Venta y Alquiler Vacacional | Borza Real Estate"</em></p>
+                    <p>Keyword principal al inicio, USP en medio, marca al final (~65 char)</p>
+                </div>
+            </div>
+            <div class="alert alert-danger">
+                Este es el problema <strong>más urgente y más fácil</strong> del sitio. Arreglarlo lleva 10 minutos en Yoast y mejora la primera impresión en Google de forma inmediata.
+            </div>
+            <p><strong>Tiempo estimado:</strong> 10 min (editar en Yoast SEO) + redirect 301 del slug antiguo | <strong>ROI:</strong> Recuperación inmediata de credibilidad y CTR</p>
+        </div>
+
+        <div class="problem-box critical">
+            <h3>Problema 2: Multilingua Sin Hreflang — WPML Mal Configurado <span class="badge badge-critical">CRÍTICO</span></h3>
+            <p>El sitio tiene 3 versiones lingüísticas activas (ES, EN, IT) gestionadas por WPML, pero la homepage <strong>no emite ninguna etiqueta <code>hreflang</code></strong> que indique a Google la relación entre ellas.</p>
+            <ul>
+                <li>HTML declara sólo <code>&lt;html lang="es-ES"&gt;</code> sin alternativas</li>
+                <li>Sin <code>&lt;link rel="alternate" hreflang="en" ...&gt;</code> ni <code>hreflang="it"</code></li>
+                <li>Sin entrada <code>hreflang="x-default"</code></li>
+                <li>Google puede interpretar <code>/</code>, <code>/en/</code> y <code>/it/</code> como <strong>contenido duplicado</strong> en lugar de versiones lingüísticas legítimas</li>
+                <li>Usuarios italianos o ingleses que buscan en su idioma reciben la versión ES por defecto</li>
+            </ul>
+            <h4>Solución JSON-LD + HTML esperada en homepage:</h4>
+            <div class="code">&lt;link rel="alternate" hreflang="es" href="https://borzarealestate.com/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://borzarealestate.com/en/" /&gt;
+&lt;link rel="alternate" hreflang="it" href="https://borzarealestate.com/it/" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://borzarealestate.com/" /&gt;</div>
+            <p><strong>Solución:</strong> WPML → Languages → SEO options → activar <em>"Redirect visitors to their language"</em> y <em>"Use the language switcher"</em>. Verificar en WPML → Support que la opción <strong>"In page languages"</strong> esté activa. Si Yoast está integrado con WPML (módulo gratuito WPML Multilingual CMS + Yoast), los hreflang se emiten automáticamente.</p>
+            <p><strong>Tiempo estimado:</strong> 1-2 horas (configurar WPML + Yoast y verificar en todas las plantillas) | <strong>ROI:</strong> Google separa las 3 versiones, +40-60% visibilidad en búsquedas en EN e IT</p>
+        </div>
+
+        <div class="problem-box critical">
+            <h3>Problema 3: Slugs Multilingua con Idiomas Mezclados <span class="badge badge-critical">CRÍTICO</span></h3>
+            <p>Las URLs de páginas traducidas mantienen <strong>slugs en español dentro de rutas inglesas o italianas</strong>, una señal de calidad baja para Google y una barrera de lectura para el usuario.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>URL actual</th>
+                        <th>Problema</th>
+                        <th>URL correcta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/en/sobre-bre/</code></td>
+                        <td>"sobre" es ES en ruta EN</td>
+                        <td><code>/en/about/</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>/it/sobre-bre/</code></td>
+                        <td>"sobre" es ES en ruta IT</td>
+                        <td><code>/it/chi-siamo/</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>/it/contacto/</code></td>
+                        <td>"contacto" es ES en ruta IT</td>
+                        <td><code>/it/contatti/</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>/it/vacacional/</code></td>
+                        <td>"vacacional" es ES en ruta IT</td>
+                        <td><code>/it/affitto-vacanze/</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>/en/city/adeje-en/</code></td>
+                        <td>Sufijo <em>-en</em> redundante (/en/ ya indica idioma)</td>
+                        <td><code>/en/city/adeje/</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>/en/city/arona-en/</code></td>
+                        <td>Sufijo <em>-en</em> redundante</td>
+                        <td><code>/en/city/arona/</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Además, la ruta <code>/borza-real-estate-inmobiliaria-en-en-tenerife-sur-2/</code> con el sufijo <code>-2</code> indica que hay un duplicado de la homepage en la base de datos de WordPress — debe eliminarse o redireccionarse.</p>
+            <p><strong>Solución:</strong> En WPML → Translations Management, editar el <strong>slug</strong> de cada página traducida y aplicar redirect 301 desde la URL antigua hacia la nueva (plugin <em>Redirection</em> ya suele estar disponible, o vía <code>.htaccess</code>).</p>
+            <p><strong>Tiempo estimado:</strong> 2-3 horas (auditar todas las URLs + aplicar redirects) | <strong>ROI:</strong> URLs limpias, mejor CTR internacional, eliminación contenido duplicado</p>
+        </div>
+
+        <div class="problem-box critical">
+            <h3>Problema 4: Ausencia de Schema RealEstateAgent y RealEstateListing <span class="badge badge-critical">CRÍTICO</span></h3>
+            <p>El sitio emite sólo el Schema.org básico que Yoast genera por defecto (<code>WebSite</code>, <code>Organization</code>, <code>WebPage</code>, <code>BreadcrumbList</code>). <strong>Falta el schema específico del sector inmobiliario</strong>:</p>
+            <ul>
+                <li>Sin <code>RealEstateAgent</code> en homepage — Google no identifica el negocio como agencia inmobiliaria</li>
+                <li>Sin <code>RealEstateListing</code> (u <code>Accommodation</code> + <code>Offer</code>) en páginas de propiedad — las 178 fichas no aparecen con precio, habitaciones ni ubicación en SERP</li>
+                <li>Sin <code>LocalBusiness</code> con <code>address</code> + <code>geo</code> + <code>openingHours</code> — sin mapa ni info del negocio en Google Business Profile conectado</li>
+                <li>Sin <code>Person</code> en las páginas de los 10 agentes — perfiles sin rich snippet</li>
+                <li>Sin <code>AggregateRating</code> / <code>Review</code> — si la agencia tiene reseñas en Google, no se muestran como estrellas</li>
+            </ul>
+            <h4>Ejemplo JSON-LD para homepage:</h4>
+            <div class="code">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Borza Real Estate",
+  "url": "https://borzarealestate.com",
+  "logo": "https://borzarealestate.com/wp-content/uploads/2024/07/logo-1000x1000-1.webp",
+  "image": "https://borzarealestate.com/og-image.jpg",
+  "telephone": "+34 657 602 561",
+  "email": "borzarealestate@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "[Municipio — completar]",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "addressCountry": "ES"
+  },
+  "areaServed": [
+    "Tenerife Sur", "Adeje", "Arona", "San Miguel de Abona",
+    "Granadilla de Abona", "Santiago del Teide", "Santa Cruz de Tenerife"
+  ],
+  "sameAs": [
+    "https://www.facebook.com/borzarealestate",
+    "https://www.instagram.com/borzarealestate",
+    "https://g.page/borza-real-estate"
+  ]
+}
+&lt;/script&gt;</div>
+            <h4>Ejemplo JSON-LD para cada propiedad:</h4>
+            <div class="code">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "SingleFamilyResidence",
+  "name": "Chalet Roque del Conde — Adeje",
+  "description": "Chalet con piscina privada y vistas al mar",
+  "url": "https://borzarealestate.com/property/chalet-roque-del-conde/",
+  "numberOfRooms": 4,
+  "numberOfBathroomsTotal": 3,
+  "floorSize": { "@type": "QuantitativeValue", "value": 280, "unitCode": "MTK" },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Adeje",
+    "addressRegion": "Santa Cruz de Tenerife",
+    "addressCountry": "ES"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "850000",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+&lt;/script&gt;</div>
+            <p><strong>Solución:</strong> Houzez dispone del hook <code>houzez_single_property_schema</code>. Alternativamente, Yoast Premium + add-on <em>Yoast Local SEO</em> genera LocalBusiness. Para RealEstateListing automática sobre 178 propiedades conviene un snippet PHP en <code>functions.php</code> del child theme que mapee campos Houzez → Schema.</p>
+            <p><strong>Tiempo estimado:</strong> 4-6 horas (implementar + validar en Schema.org Validator y Google Rich Results Test) | <strong>ROI:</strong> +20-35% CTR SERP con rich snippets (precio, habitaciones, estrellas)</p>
+        </div>
+
+        <div class="problem-box critical">
+            <h3>Problema 5: Security Headers Totalmente Ausentes <span class="badge badge-critical">CRÍTICO</span></h3>
+            <p>La respuesta HTTP del servidor no incluye <strong>ninguno</strong> de los headers de seguridad estándar. Esto afecta la puntuación de confianza que Google asigna al dominio y expone al sitio a clickjacking, MIME-sniffing y fuga de referrers.</p>
+            <ul>
+                <li>Sin <code>Strict-Transport-Security</code> (HSTS) — navegador no fuerza HTTPS en visitas sucesivas</li>
+                <li>Sin <code>X-Frame-Options</code> — vulnerable a clickjacking vía iframe de terceros</li>
+                <li>Sin <code>X-Content-Type-Options: nosniff</code> — vulnerable a MIME-type sniffing</li>
+                <li>Sin <code>Content-Security-Policy</code> — sin control sobre scripts externos cargados</li>
+                <li>Sin <code>Referrer-Policy</code> — fuga de URL completa a sitios externos</li>
+                <li>Calificación estimada en <a href="https://securityheaders.com">securityheaders.com</a>: <strong>F</strong></li>
+            </ul>
+            <h4>Solución vía Cloudflare Transform Rules (sin tocar WordPress):</h4>
+            <div class="code">Strict-Transport-Security:
+  max-age=31536000; includeSubDomains; preload
+
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=(self)
+
+Content-Security-Policy:
+  default-src 'self' *.borzarealestate.com;
+  img-src * data:;
+  script-src 'self' 'unsafe-inline' *.google.com *.googletagmanager.com
+    *.cloudflare.com;
+  style-src 'self' 'unsafe-inline' fonts.googleapis.com;
+  font-src 'self' fonts.gstatic.com data:;
+  frame-src 'self' *.google.com *.youtube.com;</div>
+            <p><strong>Tiempo estimado:</strong> 30-45 min en Cloudflare Transform Rules | <strong>ROI:</strong> Sec. headers A+, señal de confianza para Google, protección real</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 4: PROBLEMAS IMPORTANTES -->
+    <div class="section" id="problemas-importantes">
+        <h2>4. Problemas Importantes</h2>
+
+        <div class="problem-box high">
+            <h3>Problema 6: Meta Description Débil y Sin Hook Comercial <span class="badge badge-high">ALTO</span></h3>
+            <p>La meta description actual funciona como <strong>lista seca de servicios</strong>, sin USP, sin propuesta diferencial, sin CTA, y con una inconsistencia tipográfica (<em>"real Estate"</em> con minúscula en el medio):</p>
+            <div class="comparison">
+                <div class="before">
+                    <h5>✗ Meta Actual (151 char)</h5>
+                    <p><em>"Borza real Estate - Inmobiliaria en Tenerife Sur - Venta de propiedades - Alquileres - Alquiler Vacacional - Administración de Propiedades"</em></p>
+                </div>
+                <div class="after">
+                    <h5>✓ Meta Optimizada (158 char)</h5>
+                    <p><em>"Venta, alquiler y alquiler vacacional en Tenerife Sur. 178 propiedades en Adeje, Arona, San Miguel y más. Atención en ES/EN/IT. ☎ Solicita visita hoy."</em></p>
+                </div>
+            </div>
+            <p>La versión optimizada incluye: <strong>keyword principal al inicio</strong>, <strong>cifra creíble</strong> (178 propiedades), <strong>zonas</strong> (long-tail), <strong>idiomas</strong> (segmenta audiencia internacional), <strong>CTA</strong> explícito.</p>
+            <p>Aplicar la misma lógica a las 101 páginas catalogadas por Yoast y a las 178 fichas de propiedad (plantilla dinámica).</p>
+            <p><strong>Tiempo estimado:</strong> 2 horas (homepage + 10 landings principales + plantilla de propiedad) | <strong>ROI:</strong> +10-20% CTR en resultados de búsqueda</p>
+        </div>
+
+        <div class="problem-box high">
+            <h3>Problema 7: Imagen Open Graph con Formato Incorrecto <span class="badge badge-high">ALTO</span></h3>
+            <p>La imagen utilizada para compartir en redes sociales es el <strong>logo cuadrado de 1000×1000 px</strong>:</p>
+            <div class="code">&lt;meta property="og:image"
+  content="https://borzarealestate.com/wp-content/uploads/2024/07/logo-1000x1000-1.webp" /&gt;
+&lt;meta property="og:image:width" content="1000" /&gt;
+&lt;meta property="og:image:height" content="1000" /&gt;</div>
+            <ul>
+                <li>Facebook/LinkedIn/WhatsApp recortan la imagen cuadrada a formato apaisado</li>
+                <li>Twitter Cards requieren ratio 1.91:1 (1200×630) para summary_large_image</li>
+                <li>Un logo sin contexto no tiene el mismo impacto que una foto de una propiedad de bandera</li>
+                <li>WhatsApp (canal importante para Borza) muestra la imagen OG en el preview del link — crítico para CTR</li>
+            </ul>
+            <h4>Solución:</h4>
+            <div class="code">&lt;meta property="og:image"
+  content="https://borzarealestate.com/wp-content/uploads/og-hero-tenerife-1200x630.jpg" /&gt;
+&lt;meta property="og:image:width" content="1200" /&gt;
+&lt;meta property="og:image:height" content="630" /&gt;
+&lt;meta property="og:image:alt"
+  content="Borza Real Estate — Inmobiliaria en Tenerife Sur" /&gt;
+
+&lt;meta name="twitter:card" content="summary_large_image" /&gt;
+&lt;meta name="twitter:image"
+  content="https://borzarealestate.com/wp-content/uploads/og-hero-tenerife-1200x630.jpg" /&gt;</div>
+            <p>Crear una imagen hero 1200×630 px con: foto de una villa/vista al Teide o al mar + logo + claim <em>"Inmobiliaria Tenerife Sur"</em>.</p>
+            <p><strong>Tiempo estimado:</strong> 1 hora (diseño + upload + configuración Yoast Social) | <strong>ROI:</strong> +30% CTR en shares de WhatsApp, Facebook, LinkedIn</p>
+        </div>
+
+        <div class="problem-box high">
+            <h3>Problema 8: H1 Ausente en Homepage (Elementor solo usa H2) <span class="badge badge-high">ALTO</span></h3>
+            <p>El análisis del HTML de la homepage muestra <strong>ningún <code>&lt;h1&gt;</code></strong>. Elementor compone la página con widgets <em>Heading</em> configurados como H2, lo que es un error común cuando se maqueta sin auditar la jerarquía.</p>
+            <ul>
+                <li>Google usa el H1 como señal primaria del tema principal de la página</li>
+                <li>Sin H1, el sitio "depende" sólo del title tag — que además contiene el typo "en en"</li>
+                <li>Lectores de pantalla y SEO tools reportan el sitio como malestructurado</li>
+            </ul>
+            <h4>Solución:</h4>
+            <p>En Elementor, editar el widget principal del hero de la homepage y cambiar el <strong>HTML tag</strong> del heading de <em>H2</em> a <em>H1</em>. Texto sugerido:</p>
+            <div class="code">&lt;h1&gt;Inmobiliaria en Tenerife Sur — Venta, Alquiler y Vacacional&lt;/h1&gt;</div>
+            <p>Revisar también las landings de zonas (<code>/city/adeje/</code>, etc.) y las fichas de propiedad — cada una debe tener exactamente 1 H1 único.</p>
+            <p><strong>Tiempo estimado:</strong> 1-2 horas (homepage + revisión plantillas Houzez + zonas) | <strong>ROI:</strong> Jerarquía HTML correcta, señal SEO recuperada</p>
+        </div>
+
+        <div class="problem-box high">
+            <h3>Problema 9: Blog Abandonado — 9 Posts y Último de Dic 2025 <span class="badge badge-high">ALTO</span></h3>
+            <p>El post-sitemap contiene <strong>9 artículos</strong> totales y el <code>lastmod</code> del sitemap indica <strong>2025-12-02</strong> — <em>hace casi 5 meses sin publicar nada nuevo</em>.</p>
+            <ul>
+                <li>Inmobiliaria es un sector con búsquedas informativas masivas: "comprar casa en Tenerife como extranjero", "NIE para comprar propiedad España", "impuestos transmisión Canarias", "zonas mejor valoradas Tenerife Sur"</li>
+                <li>Los competidores que publican 2-4 posts mensuales capturan ese tráfico long-tail</li>
+                <li>Un blog activo es señal de autoridad temática para Google E-E-A-T</li>
+                <li>Cada post multilingua cuenta como 3 URLs indexables (ES + EN + IT)</li>
+            </ul>
+            <h4>Plan editorial sugerido (12 meses):</h4>
+            <ul>
+                <li><strong>Guías para compradores extranjeros</strong>: NIE, IGIC, hipoteca no-residente, pasos compra en España</li>
+                <li><strong>Zonas</strong>: "Vivir en Adeje vs Arona", "La Caleta vs Los Cristianos", "zonas con vistas al Teide"</li>
+                <li><strong>Mercado</strong>: tendencias precios trimestral, retorno alquiler vacacional por municipio</li>
+                <li><strong>Casos</strong>: propiedades destacadas con storytelling</li>
+                <li><strong>Legal</strong>: licencia VV (alquiler vacacional), normativa cabildo, ZEC</li>
+            </ul>
+            <p>Cadencia mínima sostenible: <strong>2 posts/mes en ES</strong>, traducidos a EN/IT. Total: 24 posts/año × 3 idiomas = <strong>72 URLs nuevas/año</strong>.</p>
+            <p><strong>Tiempo estimado:</strong> 4-8 horas/mes (redacción + traducción WPML) | <strong>ROI:</strong> +30-80% tráfico orgánico informacional en 6 meses</p>
+        </div>
+
+        <div class="problem-box high">
+            <h3>Problema 10: Inconsistencias de Marca en el HTML <span class="badge badge-high">MEDIO</span></h3>
+            <p>La misma marca aparece escrita de <strong>4 formas distintas</strong> en el HTML de la homepage:</p>
+            <table>
+                <thead>
+                    <tr><th>Dónde</th><th>Valor actual</th><th>Forma correcta</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>title</td><td><em>Borza Real Estate</em></td><td>Borza Real Estate</td></tr>
+                    <tr><td>meta description</td><td><em>Borza real Estate</em> (min.)</td><td>Borza Real Estate</td></tr>
+                    <tr><td>og:site_name</td><td><em>Borzarealestate</em> (junto)</td><td>Borza Real Estate</td></tr>
+                    <tr><td>Logo alt + footer</td><td>Variable</td><td>Borza Real Estate</td></tr>
+                </tbody>
+            </table>
+            <p>Google usa el <strong>Knowledge Graph</strong> para asociar un dominio a una "entidad". Si el nombre comercial se escribe de forma distinta en cada lugar, la consolidación de la entidad se retrasa y el <em>Branded Search</em> rinde peor.</p>
+            <p><strong>Solución:</strong> Estandarizar como <strong>"Borza Real Estate"</strong> en todos los lugares: title, og:site_name, Yoast → Search Appearance → Site Name, Schema.org, logo alt, footer, emails transaccionales.</p>
+            <p><strong>Tiempo estimado:</strong> 1 hora | <strong>ROI:</strong> Consolidación branded, mejor reconocimiento en SERP y Knowledge Panel</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 5: ANÁLISIS COMPETITIVO -->
+    <div class="section" id="competencia">
+        <h2>5. Análisis Competitivo</h2>
+        <p>Comparativa con competidores activos en inmobiliaria Tenerife Sur:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Factor</th>
+                    <th>Borza Real Estate</th>
+                    <th>RE/MAX Golden Mile</th>
+                    <th>Tenerife Real Estate</th>
+                    <th>DOM Tenerife</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Stack</strong></td>
+                    <td>WP + Houzez + WPML</td>
+                    <td>Nuxt.js</td>
+                    <td>JS custom</td>
+                    <td>PHP custom</td>
+                </tr>
+                <tr>
+                    <td><strong>CDN / HTTP/3</strong></td>
+                    <td><span class="tag green">Cloudflare ✓</span></td>
+                    <td><span class="tag green">Cloudflare ✓</span></td>
+                    <td><span class="tag red">No</span></td>
+                    <td><span class="tag red">No</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Sitemap accesible</strong></td>
+                    <td><span class="tag green">Sí ✓</span></td>
+                    <td><span class="tag red">403 Error</span></td>
+                    <td><span class="tag green">Sí</span></td>
+                    <td><span class="tag green">Sí</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Schema Real Estate</strong></td>
+                    <td><span class="tag orange">Básico (sólo Yoast)</span></td>
+                    <td><span class="tag red">No confirmado</span></td>
+                    <td><span class="tag green">LocalBusiness + WebSite</span></td>
+                    <td><span class="tag orange">Probable</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Idiomas</strong></td>
+                    <td><span class="tag orange">3 (ES/EN/IT)</span></td>
+                    <td><span class="tag green">10 ✓✓</span></td>
+                    <td><span class="tag orange">4</span></td>
+                    <td><span class="tag orange">5</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Hreflang correcto</strong></td>
+                    <td><span class="tag red">No ✗</span></td>
+                    <td><span class="tag orange">Parcial</span></td>
+                    <td><span class="tag green">Sí</span></td>
+                    <td><span class="tag green">Sí</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Propiedades en cartera</strong></td>
+                    <td><span class="tag green">178 ✓</span></td>
+                    <td><span class="tag green">137</span></td>
+                    <td><span class="tag orange">60-80</span></td>
+                    <td><span class="tag green">200+</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Blog activo</strong></td>
+                    <td><span class="tag red">9 posts, abandonado</span></td>
+                    <td><span class="tag orange">Irregular</span></td>
+                    <td><span class="tag green">Activo</span></td>
+                    <td><span class="tag orange">Esporádico</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Security headers</strong></td>
+                    <td><span class="tag red">F (ausentes)</span></td>
+                    <td><span class="tag red">F</span></td>
+                    <td><span class="tag orange">C</span></td>
+                    <td><span class="tag orange">D</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Title optimizado</strong></td>
+                    <td><span class="tag red">Typo "en en"</span></td>
+                    <td><span class="tag red">Brand-first</span></td>
+                    <td><span class="tag green">Bueno</span></td>
+                    <td><span class="tag green">Bueno</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert alert-warning">
+            <strong>Posicionamiento de Borza:</strong> Borza Real Estate tiene más propiedades que RE/MAX Golden Mile y un stack más maduro que Tenerife Real Estate (WordPress + Houzez son el estándar sectorial). <strong>La desventaja no es capacidad técnica — es atención al detalle</strong>. El typo en el title, los slugs mezclados y la ausencia de hreflang son errores de <em>ejecución</em>, no de <em>plataforma</em>. Una vez corregidos los 5 problemas críticos, Borza pasa a la primera línea competitiva local.
+        </div>
+    </div>
+
+    <!-- SECCIÓN 6: PLAN DE ACCIÓN -->
+    <div class="section" id="plan-accion">
+        <h2>6. Plan de Acción</h2>
+
+        <div class="phase">
+            <h3>FASE 1: Correcciones de Emergencia — 2-3 Días</h3>
+            <p><em>Objetivo: Eliminar los errores visibles y las pérdidas de indexación multilingua.</em></p>
+            <ul class="checklist">
+                <li>Reescribir title homepage eliminando "en en" — editar en Yoast SEO (10 min)</li>
+                <li>Aplicar redirect 301 desde <code>/borza-real-estate-inmobiliaria-en-en-tenerife-sur-2/</code> a <code>/</code> (10 min)</li>
+                <li>Configurar hreflang en WPML → Languages → SEO options (1 hora)</li>
+                <li>Añadir <code>&lt;h1&gt;</code> en hero Elementor homepage (15 min)</li>
+                <li>Reescribir meta description homepage con hook + USP + CTA (20 min)</li>
+                <li>Añadir security headers vía Cloudflare Transform Rules (45 min)</li>
+                <li>Registrar propiedad en Google Search Console y enviar sitemap_index.xml (30 min)</li>
+                <li>Estandarizar nombre de marca "Borza Real Estate" en title/og/Yoast (30 min)</li>
+            </ul>
+            <p><strong>Resultado Fase 1:</strong> Primera impresión limpia en Google, multilingua indexable correctamente.</p>
+        </div>
+
+        <div class="phase">
+            <h3>FASE 2: Schema y URLs Limpias — 1-2 Semanas</h3>
+            <p><em>Objetivo: Rich snippets activos y URLs coherentes por idioma.</em></p>
+            <ul class="checklist">
+                <li>Renombrar slugs multilingua inconsistentes: <code>/en/sobre-bre/ → /en/about/</code>, <code>/it/contacto/ → /it/contatti/</code>, <code>/it/vacacional/ → /it/affitto-vacanze/</code></li>
+                <li>Eliminar sufijos <code>-en</code>, <code>-it</code> redundantes en city/ URLs y aplicar redirects 301</li>
+                <li>Implementar <code>RealEstateAgent</code> + <code>LocalBusiness</code> JSON-LD en homepage</li>
+                <li>Implementar <code>SingleFamilyResidence</code>/<code>Apartment</code> + <code>Offer</code> en plantilla Houzez de propiedad (hook <code>houzez_single_property_schema</code>)</li>
+                <li>Implementar <code>Person</code> en páginas de los 10 agentes</li>
+                <li>Validar todos los schemas en Google Rich Results Test y Schema.org Validator</li>
+                <li>Crear imagen OG hero 1200×630 y asignarla en Yoast Social</li>
+                <li>Verificar e instalar GA4 + GSC con conversiones WhatsApp y formulario</li>
+            </ul>
+            <p><strong>Resultado Fase 2:</strong> Rich snippets con precio/habitaciones en SERP, URLs limpias, tracking operativo.</p>
+        </div>
+
+        <div class="phase">
+            <h3>FASE 3: Crecimiento y Contenido — 1-3 Meses</h3>
+            <p><em>Objetivo: Ganar tráfico orgánico informacional y long-tail geográfico.</em></p>
+            <ul class="checklist">
+                <li>Plan editorial: 2 posts/mes (ES) traducidos a EN/IT — guías compra extranjeros, zonas, mercado, legal</li>
+                <li>Landing pages SEO por zona con contenido único: <em>"Comprar casa en Adeje"</em>, <em>"Propiedades Costa Adeje"</em>, <em>"Villas Los Cristianos"</em>...</li>
+                <li>Landing pages por tipo: villas, apartamentos, áticos, terrenos, alquiler vacacional</li>
+                <li>Google Business Profile optimizado + vincular sameAs en Schema</li>
+                <li>Link building sectorial: portales expat (Angloinfo, Expatica), blogs inmobiliarios Canarias, prensa local</li>
+                <li>Presencia en Idealista / Fotocasa / Kyero con link a Borza (recupera tráfico referral)</li>
+                <li>Optimizar velocidad: WP Rocket / LiteSpeed Cache + revisión peso Elementor</li>
+                <li>Email marketing: newsletter mensual con propiedades nuevas (ES/EN/IT)</li>
+            </ul>
+            <p><strong>Resultado Fase 3:</strong> +60-100% tráfico orgánico en 6 meses, posicionamiento sólido en long-tail geográfico.</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 7: ROI E IMPACTO ECONÓMICO -->
+    <div class="section" id="roi">
+        <h2>7. ROI Estimado e Impacto Económico</h2>
+
+        <div class="metrics-grid">
+            <div class="metric">
+                <div class="metric-value green">+50-80%</div>
+                <div class="metric-label">Indexación por idioma (EN/IT) en 3 meses</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">+30-50%</div>
+                <div class="metric-label">CTR en SERP con title limpio + rich snippets</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">+40-70%</div>
+                <div class="metric-label">Tráfico orgánico en 6 meses</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">5-12</div>
+                <div class="metric-label">Leads cualificados extra/mes (conservador)</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">15-30</div>
+                <div class="metric-label">Leads cualificados extra/mes (optimista)</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value green">€8k-25k</div>
+                <div class="metric-label">Inversión SEO estimada 6 meses</div>
+            </div>
+        </div>
+
+        <div class="alert alert-success" style="font-size: 18px; padding: 30px;">
+            <strong>Impacto Económico Directo:</strong><br><br>
+            Precio medio propiedad en Tenerife Sur (Adeje/Arona): <strong>€280.000 – €450.000</strong><br>
+            Comisión agencia típica: ~3-5% = <strong>€8.400 – €22.500 por venta</strong><br><br>
+            Con sólo <strong>1 venta extra al mes</strong> atribuible al canal orgánico:<br>
+            <strong style="font-size: 22px; color: #155724;">Retorno mensual estimado: €8.400 – €22.500</strong><br><br>
+            A esto se suma el alquiler vacacional (fees de gestión 15-25% × tarifa noche), que genera ingresos recurrentes desde las fichas bien indexadas por municipio.
+        </div>
+
+        <h3>KPIs y Objetivos de Seguimiento</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Métrica</th>
+                    <th>Actual</th>
+                    <th>Objetivo 3 Meses</th>
+                    <th>Objetivo 6 Meses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Puntuación SEO global</td>
+                    <td><strong>5.5/10</strong></td>
+                    <td>7.5/10</td>
+                    <td>8.5/10</td>
+                </tr>
+                <tr>
+                    <td>Security Headers (securityheaders.com)</td>
+                    <td>F</td>
+                    <td>A</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>Páginas indexadas EN</td>
+                    <td>Bajo (sin hreflang)</td>
+                    <td>80+</td>
+                    <td>150+</td>
+                </tr>
+                <tr>
+                    <td>Páginas indexadas IT</td>
+                    <td>Bajo (sin hreflang)</td>
+                    <td>80+</td>
+                    <td>150+</td>
+                </tr>
+                <tr>
+                    <td>Ranking "inmobiliaria tenerife sur"</td>
+                    <td>Página 2-3</td>
+                    <td>Top 10</td>
+                    <td>Top 5</td>
+                </tr>
+                <tr>
+                    <td>Ranking "properties tenerife south"</td>
+                    <td>Sin posición</td>
+                    <td>Página 2</td>
+                    <td>Top 10</td>
+                </tr>
+                <tr>
+                    <td>Ranking "case in vendita tenerife"</td>
+                    <td>Sin posición</td>
+                    <td>Página 2</td>
+                    <td>Top 10</td>
+                </tr>
+                <tr>
+                    <td>Posts blog publicados</td>
+                    <td>9 (abandonado)</td>
+                    <td>15 (activo)</td>
+                    <td>27 (+ traducciones)</td>
+                </tr>
+                <tr>
+                    <td>Rich snippets activos (precio/habitaciones)</td>
+                    <td>0</td>
+                    <td>50+</td>
+                    <td>178 (100%)</td>
+                </tr>
+                <tr>
+                    <td>Leads orgánicos/mes (WhatsApp + forms)</td>
+                    <td>~Pocos</td>
+                    <td>+5-10</td>
+                    <td>+15-25</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECCIÓN 8: CONCLUSIONES -->
+    <div class="section" id="conclusiones">
+        <h2>8. Conclusiones</h2>
+
+        <div class="score-box">
+            <div class="score-text" style="font-size: 20px; margin-bottom: 20px; font-weight: bold;">VEREDICTO FINAL</div>
+            <p style="font-size: 19px; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                <strong>borzarealestate.com</strong> tiene la <strong>base correcta</strong>: WordPress + Houzez + Yoast + WPML + Cloudflare es el stack que usan las mejores inmobiliarias de España. La cartera es real — <strong>178 propiedades</strong> cubriendo todo Tenerife Sur y la capital —, los sitemaps funcionan, las imágenes están bien etiquetadas y el robots.txt está pensado.<br><br>
+                Lo que hunde el resultado es la <strong>ejecución en los detalles</strong>: un typo grave visible en Google desde la homepage, hreflang ausente que hace invisible las versiones EN e IT, slugs mezclados entre idiomas, ausencia total de Schema Real Estate y seguridad HTTP a cero.<br><br>
+                <strong>La buena noticia:</strong> todos los 5 problemas críticos se resuelven en <strong>1 semana de trabajo técnico</strong> sin tocar nada de negocio — ni diseño, ni fotografía, ni cartera. Es la clase de situación donde el ROI del SEO es más alto: no hay que construir nada nuevo, hay que <em>pulir</em>.
+            </p>
+        </div>
+
+        <h3>Próximos Pasos Inmediatos (Esta Semana)</h3>
+        <ul class="checklist">
+            <li>Corregir typo "en en" en title y slug homepage (10 min)</li>
+            <li>Activar hreflang en WPML SEO options (1 hora)</li>
+            <li>Añadir H1 correcto en hero Elementor (15 min)</li>
+            <li>Instalar security headers vía Cloudflare (45 min)</li>
+            <li>Registrar y verificar Google Search Console (30 min)</li>
+            <li>Enviar sitemap_index.xml a GSC (5 min)</li>
+            <li>Solicitar reindexación manual de la homepage (5 min)</li>
+        </ul>
+
+        <div class="alert alert-info">
+            <strong>Próxima Auditoría Recomendada:</strong> Julio 2026<br>
+            Revisión de resultados de Fase 1 y 2. Verificación de hreflang emitidos, rich snippets activos en resultados de Google, ranking en keywords target ES/EN/IT y leads generados desde canal orgánico.
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p><strong>SEO Audit Report — Borza Real Estate Tenerife</strong></p>
+    <p style="margin-top: 10px; color: #aaa;">Informe generado el 23 Abril 2026 | Powered by TapeDynamics AI</p>
+    <p style="margin-top: 5px; color: #aaa;">tapedynamics.es</p>
+</div>
+
+</body>
+</html>
